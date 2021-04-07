@@ -1,0 +1,12 @@
+{
+	ingredientPattern: "PPP	PLP	PPP",
+	ingredients: {
+		"P": { type: "block", code: "game:glassslab-plain-down-free",  quantity: 1 },
+		"L": { type: "block", code: "game:lantern-up", quantity: 1 },
+		
+		
+	},
+	width: 3,
+	height: 3,
+	output: { type: "block", code: "blocklantern", quantity: 1  }
+}

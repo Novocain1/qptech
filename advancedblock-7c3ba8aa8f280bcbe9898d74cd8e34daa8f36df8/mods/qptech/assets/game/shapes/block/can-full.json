@@ -1,0 +1,57 @@
+{
+	"editor": {
+		"allAngles": false,
+		"entityTextureMode": false
+	},
+	"textureWidth": 16,
+	"textureHeight": 16,
+	"textureSizes": {
+	},
+	"textures": {
+		"tincan": "block/tincan"
+	},
+	"elements": [
+		{
+			"name": "Bowl 1 floor",
+			"from": [ 6.5, 0.0, 6.5 ], 
+			"to": [ 9.5, 1.0, 9.5 ], 
+			"faces": {
+				"north": { "texture": "#-1", "uv": [ 0.0, 0.0, 3.0, 1.0 ], "enabled": false },
+				"east": { "texture": "#-1", "uv": [ 0.0, 0.0, 3.0, 1.0 ], "enabled": false },
+				"south": { "texture": "#-1", "uv": [ 0.0, 0.0, 3.0, 1.0 ], "enabled": false },
+				"west": { "texture": "#-1", "uv": [ 0.0, 0.0, 3.0, 1.0 ], "enabled": false },
+				"up": { "texture": "#mat", "uv": [ 10.0, 2.0, 13.0, 5.0 ] },
+				"down": { "texture": "#mat", "uv": [ 5.0, 5.0, 8.0, 8.0 ] }
+			},
+			"children": [
+				{
+					"name": "can",
+					"from": [ 0.0, 0.0, 0.0 ], 
+					"to": [ 3.0, 5.0, 3.0 ], 
+					"rotationOrigin": [ 0.5, 0.0, 0.5 ],
+					"faces": {
+						"north": { "texture": "#tincan", "uv": [ 10.0, 0.0, 14.5, 9.0 ], "autoUv": false },
+						"east": { "texture": "#tincan", "uv": [ 5.5, 0.0, 10.0, 9.0 ], "autoUv": false },
+						"south": { "texture": "#tincan", "uv": [ 10.0, 0.0, 14.5, 9.0 ], "autoUv": false },
+						"west": { "texture": "#tincan", "uv": [ 5.0, 0.0, 9.5, 9.0 ], "autoUv": false },
+						"up": { "texture": "#tincan", "uv": [ 15.0, 8.0, 16.0, 9.0 ], "autoUv": false },
+						"down": { "texture": "#tincan", "uv": [ 0.0, 9.5, 6.5, 16.0 ], "autoUv": false }
+					}
+				},
+				{
+					"name": "lid",
+					"from": [ 3.0, 5.0, 0.0 ], 
+					"to": [ 6.0, 5.25, 3.0 ], 
+					"rotationOrigin": [ 3.5, 5.0, 0.5 ],
+					"faces": {
+						"north": { "texture": "#tincan", "uv": [ 3.5, 0.0, 9.0, 9.0 ], "autoUv": false },
+						"east": { "texture": "#tincan", "uv": [ 5.5, 0.0, 10.0, 9.0 ], "autoUv": false },
+						"south": { "texture": "#tincan", "uv": [ 4.0, 0.0, 9.0, 9.0 ], "autoUv": false },
+						"west": { "texture": "#tincan", "uv": [ 5.0, 0.0, 9.5, 9.0 ], "autoUv": false },
+						"up": { "texture": "#tincan", "uv": [ 0.0, 9.5, 6.5, 16.0 ], "autoUv": false },
+						"down": { "texture": "#tincan", "uv": [ 0.0, 9.5, 6.5, 16.0 ], "autoUv": false }
+					}
+				}
+			]
+		}
+	]}

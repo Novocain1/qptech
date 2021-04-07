@@ -1,0 +1,16 @@
+{
+	ingredient: { type: "item", code: "game:ingot-*", name: "metal", allowedVariants: ["brass"] },
+	name: "plate",
+	pattern: [[
+		"##_##_##_",
+		"_________",
+		"##_##_##_",
+		"_________",
+		"##_##_##_",
+		"_________",
+		"##_##_##_",
+		"_________",
+		"##_##_##_",
+	]],
+	output: { type: "item", code: "screw-{metal}", quantity:12  }
+}

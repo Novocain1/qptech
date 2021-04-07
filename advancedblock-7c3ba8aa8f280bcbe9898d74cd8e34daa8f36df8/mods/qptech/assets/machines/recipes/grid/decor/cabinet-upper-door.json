@@ -1,0 +1,12 @@
+{
+	ingredientPattern: "PPP	PPP	S_H",
+	ingredients: {
+		"P": { type: "item", code: "game:plank-*", name: "wood", quantity: 2 },
+		"S": { type: "item", code: "game:saw-*", isTool: true },
+		"H": { type: "item", code: "game:hammer-*", isTool: true }
+		
+	},
+	width: 3,
+	height: 3,
+	output: { type: "block", code: "cabinet-upper-door-{wood}-east", quantity: 1  }
+}

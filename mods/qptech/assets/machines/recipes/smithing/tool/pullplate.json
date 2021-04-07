@@ -1,0 +1,16 @@
+{
+	ingredient: { type: "item", code: "game:ingot-*", name: "metal", allowedVariants: ["iron", "meteoriciron", "steel"] },
+	name: "plate",
+	pattern: [[
+		"#########",
+		"####_####",
+		"#########",
+		"#########",
+		"####_####",
+		"#########",
+		"#########",
+		"####_####",
+		"#########",
+	]],
+	output: { type: "item", code: "pullplate-{metal}"  }
+}

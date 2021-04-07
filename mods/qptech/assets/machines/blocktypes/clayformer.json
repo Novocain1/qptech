@@ -1,0 +1,53 @@
+{
+	code: "clayformer",
+	class: "ElectricalBlock",
+	entityclass: "BEEAssembler",
+	entityBehaviors: [{ name: "Animatable" }],
+	creativeinventory: { "general": ["*-east"] },
+	variantgroups: [
+		{code:"side","loadFromProperties":"abstract/horizontalorientation"}
+	],
+	behaviors: [{name:"HorizontalOrientable",properties:{"dropBlockFace":"east"}}],
+	attributes: {
+		maxAmps:2,
+		maxVolts:16,
+		capacitance:2,
+		requiredAmps:2,
+		inputFace:"west",
+		outputFace:"east",
+		processingTicks:45
+	},
+	blockmaterial: "Metal",
+	drawtype: "json",
+	
+	shape: { base: "block/clayformer-bowl" },
+		"shapeByType": {
+			"*-north": {
+				"base": "block/clayformer-bowl",
+				"rotateY": 0
+			},
+			"*-east": {
+				"base": "block/clayformer-bowl",
+				"rotateY": 270
+			},
+			"*-west": {
+				"base": "block/clayformer-bowl",
+				"rotateY": 90
+			},
+			"*-south": {
+				"base": "block/clayformer-bowl",
+				"rotateY": 180
+			}
+		},
+	resistance: 1,
+	sideopaque: {
+		all: false
+	},
+
+	sounds: {
+		"place": "game:block/anvil",
+		"walk": "game:walk/stone"
+	}
+
+
+}

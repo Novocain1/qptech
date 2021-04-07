@@ -1,0 +1,13 @@
+{
+	ingredientPattern: "TZ	_C	PF",
+	ingredients: {
+		"Z": { type: "item", code: "game:metalplate-zinc", quantity: 3 },
+		"C": { type: "item", code: "game:metalplate-copper", quantity: 3 },
+		"F": { type: "block", code: "game:linen-*", quantity: 3 },
+		"T": { type: "item", code: "screwdriver-*", isTool: true },
+		"P": { type: "block", code: "wireplate-tin-2a", quantity: 1}
+	},
+	width: 2,
+	height: 3,
+	output: { type: "block", code: "battery-primitive", quantity: 1  }
+}

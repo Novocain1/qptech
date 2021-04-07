@@ -1,0 +1,10 @@
+{
+	ingredient: { type: "item", code: "game:ingot-*", name: "metal", allowedVariants: ["copper", "tinbronze", "bismuthbronze", "blackbronze","iron", "meteoriciron", "steel"] },
+	pattern: [[
+		"__#__________##_",
+		"_##############_",
+		"__#__________##_",
+	]],
+	name: "Screwdriver Head",
+	output: { type: "item", code: "screwdriverhead-{metal}"   }
+}

@@ -1,0 +1,178 @@
+{
+	"editor": {
+		"allAngles": true,
+		"entityTextureMode": false
+	},
+	"textureWidth": 16,
+	"textureHeight": 16,
+	"textureSizes": {
+	},
+	"textures": {
+	},
+	"elements": [
+		{
+			"name": "Main Body",
+			"from": [ 5.0, -1.0, 1.0 ], 
+			"to": [ 9.0, 4.0, 5.0 ], 
+			"rotationOrigin": [ 7.0, -1.0, 3.0 ],
+			"rotationZ": 6.0,
+			"faces": {
+				"north": { "texture": "#null", "uv": [ 0.0, 0.0, 4.0, 5.0 ] },
+				"east": { "texture": "#null", "uv": [ 0.0, 0.0, 4.0, 5.0 ] },
+				"south": { "texture": "#null", "uv": [ 0.0, 0.0, 4.0, 5.0 ] },
+				"west": { "texture": "#null", "uv": [ 0.0, 0.0, 4.0, 5.0 ] },
+				"up": { "texture": "#null", "uv": [ 0.0, 0.0, 4.0, 4.0 ] },
+				"down": { "texture": "#null", "uv": [ 0.0, 0.0, 4.0, 4.0 ] }
+			},
+			"children": [
+				{
+					"name": "Thruster Strut",
+					"from": [ 1.0, 3.0, 4.0 ], 
+					"to": [ 2.0, 4.0, 6.0 ], 
+					"rotationOrigin": [ 1.0, 3.0, 4.0 ],
+					"faces": {
+						"north": { "texture": "#null", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
+						"east": { "texture": "#null", "uv": [ 0.0, 0.0, 2.0, 1.0 ] },
+						"south": { "texture": "#null", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
+						"west": { "texture": "#null", "uv": [ 0.0, 0.0, 2.0, 1.0 ] },
+						"up": { "texture": "#null", "uv": [ 0.0, 0.0, 1.0, 2.0 ] },
+						"down": { "texture": "#null", "uv": [ 0.0, 0.0, 1.0, 2.0 ] }
+					},
+					"children": [
+						{
+							"name": "ThrusterTube",
+							"from": [ 1.0, -1.0, 1.0 ], 
+							"to": [ 2.0, 2.0, 2.0 ], 
+							"rotationOrigin": [ 1.0, -1.0, 1.0 ],
+							"faces": {
+								"north": { "texture": "#null", "uv": [ 0.0, 0.0, 1.0, 3.0 ] },
+								"east": { "texture": "#null", "uv": [ 0.0, 0.0, 1.0, 3.0 ] },
+								"south": { "texture": "#null", "uv": [ 0.0, 0.0, 1.0, 3.0 ] },
+								"west": { "texture": "#null", "uv": [ 0.0, 0.0, 1.0, 3.0 ] },
+								"up": { "texture": "#null", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
+								"down": { "texture": "#null", "uv": [ 0.0, 0.0, 1.0, 1.0 ] }
+							},
+							"children": [
+								{
+									"name": "NacelleL",
+									"from": [ -0.25, -1.0, -0.25 ], 
+									"to": [ 1.25, 0.0, 1.25 ], 
+									"rotationOrigin": [ -1.0, -1.0, 0.0 ],
+									"faces": {
+										"north": { "texture": "#null", "uv": [ 0.0, 0.0, 1.5, 1.0 ] },
+										"east": { "texture": "#null", "uv": [ 0.0, 0.0, 1.5, 1.0 ] },
+										"south": { "texture": "#null", "uv": [ 0.0, 0.0, 1.5, 1.0 ] },
+										"west": { "texture": "#null", "uv": [ 0.0, 0.0, 1.5, 1.0 ] },
+										"up": { "texture": "#null", "uv": [ 0.0, 0.0, 1.5, 1.5 ] },
+										"down": { "texture": "#null", "uv": [ 0.0, 0.0, 1.5, 1.5 ] }
+									},
+									"attachmentpoints": [
+										{
+											"code": "Particle-L",
+											"posX": "1.0","posY": "0.0","posZ": "1.0",
+											"rotationX": "0.0","rotationY": "0.0","rotationZ": "0.0"
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "CenterExtension",
+					"from": [ 0.0, 5.0, 0.5 ], 
+					"to": [ 2.0, 6.0, 3.5 ], 
+					"rotationOrigin": [ 0.0, 5.0, 1.0 ],
+					"faces": {
+						"north": { "texture": "#null", "uv": [ 0.0, 0.0, 2.0, 1.0 ] },
+						"east": { "texture": "#null", "uv": [ 0.0, 0.0, 3.0, 1.0 ] },
+						"south": { "texture": "#null", "uv": [ 0.0, 0.0, 2.0, 1.0 ] },
+						"west": { "texture": "#null", "uv": [ 0.0, 0.0, 3.0, 1.0 ] },
+						"up": { "texture": "#null", "uv": [ 0.0, 0.0, 2.0, 3.0 ] },
+						"down": { "texture": "#null", "uv": [ 0.0, 0.0, 2.0, 3.0 ] }
+					}
+				},
+				{
+					"name": "CenterExtension19",
+					"from": [ 2.0, -1.0, 0.5 ], 
+					"to": [ 4.0, 0.0, 3.5 ], 
+					"rotationOrigin": [ 2.0, -1.0, 1.0 ],
+					"faces": {
+						"north": { "texture": "#null", "uv": [ 0.0, 0.0, 2.0, 1.0 ] },
+						"east": { "texture": "#null", "uv": [ 0.0, 0.0, 3.0, 1.0 ] },
+						"south": { "texture": "#null", "uv": [ 0.0, 0.0, 2.0, 1.0 ] },
+						"west": { "texture": "#null", "uv": [ 0.0, 0.0, 3.0, 1.0 ] },
+						"up": { "texture": "#null", "uv": [ 0.0, 0.0, 2.0, 3.0 ] },
+						"down": { "texture": "#null", "uv": [ 0.0, 0.0, 2.0, 3.0 ] }
+					}
+				},
+				{
+					"name": "Thruster Strut20",
+					"from": [ 1.0, 3.0, -2.0 ], 
+					"to": [ 2.0, 4.0, 0.0 ], 
+					"rotationOrigin": [ 1.0, 3.0, -2.0 ],
+					"faces": {
+						"north": { "texture": "#null", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
+						"east": { "texture": "#null", "uv": [ 0.0, 0.0, 2.0, 1.0 ] },
+						"south": { "texture": "#null", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
+						"west": { "texture": "#null", "uv": [ 0.0, 0.0, 2.0, 1.0 ] },
+						"up": { "texture": "#null", "uv": [ 0.0, 0.0, 1.0, 2.0 ] },
+						"down": { "texture": "#null", "uv": [ 0.0, 0.0, 1.0, 2.0 ] }
+					},
+					"children": [
+						{
+							"name": "ThrusterTube22",
+							"from": [ 1.0, -1.0, 0.0 ], 
+							"to": [ 2.0, 2.0, 1.0 ], 
+							"rotationOrigin": [ 1.0, -1.0, 0.0 ],
+							"faces": {
+								"north": { "texture": "#null", "uv": [ 0.0, 0.0, 1.0, 3.0 ] },
+								"east": { "texture": "#null", "uv": [ 0.0, 0.0, 1.0, 3.0 ] },
+								"south": { "texture": "#null", "uv": [ 0.0, 0.0, 1.0, 3.0 ] },
+								"west": { "texture": "#null", "uv": [ 0.0, 0.0, 1.0, 3.0 ] },
+								"up": { "texture": "#null", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
+								"down": { "texture": "#null", "uv": [ 0.0, 0.0, 1.0, 1.0 ] }
+							},
+							"children": [
+								{
+									"name": "NacelleR",
+									"from": [ -0.25, -1.0, -0.25 ], 
+									"to": [ 1.25, 0.0, 1.25 ], 
+									"rotationOrigin": [ -1.0, -1.0, 0.0 ],
+									"faces": {
+										"north": { "texture": "#null", "uv": [ 0.0, 0.0, 1.5, 1.0 ] },
+										"east": { "texture": "#null", "uv": [ 0.0, 0.0, 1.5, 1.0 ] },
+										"south": { "texture": "#null", "uv": [ 0.0, 0.0, 1.5, 1.0 ] },
+										"west": { "texture": "#null", "uv": [ 0.0, 0.0, 1.5, 1.0 ] },
+										"up": { "texture": "#null", "uv": [ 0.0, 0.0, 1.5, 1.5 ] },
+										"down": { "texture": "#null", "uv": [ 0.0, 0.0, 1.5, 1.5 ] }
+									},
+									"attachmentpoints": [
+										{
+											"code": "Particle-R",
+											"posX": "1.0","posY": "0.0","posZ": "1.0",
+											"rotationX": "0.0","rotationY": "0.0","rotationZ": "0.0"
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "CenterExtension10",
+					"from": [ 4.0, 1.0, 0.5 ], 
+					"to": [ 5.0, 5.0, 3.5 ], 
+					"rotationOrigin": [ 4.0, 1.0, 1.0 ],
+					"faces": {
+						"north": { "texture": "#null", "uv": [ 0.0, 0.0, 1.0, 4.0 ] },
+						"east": { "texture": "#null", "uv": [ 0.0, 0.0, 3.0, 4.0 ] },
+						"south": { "texture": "#null", "uv": [ 0.0, 0.0, 1.0, 4.0 ] },
+						"west": { "texture": "#null", "uv": [ 0.0, 0.0, 3.0, 4.0 ] },
+						"up": { "texture": "#null", "uv": [ 0.0, 0.0, 1.0, 3.0 ] },
+						"down": { "texture": "#null", "uv": [ 0.0, 0.0, 1.0, 3.0 ] }
+					}
+				}
+			]
+		}
+	]}

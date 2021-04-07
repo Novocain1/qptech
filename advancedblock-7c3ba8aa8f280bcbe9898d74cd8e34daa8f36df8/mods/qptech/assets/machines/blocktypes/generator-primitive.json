@@ -1,0 +1,54 @@
+{
+	code: "generator-primitive",
+	class: "ElectricalBlock",
+	entityclass: "BEEGenerator",
+	entityBehaviors: [{ name: "Animatable" }],
+	creativeinventory: { "general": ["*-east"] },
+	attributes: {
+		maxAmps:2,
+		maxVolts:16,
+		capacitance:4,
+		genAmps:2,
+		distributionFaces:["north"],
+		usesFuel: true,
+		fuelHopperFace:"up",
+		fuelCodes:["game:coke"],
+		fuelTicks:50
+	},
+	variantgroups: [
+		{code:"side","loadFromProperties":"abstract/horizontalorientation"}
+	],
+	behaviors: [{name:"HorizontalOrientable",properties:{"dropBlockFace":"east"}}],
+	blockmaterial: "Metal",
+	drawtype: "json",
+	shape: { base: "block/generator" },
+		"shapeByType": {
+			"*-north": {
+				"base": "block/generator",
+				"rotateY": 0
+			},
+			"*-east": {
+				"base": "block/generator",
+				"rotateY": 270
+			},
+			"*-west": {
+				"base": "block/generator",
+				"rotateY": 90
+			},
+			"*-south": {
+				"base": "block/generator",
+				"rotateY": 180
+			}
+		},
+	resistance: 1,
+	sideopaque: {
+		all: false
+	},
+
+	sounds: {
+		"place": "game:block/anvil",
+		"walk": "game:walk/stone"
+	}
+
+
+}

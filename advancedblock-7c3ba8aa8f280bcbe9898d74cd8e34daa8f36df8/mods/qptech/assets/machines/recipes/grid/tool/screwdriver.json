@@ -1,0 +1,12 @@
+{
+	ingredientPattern: "BS",
+	ingredients: {
+		"B": { type: "item", code: "screwdriverhead-*", name: "material", quantity: 1 },
+		"S": { type: "item", code: "game:stick", quantity: 1 },
+		
+		
+	},
+	width: 1,
+	height: 2,
+	output: { type: "item", code: "screwdriver-{material}", quantity: 1  }
+}
