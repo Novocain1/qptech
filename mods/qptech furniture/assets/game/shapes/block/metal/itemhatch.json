@@ -1,0 +1,90 @@
+{
+	"editor": {
+		"allAngles": false,
+		"entityTextureMode": false
+	},
+	"textureWidth": 16,
+	"textureHeight": 16,
+	"textureSizes": {
+	},
+	"textures": {
+		"machinery": "block/machinery"
+	},
+	"elements": [
+		{
+			"name": "Bottom",
+			"from": [ -16.0, 0.0, -16.0 ], 
+			"to": [ 0.0, 1.0, 0.0 ], 
+			"rotationOrigin": [ 0.0, 14.0, 0.0 ],
+			"rotationY": 180.0,
+			"faces": {
+				"north": { "texture": "#machinery", "uv": [ 0.0, 4.0, 16.0, 6.0 ], "autoUv": false },
+				"east": { "texture": "#machinery", "uv": [ 0.0, 4.0, 16.0, 6.0 ], "autoUv": false },
+				"south": { "texture": "#machinery", "uv": [ 0.0, 4.0, 16.0, 6.0 ], "autoUv": false },
+				"west": { "texture": "#machinery", "uv": [ 0.0, 4.0, 16.0, 6.0 ], "autoUv": false },
+				"up": { "texture": "#machinery", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+				"down": { "texture": "#machinery", "uv": [ 0.0, 0.0, 16.0, 16.0 ] }
+			},
+			"children": [
+				{
+					"name": "Core",
+					"from": [ 0.0, 1.0, 2.0 ], 
+					"to": [ 16.0, 15.0, 16.0 ], 
+					"rotationOrigin": [ 0.0, 15.0, 2.0 ],
+					"faces": {
+						"north": { "texture": "#machinery", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false },
+						"east": { "texture": "#machinery", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false },
+						"south": { "texture": "#machinery", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false },
+						"west": { "texture": "#machinery", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false },
+						"up": { "texture": "#machinery", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false },
+						"down": { "texture": "#machinery", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false }
+					}
+				},
+				{
+					"name": "Top",
+					"from": [ 0.0, 15.0, 0.0 ], 
+					"to": [ 16.0, 16.0, 16.0 ], 
+					"rotationOrigin": [ 0.0, 14.0, 0.0 ],
+					"faces": {
+						"north": { "texture": "#machinery", "uv": [ 0.0, 4.0, 16.0, 6.0 ], "autoUv": false },
+						"east": { "texture": "#machinery", "uv": [ 0.0, 4.0, 16.0, 6.0 ], "autoUv": false },
+						"south": { "texture": "#machinery", "uv": [ 0.0, 4.0, 16.0, 6.0 ], "autoUv": false },
+						"west": { "texture": "#machinery", "uv": [ 0.0, 4.0, 16.0, 6.0 ], "autoUv": false },
+						"up": { "texture": "#machinery", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+						"down": { "texture": "#machinery", "uv": [ 0.0, 0.0, 16.0, 16.0 ] }
+					}
+				},
+				{
+					"name": "DoorN",
+					"from": [ 3.0, 13.0, 1.0 ], 
+					"to": [ 13.0, 14.0, 11.0 ], 
+					"rotationOrigin": [ 3.0, 13.0, 1.0 ],
+					"rotationX": 89.99999164334537,
+					"faces": {
+						"north": { "texture": "#machinery", "uv": [ 0.0, 4.0, 16.0, 6.0 ], "autoUv": false },
+						"east": { "texture": "#machinery", "uv": [ 0.0, 4.0, 16.0, 6.0 ], "autoUv": false },
+						"south": { "texture": "#machinery", "uv": [ 0.0, 4.0, 16.0, 6.0 ], "autoUv": false },
+						"west": { "texture": "#machinery", "uv": [ 0.0, 4.0, 16.0, 6.0 ], "autoUv": false },
+						"up": { "texture": "#machinery", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "enabled": false, "autoUv": false },
+						"down": { "texture": "#machinery", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false }
+					},
+					"children": [
+						{
+							"name": "Handle7",
+							"from": [ 2.0, -1.0, 3.0 ], 
+							"to": [ 3.0, 0.0, 7.0 ], 
+							"rotationOrigin": [ 2.0, -1.0, 3.0 ],
+							"faces": {
+								"north": { "texture": "#machinery", "uv": [ 4.5, 7.0, 12.5, 9.0 ], "autoUv": false },
+								"east": { "texture": "#machinery", "uv": [ 4.0, 9.0, 12.0, 11.0 ], "autoUv": false },
+								"south": { "texture": "#machinery", "uv": [ 4.0, 8.5, 12.0, 6.5 ], "autoUv": false },
+								"west": { "texture": "#machinery", "uv": [ 4.5, 5.0, 12.5, 7.0 ], "autoUv": false },
+								"up": { "texture": "#machinery", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "enabled": false, "autoUv": false },
+								"down": { "texture": "#machinery", "uv": [ 6.0, 6.0, 10.0, 10.0 ], "autoUv": false }
+							}
+						}
+					]
+				}
+			]
+		}
+	]}

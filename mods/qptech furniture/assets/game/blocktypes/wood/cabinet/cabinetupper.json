@@ -1,0 +1,111 @@
+{
+	code: "upper",
+	class: "BlockGenericTypedContainer",
+	entityclass: "GenericTypedContainer",
+	attributes: {
+		partialAttachable: true,
+		inventoryClassName: "chest",
+		defaultType: "acacia-cabinet",
+		types: ["acacia-cabinet"],
+		rotatatableInterval: {
+			"acacia-cabinet":  "22.5degnot45deg",
+		},
+		drop: {
+			"acacia-cabinet": true,
+		},
+		quantitySlots: {
+			"acacia-cabinet": 10,
+		},
+		dialogTitleLangCode: {
+			"acacia-cabinet": "Upper Kitchen Cabinet",
+		},
+		storageType: {
+			"acacia-cabinet": 150,
+		},
+		retrieveOnly: {
+			"acacia-cabinet": false,
+		},
+		shape: {
+			"acacia-cabinet": "block/wood/cabinet/upper/cabinet-normal",
+		},
+		typedOpenSound: {
+			"acacia-cabinet": "sounds/block/largechestopen",
+		},
+		typedCloseSound: {
+			"acacia-cabinet": "sounds/block/largechestclose",
+		},
+		variantByGroup: "side",
+		variantByGroupInventory: null
+	},
+	behaviors: [{name: "Lockable" }, {name: "Container"}],
+	entityBehaviors: [{ name: "Animatable" }],
+	variantgroups: [
+		{ code:"side", loadFromProperties: "abstract/horizontalorientation" }
+	],
+	creativeinventory: {  },
+	creativeinventoryStacksByType: {
+		"*-east": [
+			{
+				tabs: [ "general", "decorative", "kitchen" ],
+				stacks: [
+					{ type: "block", code: "upper-east", attributes: { type: "acacia-cabinet" } },
+				]
+			}
+		]
+	},
+	heldTpIdleAnimation: "holdunderarm",
+	shapeInventory: { base: "block/wood/cabinet/upper/cabinet-normal", rotateY: 270 },
+	shapeByType: {
+		"*-north": { base: "block/wood/cabinet/upper/cabinet-normal", rotateY: 0 },
+		"*-east": { base: "block/wood/cabinet/upper/cabinet-normal", rotateY: 270 },
+		"*-west": { base: "block/wood/cabinet/upper/cabinet-normal", rotateY: 90 },
+		"*-south": { base: "block/wood/cabinet/upper/cabinet-normal", rotateY: 180 },
+	},
+	"_comment": "Must declare textures so they get added to the block texture atlas",
+		"textures": {
+		"acacia-cabinet-cabinet": { base: "block/wood/acacia/cabinet"},
+		"acacia-cabinet-shinybrass": { base: "block/metal/shinybrass"},
+		"acacia-cabinet-cabinet-boreder": { base:  "block/wood/acacia/cabinet-boreder"},
+		"acacia-cabinet-cabinet-detail": { base: "block/wood/acacia/cabinet-detail"}
+	},
+	blockmaterial: "Wood",
+	replaceable: 900,
+	resistance: 3,
+	lightAbsorption: 0,
+	sideAo: { all: false },
+	sidesolid: {
+		all: false
+	},
+	sideopaque: {
+		all: false
+	},
+	collisionbox: {
+
+	},
+	selectionbox: {
+		
+	},
+	combustibleProps: {
+		burnTemperature: 600,
+		burnDuration: 35,
+	},
+	sounds: {
+		"place": "block/planks",
+		"hit": "block/planks",
+		"break": "block/planks",
+		"walk": "walk/wood"
+	},
+	materialDensity: 600,
+	tpHandTransform: {
+		translation: { x: -2, y: -0.5, z: -1 },
+		rotation: { x: 0, y: 180, z: 0 },
+		origin: { x: 0.7, y: 0.4, z: 0.6 },
+		scale: 0.31
+	},
+	guiTransform: {
+		translation: { x: 0, y: 3, z: 0 },
+		rotation: { x: -22.6, y: -55, z: 0 },
+		origin: { x: 0.5, y: 0.4, z: 0.5 },
+		scale: 1.03
+	}
+}

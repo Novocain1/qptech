@@ -1,0 +1,12 @@
+{
+	ingredientPattern: "LLL	LCL	LLL",
+	ingredients: {
+		"L": { type: "item", code: "game:metalplate-*bronze", quantity: 1 },
+		"C": { type: "item", code: "game:chutesection-copper", quantity: 2 }
+	},
+	width: 3,
+	height: 3,
+	output: { type: "block", code: "machineryblock", quantity: 1 }
+}
+
+

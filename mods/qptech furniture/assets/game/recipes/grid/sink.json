@@ -1,0 +1,13 @@
+{
+	ingredientPattern: "SMH	PPP	PPP",
+	ingredients: {
+		"P": { type: "item", code: "game:plank-*", name: "wood", quantity: 2 },
+		"M": { type: "item", code: "game:metalplate-*", quantity: 1 },
+		"S": { type: "item", code: "game:saw-*", isTool: true },
+		"H": { type: "item", code: "game:hammer-*", isTool: true }
+		
+	},
+	width: 3,
+	height: 3,
+	output: { type: "block", code: "sink-{wood}-east", quantity: 1  }
+}

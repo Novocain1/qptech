@@ -1,0 +1,12 @@
+{
+	ingredientPattern: "CLC	L_L	CLC",
+	ingredients: {
+		"L": { type: "item", code: "game:metalplate-iron", quantity: 1 },
+		"C": { type: "item", code: "game:metalplate-tin", quantity: 1 }
+	},
+	width: 3,
+	height: 3,
+	output: { type: "block", code: "icebox-east", quantity: 1 }
+}
+
+

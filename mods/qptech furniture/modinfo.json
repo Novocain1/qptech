@@ -1,0 +1,11 @@
+{
+  "type": "code",
+  "modid": "optech",
+  "name": "QPTECH Furniture",
+  "description" : "To be added",
+  "author": "WQP & Mister Andy Dandy",
+  "version": "1.0.5.1",
+  "dependency": {
+    "game": "1.14.8"
+  }
+}

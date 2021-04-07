@@ -1,0 +1,11 @@
+{
+  "type": "code",
+  "modid": "weapons-dont-use",
+  "name": "Ranged Weapons",
+  "author": "Mister Andy Dandy",
+  "description": "To be added",
+  "version": "0.0.1",
+  "dependency": {
+    "game": "1.14.8"
+  }
+}

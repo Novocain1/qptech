@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Qptech": {
+      "commandName": "Executable",
+      "executablePath": "C:\\Users\\andy-\\AppData\\Roaming\\Vintagestory\\Vintagestory.exe",
+      "commandLineArgs": "-openWorld=\"modsamplestest\" -pcreativebuilding --addModPath=\"C:\\Users\\andy-\\source\\repos\\Projects\\Mods\\Qptech\\bin\\Debug\\net48\" --addOrigin=\"C:\\Users\\andy-\\source\\repos\\Projects\\Mods\\Qptech\\assets\\game\"",
+      "workingDirectory": "C:\\Users\\andy-\\AppData\\Roaming\\VintagestoryData\\Mods"
+    }
+  }
+}

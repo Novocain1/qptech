@@ -1,0 +1,55 @@
+{
+	code: "acacia-cabinet-double-sink-whitemarble",
+	class: "BlockDoubleSink",
+	entityClass: "DoubleSink",
+	entityBehaviors: [{ name: "Animatable" }],
+	shape: { base: "block/wood/sink/double/empty" },
+	creativeinventory: { "general": ["*"], "decorative": ["*"] },
+	blockmaterial: "Wood",
+	replaceable: 900,
+	resistance: 1.5,
+	maxStackSize: 1,
+	lightAbsorption: 1,
+	textures: {
+		"cabinet-detail": {base: "block/wood/acacia/cabinet-detail"},
+		"copper":  {base: "block/metal/copper"},
+		"countertop": {base: "block/stone/whitemarble"},
+		"shinybrass": {base: "block/metal/shinybrass"},
+		"cabinet-boreder": {base: "block/wood/acacia/cabinet-boreder"},
+		"countertop-border": {base: "block/stone/whitemarble-border"},
+		"cabinet":  {base: "block/wood/acacia/cabinet"}
+	},
+	attributes: {
+		partialAttachable: true,
+		capacityLitres: 50
+	},
+	sideao: {
+		all: false
+	},
+	sidesolid: {
+		all: false
+	},
+	emitsideao: {
+		all: false
+	},
+	sideopaque: {
+		all: false
+	},
+	combustibleProps: {
+		burnTemperature: 600,
+		burnDuration: 20,
+	},
+	sounds: {
+		"place": "block/planks",
+		"hit": "block/planks",
+		"break": "block/planks",
+		"walk": "walk/wood"
+	},
+	materialDensity: 600,
+	heldTpIdleAnimation: "holdbothhandslarge", heldTpUseAnimation: "twohandplaceblock",
+	tpHandTransform: {
+		translation: { x: -1.4, y: -0.878, z: -0.5 },
+		rotation: { x: -82, y: 10, z: -105 },
+		scale: 0.39
+	},
+}

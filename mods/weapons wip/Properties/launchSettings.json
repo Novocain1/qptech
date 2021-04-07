@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "start-all-mods-in-sln": {
+      "commandName": "Executable",
+      "executablePath": "$(VINTAGE_STORY)/Vintagestory.exe",
+      "commandLineArgs": "--openWorld=\"modsamplestest\" -pcreativebuilding --addModPath=\"$(SolutionDir)mods\""
+    }
+  }
+}

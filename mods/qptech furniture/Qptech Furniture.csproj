@@ -1,0 +1,72 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<AssemblyTitle>Qptech Furniture</AssemblyTitle>
+		<Authors></Authors>
+		<Version>0.0.2</Version>
+		<Description></Description>
+		<RepositoryUrl></RepositoryUrl>
+		<TargetFramework>net48</TargetFramework>
+		<LangVersion>latest</LangVersion>
+	</PropertyGroup>
+	<ItemGroup>
+	    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Tavis.JsonPatch">
+      <HintPath>$(AppData)\Vintagestory\Lib\Tavis.JsonPatch.dll</HintPath>
+	  <Private>False</Private>
+    </Reference>
+    <Reference Include="VintagestoryAPI">
+      <HintPath>$(AppData)\Vintagestory\VintagestoryAPI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="VSSurvivalMod">
+      <HintPath>$(AppData)\Vintagestory\Mods\VSSurvivalMod.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="VSEssentials">
+      <HintPath>$(AppData)\Vintagestory\Mods\VSEssentials.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="VSCreativeMod">
+      <HintPath>$(AppData)\Vintagestory\Mods\VSCreativeMod.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>$(AppData)\Vintagestory\Lib\Newtonsoft.Json.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+	<Reference Include="Protobuf">
+		<HintPath>$(VINTAGE_STORY)/Lib/protobuf-net.dll</HintPath>
+		<Private>false</Private>
+	</Reference>
+	<Reference Include="cairo">
+		<HintPath>$(VINTAGE_STORY)/Lib/cairo-sharp.dll</HintPath>
+		<Private>false</Private>
+		</Reference>
+	</ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+    <Folder Include="src\item\" />
+  </ItemGroup>
+	<ItemGroup>
+		<None Update="modinfo.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<OutFiles Include="$(OutDir)/**" Exclude="$(ExcludeFiles)" />
+	</ItemGroup>
+	
+  <Target Name="CopyToBin" AfterTargets="AfterBuild">
+    <Copy SourceFiles="@(OutFiles)" DestinationFiles="@(OutFiles->'$(BinaryDir)/%(RecursiveDir)%(Filename)%(Extension)')" />
+  </Target>
+  
+  <Target Name="CleanBin" AfterTargets="Clean">
+    <RemoveDir Directories="$(BinaryDir)" />
+  </Target>
+
+</Project>
