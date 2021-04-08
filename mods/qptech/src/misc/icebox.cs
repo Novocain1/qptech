@@ -13,22 +13,27 @@ namespace qptech.src
 {
     public class IceBox : ModSystem
     {
-        float chilltick = 0;
+
         public override void Start(ICoreAPI api)
         {
             base.Start(api);
             api.RegisterBlockEntityClass("IceBoxEntity", typeof(BEIceBox));
         }
+
+        public class Usless : BEIceBox
+        {
+            public float chilltick { get; set; } = 0;
+        }
+
         public class BEIceBox : BlockEntityGenericTypedContainer
         {
-            
             bool isChilled = false;
             public bool useIce = true;
             public float preserveBonus = 0.5f;
             public double useIceCounter = 10000;
             double chilltick = 0;
             double lastdays;
-            
+
             public override float GetPerishRate()
             {
                 float prate = base.GetPerishRate();
@@ -53,8 +58,8 @@ namespace qptech.src
             protected override void OnTick(float dt)
             {
                 base.OnTick(dt);
-                
-                if (!useIce) { isChilled = true;return; }
+
+                if (!useIce) { isChilled = true; return; }
                 isChilled = false;
                 ItemSlot chillslot = null;
                 //how many days have passed?
@@ -65,28 +70,34 @@ namespace qptech.src
                 chilltick += deltaDays;
                 foreach (ItemSlot slot in Inventory)
                 {
-                   if (slot.Itemstack == null) { continue; }
-                   if (slot.Itemstack.Block == null) { continue; }
-                   if (slot.Itemstack.Block.BlockMaterial.ToString() == "Ice")
+                    if (slot.Itemstack == null) { continue; }
+                    if (slot.Itemstack.Block == null) { continue; }
+                    if (slot.Itemstack.Block.BlockMaterial.ToString() == "Ice")
                     {
                         isChilled = true;
                         chillslot = slot;
-                        chilltick+=deltaDays;
+                        chilltick += deltaDays;
                         continue;
                     }
 
                 }
                 if (!isChilled) { chilltick = 0; return; }
-                if (chilltick>=useIceCounter)
+                if (chilltick >= useIceCounter)
                 {
                     int qtytotake = (int)(chilltick / useIceCounter);
                     chillslot.TakeOut(qtytotake);//note this may still result in "Free" freezer time
                     chilltick = 0;
                 }
+
             }
 
-
+            //public override void GetBlockInfo(IPlayer forPlayer, StringBuilder dsc)
+            //{
+            //    base.GetBlockInfo(forPlayer, dsc);
+            //    //dsc.AppendLine("" + lastdays.ToString());
+            //    //dsc.AppendLine("Time:" + chilltick.ToString() + "");
+            //    dsc.AppendLine("Chilled:" + isChilled.ToString());
+            //}
         }
-
     }
 }
