@@ -16,7 +16,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\bin\Debug\qptechweapons\</OutputPath>
+    <OutputPath>..\..\mods\qptechweapons\</OutputPath>
     <IntermediateOutputPath>..\..\obj\Debug\qptechweapons\</IntermediateOutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
@@ -25,7 +25,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\bin\Release\qptechweapons\</OutputPath>
+    <OutputPath>..\..\mods\qptechweapons\</OutputPath>
     <IntermediateOutputPath>..\..\obj\Release\qptechweapons\</IntermediateOutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
@@ -62,26 +62,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="assets\game\shapes\item\tool\slingshot\Slingshot.png" />
     <Content Include="modinfo.json" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <None Include="assets\game\entities\ball.json" />
-    <None Include="assets\game\itemtypes\tool\ball.json" />
-    <None Include="assets\game\itemtypes\tool\slingshot.json" />
-    <None Include="assets\game\lang\en.json" />
-    <None Include="assets\game\recipes\grid\tool\slingshot-crude.json" />
-    <None Include="assets\game\shapes\item\tool\ball.json" />
-    <None Include="assets\game\shapes\item\tool\slingshot\crude-charge1.json" />
-    <None Include="assets\game\shapes\item\tool\slingshot\crude-charge2.json" />
-    <None Include="assets\game\shapes\item\tool\slingshot\crude-charge3.json" />
-    <None Include="assets\game\shapes\item\tool\slingshot\crude.json" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="src\item\ItemBall.cs" />
     <Compile Include="src\item\ItemSlingShot.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Update="modinfo.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Target Name="CopyToBin" AfterTargets="AfterBuild">
+    <Copy SourceFiles="@(OutFiles)" DestinationFiles="@(OutFiles->'$(BinaryDir)/%(RecursiveDir)%(Filename)%(Extension)')" />
+  </Target>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>
