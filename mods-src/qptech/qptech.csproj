@@ -70,12 +70,13 @@
   <ItemGroup>
     <Compile Include="src\Electricity\BEEAssembler.cs" />
     <Compile Include="src\Electricity\BEEBaseDevice.cs" />
+    <Compile Include="src\Electricity\BEEForge.cs" />
     <Compile Include="src\Electricity\BEElectric.cs" />
     <Compile Include="src\Electricity\BEEGenerator.cs" />
     <Compile Include="src\Electricity\BEEWire.cs" />
     <Compile Include="src\misc\BlockCannedMeal.cs" />
     <Compile Include="src\Electricity\ElectricalBlock.cs" />
-    <Compile Include="src\Electricity\Electricity.cs" />
+    <Compile Include="src\Electricity\ElectricityLoader.cs" />
     <Compile Include="src\misc\icebox.cs" />
     <Compile Include="src\misc\ItemJetPack.cs" />
     <Compile Include="src\misc\ItemQuarryTool.cs" />

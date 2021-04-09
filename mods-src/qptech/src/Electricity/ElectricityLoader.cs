@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 using Vintagestory.API.Common;
 using qptech.src.misc;
 
+
 namespace qptech.src
 {
-    class Electricity:ModSystem
+    class ElectricityLoader:ModSystem
     {
         public static List<BEElectric> electricalDevices;
         public override void Start(ICoreAPI api)
@@ -22,7 +23,8 @@ namespace qptech.src
             api.RegisterBlockClass("BlockCannedMeal", typeof(BlockCannedMeal));
             api.RegisterItemClass("ItemQuarryTool", typeof(ItemQuarryTool));
             api.RegisterItemClass("ItemJetPack", typeof(ItemJetPack));
-
+            api.RegisterBlockEntityClass("BEEForge", typeof(BEEForge));
+            api.RegisterBlockClass("BlockEForge",typeof(BlockEForge));
             //api.RegisterBlockEntityBehaviorClass("BEBMPMotor", typeof(BEBMPMotor));
             //api.RegisterBlockClass("BlockPoweredRotor", typeof(BlockPoweredRotor));
             //api.RegisterBlockClass("BlockElectricMotor", typeof(BlockElectricMotor));
