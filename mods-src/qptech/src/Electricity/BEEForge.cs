@@ -18,9 +18,9 @@ namespace qptech.src
         ItemStack contents;
         ForgeContentsRenderer renderer;
         double lastTickTotalHours;
-        float runningTemp=1100; //max temperature of device
-        float tempIncrease=1500;//temperature increase per hour
-        int stackSize = 4; //how many items can go in
+        float maxHeat=1100; //max temperature of device default 1100
+        float degreesPerHour=1500;//temperature increase per hour default 1500
+        int maxItems = 4; //how many items can go in
         public override bool IsOn => base.IsOn&&contents!=null;
         public ItemStack Contents => contents;
         /*
@@ -41,7 +41,12 @@ namespace qptech.src
             base.Initialize(api);
             
             if (contents != null) contents.ResolveBlockOrItem(api.World);
-            
+            if (Block.Attributes != null)
+            {
+                maxHeat = Block.Attributes["maxHeat"].AsFloat(maxHeat);
+                degreesPerHour = Block.Attributes["degreesPerHour"].AsFloat(degreesPerHour);
+                maxItems = Block.Attributes["maxItems"].AsInt(maxItems);
+            }
             RegisterGameTickListener(OnCommonTick, 200);
         }
 
@@ -53,11 +58,11 @@ namespace qptech.src
             {
                 double hoursPassed = Api.World.Calendar.TotalHours - lastTickTotalHours;
                 float temp = contents.Collectible.GetTemperature(Api.World, contents);
-                if (temp < runningTemp)
+                if (temp < maxHeat)
                 {
-                    float tempGain = (float)(hoursPassed * tempIncrease);
+                    float tempGain = (float)(hoursPassed * degreesPerHour);
 
-                    contents.Collectible.SetTemperature(Api.World, contents, Math.Min(runningTemp, temp + tempGain));
+                    contents.Collectible.SetTemperature(Api.World, contents, Math.Min(maxHeat, temp + tempGain));
                 }
             }
             lastTickTotalHours = Api.World.Calendar.TotalHours;
@@ -202,7 +207,7 @@ namespace qptech.src
                 }
 
                 // Merge heatable item
-                if (!forgableGeneric && contents != null && contents.Equals(Api.World, slot.Itemstack, GlobalConstants.IgnoredStackAttributes) && contents.StackSize < stackSize && contents.StackSize < contents.Collectible.MaxStackSize)
+                if (!forgableGeneric && contents != null && contents.Equals(Api.World, slot.Itemstack, GlobalConstants.IgnoredStackAttributes) && contents.StackSize < maxItems && contents.StackSize < contents.Collectible.MaxStackSize)
                 {
                     float myTemp = contents.Collectible.GetTemperature(Api.World, contents);
                     float histemp = slot.Itemstack.Collectible.GetTemperature(Api.World, slot.Itemstack);

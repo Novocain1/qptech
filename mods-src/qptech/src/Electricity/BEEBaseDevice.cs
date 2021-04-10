@@ -41,6 +41,7 @@ namespace qptech.src
             if (Block.Attributes != null) {
                 requiredAmps = Block.Attributes["requiredAmps"].AsInt(requiredAmps);
                 processingTicks = Block.Attributes["processingTicks"].AsInt(processingTicks);
+                
             }
             distributionFaces = new List<BlockFacing>(); //no distribution for us!
         }

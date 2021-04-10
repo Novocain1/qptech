@@ -13,7 +13,9 @@
 		maxVolts:16,
 		capacitance:2,
 		requiredAmps:1,
-		
+		maxHeat:1000,
+		degreesPerHour:1000,
+		maxItems:2,
 	},
 	blockmaterial: "Metal",
 	drawtype: "json",
