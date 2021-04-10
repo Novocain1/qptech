@@ -21,7 +21,7 @@ namespace qptech.src
         float runningTemp=1100; //max temperature of device
         float tempIncrease=1500;//temperature increase per hour
         int stackSize = 4; //how many items can go in
-
+        public override bool IsOn => base.IsOn&&contents!=null;
         public ItemStack Contents => contents;
         /*
          * allow ingots in/out (needs inventory)
@@ -38,14 +38,17 @@ namespace qptech.src
          */
         public override void Initialize(ICoreAPI api)
         {
-            if (contents != null) contents.ResolveBlockOrItem(api.World);
             base.Initialize(api);
+            
+            if (contents != null) contents.ResolveBlockOrItem(api.World);
+            
             RegisterGameTickListener(OnCommonTick, 200);
         }
 
         private void OnCommonTick(float dt)
         {
-            lastTickTotalHours = Api.World.Calendar.TotalHours;
+            
+            //if (deviceState!=enDeviceState.RUNNING) { DoDeviceStart(); }
             if (contents != null && deviceState==enDeviceState.RUNNING)
             {
                 double hoursPassed = Api.World.Calendar.TotalHours - lastTickTotalHours;
@@ -57,6 +60,7 @@ namespace qptech.src
                     contents.Collectible.SetTemperature(Api.World, contents, Math.Min(runningTemp, temp + tempGain));
                 }
             }
+            lastTickTotalHours = Api.World.Calendar.TotalHours;
         }
         
         protected override void DoDeviceComplete()
@@ -65,7 +69,8 @@ namespace qptech.src
         }
         protected override void DoDeviceStart()
         {
-            if (capacitor >= requiredAmps&&isOn&&contents.StackSize>0)
+            
+            if (capacitor >= requiredAmps&&IsOn&&contents.StackSize>0)
             {
 
                 tickCounter = 0;
@@ -83,6 +88,7 @@ namespace qptech.src
                 DoDeviceComplete();
                 return;
             }*/
+            if (contents == null) { return; }
             if (capacitor < requiredAmps||contents.StackSize==0)
             {
                 DoDeviceComplete();
@@ -227,6 +233,15 @@ namespace qptech.src
             }
 
             //ambientSound?.Dispose();
+        }
+        public override void GetBlockInfo(IPlayer forPlayer, StringBuilder dsc)
+        {
+            base.GetBlockInfo(forPlayer, dsc);
+            if (contents == null) { dsc.AppendLine("EMPTY"); return; }
+            if (contents.StackSize == 0) { dsc.AppendLine("EMPTY");return; }
+            string d = contents.StackSize.ToString()+" of "+ contents.Item.Code.ToString();
+            d += " at " + contents.Collectible.GetTemperature(Api.World,contents).ToString() + "C";
+            dsc.AppendLine(d);
         }
     }
 }

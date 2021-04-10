@@ -28,7 +28,7 @@ namespace qptech.src
         public int MaxVolts { get { return maxVolts; } }
 
         public bool IsPowered { get { return false; } }
-        public bool IsOn { get { return isOn; } }
+        public virtual bool IsOn { get { return isOn; } }
         protected bool notfirsttick = false;
         protected bool justswitched = false; //create a delay after the player switches power
 
@@ -37,8 +37,8 @@ namespace qptech.src
             base.Initialize(api);
             //TODO need to load list of valid faces from the JSON for this stuff
             SetupIOFaces();
-            if (Electricity.electricalDevices == null) { Electricity.electricalDevices = new List<BEElectric>(); }
-            Electricity.electricalDevices.Add(this);
+            if (ElectricityLoader.electricalDevices == null) { ElectricityLoader.electricalDevices = new List<BEElectric>(); }
+            ElectricityLoader.electricalDevices.Add(this);
             
             if (outputConnections == null) { outputConnections = new List<BEElectric>(); }
             if (inputConnections == null) { inputConnections = new List<BEElectric>(); }
@@ -157,7 +157,7 @@ namespace qptech.src
         public override void OnBlockBroken()
         {
             base.OnBlockBroken();
-            Electricity.electricalDevices.Remove(this);
+            ElectricityLoader.electricalDevices.Remove(this);
             foreach (BEElectric bee in inputConnections) { bee.RemoveConnection(this); }
             foreach (BEElectric bee in outputConnections) { bee.RemoveConnection(this); }
         }
