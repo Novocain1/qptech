@@ -214,6 +214,7 @@
     <None Include="qptech\assets\machines\shapes\block\castironoven.json" />
     <None Include="qptech\assets\machines\shapes\block\castironovenlarge.json" />
     <None Include="qptech\assets\machines\shapes\block\clayformer-bowl.json" />
+    <None Include="qptech\assets\machines\shapes\block\electricforge-lv.json" />
     <None Include="qptech\assets\machines\shapes\block\firepit-loader.json" />
     <None Include="qptech\assets\machines\shapes\block\firepit-stoker.json" />
     <None Include="qptech\assets\machines\shapes\block\firepit-unloader.json" />

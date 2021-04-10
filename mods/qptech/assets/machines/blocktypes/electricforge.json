@@ -16,26 +16,27 @@
 		maxHeat:1000,
 		degreesPerHour:1000,
 		maxItems:2,
+		stackRenderHeight:0.1,
 	},
 	blockmaterial: "Metal",
 	drawtype: "json",
 	
-	shape: { base: "block/clayformer-bowl" },
+	shape: { base: "block/electricforge-lv" },
 		"shapeByType": {
 			"*-north": {
-				"base": "block/clayformer-bowl",
+				"base": "block/electricforge-lv",
 				"rotateY": 0
 			},
 			"*-east": {
-				"base": "block/clayformer-bowl",
+				"base": "block/electricforge-lv",
 				"rotateY": 270
 			},
 			"*-west": {
-				"base": "block/clayformer-bowl",
+				"base": "block/electricforge-lv",
 				"rotateY": 90
 			},
 			"*-south": {
-				"base": "block/clayformer-bowl",
+				"base": "block/electricforge-lv",
 				"rotateY": 180
 			}
 		},
