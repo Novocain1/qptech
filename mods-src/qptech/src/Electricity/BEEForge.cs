@@ -25,6 +25,7 @@ namespace qptech.src
         float degreesPerHour=1500;//temperature increase per hour default 1500
         int maxItems = 4; //how many items can go in
         float stackRenderHeight =0.07f; //this is basically the height for the itemstack
+        string elementShapeName = "element";
         public override bool IsOn => base.IsOn&&contents!=null;
         public ItemStack Contents => contents;
         /*
@@ -55,7 +56,7 @@ namespace qptech.src
             if (api is ICoreClientAPI)
             {
                 ICoreClientAPI capi = (ICoreClientAPI)api;
-                capi.Event.RegisterRenderer(renderer = new EForgeContentsRenderer(Pos, capi), EnumRenderStage.Opaque, "forge");
+                capi.Event.RegisterRenderer(renderer = new EForgeContentsRenderer(Pos, capi, elementShapeName), EnumRenderStage.Opaque, "forge");
                 renderer.SetContents(contents, stackRenderHeight, (deviceState==enDeviceState.RUNNING), true);
 
                 RegisterGameTickListener(OnClientTick, 50);
@@ -84,6 +85,7 @@ namespace qptech.src
         protected override void DoDeviceComplete()
         {
             deviceState = enDeviceState.IDLE;
+            MarkDirty();
         }
         protected override void DoDeviceStart()
         {
@@ -93,7 +95,7 @@ namespace qptech.src
 
                 tickCounter = 0;
                 deviceState = enDeviceState.RUNNING;
-
+                MarkDirty();
                 //sounds/blocks/doorslide.ogg
                 DoDeviceProcessing();
             }
@@ -106,13 +108,13 @@ namespace qptech.src
                 DoDeviceComplete();
                 return;
             }*/
-            if (contents == null) { return; }
+            if (contents == null) { DoDeviceComplete(); return; }
             if (capacitor < requiredAmps||contents.StackSize==0)
             {
                 DoDeviceComplete();
                 return;
             }
-            tickCounter++;
+            //tickCounter++;
             capacitor -= requiredAmps;
         }
 
@@ -257,7 +259,7 @@ namespace qptech.src
             d += " at " + contents.Collectible.GetTemperature(Api.World,contents).ToString() + "C";
             dsc.AppendLine(d);
         }
-        bool clientSidePrevBurning;
+        
         bool burning => (deviceState == enDeviceState.RUNNING);
         private void OnClientTick(float dt)
         {
@@ -285,7 +287,53 @@ namespace qptech.src
 
             renderer?.Dispose();
         }
+        public override void OnBlockRemoved()
+        {
+            base.OnBlockRemoved();
+            if (renderer != null)
+            {
+                renderer.Dispose();
+                renderer = null;
+            }
 
-        
+            
+        }
+
+        public override bool OnTesselation(ITerrainMeshPool mesher, ITesselatorAPI tessThreadTesselator)
+        {
+            ICoreClientAPI clientApi = (ICoreClientAPI)Api;
+            Block block = Api.World.BlockAccessor.GetBlock(Pos);
+            MeshData mesh = clientApi.TesselatorManager.GetDefaultBlockMesh(block);
+            if (mesh == null) return true;
+
+            mesher.AddMeshData(mesh);
+            
+           
+            Block elementBlock = Api.World.GetBlock(new AssetLocation("machines:dummy-element-lit"));
+            if (deviceState != enDeviceState.RUNNING)
+            {
+                elementBlock = Api.World.GetBlock(new AssetLocation("machines:dummy-element-unlit"));
+            }
+            if (elementBlock == null) { return true; }
+            clientApi.Tesselator.TesselateBlock(elementBlock, out mesh);
+            mesher.AddMeshData(mesh);
+            return true;
+
+        }
+        protected override void UsePower()
+        {
+            if (!isOn) { deviceState=enDeviceState.IDLE;return; }
+            if (DeviceState == enDeviceState.IDLE || DeviceState == enDeviceState.MATERIALHOLD)
+            {
+                DoDeviceStart();
+            }
+            else if (deviceState == enDeviceState.WARMUP)
+            {
+                tickCounter++;
+                if (tickCounter == 10) { tickCounter = 0; deviceState = enDeviceState.IDLE; }
+            }
+            else { DoDeviceProcessing(); }
+        }
+
     }
 }

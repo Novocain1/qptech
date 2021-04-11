@@ -1,0 +1,23 @@
+{
+	code: "dummy-element",
+	
+	creativeinventory: { "general": ["*"] },
+	variantgroups: [
+		{code: "status",states:["lit","unlit"]},
+	],
+	blockmaterial: "Metal",
+	drawtype: "json",
+
+
+	shape: { base: "block/element-{status}" },
+		
+	resistance: 1,
+
+
+	sounds: {
+		"place": "game:block/anvil",
+		"walk": "game:walk/stone"
+	}
+
+
+}

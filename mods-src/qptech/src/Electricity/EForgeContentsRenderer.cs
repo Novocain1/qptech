@@ -17,9 +17,10 @@ namespace qptech.src
     {
         private ICoreClientAPI capi;
         private BlockPos pos;
-
+        
         MeshRef workItemMeshRef;
-
+        MeshRef elementMeshRef;
+        string elementShapeName = "";
         //MeshRef emberQuadRef;
         //MeshRef coalQuadRef;
 
@@ -64,11 +65,11 @@ namespace qptech.src
 
 
 
-        public EForgeContentsRenderer(BlockPos pos, ICoreClientAPI capi)
+        public EForgeContentsRenderer(BlockPos pos, ICoreClientAPI capi,string elementName)
         {
             this.pos = pos;
             this.capi = capi;
-
+            elementShapeName = elementName;
             //Block block = capi.World.GetBlock(new AssetLocation("forge"));
 
             //coaltexpos = capi.BlockTextureAtlas.GetPosition(block, "coal");
@@ -109,6 +110,9 @@ namespace qptech.src
         {
             workItemMeshRef?.Dispose();
             workItemMeshRef = null;
+
+            //RegenElementMesh();
+
             if (stack == null) return;
 
             Shape shape;
@@ -167,7 +171,22 @@ namespace qptech.src
             }
         }
 
-
+        void RegenElementMesh()
+        {
+            elementMeshRef?.Dispose();
+            elementMeshRef = null;
+            Shape shape;
+            MeshData mesh = null;
+            tmpTextureSource = capi.Tesselator.GetTexSource(capi.World.GetBlock(new AssetLocation("platepile")));
+            shape = capi.Assets.TryGet("machines:shapes/block/element.json").ToObject<Shape>();
+            textureId = tmpTextureSource[tmpMetal].atlasTextureId;
+            capi.Tesselator.TesselateShape("block-fcr", shape, out mesh, this, null, 0, 0, 0, 1);
+            if (mesh != null)
+            {
+                //mesh.Rgba2 = null;
+                elementMeshRef = capi.Render.UploadMesh(mesh);
+            }
+        }
 
         public void OnRenderFrame(float deltaTime, EnumRenderStage stage)
         {
@@ -237,7 +256,7 @@ namespace qptech.src
                 prog.ModelMatrix = ModelMat.Identity().Translate(pos.X - camPos.X, pos.Y - camPos.Y + 10 / 16f + fuelLevel * 0.65f, pos.Z - camPos.Z).Values;
                 prog.ViewMatrix = rpi.CameraMatrixOriginf;
                 prog.ProjectionMatrix = rpi.CurrentProjectionMatrix;
-
+                //rpi.RenderMesh(elementMeshRef);
                 //rpi.RenderMesh(burning ? emberQuadRef : coalQuadRef);
 
             }

@@ -158,6 +158,7 @@
     <None Include="qptech\assets\machines\blocktypes\generator-primitive.json" />
     <None Include="qptech\assets\machines\blocktypes\icebox.json" />
     <None Include="qptech\assets\machines\blocktypes\itemhatch.json" />
+    <None Include="qptech\assets\machines\blocktypes\dummy-element.json" />
     <None Include="qptech\assets\machines\blocktypes\machineryblock.json" />
     <None Include="qptech\assets\machines\blocktypes\oven-castiron.json" />
     <None Include="qptech\assets\machines\blocktypes\sink.json" />
@@ -215,6 +216,8 @@
     <None Include="qptech\assets\machines\shapes\block\castironovenlarge.json" />
     <None Include="qptech\assets\machines\shapes\block\clayformer-bowl.json" />
     <None Include="qptech\assets\machines\shapes\block\electricforge-lv.json" />
+    <None Include="qptech\assets\machines\shapes\block\element-lit.json" />
+    <None Include="qptech\assets\machines\shapes\block\element-unlit.json" />
     <None Include="qptech\assets\machines\shapes\block\firepit-loader.json" />
     <None Include="qptech\assets\machines\shapes\block\firepit-stoker.json" />
     <None Include="qptech\assets\machines\shapes\block\firepit-unloader.json" />
