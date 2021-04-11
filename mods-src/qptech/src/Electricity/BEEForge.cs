@@ -85,7 +85,7 @@ namespace qptech.src
         protected override void DoDeviceComplete()
         {
             deviceState = enDeviceState.IDLE;
-            MarkDirty();
+            MarkDirty(true);
         }
         protected override void DoDeviceStart()
         {
@@ -95,7 +95,7 @@ namespace qptech.src
 
                 tickCounter = 0;
                 deviceState = enDeviceState.RUNNING;
-                MarkDirty();
+                MarkDirty(true);
                 //sounds/blocks/doorslide.ogg
                 DoDeviceProcessing();
             }
@@ -165,7 +165,7 @@ namespace qptech.src
                 }
 
                 renderer?.SetContents(contents, stackRenderHeight, burning, true);
-                MarkDirty();
+                MarkDirty(true);
                 Api.World.PlaySoundAt(new AssetLocation("sounds/block/ingot"), Pos.X, Pos.Y, Pos.Z, byPlayer, false);
 
                 return true;
@@ -185,7 +185,7 @@ namespace qptech.src
                     (Api as ICoreClientAPI)?.World.Player.TriggerFpAnimation(EnumHandInteract.HeldItemInteract);
 
                     renderer?.SetContents(contents, stackRenderHeight, burning, false);
-                    MarkDirty();
+                    MarkDirty(true);
 
                     if (byPlayer.WorldData.CurrentGameMode != EnumGameMode.Creative)
                     {
