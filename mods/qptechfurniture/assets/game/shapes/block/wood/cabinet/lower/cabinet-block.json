@@ -14,10 +14,7 @@
 		"cabinet": [16,16]
 	},
 	"textures": {
-		"countertop": "block/stone/whitemarble",
-		"shinybrass": "block/metal/shinybrass",
 		"cabinet-boreder": "block/wood/acacia/cabinet-boreder",
-		"countertop-border": "block/stone/whitemarble-border",
 		"cabinet": "block/wood/acacia/cabinet"
 	},
 	"elements": [
@@ -38,7 +35,7 @@
 				{
 					"name": "Frame N",
 					"from": [ -8.0, -6.0, 0.0 ], 
-					"to": [ 7.0, 6.0, 1.0 ], 
+					"to": [ 7.0, 7.0, 1.0 ], 
 					"rotationOrigin": [ -8.0, -6.0, 0.0 ],
 					"faces": {
 						"north": { "texture": "#cabinet", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false },
@@ -52,7 +49,7 @@
 				{
 					"name": "Frame E",
 					"from": [ 7.0, -6.0, 0.0 ], 
-					"to": [ 8.0, 6.0, 15.0 ], 
+					"to": [ 8.0, 7.0, 15.0 ], 
 					"rotationOrigin": [ 7.0, -6.0, 0.0 ],
 					"faces": {
 						"north": { "texture": "#cabinet", "uv": [ 13.0, 0.0, 15.5, 16.0 ], "autoUv": false },
@@ -66,7 +63,7 @@
 				{
 					"name": "Frame S",
 					"from": [ -7.0, -6.0, 15.0 ], 
-					"to": [ 8.0, 6.0, 16.0 ], 
+					"to": [ 8.0, 7.0, 16.0 ], 
 					"rotationOrigin": [ -7.0, -6.0, 15.0 ],
 					"faces": {
 						"north": { "texture": "#cabinet", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "enabled": false, "autoUv": false },
@@ -92,127 +89,23 @@
 					}
 				},
 				{
-					"name": "Frame S Front T",
-					"from": [ -8.0, 6.0, 15.0 ], 
-					"to": [ 8.0, 7.0, 16.0 ], 
-					"rotationOrigin": [ -8.0, 6.0, 15.0 ],
-					"faces": {
-						"north": { "texture": "#cabinet-boreder", "uv": [ 0.0, 0.0, 16.0, 2.5 ], "rotation": 180, "autoUv": false },
-						"east": { "texture": "#cabinet-boreder", "uv": [ 0.0, 0.0, 2.5, 2.5 ], "rotation": 180, "autoUv": false },
-						"south": { "texture": "#cabinet-boreder", "uv": [ 0.0, 0.0, 16.0, 2.5 ], "rotation": 180, "autoUv": false },
-						"west": { "texture": "#cabinet-boreder", "uv": [ 0.0, 0.0, 2.5, 2.5 ], "rotation": 180, "autoUv": false },
-						"up": { "texture": "#cabinet-boreder", "uv": [ 0.0, 0.0, 2.5, 2.5 ], "rotation": 90, "autoUv": false },
-						"down": { "texture": "#cabinet-boreder", "uv": [ 0.0, 0.0, 16.0, 2.5 ], "rotation": 180, "autoUv": false }
-					}
-				},
-				{
 					"name": "Countertop",
 					"from": [ -8.0, 7.0, 0.0 ], 
-					"to": [ 8.0, 8.0, 16.0 ], 
+					"to": [ 8.0, 8.0, 16.5 ], 
 					"rotationOrigin": [ -8.0, 7.0, 0.0 ],
 					"faces": {
-						"north": { "texture": "#countertop-border", "uv": [ 0.0, 0.0, 16.0, 2.0 ], "autoUv": false },
-						"east": { "texture": "#countertop-border", "uv": [ 0.0, 2.0, 16.0, 0.0 ], "autoUv": false },
-						"south": { "texture": "#countertop-border", "uv": [ 0.0, 0.0, 16.0, 2.0 ], "autoUv": false },
-						"west": { "texture": "#countertop-border", "uv": [ 0.0, 0.0, 16.0, 2.0 ], "autoUv": false },
-						"up": { "texture": "#countertop", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false },
-						"down": { "texture": "#countertop", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false }
+						"north": { "texture": "#cabinet-boreder", "uv": [ 0.0, 0.0, 16.0, 2.0 ], "autoUv": false },
+						"east": { "texture": "#cabinet-boreder", "uv": [ 0.0, 2.0, 16.0, 0.0 ], "rotation": 180, "autoUv": false },
+						"south": { "texture": "#cabinet-boreder", "uv": [ 0.0, 0.0, 16.0, 2.0 ], "autoUv": false },
+						"west": { "texture": "#cabinet-boreder", "uv": [ 0.0, 0.0, 16.0, 2.0 ], "autoUv": false },
+						"up": { "texture": "#cabinet", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false },
+						"down": { "texture": "#cabinet", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false }
 					}
-				},
-				{
-					"name": "Frame S Front W",
-					"from": [ -8.0, 6.0, 1.0 ], 
-					"to": [ -7.0, 7.0, 15.0 ], 
-					"rotationOrigin": [ -8.0, 6.0, 1.0 ],
-					"faces": {
-						"north": { "texture": "#cabinet-boreder", "uv": [ 0.0, 0.0, 16.0, 2.5 ], "rotation": 180, "autoUv": false },
-						"east": { "texture": "#cabinet-boreder", "uv": [ 0.0, 0.0, 16.0, 2.5 ], "rotation": 180, "autoUv": false },
-						"south": { "texture": "#cabinet-boreder", "uv": [ 0.0, 0.0, 16.0, 2.5 ], "rotation": 180, "autoUv": false },
-						"west": { "texture": "#cabinet-boreder", "uv": [ 0.0, 0.0, 16.0, 2.5 ], "rotation": 180, "autoUv": false },
-						"up": { "texture": "#cabinet-boreder", "uv": [ 0.0, 0.0, 16.0, 2.5 ], "rotation": 90, "autoUv": false },
-						"down": { "texture": "#cabinet-boreder", "uv": [ 0.0, 0.0, 16.0, 2.0 ], "rotation": 90, "autoUv": false }
-					},
-					"children": [
-						{
-							"name": "Frame S Front W B",
-							"from": [ 0.0, -14.0, 0.0 ], 
-							"to": [ 1.0, -12.0, 14.0 ], 
-							"rotationOrigin": [ 0.0, -14.0, 0.0 ],
-							"faces": {
-								"north": { "texture": "#cabinet-boreder", "uv": [ 0.0, 0.0, 16.0, 2.5 ], "autoUv": false },
-								"east": { "texture": "#cabinet-boreder", "uv": [ 0.0, 0.0, 16.0, 2.5 ], "autoUv": false },
-								"south": { "texture": "#cabinet-boreder", "uv": [ 0.5, 0.0, 16.5, 2.5 ], "rotation": 180, "autoUv": false },
-								"west": { "texture": "#cabinet-boreder", "uv": [ 0.0, 0.0, 16.0, 2.5 ], "autoUv": false },
-								"up": { "texture": "#cabinet-boreder", "uv": [ 0.0, 0.0, 16.0, 2.5 ], "rotation": 90, "autoUv": false },
-								"down": { "texture": "#cabinet-boreder", "uv": [ 0.0, 0.0, 16.0, 2.5 ], "rotation": 270, "autoUv": false }
-							}
-						}
-					]
-				},
-				{
-					"name": "Frame S Front N",
-					"from": [ -8.0, 6.0, 0.0 ], 
-					"to": [ 8.0, 7.0, 1.0 ], 
-					"rotationOrigin": [ -8.0, 6.0, 0.0 ],
-					"faces": {
-						"north": { "texture": "#cabinet-boreder", "uv": [ 0.0, 0.0, 16.0, 2.5 ], "rotation": 180, "autoUv": false },
-						"east": { "texture": "#cabinet-boreder", "uv": [ 0.0, 0.0, 2.5, 2.5 ], "rotation": 180, "autoUv": false },
-						"south": { "texture": "#cabinet-boreder", "uv": [ 0.0, 0.0, 16.0, 2.5 ], "rotation": 180, "autoUv": false },
-						"west": { "texture": "#cabinet-boreder", "uv": [ 0.0, 0.0, 2.5, 2.5 ], "rotation": 180, "autoUv": false },
-						"up": { "texture": "#cabinet-boreder", "uv": [ 0.0, 0.0, 2.5, 2.5 ], "rotation": 90, "autoUv": false },
-						"down": { "texture": "#cabinet-boreder", "uv": [ 0.0, 0.0, 16.0, 2.5 ], "rotation": 180, "autoUv": false }
-					},
-					"children": [
-						{
-							"name": "Frame S Front N B",
-							"from": [ 0.0, -14.0, 0.0 ], 
-							"to": [ 16.0, -12.0, 1.0 ], 
-							"rotationOrigin": [ 0.0, -14.0, 0.0 ],
-							"faces": {
-								"north": { "texture": "#cabinet-boreder", "uv": [ 0.0, 0.0, 16.0, 2.5 ], "autoUv": false },
-								"east": { "texture": "#cabinet-boreder", "uv": [ 0.0, 0.0, 2.5, 2.5 ], "autoUv": false },
-								"south": { "texture": "#cabinet-boreder", "uv": [ 0.0, 0.0, 16.0, 2.5 ], "autoUv": false },
-								"west": { "texture": "#cabinet-boreder", "uv": [ 0.0, 0.0, 1.5, 2.5 ], "autoUv": false },
-								"up": { "texture": "#cabinet-boreder", "uv": [ 0.0, 0.0, 16.0, 2.5 ], "autoUv": false },
-								"down": { "texture": "#cabinet-boreder", "uv": [ 0.0, 0.0, 16.0, 2.5 ], "rotation": 180, "autoUv": false }
-							}
-						}
-					]
-				},
-				{
-					"name": "Frame S Front E",
-					"from": [ 7.0, 6.0, 1.0 ], 
-					"to": [ 8.0, 7.0, 15.0 ], 
-					"rotationOrigin": [ 7.0, 6.0, 1.0 ],
-					"faces": {
-						"north": { "texture": "#cabinet-boreder", "uv": [ 0.0, 0.0, 16.0, 2.5 ], "rotation": 180, "autoUv": false },
-						"east": { "texture": "#cabinet-boreder", "uv": [ 0.0, 0.0, 16.0, 2.5 ], "rotation": 180, "autoUv": false },
-						"south": { "texture": "#cabinet-boreder", "uv": [ 0.0, 0.0, 16.0, 2.5 ], "rotation": 180, "autoUv": false },
-						"west": { "texture": "#cabinet-boreder", "uv": [ 0.0, 0.0, 16.0, 2.5 ], "rotation": 180, "autoUv": false },
-						"up": { "texture": "#cabinet-boreder", "uv": [ 0.0, 0.0, 16.0, 2.5 ], "rotation": 90, "autoUv": false },
-						"down": { "texture": "#cabinet-boreder", "uv": [ 0.0, 0.0, 16.0, 2.5 ], "rotation": 90, "autoUv": false }
-					},
-					"children": [
-						{
-							"name": "Frame S Front E B",
-							"from": [ 0.0, -14.0, 0.0 ], 
-							"to": [ 1.0, -12.0, 14.0 ], 
-							"rotationOrigin": [ 0.0, -14.0, 0.0 ],
-							"faces": {
-								"north": { "texture": "#cabinet-boreder", "uv": [ 0.0, 0.0, 16.0, 2.5 ], "autoUv": false },
-								"east": { "texture": "#cabinet-boreder", "uv": [ 0.0, 0.0, 16.0, 2.5 ], "autoUv": false },
-								"south": { "texture": "#cabinet-boreder", "uv": [ 0.0, 0.0, 16.0, 2.5 ], "rotation": 180, "autoUv": false },
-								"west": { "texture": "#cabinet-boreder", "uv": [ 0.0, 0.0, 16.0, 2.5 ], "autoUv": false },
-								"up": { "texture": "#cabinet-boreder", "uv": [ 0.0, 0.0, 16.0, 2.5 ], "rotation": 90, "autoUv": false },
-								"down": { "texture": "#cabinet-boreder", "uv": [ 0.0, 0.0, 16.0, 2.5 ], "rotation": 90, "autoUv": false }
-							}
-						}
-					]
 				},
 				{
 					"name": "Frame W",
 					"from": [ -8.0, -6.0, 1.0 ], 
-					"to": [ -7.0, 6.0, 16.0 ], 
+					"to": [ -7.0, 7.0, 16.0 ], 
 					"rotationOrigin": [ -8.0, -6.0, 1.0 ],
 					"faces": {
 						"north": { "texture": "#cabinet", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "enabled": false, "autoUv": false },
@@ -235,6 +128,48 @@
 						"west": { "texture": "#countertop-border", "uv": [ 0.0, 0.0, 16.0, 2.0 ], "enabled": false, "autoUv": false },
 						"up": { "texture": "#countertop", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "enabled": false, "autoUv": false },
 						"down": { "texture": "#cabinet", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false }
+					}
+				},
+				{
+					"name": "Frame S Front W B",
+					"from": [ -8.0, -8.0, 1.0 ], 
+					"to": [ -7.0, -6.0, 15.0 ], 
+					"rotationOrigin": [ -8.0, -8.0, 1.0 ],
+					"faces": {
+						"north": { "texture": "#cabinet-boreder", "uv": [ 0.0, 0.0, 16.0, 2.5 ], "autoUv": false },
+						"east": { "texture": "#cabinet-boreder", "uv": [ 0.0, 0.0, 16.0, 2.5 ], "autoUv": false },
+						"south": { "texture": "#cabinet-boreder", "uv": [ 0.5, 0.0, 16.5, 2.5 ], "rotation": 180, "autoUv": false },
+						"west": { "texture": "#cabinet-boreder", "uv": [ 0.0, 0.0, 16.0, 2.5 ], "autoUv": false },
+						"up": { "texture": "#cabinet-boreder", "uv": [ 0.0, 0.0, 16.0, 2.5 ], "rotation": 90, "autoUv": false },
+						"down": { "texture": "#cabinet-boreder", "uv": [ 0.0, 0.0, 16.0, 2.5 ], "rotation": 270, "autoUv": false }
+					}
+				},
+				{
+					"name": "Frame S Front N B",
+					"from": [ -8.0, -8.0, 0.0 ], 
+					"to": [ 8.0, -6.0, 1.0 ], 
+					"rotationOrigin": [ -8.0, -8.0, 0.0 ],
+					"faces": {
+						"north": { "texture": "#cabinet-boreder", "uv": [ 0.0, 0.0, 16.0, 2.5 ], "autoUv": false },
+						"east": { "texture": "#cabinet-boreder", "uv": [ 0.0, 0.0, 2.5, 2.5 ], "autoUv": false },
+						"south": { "texture": "#cabinet-boreder", "uv": [ 0.0, 0.0, 16.0, 2.5 ], "autoUv": false },
+						"west": { "texture": "#cabinet-boreder", "uv": [ 0.0, 0.0, 1.5, 2.5 ], "autoUv": false },
+						"up": { "texture": "#cabinet-boreder", "uv": [ 0.0, 0.0, 16.0, 2.5 ], "autoUv": false },
+						"down": { "texture": "#cabinet-boreder", "uv": [ 0.0, 0.0, 16.0, 2.5 ], "rotation": 180, "autoUv": false }
+					}
+				},
+				{
+					"name": "Frame S Front E B",
+					"from": [ 7.0, -8.0, 1.0 ], 
+					"to": [ 8.0, -6.0, 15.0 ], 
+					"rotationOrigin": [ 7.0, -8.0, 1.0 ],
+					"faces": {
+						"north": { "texture": "#cabinet-boreder", "uv": [ 0.0, 0.0, 16.0, 2.5 ], "autoUv": false },
+						"east": { "texture": "#cabinet-boreder", "uv": [ 0.0, 0.0, 16.0, 2.5 ], "autoUv": false },
+						"south": { "texture": "#cabinet-boreder", "uv": [ 0.0, 0.0, 16.0, 2.5 ], "rotation": 180, "autoUv": false },
+						"west": { "texture": "#cabinet-boreder", "uv": [ 0.0, 0.0, 16.0, 2.5 ], "autoUv": false },
+						"up": { "texture": "#cabinet-boreder", "uv": [ 0.0, 0.0, 16.0, 2.5 ], "rotation": 90, "autoUv": false },
+						"down": { "texture": "#cabinet-boreder", "uv": [ 0.0, 0.0, 16.0, 2.5 ], "rotation": 90, "autoUv": false }
 					}
 				}
 			]

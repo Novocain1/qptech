@@ -6,9 +6,10 @@
 	"attributes": {
 		"partialAttachable": true,
 		"inventoryClassName": "lower",
-		"defaultType": "oak-cabinet",
+		"defaultType": "acacia-cabinet-woodtop",
 		"types": [
 			"oak-cabinet",
+			"oak-cabinet-woodtop",
 			"oak-cabinet-whitemarble",
 			"oak-cabinet-whitemarble-fullplain-1",
 			"oak-cabinet-whitemarble-halfplain-1",
@@ -18,6 +19,7 @@
 			"oak-cabinet-shale-halfplain-1",
 			"oak-cabinet-shale-fourplain-1",
 			"acacia-cabinet",
+			"acacia-cabinet-woodtop",
 			"acacia-cabinet-whitemarble",
 			"acacia-cabinet-whitemarble-fullplain-1",
 			"acacia-cabinet-whitemarble-halfplain-1",
@@ -27,6 +29,7 @@
 			"acacia-cabinet-shale-halfplain-1",
 			"acacia-cabinet-shale-fourplain-1",
 			"maple-cabinet",
+			"maple-cabinet-woodtop",
 			"maple-cabinet-whitemarble",
 			"maple-cabinet-whitemarble-fullplain-1",
 			"maple-cabinet-whitemarble-halfplain-1",
@@ -36,10 +39,11 @@
 			"maple-cabinet-shale-halfplain-1",
 			"maple-cabinet-shale-fourplain-1"
 		],
-		collisionSelectionBoxes: {
+		"collisionSelectionBoxes": {
 		},
 		"rotatatableInterval": {
 			"oak-cabinet": "22.5degnot45deg",
+			"oak-cabinet-woodtop": "22.5degnot45deg",
 			"oak-cabinet-whitemarble": "22.5degnot45deg",
 			"oak-cabinet-whitemarble-fullplain-1": "22.5degnot45deg",
 			"oak-cabinet-whitemarble-halfplain-1": "22.5degnot45deg",
@@ -51,6 +55,7 @@
 			"oak-cabinet-shale-fourplain-1": "22.5degnot45deg",
 
 			"acacia-cabinet": "22.5degnot45deg",
+			"acacia-cabinet-woodtop": "22.5degnot45deg",
 			"acacia-cabinet-whitemarble": "22.5degnot45deg",
 			"acacia-cabinet-whitemarble-fullplain-1": "22.5degnot45deg",
 			"acacia-cabinet-whitemarble-halfplain-1": "22.5degnot45deg",
@@ -62,6 +67,7 @@
 			"acacia-cabinet-shale-fourplain-1": "22.5degnot45deg",
 
 			"maple-cabinet": "22.5degnot45deg",
+			"maple-cabinet-woodtop": "22.5degnot45deg",
 			"maple-cabinet-whitemarble": "22.5degnot45deg",
 			"maple-cabinet-whitemarble-fullplain-1": "22.5degnot45deg",
 			"maple-cabinet-whitemarble-halfplain-1": "22.5degnot45deg",
@@ -70,10 +76,11 @@
 			"maple-cabinet-shale": "22.5degnot45deg",
 			"maple-cabinet-shale-fullplain-1": "22.5degnot45deg",
 			"maple-cabinet-shale-halfplain-1": "22.5degnot45deg",
-			"maple-cabinet-shale-fourplain-1": "22.5degnot45deg",
+			"maple-cabinet-shale-fourplain-1": "22.5degnot45deg"
 		},
 		"drop": {
 			"oak-cabinet": true,
+			"oak-cabinet-woodtop": true,
 			"oak-cabinet-whitemarble": true,
 			"oak-cabinet-whitemarble-fullplain-1": true,
 			"oak-cabinet-whitemarble-halfplain-1": true,
@@ -85,6 +92,7 @@
 			"oak-cabinet-shale-fourplain-1": true,
 
 			"acacia-cabinet": true,
+			"acacia-cabinet-woodtop": true,
 			"acacia-cabinet-whitemarble": true,
 			"acacia-cabinet-whitemarble-fullplain-1": true,
 			"acacia-cabinet-whitemarble-halfplain-1": true,
@@ -96,6 +104,7 @@
 			"acacia-cabinet-shale-fourplain-1": true,
 
 			"maple-cabinet": true,
+			"maple-cabinet-woodtop": true,
 			"maple-cabinet-whitemarble": true,
 			"maple-cabinet-whitemarble-fullplain-1": true,
 			"maple-cabinet-whitemarble-halfplain-1": true,
@@ -104,10 +113,11 @@
 			"maple-cabinet-shale": true,
 			"maple-cabinet-shale-fullplain-1": true,
 			"maple-cabinet-shale-halfplain-1": true,
-			"maple-cabinet-shale-fourplain-1": true,
+			"maple-cabinet-shale-fourplain-1": true
 		},
 		"quantitySlots": {
 			"oak-cabinet": 10,
+			"oak-cabinet-woodtop": 10,
 			"oak-cabinet-whitemarble": 10,
 			"oak-cabinet-whitemarble-fullplain-1": 10,
 			"oak-cabinet-whitemarble-halfplain-1": 10,
@@ -119,6 +129,7 @@
 			"oak-cabinet-shale-fourplain-1": 10,
 
 			"acacia-cabinet": 10,
+			"acacia-cabinet-woodtop": 10,
 			"acacia-cabinet-whitemarble": 10,
 			"acacia-cabinet-whitemarble-fullplain-1": 10,
 			"acacia-cabinet-whitemarble-halfplain-1": 10,
@@ -130,6 +141,7 @@
 			"acacia-cabinet-shale-fourplain-1": 10,
 
 			"maple-cabinet": 10,
+			"maple-cabinet-woodtop": 10,
 			"maple-cabinet-whitemarble": 10,
 			"maple-cabinet-whitemarble-fullplain-1": 10,
 			"maple-cabinet-whitemarble-halfplain-1": 10,
@@ -138,10 +150,11 @@
 			"maple-cabinet-shale": 10,
 			"maple-cabinet-shale-fullplain-1": 10,
 			"maple-cabinet-shale-halfplain-1": 10,
-			"maple-cabinet-shale-fourplain-1": 10,
+			"maple-cabinet-shale-fourplain-1": 10
 		},
 		"dialogTitleLangCode": {
 			"oak-cabinet": "Lower Kitchen Cabinet",
+			"oak-cabinet-woodtop": "Lower Kitchen Cabinet",
 			"oak-cabinet-whitemarble": "Lower Kitchen Cabinet",
 			"oak-cabinet-whitemarble-fullplain-1": "Lower Kitchen Cabinet",
 			"oak-cabinet-whitemarble-halfplain-1": "Lower Kitchen Cabinet",
@@ -153,6 +166,7 @@
 			"oak-cabinet-shale-fourplain-1": "Lower Kitchen Cabinet",
 
 			"acacia-cabinet": "Lower Kitchen Cabinet",
+			"acacia-cabinet-woodtop": "Lower Kitchen Cabinet",
 			"acacia-cabinet-whitemarble": "Lower Kitchen Cabinet",
 			"acacia-cabinet-whitemarble-fullplain-1": "Lower Kitchen Cabinet",
 			"acacia-cabinet-whitemarble-halfplain-1": "Lower Kitchen Cabinet",
@@ -164,6 +178,7 @@
 			"acacia-cabinet-shale-fourplain-1": "Lower Kitchen Cabinet",
 
 			"maple-cabinet": "Lower Kitchen Cabinet",
+			"maple-cabinet-woodtop": "Lower Kitchen Cabinet",
 			"maple-cabinet-whitemarble": "Lower Kitchen Cabinet",
 			"maple-cabinet-whitemarble-fullplain-1": "Lower Kitchen Cabinet",
 			"maple-cabinet-whitemarble-halfplain-1": "Lower Kitchen Cabinet",
@@ -172,10 +187,11 @@
 			"maple-cabinet-shale": "Lower Kitchen Cabinet",
 			"maple-cabinet-shale-fullplain-1": "Lower Kitchen Cabinet",
 			"maple-cabinet-shale-halfplain-1": "Lower Kitchen Cabinet",
-			"maple-cabinet-shale-fourplain-1": "Lower Kitchen Cabinet",
+			"maple-cabinet-shale-fourplain-1": "Lower Kitchen Cabinet"
 		},
 		"storageType": {
 			"oak-cabinet": 189,
+			"oak-cabinet-woodtop": 189,
 			"oak-cabinet-whitemarble": 189,
 			"oak-cabinet-whitemarble-fullplain-1": 189,
 			"oak-cabinet-whitemarble-halfplain-1": 189,
@@ -187,6 +203,7 @@
 			"oak-cabinet-shale-fourplain-1": 189,
 
 			"acacia-cabinet": 189,
+			"acacia-cabinet-woodtop": 189,
 			"acacia-cabinet-whitemarble": 189,
 			"acacia-cabinet-whitemarble-fullplain-1": 189,
 			"acacia-cabinet-whitemarble-halfplain-1": 189,
@@ -198,6 +215,7 @@
 			"acacia-cabinet-shale-fourplain-1": 189,
 
 			"maple-cabinet": 189,
+			"maple-cabinet-woodtop": 189,
 			"maple-cabinet-whitemarble": 189,
 			"maple-cabinet-whitemarble-fullplain-1": 189,
 			"maple-cabinet-whitemarble-halfplain-1": 189,
@@ -206,10 +224,11 @@
 			"maple-cabinet-shale": 189,
 			"maple-cabinet-shale-fullplain-1": 189,
 			"maple-cabinet-shale-halfplain-1": 189,
-			"maple-cabinet-shale-fourplain-1": 189,
+			"maple-cabinet-shale-fourplain-1": 189
 		},
 		"retrieveOnly": {
 			"oak-cabinet": false,
+			"oak-cabinet-woodtop": false,
 			"oak-cabinet-whitemarble": false,
 			"oak-cabinet-whitemarble-fullplain-1": false,
 			"oak-cabinet-whitemarble-halfplain-1": false,
@@ -221,6 +240,7 @@
 			"oak-cabinet-shale-fourplain-1": false,
 
 			"acacia-cabinet": false,
+			"acacia-cabinet-woodtop": false,
 			"acacia-cabinet-whitemarble": false,
 			"acacia-cabinet-whitemarble-fullplain-1": false,
 			"acacia-cabinet-whitemarble-halfplain-1": false,
@@ -231,44 +251,58 @@
 			"acacia-cabinet-shale-halfplain-1": false,
 			"acacia-cabinet-shale-fourplain-1": false,
 
+			"maple-cabinet": false,
+			"maple-cabinet-woodtop": false,
+			"maple-cabinet-whitemarble": false,
+			"maple-cabinet-whitemarble-fullplain-1": false,
+			"maple-cabinet-whitemarble-halfplain-1": false,
+			"maple-cabinet-whitemarble-fourplain-1": false,
 
+			"maple-cabinet-shale": false,
+			"maple-cabinet-shale-fullplain-1": false,
+			"maple-cabinet-shale-halfplain-1": false,
+			"maple-cabinet-shale-fourplain-1": false
 		},
 		"shape": {
-			"oak-cabinet": "block/wood/cabinet/lower/oak/nocountertop/cabinet-oak-normal",
-			"oak-cabinet-whitemarble": "block/wood/cabinet/lower/oak/whitemarble/cabinet-whitemarble-normal",
-			"oak-cabinet-whitemarble-fullplain-1": "block/wood/cabinet/lower/oak/whitemarble/glass/fullplain/cabinet-whitemarble-normal",
-			"oak-cabinet-whitemarble-halfplain-1": "block/wood/cabinet/lower/oak/whitemarble/glass/halfplain/cabinet-whitemarble-normal",
-			"oak-cabinet-whitemarble-fourplain-1": "block/wood/cabinet/lower/oak/whitemarble/glass/fourplain/cabinet-whitemarble-normal",
+			"oak-cabinet": "block/wood/cabinet/lower/oak/nocountertop/cabinet-normal",
+			"oak-cabinet-woodtop": "block/wood/cabinet/lower/oak/countertop/cabinet-normal",
+			"oak-cabinet-whitemarble": "block/wood/cabinet/lower/oak/whitemarble/cabinet-normal",
+			"oak-cabinet-whitemarble-fullplain-1": "block/wood/cabinet/lower/oak/whitemarble/glass/fullplain/cabinet-normal",
+			"oak-cabinet-whitemarble-halfplain-1": "block/wood/cabinet/lower/oak/whitemarble/glass/halfplain/cabinet-normal",
+			"oak-cabinet-whitemarble-fourplain-1": "block/wood/cabinet/lower/oak/whitemarble/glass/fourplain/cabinet-normal",
 
-			"oak-cabinet-shale": "block/wood/cabinet/lower/oak/shale/cabinet-shale-normal",
-			"oak-cabinet-shale-fullplain-1": "block/wood/cabinet/lower/oak/shale/glass/fullplain/cabinet-shale-normal",
-			"oak-cabinet-shale-halfplain-1": "block/wood/cabinet/lower/oak/shale/glass/halfplain/cabinet-shale-normal",
-			"oak-cabinet-shale-fourplain-1": "block/wood/cabinet/lower/oak/shale/glass/fourplain/cabinet-shale-normal",
+			"oak-cabinet-shale": "block/wood/cabinet/lower/oak/shale/cabinet-normal",
+			"oak-cabinet-shale-fullplain-1": "block/wood/cabinet/lower/oak/shale/glass/fullplain/cabinet-normal",
+			"oak-cabinet-shale-halfplain-1": "block/wood/cabinet/lower/oak/shale/glass/halfplain/cabinet-normal",
+			"oak-cabinet-shale-fourplain-1": "block/wood/cabinet/lower/oak/shale/glass/fourplain/cabinet-normal",
 
-			"acacia-cabinet": "block/wood/cabinet/lower/acacia/nocountertop/cabinet-acacia-normal",
-			"acacia-cabinet-whitemarble": "block/wood/cabinet/lower/acacia/whitemarble/cabinet-whitemarble-normal",
-			"acacia-cabinet-whitemarble-fullplain-1": "block/wood/cabinet/lower/acacia/whitemarble/glass/fullplain/cabinet-whitemarble-normal",
-			"acacia-cabinet-whitemarble-halfplain-1": "block/wood/cabinet/lower/acacia/whitemarble/glass/halfplain/cabinet-whitemarble-normal",
-			"acacia-cabinet-whitemarble-fourplain-1": "block/wood/cabinet/lower/acacia/whitemarble/glass/fourplain/cabinet-whitemarble-normal",
+			"acacia-cabinet": "block/wood/cabinet/lower/acacia/nocountertop/cabinet-normal",
+			"acacia-cabinet-woodtop": "block/wood/cabinet/lower/acacia/countertop/cabinet-normal",
+			"acacia-cabinet-whitemarble": "block/wood/cabinet/lower/acacia/whitemarble/cabinet-normal",
+			"acacia-cabinet-whitemarble-fullplain-1": "block/wood/cabinet/lower/acacia/whitemarble/glass/fullplain/cabinet-normal",
+			"acacia-cabinet-whitemarble-halfplain-1": "block/wood/cabinet/lower/acacia/whitemarble/glass/halfplain/cabinet-normal",
+			"acacia-cabinet-whitemarble-fourplain-1": "block/wood/cabinet/lower/acacia/whitemarble/glass/fourplain/cabinet-normal",
 
-			"acacia-cabinet-shale": "block/wood/cabinet/lower/acacia/shale/cabinet-shale-normal",
-			"acacia-cabinet-shale-fullplain-1": "block/wood/cabinet/lower/acacia/shale/glass/fullplain/cabinet-shale-normal",
-			"acacia-cabinet-shale-halfplain-1": "block/wood/cabinet/lower/acacia/shale/glass/halfplain/cabinet-shale-normal",
-			"acacia-cabinet-shale-fourplain-1": "block/wood/cabinet/lower/acacia/shale/glass/fourplain/cabinet-shale-normal",
+			"acacia-cabinet-shale": "block/wood/cabinet/lower/acacia/shale/cabinet-normal",
+			"acacia-cabinet-shale-fullplain-1": "block/wood/cabinet/lower/acacia/shale/glass/fullplain/cabinet-normal",
+			"acacia-cabinet-shale-halfplain-1": "block/wood/cabinet/lower/acacia/shale/glass/halfplain/cabinet-normal",
+			"acacia-cabinet-shale-fourplain-1": "block/wood/cabinet/lower/acacia/shale/glass/fourplain/cabinet-normal",
 
-			"maple-cabinet": "block/wood/cabinet/lower/maple/nocountertop/cabinet-maple-normal",
-			"maple-cabinet-whitemarble": "block/wood/cabinet/lower/maple/whitemarble/cabinet-whitemarble-normal",
-			"maple-cabinet-whitemarble-fullplain-1": "block/wood/cabinet/lower/maple/whitemarble/glass/fullplain/cabinet-whitemarble-normal",
-			"maple-cabinet-whitemarble-halfplain-1": "block/wood/cabinet/lower/maple/whitemarble/glass/halfplain/cabinet-whitemarble-normal",
-			"maple-cabinet-whitemarble-fourplain-1": "block/wood/cabinet/lower/maple/whitemarble/glass/fourplain/cabinet-whitemarble-normal",
+			"maple-cabinet": "block/wood/cabinet/lower/maple/nocountertop/cabinet-normal",
+			"maple-cabinet-woodtop": "block/wood/cabinet/lower/maple/countertop/cabinet-normal",
+			"maple-cabinet-whitemarble": "block/wood/cabinet/lower/maple/whitemarble/cabinet-normal",
+			"maple-cabinet-whitemarble-fullplain-1": "block/wood/cabinet/lower/maple/whitemarble/glass/fullplain/cabinet-normal",
+			"maple-cabinet-whitemarble-halfplain-1": "block/wood/cabinet/lower/maple/whitemarble/glass/halfplain/cabinet-normal",
+			"maple-cabinet-whitemarble-fourplain-1": "block/wood/cabinet/lower/maple/whitemarble/glass/fourplain/cabinet-normal",
 
-			"maple-cabinet-shale": "block/wood/cabinet/lower/maple/shale/cabinet-shale-normal",
-			"maple-cabinet-shale-fullplain-1": "block/wood/cabinet/lower/maple/shale/glass/fullplain/cabinet-shale-normal",
-			"maple-cabinet-shale-halfplain-1": "block/wood/cabinet/lower/maple/shale/glass/halfplain/cabinet-shale-normal",
-			"maple-cabinet-shale-fourplain-1": "block/wood/cabinet/lower/maple/shale/glass/fourplain/cabinet-shale-normal",
+			"maple-cabinet-shale": "block/wood/cabinet/lower/maple/shale/cabinet-normal",
+			"maple-cabinet-shale-fullplain-1": "block/wood/cabinet/lower/maple/shale/glass/fullplain/cabinet-normal",
+			"maple-cabinet-shale-halfplain-1": "block/wood/cabinet/lower/maple/shale/glass/halfplain/cabinet-normal",
+			"maple-cabinet-shale-fourplain-1": "block/wood/cabinet/lower/maple/shale/glass/fourplain/cabinet-normal"
 		},
 		"typedOpenSound": {
 			"oak-cabinet": "sounds/block/largechestopen",
+			"oak-cabinet-woodtop": "sounds/block/largechestopen",
 			"oak-cabinet-whitemarble": "sounds/block/largechestopen",
 			"oak-cabinet-whitemarble-fullplain-1": "sounds/block/largechestopen",
 			"oak-cabinet-whitemarble-halfplain-1": "sounds/block/largechestopen",
@@ -280,6 +314,7 @@
 			"oak-cabinet-shale-fourplain-1": "sounds/block/largechestopen",
 
 			"acacia-cabinet": "sounds/block/largechestopen",
+			"acacia-cabinet-woodtop": "sounds/block/largechestopen",
 			"acacia-cabinet-whitemarble": "sounds/block/largechestopen",
 			"acacia-cabinet-whitemarble-fullplain-1": "sounds/block/largechestopen",
 			"acacia-cabinet-whitemarble-halfplain-1": "sounds/block/largechestopen",
@@ -292,6 +327,7 @@
 
 
 			"maple-cabinet": "sounds/block/largechestopen",
+			"maple-cabinet-woodtop": "sounds/block/largechestopen",
 			"maple-cabinet-whitemarble": "sounds/block/largechestopen",
 			"maple-cabinet-whitemarble-fullplain-1": "sounds/block/largechestopen",
 			"maple-cabinet-whitemarble-halfplain-1": "sounds/block/largechestopen",
@@ -300,10 +336,11 @@
 			"maple-cabinet-shale": "sounds/block/largechestopen",
 			"maple-cabinet-shale-fullplain-1": "sounds/block/largechestopen",
 			"maple-cabinet-shale-halfplain-1": "sounds/block/largechestopen",
-			"maple-cabinet-shale-fourplain-1": "sounds/block/largechestopen",
+			"maple-cabinet-shale-fourplain-1": "sounds/block/largechestopen"
 		},
 		"typedCloseSound": {
 			"oak-cabinet": "sounds/block/largechestclose",
+			"oak-cabinet-woodtop": "sounds/block/largechestclose",
 			"oak-cabinet-whitemarble": "sounds/block/largechestclose",
 			"oak-cabinet-whitemarble-fullplain-1": "sounds/block/largechestclose",
 			"oak-cabinet-whitemarble-halfplain-1": "sounds/block/largechestclose",
@@ -315,6 +352,7 @@
 			"oak-cabinet-shale-fourplain-1": "sounds/block/largechestclose",
 
 			"acacia-cabinet": "sounds/block/largechestclose",
+			"acacia-cabinet-woodtop": "sounds/block/largechestclose",
 			"acacia-cabinet-whitemarble": "sounds/block/largechestclose",
 			"acacia-cabinet-whitemarble-fullplain-1": "sounds/block/largechestclose",
 			"acacia-cabinet-whitemarble-halfplain-1": "sounds/block/largechestclose",
@@ -326,6 +364,7 @@
 			"acacia-cabinet-shale-fourplain-1": "sounds/block/largechestclose",
 
 			"maple-cabinet": "sounds/block/largechestclose",
+			"maple-cabinet-woodtop": "sounds/block/largechestclose",
 			"maple-cabinet-whitemarble": "sounds/block/largechestclose",
 			"maple-cabinet-whitemarble-fullplain-1": "sounds/block/largechestclose",
 			"maple-cabinet-whitemarble-halfplain-1": "sounds/block/largechestclose",
@@ -334,7 +373,7 @@
 			"maple-cabinet-shale": "sounds/block/largechestclose",
 			"maple-cabinet-shale-fullplain-1": "sounds/block/largechestclose",
 			"maple-cabinet-shale-halfplain-1": "sounds/block/largechestclose",
-			"maple-cabinet-shale-fourplain-1": "sounds/block/largechestclose",
+			"maple-cabinet-shale-fourplain-1": "sounds/block/largechestclose"
 		},
 		"variantByGroup": "side",
 		"variantByGroupInventory": null
@@ -360,6 +399,11 @@
 						"type": "block",
 						"code": "lower-east",
 						"attributes": { "type": "oak-cabinet" }
+					},
+					{
+						"type": "block",
+						"code": "lower-east",
+						"attributes": { "type": "oak-cabinet-woodtop" }
 					},
 					{
 						"type": "block",
@@ -411,6 +455,11 @@
 					{
 						"type": "block",
 						"code": "lower-east",
+						"attributes": { "type": "acacia-cabinet-woodtop" }
+					},
+					{
+						"type": "block",
+						"code": "lower-east",
 						"attributes": { "type": "acacia-cabinet-whitemarble" }
 					},
 					{
@@ -458,6 +507,11 @@
 					{
 						"type": "block",
 						"code": "lower-east",
+						"attributes": { "type": "maple-cabinet-woodtop" }
+					},
+					{
+						"type": "block",
+						"code": "lower-east",
 						"attributes": { "type": "maple-cabinet-whitemarble" }
 					},
 					{
@@ -490,41 +544,44 @@
 						"type": "block",
 						"code": "lower-east",
 						"attributes": { "type": "maple-cabinet-shale-halfplain-1" }
-					},
-					{
-						"type": "block",
-						"code": "lower-east",
-						"attributes": { "type": "maple-cabinet-shale-fourplain-1" }
-					},
+					}
 				]
 			}
 		]
 	},
 	"heldTpIdleAnimation": "holdunderarm",
 	"shapeInventory": {
-		"base": "block/wood/cabinet/lower/oak/nocountertop/cabinet-oak-normal",
+		"base": "block/wood/cabinet/lower/oak/countertop/cabinet-normal",
 		"rotateY": 270
 	},
 	"shapeByType": {
 		"*-north": {
-			"base": "block/wood/cabinet/lower/oak/nocountertop/cabinet-oak-normal",
+			"base": "block/wood/cabinet/lower/oak/countertop/cabinet-normal",
 			"rotateY": 0
 		},
 		"*-east": {
-			"base": "block/wood/cabinet/lower/oak/nocountertop/cabinet-oak-normal",
+			"base": "block/wood/cabinet/lower/oak/countertop/cabinet-normal",
 			"rotateY": 270
 		},
 		"*-west": {
-			"base": "block/wood/cabinet/lower/oak/nocountertop/cabinet-oak-normal",
+			"base": "block/wood/cabinet/lower/oak/countertop/cabinet-normal",
 			"rotateY": 90
 		},
 		"*-south": {
-			"base": "block/wood/cabinet/lower/oak/nocountertop/cabinet-oak-normal",
+			"base": "block/wood/cabinet/lower/oak/countertop/cabinet-normal",
 			"rotateY": 180
-		},
+		}
 	},
 	"_comment": "Must declare textures so they get added to the block texture atlas",
 	"textures": {
+
+
+		"oak-cabinet-woodtop-countertop": { "base": "block/wood/oak/countertop" },
+		"oak-cabinet-woodtop-countertop-boreder": { "base": "block/wood/oak/countertop-boreder" },
+		"oak-cabinet-woodtop-cabinet": { "base": "block/wood/oak/cabinet" },
+		"oak-cabinet-woodtop-shinybrass": { "base": "block/metal/shinybrass" },
+		"oak-cabinet-woodtop-cabinet-boreder": { "base": "block/wood/oak/cabinet-boreder" },
+		"oak-cabinet-woodtop-cabinet-detail": { "base": "block/wood/oak/cabinet-detail" },
 
 		"oak-cabinet-nocountertop": { "base": "block/wood/oak/cabinet" },
 		"oak-cabinet-nocountertop-boreder": { "base": "block/wood/oak/cabinet" },
@@ -534,14 +591,14 @@
 		"oak-cabinet-cabinet-detail": { "base": "block/wood/oak/cabinet-detail" },
 
 		"oak-cabinet-whitemarble-countertop": { "base": "block/stone/whitemarble" },
-		"oak-cabinet-whitemarble-countertop-border": { "base": "block/stone/whitemarble-border" },
+		"oak-cabinet-whitemarble-countertop-border": { "base": "block/stone/whitemarble-boreder" },
 		"oak-cabinet-whitemarble-cabinet": { "base": "block/wood/oak/cabinet" },
 		"oak-cabinet-whitemarble-shinybrass": { "base": "block/metal/shinybrass" },
 		"oak-cabinet-whitemarble-cabinet-boreder": { "base": "block/wood/oak/cabinet-boreder" },
 		"oak-cabinet-whitemarble-cabinet-detail": { "base": "block/wood/oak/cabinet-detail" },
 
 		"oak-cabinet-whitemarble-halfplain-1-countertop": { "base": "block/stone/whitemarble" },
-		"oak-cabinet-whitemarble-halfplain-1-countertop-border": { "base": "block/stone/whitemarble-border" },
+		"oak-cabinet-whitemarble-halfplain-1-countertop-border": { "base": "block/stone/whitemarble-boreder" },
 		"oak-cabinet-whitemarble-halfplain-1-cabinet": { "base": "block/wood/oak/cabinet" },
 		"oak-cabinet-whitemarble-halfplain-1-shinybrass": { "base": "block/metal/shinybrass" },
 		"oak-cabinet-whitemarble-halfplain-1-cabinet-boreder": { "base": "block/wood/oak/cabinet-boreder" },
@@ -549,7 +606,7 @@
 		"oak-cabinet-whitemarble-halfplain-1-leadedhaft": { "base": "block/glass/leadedhaft" },
 
 		"oak-cabinet-whitemarble-fullplain-1-countertop": { "base": "block/stone/whitemarble" },
-		"oak-cabinet-whitemarble-fullplain-1-countertop-border": { "base": "block/stone/whitemarble-border" },
+		"oak-cabinet-whitemarble-fullplain-1-countertop-border": { "base": "block/stone/whitemarble-boreder" },
 		"oak-cabinet-whitemarble-fullplain-1-cabinet": { "base": "block/wood/oak/cabinet" },
 		"oak-cabinet-whitemarble-fullplain-1-shinybrass": { "base": "block/metal/shinybrass" },
 		"oak-cabinet-whitemarble-fullplain-1-cabinet-boreder": { "base": "block/wood/oak/cabinet-boreder" },
@@ -557,7 +614,7 @@
 		"oak-cabinet-whitemarble-fullplain-1-glass": { "base": "block/glass/newleaded" },
 
 		"oak-cabinet-whitemarble-fourplain-1-countertop": { "base": "block/stone/whitemarble" },
-		"oak-cabinet-whitemarble-fourplain-1-countertop-border": { "base": "block/stone/whitemarble-border" },
+		"oak-cabinet-whitemarble-fourplain-1-countertop-border": { "base": "block/stone/whitemarble-boreder" },
 		"oak-cabinet-whitemarble-fourplain-1-cabinet": { "base": "block/wood/oak/cabinet" },
 		"oak-cabinet-whitemarble-fourplain-1-shinybrass": { "base": "block/metal/shinybrass" },
 		"oak-cabinet-whitemarble-fourplain-1-cabinet-boreder": { "base": "block/wood/oak/cabinet-boreder" },
@@ -565,14 +622,14 @@
 		"oak-cabinet-whitemarble-fourplain-1-leadedhaft": { "base": "block/glass/leadedhaft" },
 
 		"oak-cabinet-shale-countertop": { "base": "block/stone/shale" },
-		"oak-cabinet-shale-countertop-border": { "base": "block/stone/shale-border" },
+		"oak-cabinet-shale-countertop-border": { "base": "block/stone/shale-boreder" },
 		"oak-cabinet-shale-cabinet": { "base": "block/wood/oak/cabinet" },
 		"oak-cabinet-shale-shinybrass": { "base": "block/metal/shinybrass" },
 		"oak-cabinet-shale-cabinet-boreder": { "base": "block/wood/oak/cabinet-boreder" },
 		"oak-cabinet-shale-cabinet-detail": { "base": "block/wood/oak/cabinet-detail" },
 
 		"oak-cabinet-shale-halfplain-1-countertop": { "base": "block/stone/shale" },
-		"oak-cabinet-shale-halfplain-1-countertop-border": { "base": "block/stone/shale-border" },
+		"oak-cabinet-shale-halfplain-1-countertop-border": { "base": "block/stone/shale-boreder" },
 		"oak-cabinet-shale-halfplain-1-cabinet": { "base": "block/wood/oak/cabinet" },
 		"oak-cabinet-shale-halfplain-1-shinybrass": { "base": "block/metal/shinybrass" },
 		"oak-cabinet-shale-halfplain-1-cabinet-boreder": { "base": "block/wood/oak/cabinet-boreder" },
@@ -580,7 +637,7 @@
 		"oak-cabinet-shale-halfplain-1-leadedhaft": { "base": "block/glass/leadedhaft" },
 
 		"oak-cabinet-shale-fullplain-1-countertop": { "base": "block/stone/shale" },
-		"oak-cabinet-shale-fullplain-1-countertop-border": { "base": "block/stone/shale-border" },
+		"oak-cabinet-shale-fullplain-1-countertop-border": { "base": "block/stone/shale-boreder" },
 		"oak-cabinet-shale-fullplain-1-cabinet": { "base": "block/wood/oak/cabinet" },
 		"oak-cabinet-shale-fullplain-1-shinybrass": { "base": "block/metal/shinybrass" },
 		"oak-cabinet-shale-fullplain-1-cabinet-boreder": { "base": "block/wood/oak/cabinet-boreder" },
@@ -588,7 +645,7 @@
 		"oak-cabinet-shale-fullplain-1-glass": { "base": "block/glass/newleaded" },
 
 		"oak-cabinet-shale-fourplain-1-countertop": { "base": "block/stone/shale" },
-		"oak-cabinet-shale-fourplain-1-countertop-border": { "base": "block/stone/shale-border" },
+		"oak-cabinet-shale-fourplain-1-countertop-border": { "base": "block/stone/shale-boreder" },
 		"oak-cabinet-shale-fourplain-1-cabinet": { "base": "block/wood/oak/cabinet" },
 		"oak-cabinet-shale-fourplain-1-shinybrass": { "base": "block/metal/shinybrass" },
 		"oak-cabinet-shale-fourplain-1-cabinet-boreder": { "base": "block/wood/oak/cabinet-boreder" },
@@ -596,10 +653,12 @@
 		"oak-cabinet-shale-fourplain-1-leadedhaft": { "base": "block/glass/leadedhaft" },
 
 
-
-
-
-
+		"acacia-cabinet-woodtop-countertop": { "base": "block/wood/acacia/countertop" },
+		"acacia-cabinet-woodtop-countertop-boreder": { "base": "block/wood/acacia/countertop-boreder" },
+		"acacia-cabinet-woodtop-cabinet": { "base": "block/wood/acacia/cabinet" },
+		"acacia-cabinet-woodtop-shinybrass": { "base": "block/metal/shinybrass" },
+		"acacia-cabinet-woodtop-cabinet-boreder": { "base": "block/wood/acacia/cabinet-boreder" },
+		"acacia-cabinet-woodtop-cabinet-detail": { "base": "block/wood/acacia/cabinet-detail" },
 
 		"acacia-cabinet-nocountertop": { "base": "block/wood/acacia/cabinet" },
 		"acacia-cabinet-nocountertop-boreder": { "base": "block/wood/acacia/cabinet" },
@@ -609,14 +668,14 @@
 		"acacia-cabinet-cabinet-detail": { "base": "block/wood/acacia/cabinet-detail" },
 
 		"acacia-cabinet-whitemarble-countertop": { "base": "block/stone/whitemarble" },
-		"acacia-cabinet-whitemarble-countertop-border": { "base": "block/stone/whitemarble-border" },
+		"acacia-cabinet-whitemarble-countertop-border": { "base": "block/stone/whitemarble-boreder" },
 		"acacia-cabinet-whitemarble-cabinet": { "base": "block/wood/acacia/cabinet" },
 		"acacia-cabinet-whitemarble-shinybrass": { "base": "block/metal/shinybrass" },
 		"acacia-cabinet-whitemarble-cabinet-boreder": { "base": "block/wood/acacia/cabinet-boreder" },
 		"acacia-cabinet-whitemarble-cabinet-detail": { "base": "block/wood/acacia/cabinet-detail" },
 
 		"acacia-cabinet-whitemarble-halfplain-1-countertop": { "base": "block/stone/whitemarble" },
-		"acacia-cabinet-whitemarble-halfplain-1-countertop-border": { "base": "block/stone/whitemarble-border" },
+		"acacia-cabinet-whitemarble-halfplain-1-countertop-border": { "base": "block/stone/whitemarble-boreder" },
 		"acacia-cabinet-whitemarble-halfplain-1-cabinet": { "base": "block/wood/acacia/cabinet" },
 		"acacia-cabinet-whitemarble-halfplain-1-shinybrass": { "base": "block/metal/shinybrass" },
 		"acacia-cabinet-whitemarble-halfplain-1-cabinet-boreder": { "base": "block/wood/acacia/cabinet-boreder" },
@@ -624,7 +683,7 @@
 		"acacia-cabinet-whitemarble-halfplain-1-leadedhaft": { "base": "block/glass/leadedhaft" },
 
 		"acacia-cabinet-whitemarble-fullplain-1-countertop": { "base": "block/stone/whitemarble" },
-		"acacia-cabinet-whitemarble-fullplain-1-countertop-border": { "base": "block/stone/whitemarble-border" },
+		"acacia-cabinet-whitemarble-fullplain-1-countertop-border": { "base": "block/stone/whitemarble-boreder" },
 		"acacia-cabinet-whitemarble-fullplain-1-cabinet": { "base": "block/wood/acacia/cabinet" },
 		"acacia-cabinet-whitemarble-fullplain-1-shinybrass": { "base": "block/metal/shinybrass" },
 		"acacia-cabinet-whitemarble-fullplain-1-cabinet-boreder": { "base": "block/wood/acacia/cabinet-boreder" },
@@ -632,7 +691,7 @@
 		"acacia-cabinet-whitemarble-fullplain-1-glass": { "base": "block/glass/newleaded" },
 
 		"acacia-cabinet-whitemarble-fourplain-1-countertop": { "base": "block/stone/whitemarble" },
-		"acacia-cabinet-whitemarble-fourplain-1-countertop-border": { "base": "block/stone/whitemarble-border" },
+		"acacia-cabinet-whitemarble-fourplain-1-countertop-border": { "base": "block/stone/whitemarble-boreder" },
 		"acacia-cabinet-whitemarble-fourplain-1-cabinet": { "base": "block/wood/acacia/cabinet" },
 		"acacia-cabinet-whitemarble-fourplain-1-shinybrass": { "base": "block/metal/shinybrass" },
 		"acacia-cabinet-whitemarble-fourplain-1-cabinet-boreder": { "base": "block/wood/acacia/cabinet-boreder" },
@@ -641,14 +700,14 @@
 
 
 		"acacia-cabinet-shale-countertop": { "base": "block/stone/shale" },
-		"acacia-cabinet-shale-countertop-border": { "base": "block/stone/shale-border" },
+		"acacia-cabinet-shale-countertop-border": { "base": "block/stone/shale-boreder" },
 		"acacia-cabinet-shale-cabinet": { "base": "block/wood/acacia/cabinet" },
 		"acacia-cabinet-shale-shinybrass": { "base": "block/metal/shinybrass" },
 		"acacia-cabinet-shale-cabinet-boreder": { "base": "block/wood/acacia/cabinet-boreder" },
 		"acacia-cabinet-shale-cabinet-detail": { "base": "block/wood/acacia/cabinet-detail" },
 
 		"acacia-cabinet-shale-halfplain-1-countertop": { "base": "block/stone/shale" },
-		"acacia-cabinet-shale-halfplain-1-countertop-border": { "base": "block/stone/shale-border" },
+		"acacia-cabinet-shale-halfplain-1-countertop-border": { "base": "block/stone/shale-boreder" },
 		"acacia-cabinet-shale-halfplain-1-cabinet": { "base": "block/wood/acacia/cabinet" },
 		"acacia-cabinet-shale-halfplain-1-shinybrass": { "base": "block/metal/shinybrass" },
 		"acacia-cabinet-shale-halfplain-1-cabinet-boreder": { "base": "block/wood/acacia/cabinet-boreder" },
@@ -656,7 +715,7 @@
 		"acacia-cabinet-shale-halfplain-1-leadedhaft": { "base": "block/glass/leadedhaft" },
 
 		"acacia-cabinet-shale-fullplain-1-countertop": { "base": "block/stone/shale" },
-		"acacia-cabinet-shale-fullplain-1-countertop-border": { "base": "block/stone/shale-border" },
+		"acacia-cabinet-shale-fullplain-1-countertop-border": { "base": "block/stone/shale-boreder" },
 		"acacia-cabinet-shale-fullplain-1-cabinet": { "base": "block/wood/acacia/cabinet" },
 		"acacia-cabinet-shale-fullplain-1-shinybrass": { "base": "block/metal/shinybrass" },
 		"acacia-cabinet-shale-fullplain-1-cabinet-boreder": { "base": "block/wood/acacia/cabinet-boreder" },
@@ -664,7 +723,7 @@
 		"acacia-cabinet-shale-fullplain-1-glass": { "base": "block/glass/newleaded" },
 
 		"acacia-cabinet-shale-fourplain-1-countertop": { "base": "block/stone/shale" },
-		"acacia-cabinet-shale-fourplain-1-countertop-border": { "base": "block/stone/shale-border" },
+		"acacia-cabinet-shale-fourplain-1-countertop-border": { "base": "block/stone/shale-boreder" },
 		"acacia-cabinet-shale-fourplain-1-cabinet": { "base": "block/wood/acacia/cabinet" },
 		"acacia-cabinet-shale-fourplain-1-shinybrass": { "base": "block/metal/shinybrass" },
 		"acacia-cabinet-shale-fourplain-1-cabinet-boreder": { "base": "block/wood/acacia/cabinet-boreder" },
@@ -676,6 +735,12 @@
 
 
 
+		"maple-cabinet-woodtop-countertop": { "base": "block/wood/maple/countertop" },
+		"maple-cabinet-woodtop-countertop-boreder": { "base": "block/wood/maple/countertop-boreder" },
+		"maple-cabinet-woodtop-cabinet": { "base": "block/wood/maple/cabinet" },
+		"maple-cabinet-woodtop-shinybrass": { "base": "block/metal/shinybrass" },
+		"maple-cabinet-woodtop-cabinet-boreder": { "base": "block/wood/maple/cabinet-boreder" },
+		"maple-cabinet-woodtop-cabinet-detail": { "base": "block/wood/maple/cabinet-detail" },
 
 
 		"maple-cabinet-nocountertop": { "base": "block/wood/maple/cabinet" },
@@ -686,14 +751,14 @@
 		"maple-cabinet-cabinet-detail": { "base": "block/wood/maple/cabinet-detail" },
 
 		"maple-cabinet-whitemarble-countertop": { "base": "block/stone/whitemarble" },
-		"maple-cabinet-whitemarble-countertop-border": { "base": "block/stone/whitemarble-border" },
+		"maple-cabinet-whitemarble-countertop-border": { "base": "block/stone/whitemarble-boreder" },
 		"maple-cabinet-whitemarble-cabinet": { "base": "block/wood/maple/cabinet" },
 		"maple-cabinet-whitemarble-shinybrass": { "base": "block/metal/shinybrass" },
 		"maple-cabinet-whitemarble-cabinet-boreder": { "base": "block/wood/maple/cabinet-boreder" },
 		"maple-cabinet-whitemarble-cabinet-detail": { "base": "block/wood/maple/cabinet-detail" },
 
 		"maple-cabinet-whitemarble-halfplain-1-countertop": { "base": "block/stone/whitemarble" },
-		"maple-cabinet-whitemarble-halfplain-1-countertop-border": { "base": "block/stone/whitemarble-border" },
+		"maple-cabinet-whitemarble-halfplain-1-countertop-border": { "base": "block/stone/whitemarble-boreder" },
 		"maple-cabinet-whitemarble-halfplain-1-cabinet": { "base": "block/wood/maple/cabinet" },
 		"maple-cabinet-whitemarble-halfplain-1-shinybrass": { "base": "block/metal/shinybrass" },
 		"maple-cabinet-whitemarble-halfplain-1-cabinet-boreder": { "base": "block/wood/maple/cabinet-boreder" },
@@ -701,7 +766,7 @@
 		"maple-cabinet-whitemarble-halfplain-1-leadedhaft": { "base": "block/glass/leadedhaft" },
 
 		"maple-cabinet-whitemarble-fullplain-1-countertop": { "base": "block/stone/whitemarble" },
-		"maple-cabinet-whitemarble-fullplain-1-countertop-border": { "base": "block/stone/whitemarble-border" },
+		"maple-cabinet-whitemarble-fullplain-1-countertop-border": { "base": "block/stone/whitemarble-boreder" },
 		"maple-cabinet-whitemarble-fullplain-1-cabinet": { "base": "block/wood/maple/cabinet" },
 		"maple-cabinet-whitemarble-fullplain-1-shinybrass": { "base": "block/metal/shinybrass" },
 		"maple-cabinet-whitemarble-fullplain-1-cabinet-boreder": { "base": "block/wood/maple/cabinet-boreder" },
@@ -709,7 +774,7 @@
 		"maple-cabinet-whitemarble-fullplain-1-glass": { "base": "block/glass/newleaded" },
 
 		"maple-cabinet-whitemarble-fourplain-1-countertop": { "base": "block/stone/whitemarble" },
-		"maple-cabinet-whitemarble-fourplain-1-countertop-border": { "base": "block/stone/whitemarble-border" },
+		"maple-cabinet-whitemarble-fourplain-1-countertop-border": { "base": "block/stone/whitemarble-boreder" },
 		"maple-cabinet-whitemarble-fourplain-1-cabinet": { "base": "block/wood/maple/cabinet" },
 		"maple-cabinet-whitemarble-fourplain-1-shinybrass": { "base": "block/metal/shinybrass" },
 		"maple-cabinet-whitemarble-fourplain-1-cabinet-boreder": { "base": "block/wood/maple/cabinet-boreder" },
@@ -717,14 +782,14 @@
 		"maple-cabinet-whitemarble-fourplain-1-leadedhaft": { "base": "block/glass/leadedhaft" },
 
 		"maple-cabinet-shale-countertop": { "base": "block/stone/shale" },
-		"maple-cabinet-shale-countertop-border": { "base": "block/stone/shale-border" },
+		"maple-cabinet-shale-countertop-border": { "base": "block/stone/shale-boreder" },
 		"maple-cabinet-shale-cabinet": { "base": "block/wood/maple/cabinet" },
 		"maple-cabinet-shale-shinybrass": { "base": "block/metal/shinybrass" },
 		"maple-cabinet-shale-cabinet-boreder": { "base": "block/wood/maple/cabinet-boreder" },
 		"maple-cabinet-shale-cabinet-detail": { "base": "block/wood/maple/cabinet-detail" },
 
 		"maple-cabinet-shale-halfplain-1-countertop": { "base": "block/stone/shale" },
-		"maple-cabinet-shale-halfplain-1-countertop-border": { "base": "block/stone/shale-border" },
+		"maple-cabinet-shale-halfplain-1-countertop-border": { "base": "block/stone/shale-boreder" },
 		"maple-cabinet-shale-halfplain-1-cabinet": { "base": "block/wood/maple/cabinet" },
 		"maple-cabinet-shale-halfplain-1-shinybrass": { "base": "block/metal/shinybrass" },
 		"maple-cabinet-shale-halfplain-1-cabinet-boreder": { "base": "block/wood/maple/cabinet-boreder" },
@@ -732,7 +797,7 @@
 		"maple-cabinet-shale-halfplain-1-leadedhaft": { "base": "block/glass/leadedhaft" },
 
 		"maple-cabinet-shale-fullplain-1-countertop": { "base": "block/stone/shale" },
-		"maple-cabinet-shale-fullplain-1-countertop-border": { "base": "block/stone/shale-border" },
+		"maple-cabinet-shale-fullplain-1-countertop-border": { "base": "block/stone/shale-boreder" },
 		"maple-cabinet-shale-fullplain-1-cabinet": { "base": "block/wood/maple/cabinet" },
 		"maple-cabinet-shale-fullplain-1-shinybrass": { "base": "block/metal/shinybrass" },
 		"maple-cabinet-shale-fullplain-1-cabinet-boreder": { "base": "block/wood/maple/cabinet-boreder" },
@@ -740,7 +805,7 @@
 		"maple-cabinet-shale-fullplain-1-glass": { "base": "block/glass/newleaded" },
 
 		"maple-cabinet-shale-fourplain-1-countertop": { "base": "block/stone/shale" },
-		"maple-cabinet-shale-fourplain-1-countertop-border": { "base": "block/stone/shale-border" },
+		"maple-cabinet-shale-fourplain-1-countertop-border": { "base": "block/stone/shale-boreder" },
 		"maple-cabinet-shale-fourplain-1-cabinet": { "base": "block/wood/maple/cabinet" },
 		"maple-cabinet-shale-fourplain-1-shinybrass": { "base": "block/metal/shinybrass" },
 		"maple-cabinet-shale-fourplain-1-cabinet-boreder": { "base": "block/wood/maple/cabinet-boreder" },

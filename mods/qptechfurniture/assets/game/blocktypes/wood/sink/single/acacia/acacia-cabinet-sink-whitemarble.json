@@ -4,7 +4,7 @@
 	entityClass: "SingleSink",
 	entityBehaviors: [{ name: "Animatable" }], 	
 	shape: { base: "block/wood/sink/single/empty" },
-	creativeinventory: { "general": ["*"], "decorative": ["*"] },
+	creativeinventory: { "general": ["*"], "decorative": ["*"], "kitchen": ["*"]},
 	blockmaterial: "Wood",
 	replaceable: 900,
 	resistance: 1.5,
