@@ -53,6 +53,7 @@
 	"item-wire-*": "Metal Wire",
 	"item-pullplate-*": "Wire Pulling Plate",
 	"item-screwdriver-*": "Screwdriver",
-	"item-screwdriverhead-*": "Screwdriver Head"
+	"item-screwdriverhead-*": "Screwdriver Head",
+	"block-powersink": "Selfish Power Sink"
 	
 }

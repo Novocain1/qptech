@@ -22,7 +22,7 @@ namespace qptech.src
         protected int processingTicks = 30; //how many ticks for process to run
         protected int tickCounter = 0;
         public int RequiredAmps { get { return requiredAmps; } }
-        public bool IsPowered { get { return capacitor >= requiredAmps; } }
+        //public bool IsPowered { get { return capacitor >= requiredAmps; } }
 
         protected enDeviceState deviceState = enDeviceState.WARMUP;
         public enDeviceState DeviceState { get { return deviceState; } }

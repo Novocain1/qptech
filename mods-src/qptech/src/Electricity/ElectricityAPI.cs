@@ -7,9 +7,10 @@ using Vintagestory.API.Common;
 
 namespace ElectricityAPI
 {
+    
     //Class to Distribute electricity between block entities
     // note this is barebones - what connects to what, and whether it needs power, and to use up power
-    // you would have to create your own tick to go through and distribute available power if applicable
+    // you would have to create your own tick (default 75) to go through and distribute available power if applicable
     // (or it can passively accept power)
     public interface IElectricity
     {

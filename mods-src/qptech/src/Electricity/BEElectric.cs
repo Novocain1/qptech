@@ -49,7 +49,7 @@ namespace qptech.src
             maxVolts = Block.Attributes["maxVolts"].AsInt(maxVolts);
             capacitance = Block.Attributes["capacitance"].AsInt(capacitance);
             
-            RegisterGameTickListener(OnTick, 100);
+            RegisterGameTickListener(OnTick, 75);
             notfirsttick = false;
         }
 
@@ -104,7 +104,7 @@ namespace qptech.src
                 BlockPos bp = Pos.Copy().Offset(bf);
                 
                 BlockEntity checkblock = Api.World.BlockAccessor.GetBlockEntity(bp);
-                var bee = checkblock as BEElectric;
+                var bee = checkblock as IElectricity;
                 if (bee == null) { continue; }
                 if (bee.TryOutputConnection(this) && !inputConnections.Contains(bee)) { inputConnections.Add(bee); }
 
@@ -119,7 +119,7 @@ namespace qptech.src
             {
                 BlockPos bp = Pos.Copy().Offset(bf);
                 BlockEntity checkblock = Api.World.BlockAccessor.GetBlockEntity(bp);
-                var bee = checkblock as BEElectric;
+                var bee = checkblock as IElectricity;
                 if (bee == null) { continue; }
                 if (bee.TryInputConnection(this) && !outputConnections.Contains(bee)) { outputConnections.Add(bee); }
 
@@ -163,8 +163,8 @@ namespace qptech.src
         {
             base.OnBlockBroken();
             ElectricityLoader.electricalDevices.Remove(this);
-            foreach (BEElectric bee in inputConnections) { bee.RemoveConnection(this); }
-            foreach (BEElectric bee in outputConnections) { bee.RemoveConnection(this); }
+            foreach (IElectricity bee in inputConnections) { bee.RemoveConnection(this); }
+            foreach (IElectricity bee in outputConnections) { bee.RemoveConnection(this); }
         }
         public virtual void OnTick(float par)
         {

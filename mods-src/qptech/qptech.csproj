@@ -87,6 +87,7 @@
     <Compile Include="src\misc\firepitstoker.cs" />
     <Compile Include="src\misc\firepitunloader.cs" />
     <Compile Include="src\misc\firepitloader.cs" />
+    <Compile Include="src\misc\PowerSink.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Update="modinfo.json">

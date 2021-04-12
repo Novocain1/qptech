@@ -159,7 +159,8 @@
     <None Include="qptech\assets\machines\blocktypes\icebox.json" />
     <None Include="qptech\assets\machines\blocktypes\itemhatch.json" />
     <None Include="qptech\assets\machines\blocktypes\dummy-element.json" />
-    <None Include="qptech\assets\machines\blocktypes\machineryblock.json" />
+    <None Include="qptech\assets\machines\blocktypes\machineryblock - Copy.json" />
+    <None Include="qptech\assets\machines\blocktypes\powersink.json" />
     <None Include="qptech\assets\machines\blocktypes\oven-castiron.json" />
     <None Include="qptech\assets\machines\blocktypes\sink.json" />
     <None Include="qptech\assets\machines\blocktypes\smelterfurnace.json" />

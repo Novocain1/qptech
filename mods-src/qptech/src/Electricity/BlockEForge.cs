@@ -14,7 +14,7 @@ namespace qptech.src
 {
     class BlockEForge:Block
     {
-        WorldInteraction[] interactions;
+        //WorldInteraction[] interactions;
         public override bool OnBlockInteractStart(IWorldAccessor world, IPlayer byPlayer, BlockSelection blockSel)
         {
             BEEForge bea = world.BlockAccessor.GetBlockEntity(blockSel.Position) as BEEForge;
