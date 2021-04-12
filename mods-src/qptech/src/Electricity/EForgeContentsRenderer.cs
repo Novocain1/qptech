@@ -21,7 +21,7 @@ namespace qptech.src
         MeshRef workItemMeshRef;
         MeshRef elementMeshRef;
         string elementShapeName = "";
-        //MeshRef emberQuadRef;
+        
         //MeshRef coalQuadRef;
 
 
@@ -30,7 +30,7 @@ namespace qptech.src
         bool burning;
 
         //TextureAtlasPosition coaltexpos;
-        //TextureAtlasPosition embertexpos;
+        TextureAtlasPosition elementtexpos;
 
         int textureId;
 
@@ -70,21 +70,24 @@ namespace qptech.src
             this.pos = pos;
             this.capi = capi;
             elementShapeName = elementName;
-            //Block block = capi.World.GetBlock(new AssetLocation("forge"));
+            
+            Block elementblock = capi.World.GetBlock(new AssetLocation("machines:dummy-element-lit"));
+            elementtexpos = capi.BlockTextureAtlas.GetPosition(elementblock, "castiron");
 
+            elementMeshRef = capi.Render.UploadMesh(capi.TesselatorManager.GetDefaultBlockMesh(elementblock)); 
             //coaltexpos = capi.BlockTextureAtlas.GetPosition(block, "coal");
-            //embertexpos = capi.BlockTextureAtlas.GetPosition(block, "ember");
+
 
             //MeshData emberMesh = QuadMeshUtil.GetCustomQuadHorizontal(3 / 16f, 0, 3 / 16f, 10 / 16f, 10 / 16f, 255, 255, 255, 255);
 
             //for (int i = 0; i < emberMesh.Uv.Length; i += 2)
             //{
-            //    emberMesh.Uv[i + 0] = embertexpos.x1 + emberMesh.Uv[i + 0] * 32f / AtlasSize.Width;
-             //   emberMesh.Uv[i + 1] = embertexpos.y1 + emberMesh.Uv[i + 1] * 32f / AtlasSize.Height;
+            //    emberMesh.Uv[i + 0] = elementtexpos.x1 + emberMesh.Uv[i + 0] * 32f / AtlasSize.Width;
+            //   emberMesh.Uv[i + 1] = elementtexpos.y1 + emberMesh.Uv[i + 1] * 32f / AtlasSize.Height;
             //}
             //emberMesh.Flags = new int[] { 128, 128, 128, 128 };
 
-           // MeshData coalMesh = QuadMeshUtil.GetCustomQuadHorizontal(3 / 16f, 0, 3 / 16f, 10 / 16f, 10 / 16f, 255, 255, 255, 255);
+            // MeshData coalMesh = QuadMeshUtil.GetCustomQuadHorizontal(3 / 16f, 0, 3 / 16f, 10 / 16f, 10 / 16f, 255, 255, 255, 255);
 
             //for (int i = 0; i < coalMesh.Uv.Length; i += 2)
             //{
@@ -92,7 +95,7 @@ namespace qptech.src
             //    coalMesh.Uv[i + 1] = coaltexpos.y1 + coalMesh.Uv[i + 1] * 32f / AtlasSize.Height;
             //}
 
-            //emberQuadRef = capi.Render.UploadMesh(emberMesh);
+
             //coalQuadRef = capi.Render.UploadMesh(coalMesh);
         }
 
@@ -171,26 +174,11 @@ namespace qptech.src
             }
         }
 
-        void RegenElementMesh()
-        {
-            elementMeshRef?.Dispose();
-            elementMeshRef = null;
-            Shape shape;
-            MeshData mesh = null;
-            tmpTextureSource = capi.Tesselator.GetTexSource(capi.World.GetBlock(new AssetLocation("platepile")));
-            shape = capi.Assets.TryGet("machines:shapes/block/element.json").ToObject<Shape>();
-            textureId = tmpTextureSource[tmpMetal].atlasTextureId;
-            capi.Tesselator.TesselateShape("block-fcr", shape, out mesh, this, null, 0, 0, 0, 1);
-            if (mesh != null)
-            {
-                //mesh.Rgba2 = null;
-                elementMeshRef = capi.Render.UploadMesh(mesh);
-            }
-        }
+       
 
         public void OnRenderFrame(float deltaTime, EnumRenderStage stage)
         {
-            if (stack == null) return;
+            
 
             IRenderAPI rpi = capi.Render;
             IClientWorldAccessor worldAccess = capi.World;
@@ -229,6 +217,7 @@ namespace qptech.src
                 prog.ProjectionMatrix = rpi.CurrentProjectionMatrix;
 
                 rpi.RenderMesh(workItemMeshRef);
+                
             }
 
             if (fuelLevel > 0)
@@ -251,13 +240,14 @@ namespace qptech.src
                 prog.ExtraGlow = burning ? 255 : 0;
 
                 // The coal or embers
-               // rpi.BindTexture2d(burning ? embertexpos.atlasTextureId : coaltexpos.atlasTextureId);
+               // rpi.BindTexture2d(burning ? elementtexpos.atlasTextureId : coaltexpos.atlasTextureId);
 
-                prog.ModelMatrix = ModelMat.Identity().Translate(pos.X - camPos.X, pos.Y - camPos.Y + 10 / 16f + fuelLevel * 0.65f, pos.Z - camPos.Z).Values;
+                prog.ModelMatrix = ModelMat.Identity().Translate(pos.X - camPos.X, pos.Y - camPos.Y , pos.Z - camPos.Z).Values;
+                //prog.ModelMatrix = ModelMat.Identity().Translate(pos.X - camPos.X, pos.Y - camPos.Y + 10 / 16f + fuelLevel * 0.65f, pos.Z - camPos.Z).Values;
                 prog.ViewMatrix = rpi.CameraMatrixOriginf;
                 prog.ProjectionMatrix = rpi.CurrentProjectionMatrix;
-                //rpi.RenderMesh(elementMeshRef);
-                //rpi.RenderMesh(burning ? emberQuadRef : coalQuadRef);
+                rpi.RenderMesh(elementMeshRef);
+                //rpi.RenderMesh(burning ? elementMeshRef : coalQuadRef);
 
             }
 
@@ -270,7 +260,7 @@ namespace qptech.src
         public void Dispose()
         {
             capi.Event.UnregisterRenderer(this, EnumRenderStage.Opaque);
-            //emberQuadRef?.Dispose();
+            //elementMeshRef?.Dispose();
            // coalQuadRef?.Dispose();
             workItemMeshRef?.Dispose();
         }

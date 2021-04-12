@@ -299,8 +299,10 @@ namespace qptech.src
             
         }
 
+        /*
         public override bool OnTesselation(ITerrainMeshPool mesher, ITesselatorAPI tessThreadTesselator)
         {
+            
             ICoreClientAPI clientApi = (ICoreClientAPI)Api;
             Block block = Api.World.BlockAccessor.GetBlock(Pos);
             MeshData mesh = clientApi.TesselatorManager.GetDefaultBlockMesh(block);
@@ -310,9 +312,11 @@ namespace qptech.src
             
            
             Block elementBlock = Api.World.GetBlock(new AssetLocation("machines:dummy-element-lit"));
+           
             if (deviceState != enDeviceState.RUNNING)
             {
                 elementBlock = Api.World.GetBlock(new AssetLocation("machines:dummy-element-unlit"));
+                
             }
             if (elementBlock == null) { return true; }
             clientApi.Tesselator.TesselateBlock(elementBlock, out mesh);
@@ -320,6 +324,7 @@ namespace qptech.src
             return true;
 
         }
+        */
         protected override void UsePower()
         {
             if (!isOn) { deviceState=enDeviceState.IDLE;return; }

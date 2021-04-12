@@ -20,7 +20,7 @@
 	},
 	blockmaterial: "Metal",
 	drawtype: "json",
-	
+
 	shape: { base: "block/electricforge-lv" },
 		"shapeByType": {
 			"*-north": {
@@ -42,6 +42,9 @@
 		},
 	resistance: 1,
 	sideopaque: {
+		all: false
+	},
+	sidesolid:{
 		all: false
 	},
 

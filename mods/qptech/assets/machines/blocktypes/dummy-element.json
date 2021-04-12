@@ -10,7 +10,7 @@
 
 
 	shape: { base: "block/element-{status}" },
-		
+
 	resistance: 1,
 
 
