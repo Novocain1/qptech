@@ -66,7 +66,6 @@
     <Content Include="modinfo.json" />
     <Content Include="src\Power System Notes.txt" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Compile Include="src\Electricity\BEEAssembler.cs" />
     <Compile Include="src\Electricity\BEEBaseDevice.cs" />
@@ -75,7 +74,9 @@
     <Compile Include="src\Electricity\BEEGenerator.cs" />
     <Compile Include="src\Electricity\BEEWire.cs" />
     <Compile Include="src\Electricity\BlockEForge.cs" />
+    <Compile Include="src\Electricity\BSElectricalDevice.cs" />
     <Compile Include="src\Electricity\EForgeContentsRenderer.cs" />
+    <Compile Include="src\Electricity\ElectricityAPI.cs" />
     <Compile Include="src\misc\BlockCannedMeal.cs" />
     <Compile Include="src\Electricity\ElectricalBlock.cs" />
     <Compile Include="src\Electricity\ElectricityLoader.cs" />

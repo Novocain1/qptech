@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Vintagestory.API.Common;
 using Vintagestory.GameContent;
 using Vintagestory.API.MathTools;
+using ElectricityAPI;
 
 namespace qptech.src
 {
@@ -123,7 +124,7 @@ namespace qptech.src
             return fueled;
         }
         //generators don't receive power
-        public override int ReceivePacketOffer(BEElectric from,int volt, int amp)
+        public override int ReceivePacketOffer(IElectricity from,int volt, int amp)
         {
             return 0;
         }
