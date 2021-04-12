@@ -15,32 +15,20 @@ using Vintagestory.API.Client;
 
 namespace qptech.src
 {
-    //electric forge for heating up ingots
+    //electric forge for heating up ingots using electricity
     class BEEForge:BEEBaseDevice, IHeatSource
     {
         ItemStack contents;
         EForgeContentsRenderer renderer;
         double lastTickTotalHours;
-        float maxHeat=1100; //max temperature of device default 1100
-        float degreesPerHour=1500;//temperature increase per hour default 1500
-        int maxItems = 4; //how many items can go in
-        float stackRenderHeight =0.07f; //this is basically the height for the itemstack
-        string elementShapeName = "element";
+        float maxHeat=1100;                                 //max temperature of device default 1100
+        float degreesPerHour=1500;                          //temperature increase per hour default 1500
+        int maxItems = 4;                                   //how many items can go in
+        float stackRenderHeight =0.07f;                     //this is basically the height for the itemstack
+        string elementShapeName = "machines:dummy-element-lit";      //what item to load heating element's shape & texture from
         public override bool IsOn => base.IsOn&&contents!=null;
         public ItemStack Contents => contents;
-        /*
-         * allow ingots in/out (needs inventory)
-         * heat ingots if electricity
-         * max heat, heat time(?)
-         * only draw electricity if loaded
-         * 
-         * TODO
-         * - add glow, particles
-         * - render ingots
-         * - need BlockForge class as well
-         * - need model
-         * 
-         */
+        
         public override void Initialize(ICoreAPI api)
         {
             base.Initialize(api);
@@ -52,6 +40,7 @@ namespace qptech.src
                 degreesPerHour = Block.Attributes["degreesPerHour"].AsFloat(degreesPerHour);
                 maxItems = Block.Attributes["maxItems"].AsInt(maxItems);
                 stackRenderHeight = Block.Attributes["stackRenderHeight"].AsFloat(stackRenderHeight);
+                elementShapeName = Block.Attributes["elementShapeName"].AsString(elementShapeName);
             }
             if (api is ICoreClientAPI)
             {
@@ -299,6 +288,7 @@ namespace qptech.src
             
         }
 
+        //Keeping this OnTesselation here as it's a good reference for the future, but it's all taken care of in the renderer
         /*
         public override bool OnTesselation(ITerrainMeshPool mesher, ITesselatorAPI tessThreadTesselator)
         {

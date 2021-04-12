@@ -30,7 +30,7 @@ namespace qptech.src
         bool burning;
 
         //TextureAtlasPosition coaltexpos;
-        TextureAtlasPosition elementtexpos;
+        //TextureAtlasPosition elementtexpos;
 
         int textureId;
 
@@ -71,8 +71,8 @@ namespace qptech.src
             this.capi = capi;
             elementShapeName = elementName;
             
-            Block elementblock = capi.World.GetBlock(new AssetLocation("machines:dummy-element-lit"));
-            elementtexpos = capi.BlockTextureAtlas.GetPosition(elementblock, "castiron");
+            Block elementblock = capi.World.GetBlock(new AssetLocation(elementName));
+            //elementtexpos = capi.BlockTextureAtlas.GetPosition(elementblock, "element");
 
             elementMeshRef = capi.Render.UploadMesh(capi.TesselatorManager.GetDefaultBlockMesh(elementblock)); 
             //coaltexpos = capi.BlockTextureAtlas.GetPosition(block, "coal");
