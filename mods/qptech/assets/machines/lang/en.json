@@ -38,6 +38,21 @@
 	"block-cabinet-upper-door-pine-*": "Pine Upper Kitchen Cabinet",
 	"block-cabinet-upper-door-maple-*": "Maple Upper Kitchen Cabinet",
 	"block-icebox-*": "Ice Box",
-	"block-blocklantern" : "Encased Lantern"
+	"block-blocklantern" : "Encased Lantern",
+	"block-battery-primitive" : "Primitive Electric Battery (LV)",
+	"block-electricforge-lv-*": "Primitive Electric Forge (LV)",
+	"block-generator-primitive-*": "Primitive Electric Generator (LV)",
+	"block-machineryblock": "LV Machine Hull",
+	"block-itemhatch": "Bronze Item Hatch",
+	"block-wireplate-tin-2a": "Primitive Electric Wireplate (LV, 2 amp)",
+	"item-drilledplate-*": "Drilled Metal Plate",
+	"item-machineplate-*": "Machine Plate",
+	"item-motor-primitive": "Primitive Electric Motor (LV)",
+	"item-rod-*": "Metal Rod",
+	"item-screw-*": "Metal Screw",
+	"item-wire-*": "Metal Wire",
+	"item-pullplate-*": "Wire Pulling Plate",
+	"item-screwdriver-*": "Screwdriver",
+	"item-screwdriverhead-*": "Screwdriver Head"
 	
 }
