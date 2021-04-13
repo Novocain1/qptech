@@ -4,15 +4,20 @@
 	entityclass: "BEEWire",
 	creativeinventory: { "general": ["*"] },
 	variantgroups: [
-		{ code: "type", states: ["primitive", "LV"] }
+		{ code: "type", states: ["primitive", "lv"] }
 	],
-	attributesByType: {
-		"battery-primitive": {maxAmps:1,maxVolts:16,capacitance:500},
-		"battery-LV": {maxAmps:4,maxVolts:16,capacitance:1000}
+	attributesbytype: {
+		"*-primitive": {maxAmps:1,maxVolts:16,capacitance:500},
+		"*-lv": {maxAmps:4,maxVolts:16,capacitance:1000}
 	},
 	blockmaterial: "Metal",
 	drawtype: "json",
-	shape: { base: "block/battery-primitive" },
+	
+	shapebytype: {
+		"*": {
+			base: "block/battery-primitive",
+		}
+	},
 	resistance: 1,
 	sideopaque: {
 		all: false
