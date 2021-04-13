@@ -5,7 +5,10 @@
 	variantgroups: [
 		{ code: "type", states: ["tin-4a", "tin-2a"] }
 	],
-	creativeinventory: { "general": ["*"] },
+	creativeinventory: {
+		"general": [ "*" ],
+		"qptech": [ "*" ]
+	},
 	attributesByType: {
 		"*tin-4a":{maxAmps:4,maxVolts:16,capacitance:4},
 		"*tin-2a":{maxAmps:2,maxVolts:16,capacitance:2}

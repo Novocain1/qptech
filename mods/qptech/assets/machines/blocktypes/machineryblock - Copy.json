@@ -1,7 +1,9 @@
 {
 	code: "machineryblock",
-	
-	creativeinventory: { "general": ["*"] },
+	creativeinventory: {
+		"general": [ "*" ],
+		"qptech": [ "*" ]
+	},
 	blockmaterial: "Metal",
 	drawtype: "Cube",
 	textures: {

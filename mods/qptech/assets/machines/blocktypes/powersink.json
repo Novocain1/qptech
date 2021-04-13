@@ -1,18 +1,21 @@
 {
-	code: "powersink",
-	entityClass: "PowerSink",
-	creativeinventory: { "general": ["*"] },
-	blockmaterial: "Metal",
-	drawtype: "Cube",
-	textures: {
-		all: { 
-			base: "block/machinery",
-		},
+	"code": "powersink",
+	"entityClass": "PowerSink",
+	"creativeinventory": {
+		"general": [ "*" ],
+		"qptech": [ "*" ]
 	},
-	resistance: 1,
+	"blockmaterial": "Metal",
+	"drawtype": "Cube",
+	"textures": {
+		"all": {
+			"base": "block/machinery"
+		}
+	},
+	"resistance": 1,
 
 
-	sounds: {
+	"sounds": {
 		"place": "game:block/anvil",
 		"walk": "game:walk/stone"
 	}

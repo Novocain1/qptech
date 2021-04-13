@@ -1,21 +1,24 @@
 {
-	code: "firepitloader",
-	entityClass: "FirepitLoader",
-	creativeinventory: { "general": ["*"] },
-	blockmaterial: "Metal",
-	drawtype: "json",
-	shape: { "base":"block/firepit-loader"},
-	resistance: 1,
-	sidesolid: {
-		horizontals: "false",
-		down: "false",
-		up: "true"
+	"code": "firepitloader",
+	"entityClass": "FirepitLoader",
+	"creativeinventory": {
+		"general": [ "*" ],
+		"qptech": [ "*" ]
+	},
+	"blockmaterial": "Metal",
+	"drawtype": "json",
+	"shape": { "base": "block/firepit-loader" },
+	"resistance": 1,
+	"sidesolid": {
+		"horizontals": "false",
+		"down": "false",
+		"up": "true"
 	},
 
-	sideopaque: {
-		all: "false"
+	"sideopaque": {
+		"all": "false"
 	},
-	sounds: {
+	"sounds": {
 		"place": "game:block/anvil",
 		"walk": "game:walk/stone"
 	}

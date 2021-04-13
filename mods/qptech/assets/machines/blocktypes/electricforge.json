@@ -1,54 +1,64 @@
 {
-	code: "electricforge-lv",
-	class: "BlockEForge",
-	entityclass: "BEEForge",
-	
-	creativeinventory: { "general": ["*-east"] },
-	variantgroups: [
-		{code:"side","loadFromProperties":"abstract/horizontalorientation"}
+	"code": "electricforge-lv",
+	"class": "BlockEForge",
+	"entityclass": "BEEForge",
+	"creativeinventory": {
+		"general": [ "*-east" ],
+		"qptech": [ "*-east" ]
+	},
+	"variantgroups": [
+		{
+			"code": "side",
+			"loadFromProperties": "abstract/horizontalorientation"
+		}
 	],
-	behaviors: [{name:"HorizontalOrientable",properties:{"dropBlockFace":"east"}}],
-	attributes: {
-		maxAmps:2,
-		maxVolts:16,
-		capacitance:2,
-		requiredAmps:1,
-		maxHeat:1000,
-		degreesPerHour:1000,
-		maxItems:2,
-		stackRenderHeight:0.1,
+	"behaviors": [
+		{
+			"name": "HorizontalOrientable",
+			"properties": { "dropBlockFace": "east" }
+		}
+	],
+	"attributes": {
+		"maxAmps": 2,
+		"maxVolts": 16,
+		"capacitance": 2,
+		"requiredAmps": 1,
+		"maxHeat": 1000,
+		"degreesPerHour": 1000,
+		"maxItems": 2,
+		"stackRenderHeight": 0.1
 	},
-	blockmaterial: "Metal",
-	drawtype: "json",
+	"blockmaterial": "Metal",
+	"drawtype": "json",
 
-	shape: { base: "block/electricforge-lv" },
-		"shapeByType": {
-			"*-north": {
-				"base": "block/electricforge-lv",
-				"rotateY": 0
-			},
-			"*-east": {
-				"base": "block/electricforge-lv",
-				"rotateY": 270
-			},
-			"*-west": {
-				"base": "block/electricforge-lv",
-				"rotateY": 90
-			},
-			"*-south": {
-				"base": "block/electricforge-lv",
-				"rotateY": 180
-			}
+	"shape": { "base": "block/electricforge-lv" },
+	"shapeByType": {
+		"*-north": {
+			"base": "block/electricforge-lv",
+			"rotateY": 0
 		},
-	resistance: 1,
-	sideopaque: {
-		all: false
+		"*-east": {
+			"base": "block/electricforge-lv",
+			"rotateY": 270
+		},
+		"*-west": {
+			"base": "block/electricforge-lv",
+			"rotateY": 90
+		},
+		"*-south": {
+			"base": "block/electricforge-lv",
+			"rotateY": 180
+		}
 	},
-	sidesolid:{
-		all: false
+	"resistance": 1,
+	"sideopaque": {
+		"all": false
+	},
+	"sidesolid": {
+		"all": false
 	},
 
-	sounds: {
+	"sounds": {
 		"place": "game:block/anvil",
 		"walk": "game:walk/stone"
 	}

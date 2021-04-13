@@ -1,22 +1,25 @@
 {
-	code: "firepitunloader",
-	entityClass: "FirepitUnloader",
-	creativeinventory: { "general": ["*"] },
-	blockmaterial: "Metal",
-	drawtype: "json",
-	shape: { "base":"block/firepit-unloader"},
-	resistance: 1,
-	sidesolid: {
-		horizontals: "false",
-		down: "false",
-		up: "true"
+	"code": "firepitunloader",
+	"entityClass": "FirepitUnloader",
+	"creativeinventory": {
+		"general": [ "*" ],
+		"qptech": [ "*" ]
 	},
-	
-	sideopaque: {
-		all: "false"
+	"blockmaterial": "Metal",
+	"drawtype": "json",
+	"shape": { "base": "block/firepit-unloader" },
+	"resistance": 1,
+	"sidesolid": {
+		"horizontals": "false",
+		"down": "false",
+		"up": "true"
 	},
 
-	sounds: {
+	"sideopaque": {
+		"all": "false"
+	},
+
+	"sounds": {
 		"place": "game:block/anvil",
 		"walk": "game:walk/stone"
 	}

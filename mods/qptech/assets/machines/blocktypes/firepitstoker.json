@@ -1,23 +1,26 @@
 {
-	code: "firepitstoker",
-	entityClass: "FirepitStoker",
-	creativeinventory: { "general": ["*"] },
-	blockmaterial: "Metal",
-	drawtype: "json",
-	shape: { "base":"block/firepit-stoker"},
-	resistance: 1,
-	sidesolid: {
-		horizontals: "false",
-		down: "false",
-		up: "true"
+	"code": "firepitstoker",
+	"entityClass": "FirepitStoker",
+	"creativeinventory": {
+		"general": [ "*" ],
+		"qptech": [ "*" ]
 	},
-	
-	sideopaque: {
-		all: "false"
+	"blockmaterial": "Metal",
+	"drawtype": "json",
+	"shape": { "base": "block/firepit-stoker" },
+	"resistance": 1,
+	"sidesolid": {
+		"horizontals": "false",
+		"down": "false",
+		"up": "true"
+	},
+
+	"sideopaque": {
+		"all": "false"
 	},
 
 
-	sounds: {
+	"sounds": {
 		"place": "game:block/anvil",
 		"walk": "game:walk/stone"
 	}

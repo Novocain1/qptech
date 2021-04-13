@@ -1,20 +1,26 @@
 {
-	code: "dummy-element",
-	
-	creativeinventory: { "general": ["*"] },
-	variantgroups: [
-		{code: "status",states:["lit","unlit"]},
+	"code": "dummy-element",
+
+	"creativeinventory": {
+		"general": [ "*" ],
+		"qptech": [ "*" ]
+	},
+	"variantgroups": [
+		{
+			"code": "status",
+			"states": [ "lit", "unlit" ]
+		}
 	],
-	blockmaterial: "Metal",
-	drawtype: "json",
+	"blockmaterial": "Metal",
+	"drawtype": "json",
 
 
-	shape: { base: "block/element-{status}" },
+	"shape": { "base": "block/element-{status}" },
 
-	resistance: 1,
+	"resistance": 1,
 
 
-	sounds: {
+	"sounds": {
 		"place": "game:block/anvil",
 		"walk": "game:walk/stone"
 	}

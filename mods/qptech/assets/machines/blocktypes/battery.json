@@ -2,7 +2,10 @@
 	code: "battery",
 	class: "ElectricalBlock",
 	entityclass: "BEEWire",
-	creativeinventory: { "general": ["*"] },
+	creativeinventory: {
+		"general": [ "*" ],
+		"qptech": [ "*" ]
+	},
 	variantgroups: [
 		{ code: "type", states: ["primitive", "lv"] }
 	],

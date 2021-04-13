@@ -1,49 +1,60 @@
 {
-	code: "creativegenerator-primitive",
-	class: "ElectricalBlock",
-	entityclass: "BEEGenerator",
-	entityBehaviors: [{ name: "Animatable" }],
-	creativeinventory: { "general": ["*-east"] },
-	attributes: {
-		capacitance:4,
-		maxVolts: 16,
-		maxAmps:2,
-		genAmps:2,
-		distributionFaces:["north"]
+	"code": "creativegenerator-primitive",
+	"class": "ElectricalBlock",
+	"entityclass": "BEEGenerator",
+	"entityBehaviors": [ { "name": "Animatable" } ],
+	"creativeinventory": {
+		"general": [ "*-east" ],
+		"qptech": [ "*-east" ]
 	},
-	variantgroups: [
-		
-		{code:"side","loadFromProperties":"abstract/horizontalorientation"}
+	"attributes": {
+		"capacitance": 4,
+		"maxVolts": 16,
+		"maxAmps": 2,
+		"genAmps": 2,
+		"distributionFaces": [ "north" ]
+	},
+	"variantgroups": [
+
+		{
+			"code": "side",
+			"loadFromProperties": "abstract/horizontalorientation"
+		}
 	],
 
-	behaviors: [{name:"HorizontalOrientable",properties:{"dropBlockFace":"east"}}],
-	blockmaterial: "Metal",
-	drawtype: "json",
-	shape: { base: "block/generator" },
-		"shapeByType": {
-			"*-north": {
-				"base": "block/generator",
-				"rotateY": 0
-			},
-			"*-east": {
-				"base": "block/generator",
-				"rotateY": 270
-			},
-			"*-west": {
-				"base": "block/generator",
-				"rotateY": 90
-			},
-			"*-south": {
-				"base": "block/generator",
-				"rotateY": 180
-			}
+	"behaviors": [
+		{
+			"name": "HorizontalOrientable",
+			"properties": { "dropBlockFace": "east" }
+		}
+	],
+	"blockmaterial": "Metal",
+	"drawtype": "json",
+	"shape": { "base": "block/generator" },
+	"shapeByType": {
+		"*-north": {
+			"base": "block/generator",
+			"rotateY": 0
 		},
-	resistance: 1,
-	sideopaque: {
-		all: false
+		"*-east": {
+			"base": "block/generator",
+			"rotateY": 270
+		},
+		"*-west": {
+			"base": "block/generator",
+			"rotateY": 90
+		},
+		"*-south": {
+			"base": "block/generator",
+			"rotateY": 180
+		}
+	},
+	"resistance": 1,
+	"sideopaque": {
+		"all": false
 	},
 
-	sounds: {
+	"sounds": {
 		"place": "game:block/anvil",
 		"walk": "game:walk/stone"
 	}

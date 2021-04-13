@@ -1,61 +1,80 @@
 {
-	code: "sink",
-	class: "BlockBarrel",
-	entityClass: "Barrel",
-	entityclass: "GenericTypedContainer",
-	creativeinventory: { "general": ["*-east"] },
-	attributes: {
-		liquidcontainer: true,
-		capacityLitres: 50,
-		canhold: ["water"],
+	"code": "sink",
+	"class": "BlockBarrel",
+	"entityClass": "Barrel",
+	"entityclass": "GenericTypedContainer",
+	"creativeinventory": {
+		"general": [ "*-east" ],
+		"qptech": [ "*-east" ]
 	},
-	variantgroups: [
-		
-		{code: "wood", states: ["aged"], loadFromProperties: "block/wood" },
-		{code:"side","loadFromProperties":"abstract/horizontalorientation"}
-	],
-	behaviors: [{name:"HorizontalOrientable",properties:{"dropBlockFace":"east"}}],
-	drawtype: "json",
-	shape: { base: "block/basin" },
-		"shapeByType": {
-			"*-north": {
-				"base": "block/basin",
-				"rotateY": 0
-			},
-			"*-east": {
-				"base": "block/basin",
-				"rotateY": 270
-			},
-			"*-west": {
-				"base": "block/basin",
-				"rotateY": 90
-			},
-			"*-south": {
-				"base": "block/basin",
-				"rotateY": 180
-			}
+	"attributes": {
+		"liquidcontainer": true,
+		"capacityLitres": 50,
+		"canhold": [ "water" ]
+	},
+	"variantgroups": [
+
+		{
+			"code": "wood",
+			"states": [ "aged" ],
+			"loadFromProperties": "block/wood"
 		},
-	
-	
-	blockmaterial: "Wood",
-	sideopaque: {
-		all: false
+		{
+			"code": "side",
+			"loadFromProperties": "abstract/horizontalorientation"
+		}
+	],
+	"behaviors": [
+		{
+			"name": "HorizontalOrientable",
+			"properties": { "dropBlockFace": "east" }
+		}
+	],
+	"drawtype": "json",
+	"shape": { "base": "block/basin" },
+	"shapeByType": {
+		"*-north": {
+			"base": "block/basin",
+			"rotateY": 0
+		},
+		"*-east": {
+			"base": "block/basin",
+			"rotateY": 270
+		},
+		"*-west": {
+			"base": "block/basin",
+			"rotateY": 90
+		},
+		"*-south": {
+			"base": "block/basin",
+			"rotateY": 180
+		}
 	},
-	textures: {
-		all: { base: "game:block/wood/planks/{wood}*" }
-	},
-	resistance: 1,
 
 
-	sounds: {
+	"blockmaterial": "Wood",
+	"sideopaque": {
+		"all": false
+	},
+	"textures": {
+		"all": { "base": "game:block/wood/planks/{wood}*" }
+	},
+	"resistance": 1,
+
+
+	"sounds": {
 		"hit": "game:block/planks",
 		"break": "game:block/planks",
 		"place": "game:block/planks",
 		"walk": "game:walk/wood"
 	},
-	guiTransform: {
-		origin: { x: 0.5, y: 0.5, z: 0.5 },
-		scale: 1
+	"guiTransform": {
+		"origin": {
+			"x": 0.5,
+			"y": 0.5,
+			"z": 0.5
+		},
+		"scale": 1
 	}
 
 

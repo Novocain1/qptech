@@ -1,68 +1,82 @@
 {
-	code: "icebox",
-	
-	entityclass: "IceBoxEntity",
-	variantgroups: [
-		{code:"side","loadFromProperties":"abstract/horizontalorientation"}
+	"code": "icebox",
+	"entityclass": "IceBoxEntity",
+	"creativeinventory": {
+		"general": [ "*-east" ],
+		"qptech": [ "*-east" ]
+	},
+	"variantgroups": [
+		{
+			"code": "side",
+			"loadFromProperties": "abstract/horizontalorientation"
+		}
 	],
-	attributes: {
-		partialAttachable: true,
-		useIce: true,
-		useIceCounter: 2,
-		preserveBonus: 0.5,
-		inventoryClassName: "chest",
-		
-		types: ["normal-generic"],
-		quantitySlots: {"normal-generic": 5},
-		storageType: {"normal-generic": 169},
-		typedOpenSound: {"normal-generic": "sounds/block/largechestopen"},
-		dialogTitleLangCode: {
-			"normal-generic": "chestcontents",
+	"attributes": {
+		"types": [ "normal-generic" ],
+		"partialAttachable": true,
+		"useIce": true,
+		"useIceCounter": 2,
+		"preserveBonus": 0.5,
+		"inventoryClassName": "chest",
+		"quantitySlots": { "normal-generic": 5 },
+		"storageType": { "normal-generic": 169 },
+		"dialogTitleLangCode": {
+			"normal-generic": "chestcontents"
 		},
-		
-		typedCloseSound: {"normal-generic": "sounds/block/largechestclose"}
+		"typedOpenSound": { "normal-generic": "sounds/block/largechestopen" },
+		"typedCloseSound": { "normal-generic": "sounds/block/largechestclose" }
 	},
-	behaviors: [{name: "Lockable" }, {name: "Container"},{name:"HorizontalOrientable",properties:{"dropBlockFace":"east"}}],
-	creativeinventory: { "general": ["*-east"] },
-	blockmaterial: "Metal",
-	shape: { base: "block/itemhatch" },
-		"shapeByType": {
-			"*-north": {
-				"base": "block/itemhatch",
-				"rotateY": 0
-			},
-			"*-east": {
-				"base": "block/itemhatch",
-				"rotateY": 270
-			},
-			"*-west": {
-				"base": "block/itemhatch",
-				"rotateY": 90
-			},
-			"*-south": {
-				"base": "block/itemhatch",
-				"rotateY": 180
-			}
+	"behaviors": [
+		{ "name": "Lockable" },
+		{ "name": "Container" },
+		{
+			"name": "HorizontalOrientable",
+			"properties": { "dropBlockFace": "east" }
+		}
+	],
+	"blockmaterial": "Metal",
+	"shape": { "base": "block/itemhatch" },
+	"shapeByType": {
+		"*-north": {
+			"base": "block/itemhatch",
+			"rotateY": 0
 		},
-	drawtype: "json",
-	texturesByType: {
+		"*-east": {
+			"base": "block/itemhatch",
+			"rotateY": 270
+		},
+		"*-west": {
+			"base": "block/itemhatch",
+			"rotateY": 90
+		},
+		"*-south": {
+			"base": "block/itemhatch",
+			"rotateY": 180
+		}
+	},
+	"drawtype": "json",
+	"texturesByType": {
 		"*": {
-			all: { base: "block/machinery-tin" },
-		},
-		
+			"all": { "base": "block/machinery-tin" }
+		}
+
 	},
-	resistance: 1,
-	sideopaque: {
-		all: false
+	"resistance": 1,
+	"sideopaque": {
+		"all": false
 	},
 
-	sounds: {
+	"sounds": {
 		"place": "game:block/anvil",
 		"walk": "game:walk/stone"
 	},
-	guiTransform: {
-		origin: { x: 0.5, y: 0.5, z: 0.5 },
-		scale: 1
+	"guiTransform": {
+		"origin": {
+			"x": 0.5,
+			"y": 0.5,
+			"z": 0.5
+		},
+		"scale": 1
 	}
 
 }

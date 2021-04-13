@@ -1,23 +1,26 @@
 {
-	code: "blocklantern",
-	
-	creativeinventory: { "general": ["*"] },
-	blockmaterial: "Metal",
-	textures: {
-		all: { base: "block/lightblock" }
+	"code": "blocklantern",
+
+	"creativeinventory": {
+		"general": [ "*" ],
+		"qptech": [ "*" ]
 	},
-	resistance: 1,
-	sounds: {
+	"blockmaterial": "Metal",
+	"textures": {
+		"all": { "base": "block/lightblock" }
+	},
+	"resistance": 1,
+	"sounds": {
 		"place": "game:block/anvil",
 		"walk": "game:walk/stone"
 	},
-	lightAbsorption: 0,
-	lightHsvByType: {
-		
-		"*": [8, 2, 21],
+	"lightAbsorption": 0,
+	"lightHsvByType": {
+
+		"*": [ 8, 2, 21 ]
 	},
-	vertexFlags: {
-		glowLevel: 64,
+	"vertexFlags": {
+		"glowLevel": 64
 	}
 
 }
