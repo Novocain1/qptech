@@ -1,0 +1,11 @@
+{
+  "type": "code",
+  "modid": "qptechapi",
+  "name": "QPTECH API",
+  "description" : "",
+  "author": "WQP",
+  "version": "1.0.1",
+  "dependency": {
+    "game": "1.14.8"
+  }
+}

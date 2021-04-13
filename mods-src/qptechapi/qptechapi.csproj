@@ -4,21 +4,21 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{36C91EE7-484E-4A49-8834-E3502F0FF8CF}</ProjectGuid>
+    <ProjectGuid>{28583445-ABF9-47C2-BA6D-57384D5FC2AC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>qptech</RootNamespace>
-    <AssemblyName>qptech</AssemblyName>
+    <RootNamespace>qptechapi</RootNamespace>
+    <AssemblyName>qptechapi</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
+    <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\mods\qptech\</OutputPath>
-    <IntermediateOutputPath>..\..\obj\Debug\qptech\</IntermediateOutputPath>
+    <OutputPath>..\..\mods\qptechapi\</OutputPath>
+    <IntermediateOutputPath>..\..\obj\Debug\qptechapi\</IntermediateOutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -26,8 +26,8 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\mods\qptech\</OutputPath>
-    <IntermediateOutputPath>..\..\obj\Release\qptech\</IntermediateOutputPath>
+    <OutputPath>..\..\mods\qptechapi\</OutputPath>
+    <IntermediateOutputPath>..\..\obj\Release\qptechapi\</IntermediateOutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -63,48 +63,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="modinfo.json" />
-    <Content Include="src\Power System Notes.txt" />
+    <Compile Include="src\ElectricityAPI.cs" />
+    <Compile Include="src\Main.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="src\Electricity\BEEAssembler.cs" />
-    <Compile Include="src\Electricity\BEEBaseDevice.cs" />
-    <Compile Include="src\Electricity\BEEForge.cs" />
-    <Compile Include="src\Electricity\BEElectric.cs" />
-    <Compile Include="src\Electricity\BEEGenerator.cs" />
-    <Compile Include="src\Electricity\BEEWire.cs" />
-    <Compile Include="src\Electricity\BlockEForge.cs" />
-    <Compile Include="src\Electricity\BSElectricalDevice.cs" />
-    <Compile Include="src\Electricity\EForgeContentsRenderer.cs" />
-    <Compile Include="src\misc\BlockCannedMeal.cs" />
-    <Compile Include="src\Electricity\ElectricalBlock.cs" />
-    <Compile Include="src\Electricity\ElectricityLoader.cs" />
-    <Compile Include="src\misc\icebox.cs" />
-    <Compile Include="src\misc\ItemJetPack.cs" />
-    <Compile Include="src\misc\ItemQuarryTool.cs" />
-    <Compile Include="src\misc\moddedfirepit.cs" />
-    <Compile Include="src\misc\firepitstoker.cs" />
-    <Compile Include="src\misc\firepitunloader.cs" />
-    <Compile Include="src\misc\firepitloader.cs" />
-    <Compile Include="src\misc\PowerSink.cs" />
+    <Content Include="modinfo.json" />
   </ItemGroup>
   <ItemGroup>
     <Content Update="modinfo.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\qptechapi\qptechapi.csproj">
-      <Project>{28583445-abf9-47c2-ba6d-57384d5fc2ac}</Project>
-      <Name>qptechapi</Name>
-      <Private>False</Private>
-    </ProjectReference>
-  </ItemGroup>
   <Target Name="CopyToBin" AfterTargets="AfterBuild">
     <Copy SourceFiles="@(OutFiles)" DestinationFiles="@(OutFiles->'$(BinaryDir)/%(RecursiveDir)%(Filename)%(Extension)')" />
   </Target>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
-  </PropertyGroup>
 </Project>

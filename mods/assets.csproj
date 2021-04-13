@@ -17,6 +17,7 @@
     <OutputPath>.\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
+    <None Include="qptechapi\modinfo.json" />
     <None Include="qptechfurniture\assets\game\blocktypes.zip" />
     <None Include="qptechfurniture\assets\game\blocktypes\metal\icebox.json" />
     <None Include="qptechfurniture\assets\game\blocktypes\wood\cabinet\cabinetlower.json" />
@@ -283,6 +284,8 @@
     <None Include="qptech\assets\machines\shapes\item\worn\jetpack.json" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="qptechapi\qptechapi.dll" />
+    <Content Include="qptechapi\qptechapi.pdb" />
     <Content Include="qptechfurniture\assets\game\textures\block\glass\frame.png" />
     <Content Include="qptechfurniture\assets\game\textures\block\glass\leadedhaft.png" />
     <Content Include="qptechfurniture\assets\game\textures\block\glass\newleaded.png" />
