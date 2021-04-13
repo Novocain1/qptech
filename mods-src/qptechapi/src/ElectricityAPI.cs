@@ -5,9 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using Vintagestory.API.Common;
 
-namespace ElectricityAPI
+namespace Electricity.API
 {
 
+<<<<<<< Updated upstream:mods-src/qptech/src/Electricity/ElectricityAPI.cs
 
     /// <summary>
     /// https://discord.gg/VbYQc7yfnF
@@ -24,6 +25,12 @@ namespace ElectricityAPI
     /// 
     /// OnTick length to handle your electricity updates - 75
     /// </summary>
+=======
+    //Class to Distribute electricity between block entities
+    // note this is barebones - what connects to what, and whether it needs power, and to use up power
+    // you would have to create your own tick (default 75) to go through and distribute available power if applicable
+    // (or it can passively accept power)
+>>>>>>> Stashed changes:mods-src/qptechapi/src/ElectricityAPI.cs
     public interface IElectricity
     {
         //the block entity this IElectricity belongs to
