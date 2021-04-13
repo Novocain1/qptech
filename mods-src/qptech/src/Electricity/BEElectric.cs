@@ -8,16 +8,8 @@ using Vintagestory.API.Common;
 using Vintagestory.API.Datastructures;
 using Vintagestory.API.MathTools;
 using Vintagestory.GameContent;
-<<<<<<< Updated upstream
-using Vintagestory.API.Client;
-
-using Vintagestory.API.Common.Entities;
-
 using Vintagestory.API.Server;
-using ElectricityAPI;
-=======
 using Electricity.API;
->>>>>>> Stashed changes
 
 namespace qptech.src
 {
