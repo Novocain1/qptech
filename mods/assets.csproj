@@ -150,6 +150,7 @@
     <None Include="qptech\assets\machines\blocktypes\cabinet.json" />
     <None Include="qptech\assets\machines\blocktypes\castironovenlarge.json" />
     <None Include="qptech\assets\machines\blocktypes\clayformer.json" />
+    <None Include="qptech\assets\machines\blocktypes\creativegenerator-MV.json" />
     <None Include="qptech\assets\machines\blocktypes\creativegenerator.json" />
     <None Include="qptech\assets\machines\blocktypes\firepitloader.json" />
     <None Include="qptech\assets\machines\blocktypes\firepitstoker.json" />

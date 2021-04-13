@@ -7,11 +7,23 @@ using Vintagestory.API.Common;
 
 namespace ElectricityAPI
 {
-    
-    //Class to Distribute electricity between block entities
-    // note this is barebones - what connects to what, and whether it needs power, and to use up power
-    // you would have to create your own tick (default 75) to go through and distribute available power if applicable
-    // (or it can passively accept power)
+
+
+    /// <summary>
+    /// https://discord.gg/VbYQc7yfnF
+    /// 
+    /// Class to Distribute electricity between block entities
+    /// note this is barebones - what connects to what, and whether it needs power, and to use up power
+    /// you would have to create your own tick (default 75) to go through and distribute available power if applicable
+    /// (or it can passively accept power)
+    /// 
+    /// Suggested guidelines
+    /// LV -  16 Volts
+    /// MV -  64 Volts
+    /// HV - 256 Volts
+    /// 
+    /// OnTick length to handle your electricity updates - 75
+    /// </summary>
     public interface IElectricity
     {
         //the block entity this IElectricity belongs to
@@ -33,6 +45,7 @@ namespace ElectricityAPI
         bool TryOutputConnection(IElectricity connectto);
         //Delete any connection the the supplied IElectricity (should be called on every connection when the block is deleted, removed etc)
         void RemoveConnection(IElectricity disconnect);
+
     }
 
 }

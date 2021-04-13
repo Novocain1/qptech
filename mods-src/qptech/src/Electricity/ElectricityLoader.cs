@@ -12,7 +12,7 @@ namespace qptech.src
 {
     class ElectricityLoader:ModSystem
     {
-        public static List<BEElectric> electricalDevices;
+        
         public override void Start(ICoreAPI api)
         {
             base.Start(api);

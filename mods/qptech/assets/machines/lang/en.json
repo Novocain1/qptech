@@ -40,6 +40,7 @@
 	"block-icebox-*": "Ice Box",
 	"block-blocklantern" : "Encased Lantern",
 	"block-battery-primitive" : "Primitive Electric Battery (LV)",
+	"block-battery-LV" : "Electric Battery (LV)",
 	"block-electricforge-lv-*": "Primitive Electric Forge (LV)",
 	"block-generator-primitive-*": "Primitive Electric Generator (LV)",
 	"block-machineryblock": "LV Machine Hull",

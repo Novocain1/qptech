@@ -1,11 +1,11 @@
 {
-	code: "creativegenerator",
+	code: "creativegenerator-MV",
 	class: "ElectricalBlock",
 	entityclass: "BEEGenerator",
 	entityBehaviors: [{ name: "Animatable" }],
 	creativeinventory: { "general": ["*-east"] },
 	attributes: {
-		capacitance:4,maxVolts: 16,maxAmps:2,genAmps:2,
+		capacitance:4,maxVolts: 32,maxAmps:2,genAmps:2,
 		distributionFaces:["north"]
 	},
 	variantgroups: [

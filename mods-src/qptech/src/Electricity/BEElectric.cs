@@ -8,6 +8,11 @@ using Vintagestory.API.Common;
 using Vintagestory.API.Datastructures;
 using Vintagestory.API.MathTools;
 using Vintagestory.GameContent;
+using Vintagestory.API.Client;
+
+using Vintagestory.API.Common.Entities;
+
+using Vintagestory.API.Server;
 using ElectricityAPI;
 
 namespace qptech.src
@@ -39,9 +44,7 @@ namespace qptech.src
             
             //TODO need to load list of valid faces from the JSON for this stuff
             SetupIOFaces();
-            if (ElectricityLoader.electricalDevices == null) { ElectricityLoader.electricalDevices = new List<BEElectric>(); }
-            ElectricityLoader.electricalDevices.Add(this);
-            
+                       
             if (outputConnections == null) { outputConnections = new List<IElectricity>(); }
             if (inputConnections == null) { inputConnections = new List<IElectricity>(); }
             if (Block.Attributes == null) { api.World.Logger.Error("ERROR BEE INITIALIZE HAS NO BLOCK");return; }
@@ -162,7 +165,7 @@ namespace qptech.src
         public override void OnBlockBroken()
         {
             base.OnBlockBroken();
-            ElectricityLoader.electricalDevices.Remove(this);
+            
             foreach (IElectricity bee in inputConnections) { bee.RemoveConnection(this); }
             foreach (IElectricity bee in outputConnections) { bee.RemoveConnection(this); }
         }
@@ -193,8 +196,8 @@ namespace qptech.src
         {
             if (usedconnections == null) { usedconnections = new List<IElectricity>(); }
             if (!isOn) { return 0; }//Not even on
-            if (inVolt > maxVolts) { DoOverload(); return 0; }//!TOO MANY VOLTS!
-            if (inVolt < maxVolts) { return 0; }// not enough volts
+            if (inVolt != maxVolts) { DoOverload(); return 0; }//Incompatible power - bad!
+            
             if (capacitor>=capacitance) { return 0; }//already full
             inAmp = Math.Min(inAmp, MaxAmps); //can only move a certain amount of amps - eg 2
             int useamps = Math.Min(inAmp, capacitance - capacitor); //2
@@ -246,7 +249,17 @@ namespace qptech.src
         
         public virtual void DoOverload()
         {
-            //BOOOOM!
+            ////BOOOOM!
+            if (!IsOn) { return; }
+            EnumBlastType blastType=EnumBlastType.OreBlast;
+            var iswa = Api.World as IServerWorldAccessor;
+            Api.World.BlockAccessor.SetBlock(0, Pos);
+            if (iswa!=null)
+            {
+                iswa.CreateExplosion(Pos, blastType, 4, 15);
+                isOn = false;
+            }
+            
         }
 
         public virtual void TogglePower()
@@ -273,12 +286,16 @@ namespace qptech.src
         public override void FromTreeAttributes(ITreeAttribute tree, IWorldAccessor worldAccessForResolve)
         {
             base.FromTreeAttributes(tree, worldAccessForResolve);
+            
+
+            //if (type == null) type = defaultType; // No idea why. Somewhere something has no type. Probably some worldgen ruins
             capacitor = tree.GetInt("capacitor");
             isOn = tree.GetBool("isOn");
         }
         public override void ToTreeAttributes(ITreeAttribute tree)
         {
             base.ToTreeAttributes(tree);
+            
             tree.SetInt("capacitor", capacitor);
             tree.SetBool("isOn", isOn);
         }

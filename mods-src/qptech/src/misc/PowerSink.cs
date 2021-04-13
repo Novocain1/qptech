@@ -70,7 +70,7 @@ namespace qptech.src.misc
         {
             base.GetBlockInfo(forPlayer, dsc);
             
-            dsc.AppendLine("I've stolen "+stolenpowercounter.ToString()+" amps LOL");
+            dsc.AppendLine("I've stolen "+stolenpowercounter.ToString()+" power packets LOL");
         }
     }
     
