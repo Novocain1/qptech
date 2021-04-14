@@ -1,6 +1,6 @@
 {
 	code: "wireplate",
-	class: "ElectricalBlock",
+	class: "BlockWire",
 	entityclass: "BEEWire",
 	variantgroups: [
 		{ code: "type", states: ["tin-4a", "tin-2a"] }

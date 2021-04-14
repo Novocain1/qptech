@@ -10,7 +10,7 @@
 		{ code: "type", states: ["primitive", "lv"] }
 	],
 	attributesbytype: {
-		"*-primitive": {maxAmps:1,maxVolts:16,capacitance:500},
+		"*-primitive": {maxAmps:1,maxVolts:16,capacitance:500,receptionFaces:["south"],distributionFaces:["north","east","west"]},
 		"*-lv": {maxAmps:4,maxVolts:16,capacitance:1000}
 	},
 	blockmaterial: "Metal",
