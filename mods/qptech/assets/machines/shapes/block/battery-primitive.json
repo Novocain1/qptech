@@ -302,60 +302,60 @@
 		{
 			"name": "TerminalW",
 			"from": [ 0.0, 1.0, 6.0 ], 
-			"to": [ 1.0, 2.0, 7.0 ], 
+			"to": [ 5.0, 2.0, 7.0 ], 
 			"rotationOrigin": [ 0.0, 15.0, 6.0 ],
 			"faces": {
-				"north": { "texture": "#castiron", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
+				"north": { "texture": "#castiron", "uv": [ 0.0, 0.0, 5.0, 1.0 ] },
 				"east": { "texture": "#castiron", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
-				"south": { "texture": "#castiron", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
+				"south": { "texture": "#castiron", "uv": [ 0.0, 0.0, 5.0, 1.0 ] },
 				"west": { "texture": "#castiron", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
-				"up": { "texture": "#castiron", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
-				"down": { "texture": "#castiron", "uv": [ 0.0, 0.0, 1.0, 1.0 ] }
+				"up": { "texture": "#castiron", "uv": [ 0.0, 0.0, 5.0, 1.0 ] },
+				"down": { "texture": "#castiron", "uv": [ 0.0, 0.0, 5.0, 1.0 ] }
 			},
 			"children": [
 				{
 					"name": "Terminal22",
 					"from": [ 0.0, 0.0, 3.0 ], 
-					"to": [ 1.0, 1.0, 4.0 ], 
+					"to": [ 5.0, 1.0, 4.0 ], 
 					"rotationOrigin": [ 0.0, 14.0, 3.0 ],
 					"faces": {
-						"north": { "texture": "#castiron", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
+						"north": { "texture": "#castiron", "uv": [ 0.0, 0.0, 5.0, 1.0 ] },
 						"east": { "texture": "#castiron", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
-						"south": { "texture": "#castiron", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
+						"south": { "texture": "#castiron", "uv": [ 0.0, 0.0, 5.0, 1.0 ] },
 						"west": { "texture": "#castiron", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
-						"up": { "texture": "#castiron", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
-						"down": { "texture": "#castiron", "uv": [ 0.0, 0.0, 1.0, 1.0 ] }
+						"up": { "texture": "#castiron", "uv": [ 0.0, 0.0, 5.0, 1.0 ] },
+						"down": { "texture": "#castiron", "uv": [ 0.0, 0.0, 5.0, 1.0 ] }
 					}
 				}
 			]
 		},
 		{
 			"name": "TerminalS",
-			"from": [ 6.0, 1.0, 16.0 ], 
-			"to": [ 7.0, 2.0, 17.0 ], 
-			"rotationOrigin": [ 6.0, 15.0, 16.0 ],
+			"from": [ 5.0, 1.0, 16.0 ], 
+			"to": [ 10.0, 3.0, 18.0 ], 
+			"rotationOrigin": [ 5.0, 15.0, 16.0 ],
 			"rotationY": 90.0,
 			"faces": {
-				"north": { "texture": "#castiron", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
-				"east": { "texture": "#castiron", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
-				"south": { "texture": "#castiron", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
-				"west": { "texture": "#castiron", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
-				"up": { "texture": "#castiron", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
-				"down": { "texture": "#castiron", "uv": [ 0.0, 0.0, 1.0, 1.0 ] }
+				"north": { "texture": "#castiron", "uv": [ 0.0, 0.0, 5.0, 2.0 ] },
+				"east": { "texture": "#castiron", "uv": [ 0.0, 0.0, 2.0, 2.0 ] },
+				"south": { "texture": "#castiron", "uv": [ 0.0, 0.0, 5.0, 2.0 ] },
+				"west": { "texture": "#castiron", "uv": [ 0.0, 0.0, 2.0, 2.0 ] },
+				"up": { "texture": "#castiron", "uv": [ 0.0, 0.0, 5.0, 2.0 ] },
+				"down": { "texture": "#castiron", "uv": [ 0.0, 0.0, 5.0, 2.0 ] }
 			},
 			"children": [
 				{
 					"name": "Terminal24",
-					"from": [ 0.0, 0.0, 3.0 ], 
-					"to": [ 1.0, 1.0, 4.0 ], 
-					"rotationOrigin": [ 0.0, 14.0, 3.0 ],
+					"from": [ 0.0, 0.0, 4.0 ], 
+					"to": [ 5.0, 2.0, 6.0 ], 
+					"rotationOrigin": [ 0.0, 14.0, 4.0 ],
 					"faces": {
-						"north": { "texture": "#castiron", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
-						"east": { "texture": "#castiron", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
-						"south": { "texture": "#castiron", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
-						"west": { "texture": "#castiron", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
-						"up": { "texture": "#castiron", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
-						"down": { "texture": "#castiron", "uv": [ 0.0, 0.0, 1.0, 1.0 ] }
+						"north": { "texture": "#castiron", "uv": [ 0.0, 0.0, 5.0, 2.0 ] },
+						"east": { "texture": "#castiron", "uv": [ 0.0, 0.0, 2.0, 2.0 ] },
+						"south": { "texture": "#castiron", "uv": [ 0.0, 0.0, 5.0, 2.0 ] },
+						"west": { "texture": "#castiron", "uv": [ 0.0, 0.0, 2.0, 2.0 ] },
+						"up": { "texture": "#castiron", "uv": [ 0.0, 0.0, 5.0, 2.0 ] },
+						"down": { "texture": "#castiron", "uv": [ 0.0, 0.0, 5.0, 2.0 ] }
 					}
 				}
 			]
@@ -363,30 +363,30 @@
 		{
 			"name": "TerminalE",
 			"from": [ 16.0, 1.0, 10.0 ], 
-			"to": [ 17.0, 2.0, 11.0 ], 
+			"to": [ 21.0, 2.0, 11.0 ], 
 			"rotationOrigin": [ 16.0, 15.0, 10.0 ],
 			"rotationY": 180.0,
 			"faces": {
-				"north": { "texture": "#castiron", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
+				"north": { "texture": "#castiron", "uv": [ 0.0, 0.0, 5.0, 1.0 ] },
 				"east": { "texture": "#castiron", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
-				"south": { "texture": "#castiron", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
+				"south": { "texture": "#castiron", "uv": [ 0.0, 0.0, 5.0, 1.0 ] },
 				"west": { "texture": "#castiron", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
-				"up": { "texture": "#castiron", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
-				"down": { "texture": "#castiron", "uv": [ 0.0, 0.0, 1.0, 1.0 ] }
+				"up": { "texture": "#castiron", "uv": [ 0.0, 0.0, 5.0, 1.0 ] },
+				"down": { "texture": "#castiron", "uv": [ 0.0, 0.0, 5.0, 1.0 ] }
 			},
 			"children": [
 				{
 					"name": "Terminal26",
 					"from": [ 0.0, 0.0, 3.0 ], 
-					"to": [ 1.0, 1.0, 4.0 ], 
+					"to": [ 5.0, 1.0, 4.0 ], 
 					"rotationOrigin": [ 0.0, 14.0, 3.0 ],
 					"faces": {
-						"north": { "texture": "#castiron", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
+						"north": { "texture": "#castiron", "uv": [ 0.0, 0.0, 5.0, 1.0 ] },
 						"east": { "texture": "#castiron", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
-						"south": { "texture": "#castiron", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
+						"south": { "texture": "#castiron", "uv": [ 0.0, 0.0, 5.0, 1.0 ] },
 						"west": { "texture": "#castiron", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
-						"up": { "texture": "#castiron", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
-						"down": { "texture": "#castiron", "uv": [ 0.0, 0.0, 1.0, 1.0 ] }
+						"up": { "texture": "#castiron", "uv": [ 0.0, 0.0, 5.0, 1.0 ] },
+						"down": { "texture": "#castiron", "uv": [ 0.0, 0.0, 5.0, 1.0 ] }
 					}
 				}
 			]
@@ -394,32 +394,46 @@
 		{
 			"name": "TerminalN",
 			"from": [ 10.0, 1.0, 0.0 ], 
-			"to": [ 11.0, 2.0, 1.0 ], 
+			"to": [ 15.0, 2.0, 1.0 ], 
 			"rotationOrigin": [ 10.0, 15.0, 0.0 ],
 			"rotationY": -90.0,
 			"faces": {
-				"north": { "texture": "#castiron", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
+				"north": { "texture": "#castiron", "uv": [ 0.0, 0.0, 5.0, 1.0 ] },
 				"east": { "texture": "#castiron", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
-				"south": { "texture": "#castiron", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
+				"south": { "texture": "#castiron", "uv": [ 0.0, 0.0, 5.0, 1.0 ] },
 				"west": { "texture": "#castiron", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
-				"up": { "texture": "#castiron", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
-				"down": { "texture": "#castiron", "uv": [ 0.0, 0.0, 1.0, 1.0 ] }
+				"up": { "texture": "#castiron", "uv": [ 0.0, 0.0, 5.0, 1.0 ] },
+				"down": { "texture": "#castiron", "uv": [ 0.0, 0.0, 5.0, 1.0 ] }
 			},
 			"children": [
 				{
 					"name": "Terminal28",
 					"from": [ 0.0, 0.0, 3.0 ], 
-					"to": [ 1.0, 1.0, 4.0 ], 
+					"to": [ 5.0, 1.0, 4.0 ], 
 					"rotationOrigin": [ 0.0, 14.0, 3.0 ],
 					"faces": {
-						"north": { "texture": "#castiron", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
+						"north": { "texture": "#castiron", "uv": [ 0.0, 0.0, 5.0, 1.0 ] },
 						"east": { "texture": "#castiron", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
-						"south": { "texture": "#castiron", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
+						"south": { "texture": "#castiron", "uv": [ 0.0, 0.0, 5.0, 1.0 ] },
 						"west": { "texture": "#castiron", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
-						"up": { "texture": "#castiron", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
-						"down": { "texture": "#castiron", "uv": [ 0.0, 0.0, 1.0, 1.0 ] }
+						"up": { "texture": "#castiron", "uv": [ 0.0, 0.0, 5.0, 1.0 ] },
+						"down": { "texture": "#castiron", "uv": [ 0.0, 0.0, 5.0, 1.0 ] }
 					}
 				}
 			]
+		},
+		{
+			"name": "Input Plate",
+			"from": [ 4.0, 0.0, 14.0 ], 
+			"to": [ 12.0, 4.0, 15.0 ], 
+			"rotationOrigin": [ 4.0, 0.0, 14.0 ],
+			"faces": {
+				"north": { "texture": "#machinery", "uv": [ 0.0, 0.0, 8.0, 4.0 ] },
+				"east": { "texture": "#machinery", "uv": [ 0.0, 0.0, 1.0, 4.0 ] },
+				"south": { "texture": "#machinery", "uv": [ 0.0, 0.0, 8.0, 4.0 ] },
+				"west": { "texture": "#machinery", "uv": [ 0.0, 0.0, 1.0, 4.0 ] },
+				"up": { "texture": "#machinery", "uv": [ 0.0, 0.0, 8.0, 1.0 ] },
+				"down": { "texture": "#machinery", "uv": [ 0.0, 0.0, 8.0, 1.0 ] }
+			}
 		}
 	]}
