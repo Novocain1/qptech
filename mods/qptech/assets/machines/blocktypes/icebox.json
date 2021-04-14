@@ -5,12 +5,6 @@
 		"general": [ "*-east" ],
 		"qptech": [ "*-east" ]
 	},
-	"variantgroups": [
-		{
-			"code": "side",
-			"loadFromProperties": "abstract/horizontalorientation"
-		}
-	],
 	"attributes": {
 		"types": [ "normal-generic" ],
 		"partialAttachable": true,
@@ -32,6 +26,12 @@
 		{
 			"name": "HorizontalOrientable",
 			"properties": { "dropBlockFace": "east" }
+		}
+	],
+	"variantgroups": [
+		{
+			"code": "side",
+			"loadFromProperties": "abstract/horizontalorientation"
 		}
 	],
 	"blockmaterial": "Metal",

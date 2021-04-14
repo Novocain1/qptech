@@ -1,55 +1,92 @@
 {
-	code: "oak-cabinet-single-sink-shale",
-	class: "BlockSingleSink",
-	entityClass: "SingleSink",
-	entityBehaviors: [{ name: "Animatable" }], 	
-	shape: { base: "block/wood/sink/single/empty" },
-	creativeinventory: { "general": ["*"], "decorative": ["*"], "kitchen": ["*"]},
-	blockmaterial: "Wood",
-	replaceable: 900,
-	resistance: 1.5,
-	maxStackSize: 1,
-	lightAbsorption: 1,
-	textures: {
-		"cabinet-detail": {base: "block/wood/oak/cabinet-detail"},
-		"copper":  {base: "block/metal/copper"},
-		"countertop": {base: "block/stone/shale"},
-		"shinybrass": {base: "block/metal/shinybrass"},
-		"cabinet-boreder": {base: "block/wood/oak/cabinet-boreder"},
-		"countertop-border": {base: "block/stone/shale-border"},
-		"cabinet":  {base: "block/wood/oak/cabinet"}
+	"code": "oak-cabinet-single-sink-shale",
+	"class": "BlockSingleSink",
+	"entityClass": "SingleSink",
+	"behaviors": [
+		{ "name": "Container" },
+		{ "name": "HorizontalOrientable" }
+	],
+	"entityBehaviors": [ { "name": "Animatable" } ],
+	"variantgroups": [
+		{ "loadFromProperties": "abstract/horizontalorientation" }
+	],
+	"blockmaterial": "Wood",
+	"shapebytype": {
+		"*-north": {
+			"base": "block/wood/sink/single/empty",
+			"rotateY": 0
+		},
+		"*-east": {
+			"base": "block/wood/sink/single/empty",
+			"rotateY": 270
+		},
+		"*-south": {
+			"base": "block/wood/sink/single/empty",
+			"rotateY": 180
+		},
+		"*-west": {
+			"base": "block/wood/sink/single/empty",
+			"rotateY": 90
+		}
 	},
-	attributes: {
-		partialAttachable: true,
-		capacityLitres: 50
+	"creativeinventory": {
+		"general": [ "*-north" ],
+		"decorative": [ "*-north" ],
+		"kitchen": [ "*-north" ]
 	},
-	sideao: {
-		all: false
+	"replaceable": 900,
+	"resistance": 1.5,
+	"maxStackSize": 1,
+	"lightAbsorption": 1,
+	"textures": {
+		"cabinet-detail": { "base": "block/wood/oak/cabinet-detail" },
+		"copper": { "base": "block/metal/copper" },
+		"countertop": { "base": "block/stone/shale" },
+		"shinybrass": { "base": "block/metal/shinybrass" },
+		"cabinet-boreder": { "base": "block/wood/oak/cabinet-boreder" },
+		"countertop-border": { "base": "block/stone/shale-boreder" },
+		"cabinet": { "base": "block/wood/oak/cabinet" }
 	},
-	sidesolid: {
-		all: false
+	"attributes": {
+		"partialAttachable": true,
+		"capacityLitres": 50
 	},
-	emitsideao: {
-		all: false
+	"sideao": {
+		"all": false
 	},
-	sideopaque: {
-		all: false
+	"sidesolid": {
+		"all": false
 	},
-	combustibleProps: {
-		burnTemperature: 600,
-		burnDuration: 20,
+	"emitsideao": {
+		"all": false
 	},
-	sounds: {
+	"sideopaque": {
+		"all": false
+	},
+	"combustibleProps": {
+		"burnTemperature": 600,
+		"burnDuration": 20
+	},
+	"sounds": {
 		"place": "block/planks",
 		"hit": "block/planks",
 		"break": "block/planks",
 		"walk": "walk/wood"
 	},
-	materialDensity: 600,
-	heldTpIdleAnimation: "holdbothhandslarge", heldTpUseAnimation: "twohandplaceblock",
-	tpHandTransform: {
-		translation: { x: -1.4, y: -0.878, z: -0.5 },
-		rotation: { x: -82, y: 10, z: -105 },
-		scale: 0.39
-	},
+	"materialDensity": 600,
+	"heldTpIdleAnimation": "holdbothhandslarge",
+	"heldTpUseAnimation": "twohandplaceblock",
+	"tpHandTransform": {
+		"translation": {
+			"x": -1.4,
+			"y": -0.878,
+			"z": -0.5
+		},
+		"rotation": {
+			"x": -82,
+			"y": 10,
+			"z": -105
+		},
+		"scale": 0.39
+	}
 }

@@ -19,7 +19,7 @@
 		typedCloseSound: {"normal-generic": "sounds/block/largechestclose"}
 	},
 	behaviors: [{name: "Lockable" }, {name: "Container"},{name:"HorizontalOrientable",properties:{"dropBlockFace":"east"}}],
-    creativeinventory: { "general": ["*-east"], "decorative": ["*-east"], "kitchen": ["*-east"]},
+  creativeinventory: { "general": ["*-east"], "decorative": ["*-east"], "kitchen": ["*-east"]},
 	blockmaterial: "Metal",
 	shapeInventory: { base: "block/metal/itemhatch", "rotateY": 270},
 		"shapeByType": {

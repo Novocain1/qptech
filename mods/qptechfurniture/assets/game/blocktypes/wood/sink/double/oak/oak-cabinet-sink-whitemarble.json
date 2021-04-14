@@ -1,84 +1,146 @@
 {
-	code: "oak-cabinet-double-sink-whitemarble",
-	class: "BlockDoubleSink",
-	entityClass: "DoubleSink",
-	behaviors: [{name: "Container"}, { name: "HorizontalOrientable" }],
-	entityBehaviors: [{ name: "Animatable" }], 	
-	variantgroups: [
-		{ loadFromProperties: "abstract/horizontalorientation" }
+	"code": "oak-cabinet-double-sink-whitemarble",
+	"class": "BlockDoubleSink",
+	"entityClass": "DoubleSink",
+	"behaviors": [
+		{ "name": "Container" },
+		{ "name": "HorizontalOrientable" }
 	],
-	blockmaterial: "Wood",
-	shapebytype: { 
+	"entityBehaviors": [ { "name": "Animatable" } ],
+	"variantgroups": [
+		{ "loadFromProperties": "abstract/horizontalorientation" }
+	],
+	"blockmaterial": "Wood",
+	"shapebytype": {
 		"*-north": {
-			base: "block/wood/sink/double/empty",
-			rotateY: 0
+			"base": "block/wood/sink/double/empty",
+			"rotateY": 0
 		},
 		"*-east": {
-			base: "block/wood/sink/double/empty",
-			rotateY: 270
+			"base": "block/wood/sink/double/empty",
+			"rotateY": 270
 		},
 		"*-south": {
-			base: "block/wood/sink/double/empty",
-			rotateY: 180
+			"base": "block/wood/sink/double/empty",
+			"rotateY": 180
 		},
 		"*-west": {
-			base: "block/wood/sink/double/empty",
-			rotateY: 90
+			"base": "block/wood/sink/double/empty",
+			"rotateY": 90
 		}
 	},
-	creativeinventory: { "general": ["*-north"], "decorative": ["*-north"], "kitchen": ["*-north"] },
-	blockmaterial: "Wood",
-	replaceable: 900,
-	resistance: 2,
-	maxStackSize: 1,
-	lightAbsorption: 1,
-	textures: {
-		"cabinet-detail": {base: "block/wood/oak/cabinet-detail"},
-		"copper":  {base: "block/metal/copper"},
-		"countertop": {base: "block/stone/whitemarble"},
-		"shinybrass": {base: "block/metal/shinybrass"},
-		"cabinet-boreder": {base: "block/wood/oak/cabinet-boreder"},
-		"countertop-border": {base: "block/stone/whitemarble-border"},
-		"cabinet":  {base: "block/wood/oak/cabinet"}
+	"creativeinventory": {
+		"general": [ "*-north" ],
+		"decorative": [ "*-north" ],
+		"kitchen": [ "*-north" ]
 	},
-	attributes: {
-		partialAttachable: true,
-		capacityLitres: 50
+	"replaceable": 900,
+	"resistance": 2,
+	"maxStackSize": 1,
+	"lightAbsorption": 1,
+	"textures": {
+		"cabinet-detail": { "base": "block/wood/oak/cabinet-detail" },
+		"copper": { "base": "block/metal/copper" },
+		"countertop": { "base": "block/stone/whitemarble" },
+		"shinybrass": { "base": "block/metal/shinybrass" },
+		"cabinet-boreder": { "base": "block/wood/oak/cabinet-boreder" },
+		"countertop-border": { "base": "block/stone/whitemarble-boreder" },
+		"cabinet": { "base": "block/wood/oak/cabinet" }
 	},
-	sideao: {
-		all: false
+	"attributes": {
+		"partialAttachable": true,
+		"capacityLitres": 50
 	},
-	sidesolid: {
-		all: false
+	"sideao": {
+		"all": false
 	},
-	emitsideao: {
-		all: false
+	"sidesolid": {
+		"all": false
 	},
-	sideopaque: {
-		all: false
+	"emitsideao": {
+		"all": false
 	},
-	combustibleProps: {
-		burnTemperature: 600,
-		burnDuration: 20,
+	"sideopaque": {
+		"all": false
 	},
-	sounds: {
+	"combustibleProps": {
+		"burnTemperature": 600,
+		"burnDuration": 20
+	},
+	"sounds": {
 		"place": "block/planks",
 		"hit": "block/planks",
 		"break": "block/planks",
 		"walk": "walk/wood"
 	},
-	selectionBox: { x1: 0, y1: 0, z1: 0, x2: 1, y2: 1, z2: 2 },
-	collisionSelectionBoxesByType: {
-		"*-north": [ {  x1: -1, y1: 0, z1: 0, x2: 1, y2: 1, z2: 1,  rotateY: 0  } ],
-		"*-east": [ {  x1: -1, y1: 0, z1: 0, x2: 1, y2: 1, z2: 1, rotateY: 270  } ],
-		"*-west": [ { x1: -1, y1: 0, z1: 0, x2: 1, y2: 1, z2: 1.0625, rotateY: 90 } ],
-		"*-south": [ {  x1: -1, y1: 0, z1: 0, x2: 1, y2: 1, z2: 1, rotateY: 180 } ]
+	"selectionBox": {
+		"x1": 0,
+		"y1": 0,
+		"z1": 0,
+		"x2": 1,
+		"y2": 1,
+		"z2": 2
 	},
-	materialDensity: 600,
-	heldTpIdleAnimation: "holdbothhandslarge", heldTpUseAnimation: "twohandplaceblock",
-	tpHandTransform: {
-		translation: { x: -1.4, y: -0.878, z: -0.5 },
-		rotation: { x: -82, y: 10, z: -105 },
-		scale: 0.39
+	"collisionSelectionBoxesByType": {
+		"*-north": [
+			{
+				"x1": -1,
+				"y1": 0,
+				"z1": 0,
+				"x2": 1,
+				"y2": 1,
+				"z2": 1,
+				"rotateY": 0
+			}
+		],
+		"*-east": [
+			{
+				"x1": -1,
+				"y1": 0,
+				"z1": 0,
+				"x2": 1,
+				"y2": 1,
+				"z2": 1,
+				"rotateY": 270
+			}
+		],
+		"*-west": [
+			{
+				"x1": -1,
+				"y1": 0,
+				"z1": 0,
+				"x2": 1,
+				"y2": 1,
+				"z2": 1.0625,
+				"rotateY": 90
+			}
+		],
+		"*-south": [
+			{
+				"x1": -1,
+				"y1": 0,
+				"z1": 0,
+				"x2": 1,
+				"y2": 1,
+				"z2": 1,
+				"rotateY": 180
+			}
+		]
 	},
+	"materialDensity": 600,
+	"heldTpIdleAnimation": "holdbothhandslarge",
+	"heldTpUseAnimation": "twohandplaceblock",
+	"tpHandTransform": {
+		"translation": {
+			"x": -1.4,
+			"y": -0.878,
+			"z": -0.5
+		},
+		"rotation": {
+			"x": -82,
+			"y": 10,
+			"z": -105
+		},
+		"scale": 0.39
+	}
 }
