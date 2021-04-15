@@ -9,5 +9,5 @@
 	},
 	width: 2,
 	height: 3,
-	output: { type: "block", code: "battery-primitive", quantity: 1  }
+	output: { type: "block", code: "battery-primitive-east", quantity: 1  }
 }

@@ -74,9 +74,9 @@
     <Compile Include="src\Electricity\BEElectric.cs" />
     <Compile Include="src\Electricity\BEEGenerator.cs" />
     <Compile Include="src\Electricity\BEEWire.cs" />
+    <Compile Include="src\Electricity\BEPowerFlag.cs" />
     <Compile Include="src\Electricity\BlockEForge.cs" />
     <Compile Include="src\Electricity\BlockWire.cs" />
-    <Compile Include="src\Electricity\BSElectricalDevice.cs" />
     <Compile Include="src\Electricity\EForgeContentsRenderer.cs" />
     <Compile Include="src\misc\BlockCannedMeal.cs" />
     <Compile Include="src\Electricity\ElectricalBlock.cs" />

@@ -14,6 +14,8 @@ namespace qptech.src
         public override void Initialize(ICoreAPI api)
         {
             base.Initialize(api);
+            if (Block == null) { return; }
+            if (Block.Attributes == null) { return; }
             isInsulated= Block.Attributes["isInsulated"].AsBool(isInsulated);
 
         }

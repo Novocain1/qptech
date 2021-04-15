@@ -1,0 +1,21 @@
+{
+	code: "statusflag-up",
+	
+	creativeinventory: {
+		"general": [ "*" ],
+		"qptech": [ "*" ]
+	},
+	blockmaterial: "Metal",
+	drawtype: "json",
+	"shape": { "base": "block/statusflag-up" },
+	
+	resistance: 1,
+
+
+	sounds: {
+		"place": "game:block/anvil",
+		"walk": "game:walk/stone"
+	}
+
+
+}

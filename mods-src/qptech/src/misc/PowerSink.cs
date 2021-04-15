@@ -28,8 +28,9 @@ namespace qptech.src.misc
         //report a ridiculous amount of amps, but this isn't tracked by this device anyways
         public int MaxAmps => 2048;
         //this doesn't actually matter right now - most devices would explode or something bad during a voltage mismatch
-        public int MaxVolts => 16; 
-        
+        public int MaxVolts => 16;
+
+        public bool IsPowered => IsOn && (stolenpowercounter > 0);
 
         //Always on baby!
         public bool IsOn => true;

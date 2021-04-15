@@ -40,6 +40,8 @@ namespace Electricity.API
         int MaxVolts { get; }
         //if device is on
         bool IsOn { get;  }
+        //Device has power
+        bool IsPowered { get; }
         //Receive an offer for a power packet, return how much power it uses
         int ReceivePacketOffer(IElectricity from, int inVolt, int inAmp);
         //return if this object needs any power

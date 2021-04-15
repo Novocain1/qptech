@@ -2,23 +2,46 @@
 	code: "battery",
 	class: "ElectricalBlock",
 	entityclass: "BEEWire",
-	creativeinventory: {
-		"general": [ "*" ],
-		"qptech": [ "*" ]
+	"creativeinventory": {
+		"general": [ "*-{type}-east" ],
+		"qptech": [ "*-{type}-east" ]
 	},
 	variantgroups: [
-		{ code: "type", states: ["primitive", "lv"] }
+		{ code: "type", states: ["primitive", "lv"] },
+		{
+			"code": "side",
+			"loadFromProperties": "abstract/horizontalorientation"
+		}
+	],
+	"behaviors": [
+		{
+			"name": "HorizontalOrientable",
+			"properties": { "dropBlockFace": "east" }
+		}
 	],
 	attributesbytype: {
-		"*-primitive": {maxAmps:1,maxVolts:16,capacitance:500,receptionFaces:["south"],distributionFaces:["north","east","west"]},
-		"*-lv": {maxAmps:4,maxVolts:16,capacitance:1000}
+		"*-primitive-*": {maxAmps:1,maxVolts:16,capacitance:500,receptionFaces:["south"],distributionFaces:["north","east","west"]},
+		"*-lv-*": {maxAmps:4,maxVolts:16,capacitance:1000}
 	},
 	blockmaterial: "Metal",
 	drawtype: "json",
-	
-	shapebytype: {
-		"*": {
-			base: "block/battery-primitive",
+	"shape": { "base": "block/battery-primitive" },
+"shapeByType": {
+		"*-north": {
+			"base": "block/battery-primitive",
+			"rotateY": 0
+		},
+		"*-east": {
+			"base": "block/battery-primitive",
+			"rotateY": 270
+		},
+		"*-west": {
+			"base": "block/battery-primitive",
+			"rotateY": 90
+		},
+		"*-south": {
+			"base": "block/battery-primitive",
+			"rotateY": 180
 		}
 	},
 	resistance: 1,

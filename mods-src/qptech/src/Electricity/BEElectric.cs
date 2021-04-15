@@ -29,7 +29,7 @@ namespace qptech.src
         public int MaxAmps { get { return maxAmps; } }
         public int MaxVolts { get { return maxVolts; } }
 
-        public bool IsPowered { get { return false; } }
+        public bool IsPowered { get { return IsOn&&capacitor>0; } }
         public virtual bool IsOn { get { return isOn; } }
         protected bool notfirsttick = false;
         protected bool justswitched = false; //create a delay after the player switches power

@@ -205,7 +205,9 @@
     <None Include="qptech\assets\machines\blocktypes\icebox.json" />
     <None Include="qptech\assets\machines\blocktypes\itemhatch.json" />
     <None Include="qptech\assets\machines\blocktypes\dummy-element.json" />
-    <None Include="qptech\assets\machines\blocktypes\machineryblock - Copy.json" />
+    <None Include="qptech\assets\machines\blocktypes\statusflag-up.json" />
+    <None Include="qptech\assets\machines\blocktypes\powerflag.json" />
+    <None Include="qptech\assets\machines\blocktypes\machineryblock.json" />
     <None Include="qptech\assets\machines\blocktypes\powersink.json" />
     <None Include="qptech\assets\machines\blocktypes\oven-castiron.json" />
     <None Include="qptech\assets\machines\blocktypes\sink.json" />
@@ -273,6 +275,8 @@
     <None Include="qptech\assets\machines\shapes\block\generator.json" />
     <None Include="qptech\assets\machines\shapes\block\itemhatch.json" />
     <None Include="qptech\assets\machines\shapes\block\smelter-furnace-closed.json" />
+    <None Include="qptech\assets\machines\shapes\block\statusflag-up.json" />
+    <None Include="qptech\assets\machines\shapes\block\statusflag.json" />
     <None Include="qptech\assets\machines\shapes\block\wireplate-tin-2a.json" />
     <None Include="qptech\assets\machines\shapes\block\wireplate-tin-4a.json" />
     <None Include="qptech\assets\machines\shapes\item\part\drilledplate.json" />
@@ -357,6 +361,7 @@
     <Content Include="qptech\assets\machines\textures\block\machinery-tin.png" />
     <Content Include="qptech\assets\machines\textures\block\machinery.png" />
     <Content Include="qptech\assets\machines\textures\block\oak1.png" />
+    <Content Include="qptech\assets\machines\textures\block\redfabric.png" />
     <Content Include="qptech\assets\machines\textures\block\shinybrass.png" />
   </ItemGroup>
   <ItemGroup>
