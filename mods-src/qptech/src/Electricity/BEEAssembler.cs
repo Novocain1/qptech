@@ -22,7 +22,7 @@ namespace qptech.src
         protected int internalQuantity = 0; //will store ingredients virtually
         protected BlockFacing rmInputFace; //what faces will be checked for input containers
         protected BlockFacing outputFace; //what faces will be checked for output containers
-        protected BlockFacing recipeFace; //what face will be used to look for a container with the model object
+        //protected BlockFacing recipeFace; //what face will be used to look for a container with the model object
          DummyInventory dummy;
          
         /// </summary>
@@ -54,12 +54,12 @@ namespace qptech.src
             //Check for power
             //Check for supplies
             //If ok - begin process, use up supplies
-            if (capacitor < requiredAmps) { return; }//not enough power
+            if (Capacitor < requiredAmps) { return; }//not enough power
             FetchMaterial();
                   
             if (internalQuantity<inputQuantity) { deviceState = enDeviceState.MATERIALHOLD; return; }//check for and extract the required RM
             //TODO - do we make sure there's an output container?
-            if (capacitor >= requiredAmps)
+            if (Capacitor >= requiredAmps)
             {
                 internalQuantity = 0;
                 tickCounter = 0;

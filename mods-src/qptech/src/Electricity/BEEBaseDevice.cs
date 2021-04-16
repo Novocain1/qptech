@@ -62,7 +62,7 @@ namespace qptech.src
 
         protected virtual void DoDeviceStart()
         {
-            if (capacitor >= requiredAmps)
+            if (Capacitor >= requiredAmps)
             {
                 
                 tickCounter = 0;
@@ -81,13 +81,14 @@ namespace qptech.src
                 DoDeviceComplete();
                 return;
             }
-            if (capacitor < requiredAmps)
+            if (Capacitor < requiredAmps)
             {
                 DoFailedProcessing();
                 return;
             }
             tickCounter++;
-            capacitor -= requiredAmps;
+            ChangeCapacitor(-requiredAmps);
+            
         }
         //can do some feedback if device can't run
         protected virtual void DoFailedStart()

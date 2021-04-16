@@ -1,6 +1,8 @@
 {
 	code: "powerflag",
 	entityclass: "BEPowerFlag",
+	behaviors: [{name: "UnstableFalling"}, { name: "RightClickPickup", properties: { dropsPickupMode: true, sound: "sounds/block/loosestone" } }],
+	maxstacksize: 32,
 	creativeinventory: {
 		"general": [ "*" ],
 		"qptech": [ "*" ]
@@ -9,10 +11,22 @@
 	drawtype: "json",
 	"shape": { "base": "block/statusflag" },
 	
-	resistance: 1,
+	resistance: 0,
 	sideopaque: {
 		all: false
 	},
+
+	guiTransform: {
+		origin: { x: 0.5, y: 0.125, z: 0.5 },
+		scale: 2.75
+	},
+
+	selectionBox: { x1: 0.25, y1: 0, z1: 0.3125, x2: 0.6875, y2: 0.375, z2: 0.6875 },
+	collisionBox: { x1: 0.25, y1: 0, z1: 0.3125, x2: 0.6875, y2: 0.375, z2: 0.6875 },
+	sidesolid: {
+		all: false
+	},
+
 
 	sounds: {
 		"place": "game:block/anvil",

@@ -81,7 +81,7 @@ namespace qptech.src
 
             }
 
-            if (trypower) { capacitor = Math.Min(capacitance, capacitor + MaxAmps); }
+            if (trypower) { ChangeCapacitor(MaxAmps); }
             
             return;
         }
@@ -90,7 +90,7 @@ namespace qptech.src
         {
             if (!isOn) { return false; }
             if (!usesFuel) { return true; } //if we don't use fuel, we can make power
-            if (capacitor == capacitance && !usesFuelWhileOn) { return false; }//not necessary to generate power
+            if (Capacitor == Capacitance && !usesFuelWhileOn) { return false; }//not necessary to generate power
             if (fueled && fuelCounter < fuelTicks) //on going burning of current fuel item
             {
                 fuelCounter++;

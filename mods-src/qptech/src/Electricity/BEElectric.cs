@@ -16,20 +16,24 @@ namespace qptech.src
     public class BEElectric : BlockEntity, IElectricity
     {
         /*base class to handle electrical devices*/
-        protected int maxAmps=1;    //how many packets that can move at once
-        protected int maxVolts=16;  //how many volts it can handle before exploding
-        protected int capacitance=1;//how many packets it can store
-        protected int capacitor;  //packets currently stored (the ints store the volts for each packet)
-        protected bool isOn=true;        //if it's not on it won't do any power processing
-        protected List<IElectricity>outputConnections; //what we are connected to output power
-        protected List<IElectricity>inputConnections; //what we are connected to receive power
-        protected List<IElectricity>usedconnections; //track if already traded with in a given turn (to prevent bouncing)
-        protected List<BlockFacing>distributionFaces; //what faces are valid for distributing power
-        protected List<BlockFacing>receptionFaces; //what faces are valid for receiving power
+        protected int maxAmps = 1;    //how many packets that can move at once
+        protected int maxVolts = 16;  //how many volts it can handle before exploding
+        protected int Capacitance => capacitance;//how many packets it can store
+        protected int capacitance = 1;
+        //protected int cachedCapacitance = 0;
+        protected int Capacitor => capacitor;  //packets currently stored (the ints store the volts for each packet)
+        protected int capacitor = 0;
+        protected bool isOn = true;        //if it's not on it won't do any power processing
+        protected List<IElectricity> outputConnections; //what we are connected to output power
+        protected List<IElectricity> inputConnections; //what we are connected to receive power
+        protected List<IElectricity> usedconnections; //track if already traded with in a given turn (to prevent bouncing)
+        protected List<BlockFacing> distributionFaces; //what faces are valid for distributing power
+        protected List<BlockFacing> receptionFaces; //what faces are valid for receiving power
+        bool distributiontick = false;
         public int MaxAmps { get { return maxAmps; } }
         public int MaxVolts { get { return maxVolts; } }
 
-        public bool IsPowered { get { return IsOn&&capacitor>0; } }
+        public bool IsPowered { get { return IsOn && Capacitor > 0; } }
         public virtual bool IsOn { get { return isOn; } }
         protected bool notfirsttick = false;
         protected bool justswitched = false; //create a delay after the player switches power
@@ -37,17 +41,17 @@ namespace qptech.src
         public override void Initialize(ICoreAPI api)
         {
             base.Initialize(api);
-            
+
             //TODO need to load list of valid faces from the JSON for this stuff
             SetupIOFaces();
-                       
+
             if (outputConnections == null) { outputConnections = new List<IElectricity>(); }
             if (inputConnections == null) { inputConnections = new List<IElectricity>(); }
-            if (Block.Attributes == null) { api.World.Logger.Error("ERROR BEE INITIALIZE HAS NO BLOCK");return; }
+            if (Block.Attributes == null) { api.World.Logger.Error("ERROR BEE INITIALIZE HAS NO BLOCK"); return; }
             maxAmps = Block.Attributes["maxAmps"].AsInt(maxAmps);
             maxVolts = Block.Attributes["maxVolts"].AsInt(maxVolts);
-            capacitance = Block.Attributes["capacitance"].AsInt(capacitance);
-            
+            capacitance = Block.Attributes["capacitance"].AsInt(Capacitance);
+
             RegisterGameTickListener(OnTick, 75);
             notfirsttick = false;
         }
@@ -55,25 +59,25 @@ namespace qptech.src
         //attempt to load power distribution and reception faces from attributes, and orient them to this blocks face if necessary
         public virtual void SetupIOFaces()
         {
-             string[] cfaces= { };
-            
+            string[] cfaces = { };
+
             if (Block.Attributes == null)
             {
                 distributionFaces = BlockFacing.HORIZONTALS.ToList<BlockFacing>();
                 receptionFaces = BlockFacing.HORIZONTALS.ToList<BlockFacing>();
                 return;
             }
-            if (!Block.Attributes.KeyExists("receptionFaces")){ receptionFaces = BlockFacing.HORIZONTALS.ToList<BlockFacing>(); }
+            if (!Block.Attributes.KeyExists("receptionFaces")) { receptionFaces = BlockFacing.HORIZONTALS.ToList<BlockFacing>(); }
             else
             {
                 cfaces = Block.Attributes["receptionFaces"].AsArray<string>(cfaces);
                 receptionFaces = new List<BlockFacing>();
                 foreach (string f in cfaces)
                 {
-                    receptionFaces.Add(OrientFace(Block.Code.ToString(),BlockFacing.FromCode(f)));
+                    receptionFaces.Add(OrientFace(Block.Code.ToString(), BlockFacing.FromCode(f)));
                 }
             }
-            
+
             if (!Block.Attributes.KeyExists("distributionFaces")) { distributionFaces = BlockFacing.HORIZONTALS.ToList<BlockFacing>(); }
             else
             {
@@ -84,7 +88,7 @@ namespace qptech.src
                     distributionFaces.Add(OrientFace(Block.Code.ToString(), BlockFacing.FromCode(f)));
                 }
             }
-            
+
         }
         public virtual void FindConnections()
         {
@@ -95,13 +99,13 @@ namespace qptech.src
         protected virtual void FindInputConnections()
         {
             //BlockFacing probably has useful stuff to do this right
-            
+
             foreach (BlockFacing bf in receptionFaces)
             {
 
 
                 BlockPos bp = Pos.Copy().Offset(bf);
-                
+
                 BlockEntity checkblock = Api.World.BlockAccessor.GetBlockEntity(bp);
                 var bee = checkblock as IElectricity;
                 if (bee == null) { continue; }
@@ -113,7 +117,7 @@ namespace qptech.src
         protected virtual void FindOutputConnections()
         {
             //BlockFacing probably has useful stuff to do this right
-            
+
             foreach (BlockFacing bf in distributionFaces)
             {
                 BlockPos bp = Pos.Copy().Offset(bf);
@@ -126,13 +130,13 @@ namespace qptech.src
         }
 
         //Allow devices to connection to each other
-        
+
         //API
         public virtual bool TryInputConnection(IElectricity connectto)
         {
             if (inputConnections == null) { inputConnections = new List<IElectricity>(); }
             Vec3d vector = connectto.EBlock.Pos.ToVec3d() - Pos.ToVec3d();
-            BlockFacing bf = BlockFacing.FromVector(vector.X,vector.Y,vector.Z);
+            BlockFacing bf = BlockFacing.FromVector(vector.X, vector.Y, vector.Z);
             if (receptionFaces == null) { return false; }
             if (!receptionFaces.Contains(bf)) { return false; }
             if (!inputConnections.Contains(connectto)) { inputConnections.Add(connectto); MarkDirty(); }
@@ -161,7 +165,7 @@ namespace qptech.src
         public override void OnBlockBroken()
         {
             base.OnBlockBroken();
-            
+
             foreach (IElectricity bee in inputConnections) { bee.RemoveConnection(this); }
             foreach (IElectricity bee in outputConnections) { bee.RemoveConnection(this); }
         }
@@ -172,8 +176,13 @@ namespace qptech.src
                 FindConnections();
                 notfirsttick = true;
             }
-            if (isOn) { DistributePower(); }
-            usedconnections = new List<IElectricity>(); //clear record of connections for next tick
+
+            if (isOn && distributiontick) {
+                DistributePower();
+                //FlushCapacitorCache();
+                usedconnections = new List<IElectricity>(); //clear record of connections for next tick
+            }
+            distributiontick = !distributiontick;
             justswitched = false;
         }
 
@@ -181,11 +190,11 @@ namespace qptech.src
         {
             base.GetBlockInfo(forPlayer, dsc);
             dsc.AppendLine("   On:" + isOn.ToString());
-            dsc.AppendLine("Volts:"+MaxVolts.ToString()+"V");
-            dsc.AppendLine("Power:" + capacitor.ToString() + "/" + capacitance.ToString());
+            dsc.AppendLine("Volts:" + MaxVolts.ToString() + "V" + " Amps:" + maxAmps.ToString());
+            dsc.AppendLine("Power:" + Capacitor.ToString() + "/" + Capacitance.ToString());
             dsc.AppendLine("IN:" + inputConnections.Count.ToString() + " OUT:" + outputConnections.Count.ToString());
         }
-        
+
         //Used for other power devices to offer this device some energy returns how much power was used
         //API
         public virtual int ReceivePacketOffer(IElectricity from, int inVolt, int inAmp) //eg 2
@@ -193,53 +202,75 @@ namespace qptech.src
             if (usedconnections == null) { usedconnections = new List<IElectricity>(); }
             if (!isOn) { return 0; }//Not even on
             if (inVolt != maxVolts) { DoOverload(); return 0; }//Incompatible power - bad!
-            
-            if (capacitor>=capacitance) { return 0; }//already full
+            if (inAmp <= 0) { return 0; }
+            if (Capacitor >= Capacitance) { return 0; }//already full
             inAmp = Math.Min(inAmp, MaxAmps); //can only move a certain amount of amps - eg 2
-            int useamps = Math.Min(inAmp, capacitance - capacitor); //2
-            capacitor += useamps;//capacitor=2
+            int useamps = Math.Min(inAmp, Capacitance - Capacitor); //2
+            useamps = Math.Max(useamps, 0);
+            ChangeCapacitor(useamps);
+
             usedconnections.Add(from);
             if (useamps != 0) { MarkDirty(); }//not zero should be dirty
             return useamps;//return 2
         }
-        
+
         //Attempt to send out power (can be overridden for devices that only use power)
         public virtual void DistributePower()
         {
+            // bunch of checks to see if we can give power
+            if (Capacitor == 0) { return; }
             if (usedconnections == null) { usedconnections = new List<IElectricity>(); }
             if (!isOn) { return; } //can't generator power if off
-            
             if (outputConnections == null) { return; } //nothing hooked up
-            if (outputConnections.Count==0) { return; }
-            
-            int ampsMoved = 0;
-            //Build a list of power demands (want to send from highest demand to lowest)
-            //TODO could probably all be compressed in to one linq query
-            Dictionary<IElectricity,int> powerRequests = new Dictionary< IElectricity,int>();
+            if (outputConnections.Count == 0) { return; }
+
+            //figure out who needs power
+            List<IElectricity> tempconnections = new List<IElectricity>();
+            int powerreq = 0;
             foreach (IElectricity ie in outputConnections)
             {
-                if (ie == null) { continue; }
-                if (ie.EBlock == null) { continue; }
-                if (usedconnections.Contains(ie)) { continue; }
-                if (ie.NeedPower() > 0) { powerRequests.Add(ie, ie.NeedPower()); }
+                int np = ie.NeedPower();
+                if (np == 0) { continue; }
+                powerreq += np;
+                tempconnections.Add(ie);
             }
-            if (powerRequests.Count == 0) { return; }
-            var sortedDict = from entry in powerRequests orderby entry.Value descending select entry;
-
-            foreach (KeyValuePair<IElectricity,int>kvp in sortedDict)
+            if (powerreq == 0) { return; } //Don't need to distribute any power
+            bool gavepower = false;
+            //cap the powerrequest to our max amps, by the number of requests
+            powerreq = Math.Min(powerreq, tempconnections.Count * maxAmps);
+            //distribute what power we can
+            //If we have more power than is requested, just go through and give power
+            if (Capacitor >= powerreq)
             {
-                
-                if (capacitor == 0) { break; } //no power to give 
-                if (kvp.Key == null) { continue; }
-                //if (kvp.Value > capacitor) { continue; } //Connection has more power than me skip
-                if (usedconnections.Contains(kvp.Key)) { continue; } //already traded with this ie
-                int powerOffer = Math.Min(capacitor, MaxAmps); //offer as much as possible 
-                int powerUsed = kvp.Key.ReceivePacketOffer(this as IElectricity,MaxVolts, powerOffer);
-                ampsMoved += powerUsed;
-                capacitor -= powerUsed;
-                
+               foreach (IElectricity ie in tempconnections)
+                {
+                    int offer = ie.ReceivePacketOffer(this, MaxVolts, Math.Min(Capacitor, maxAmps));
+                    if (offer > 0) { ChangeCapacitor(-offer);gavepower=true; }
+                }
+               if (gavepower) { MarkDirty(true); }
+               return;
             }
-            if (ampsMoved != 0) { MarkDirty(); }
+
+            //Not enough power to go around, have to divide it up
+            int eachavail = Capacitor / tempconnections.Count;
+            int leftover = Capacitor % tempconnections.Count;//remainder
+            foreach (IElectricity ie in tempconnections)
+            {
+                int offer = ie.ReceivePacketOffer(this, MaxVolts, eachavail);
+                if (offer == 0) { continue; }
+                gavepower = true;
+                ChangeCapacitor(-offer);
+                if (leftover > 0)
+                {
+                    offer = ie.ReceivePacketOffer(this, MaxVolts, leftover);
+                    if (offer > 0)
+                    {
+                        leftover -= offer;
+                        ChangeCapacitor(-offer);
+                    }
+                }
+            }
+            if (gavepower) { MarkDirty(true); }
             
         }
         
@@ -271,7 +302,7 @@ namespace qptech.src
             int needs = 0;
             if (isOn)
             {
-                needs = capacitance - capacitor;
+                needs = Capacitance - Capacitor;
                 if (needs < 0) { needs = 0; }
                 needs = Math.Min(needs, MaxAmps);
             }
@@ -292,10 +323,27 @@ namespace qptech.src
         {
             base.ToTreeAttributes(tree);
             
-            tree.SetInt("capacitor", capacitor);
+            tree.SetInt("capacitor", Capacitor);
             tree.SetBool("isOn", isOn);
         }
-
+        public void ChangeCapacitor(int amt)
+        {
+           // if (distributiontick && amt > 0) { cachedCapacitance += amt; }
+           // else
+            //{
+                capacitor += amt;
+                
+            //}
+            capacitor = Math.Max(Capacitor, 0);
+            capacitor = Math.Min(Capacitance, Capacitor);
+        }
+        /*void FlushCapacitorCache()
+        {
+            capacitor += cachedCapacitance;
+            capacitor = Math.Max(Capacitor, 0);
+            capacitor = Math.Min(Capacitance, Capacitor);
+            cachedCapacitance = 0;
+        }*/
         //Take a block code (that ends in a cardinal direction) and a BlockFacing,
         //and rotate it, returning the appropriate blockfacing
         public static BlockFacing OrientFace(string checkBlockCode, BlockFacing toChange)
