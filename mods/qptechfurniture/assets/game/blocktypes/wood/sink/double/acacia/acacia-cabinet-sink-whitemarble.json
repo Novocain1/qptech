@@ -35,17 +35,15 @@
 		"kitchen": [ "*-north" ]
 	},
 	"replaceable": 900,
-	"resistance": 2,
+	"resistance": 1.5,
 	"maxStackSize": 1,
 	"lightAbsorption": 1,
 	"textures": {
-		"cabinet-detail": { "base": "block/wood/oak/cabinet-detail" },
 		"copper": { "base": "block/metal/copper" },
-		"countertop": { "base": "block/stone/whitemarble" },
-		"shinybrass": { "base": "block/metal/shinybrass" },
-		"cabinet-boreder": { "base": "block/wood/oak/cabinet-boreder" },
-		"countertop-border": { "base": "block/stone/whitemarble-boreder" },
-		"cabinet": { "base": "block/wood/oak/cabinet" }
+		"accessories": { "base": "block/stone/whitemarble/countertop" },
+		"lid": { "base": "block/stone/whitemarble/acacia" },
+		"sides2": { "base": "block/wood/acacia/cabinet" },
+		"cabinet-detail": { "base": "block/wood/acacia/cabinet-detail" }
 	},
 	"attributes": {
 		"partialAttachable": true,
@@ -72,60 +70,6 @@
 		"hit": "block/planks",
 		"break": "block/planks",
 		"walk": "walk/wood"
-	},
-	"selectionBox": {
-		"x1": 0,
-		"y1": 0,
-		"z1": 0,
-		"x2": 1,
-		"y2": 1,
-		"z2": 2
-	},
-	"collisionSelectionBoxesByType": {
-		"*-north": [
-			{
-				"x1": -1,
-				"y1": 0,
-				"z1": 0,
-				"x2": 1,
-				"y2": 1,
-				"z2": 1,
-				"rotateY": 0
-			}
-		],
-		"*-east": [
-			{
-				"x1": -1,
-				"y1": 0,
-				"z1": 0,
-				"x2": 1,
-				"y2": 1,
-				"z2": 1,
-				"rotateY": 270
-			}
-		],
-		"*-west": [
-			{
-				"x1": -1,
-				"y1": 0,
-				"z1": 0,
-				"x2": 1,
-				"y2": 1,
-				"z2": 1.0625,
-				"rotateY": 90
-			}
-		],
-		"*-south": [
-			{
-				"x1": -1,
-				"y1": 0,
-				"z1": 0,
-				"x2": 1,
-				"y2": 1,
-				"z2": 1,
-				"rotateY": 180
-			}
-		]
 	},
 	"materialDensity": 600,
 	"heldTpIdleAnimation": "holdbothhandslarge",
