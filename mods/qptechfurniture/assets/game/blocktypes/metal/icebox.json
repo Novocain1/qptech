@@ -1,63 +1,157 @@
 {
-	code: "freeze",
-	entityclass: "IceBox",
-	class: "BlockIceBox",
-	variantgroups: [
-		{code:"side","loadFromProperties":"abstract/horizontalorientation"}
+	"code": "oldbox",
+	"class": "BlockGenericTypedContainer",
+	"entityclass": "GenericTypedContainer",
+	"maxStackSize": 1,
+	"attributes": {
+		"partialAttachable": true,
+		"useIce": true,
+		"useIceCounter": 2,
+		"preserveBonus": 0.5,
+		"inventoryClassName": "chest",
+		"defaultType": "old-ice-box",
+		"types": [
+
+			"old-ice-box"
+		],
+		"rotatatableInterval": {
+			"old-ice-box": "22.5degnot45deg"
+		},
+		"drop": {
+			"old-ice-box": true
+		},
+		"quantitySlots": {
+			"old-ice-box": 6
+		},
+		"dialogTitleLangCode": {
+			"old-ice-box": "Old Ice Box"
+		},
+		"storageType": {
+			"old-ice-box": 189
+		},
+		"retrieveOnly": {
+			"old-ice-box": false
+		},
+		"shape": {
+			"old-ice-box": "block/metal/freeze/icebox"
+		},
+		"typedOpenSound": {
+			"old-ice-box": "game:sounds/block/cokeovendoor-open"
+		},
+		"typedCloseSound": {
+			"old-ice-box": "game:sounds/block/cokeovendoor-close"
+		},
+		"variantByGroup": "side",
+		"variantByGroupInventory": null
+	},
+	"behaviors": [
+		{ "name": "Lockable" },
+		{ "name": "Container" }
 	],
-	attributes: {
-		partialAttachable: true,
-		useIce: true,
-		useIceCounter: 2,
-		preserveBonus: 0.5,
-		inventoryClassName: "chest",
-		types: ["normal-generic"],
-		quantitySlots: {"normal-generic": 5},
-		storageType: {"normal-generic": 169},
-		dialogTitleLangCode: {"normal-generic": "Ice Chest"},
-		typedOpenSound: {"normal-generic": "sounds/block/largechestopen"},
-		typedCloseSound: {"normal-generic": "sounds/block/largechestclose"}
-	},
-	behaviors: [{name: "Lockable" }, {name: "Container"},{name:"HorizontalOrientable",properties:{"dropBlockFace":"east"}}],
-  creativeinventory: { "general": ["*-east"], "decorative": ["*-east"], "kitchen": ["*-east"]},
-	blockmaterial: "Metal",
-	shapeInventory: { base: "block/metal/itemhatch", "rotateY": 270},
-		"shapeByType": {
-			"*-north": {
-				"base": "block/metal/itemhatch",
-				"rotateY": 0
-			},
-			"*-east": {
-				"base": "block/metal/itemhatch",
-				"rotateY": 270
-			},
-			"*-west": {
-				"base": "block/metal/itemhatch",
-				"rotateY": 90
-			},
-			"*-south": {
-				"base": "block/metal/itemhatch",
-				"rotateY": 180
+	"entityBehaviors": [ { "name": "Animatable" } ],
+	"variantgroups": [
+		{
+			"code": "side",
+			"loadFromProperties": "abstract/horizontalorientation"
+		}
+	],
+	"creativeinventory": {},
+	"creativeinventoryStacksByType": {
+		"*-east": [
+			{
+				"tabs": [ "general", "decorative", "kitchen" ],
+				"stacks": [
+					{
+						"type": "block",
+						"code": "oldbox-east",
+						"attributes": { "type": "old-ice-box" }
+					}
+				]
 			}
+		]
+	},
+	"heldTpIdleAnimation": "holdunderarm",
+	"shapeInventory": {
+		"base": "block/metal/freeze/icebox",
+		"rotateY": 270
+	},
+	"shapeByType": {
+		"*-north": {
+			"base": "block/metal/freeze/icebox",
+			"rotateY": 0
 		},
-	drawtype: "json",
-	texturesByType: {
-		"*": {
-			all: { base: "block/metal/machinery-tin" },
+		"*-east": {
+			"base": "block/metal/freeze/icebox",
+			"rotateY": 270
 		},
+		"*-west": {
+			"base": "block/metal/freeze/icebox",
+			"rotateY": 90
+		},
+		"*-south": {
+			"base": "block/metal/freeze/icebox",
+			"rotateY": 180
+		}
 	},
-	resistance: 1,
-	sideopaque: {
-		all: false
+	"_Icebox": "Texture go here later",
+	"textures": {
 	},
-
-	sounds: {
-		"place": "game:block/anvil",
-		"walk": "game:walk/stone"
+	"blockmaterial": "Metal",
+	"replaceable": 900,
+	"resistance": 3,
+	"lightAbsorption": 0,
+	"sideAo": { "all": false },
+	"sidesolid": {
+		"all": false
 	},
-	guiTransform: {
-		origin: { x: 0.5, y: 0.5, z: 0.5 },
-		scale: 1
+	"sideopaque": {
+		"all": false
+	},
+	"combustibleProps": {
+		"burnTemperature": 600,
+		"burnDuration": 35
+	},
+	"sounds": {
+		"place": "game:block/heavyice",
+		"hit": "game:block/chute",
+		"break": "game:block/anvil1",
+		"walk": "game:tool/breakreinforced"
+	},
+	"materialDensity": 600,
+	"tpHandTransform": {
+		"translation": {
+			"x": -2,
+			"y": -0.5,
+			"z": -1
+		},
+		"rotation": {
+			"x": 0,
+			"y": 180,
+			"z": 0
+		},
+		"origin": {
+			"x": 0.7,
+			"y": 0.4,
+			"z": 0.6
+		},
+		"scale": 0.31
+	},
+	"guiTransform": {
+		"translation": {
+			"x": 0,
+			"y": 3,
+			"z": 0
+		},
+		"rotation": {
+			"x": -22.6,
+			"y": -55,
+			"z": 0
+		},
+		"origin": {
+			"x": 0.5,
+			"y": 0.4,
+			"z": 0.5
+		},
+		"scale": 1.03
 	}
-
 }

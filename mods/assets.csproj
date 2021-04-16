@@ -40,6 +40,8 @@
     <None Include="qptechfurniture\assets\game\recipes.zip" />
     <None Include="qptechfurniture\assets\game\shapes\block\metal\castironoven.json" />
     <None Include="qptechfurniture\assets\game\shapes\block\metal\castironovenlarge.json" />
+    <None Include="qptechfurniture\assets\game\shapes\block\metal\freeze\icebox-top.json" />
+    <None Include="qptechfurniture\assets\game\shapes\block\metal\freeze\icebox.json" />
     <None Include="qptechfurniture\assets\game\shapes\block\metal\itemhatch.json" />
     <None Include="qptechfurniture\assets\game\shapes\block\metal\smelter-furnace-closed.json" />
     <None Include="qptechfurniture\assets\game\shapes\block\wood\BlockLantern.json" />
