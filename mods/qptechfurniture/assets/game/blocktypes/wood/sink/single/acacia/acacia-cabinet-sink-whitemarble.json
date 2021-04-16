@@ -39,17 +39,15 @@
 	"maxStackSize": 1,
 	"lightAbsorption": 1,
 	"textures": {
-		"cabinet-detail": { "base": "block/wood/acacia/cabinet-detail" },
 		"copper": { "base": "block/metal/copper" },
-		"countertop": { "base": "block/stone/whitemarble" },
-		"shinybrass": { "base": "block/metal/shinybrass" },
-		"cabinet-boreder": { "base": "block/wood/acacia/cabinet-boreder" },
-		"countertop-border": { "base": "block/stone/whitemarble-boreder" },
-		"cabinet": { "base": "block/wood/acacia/cabinet" }
+		"accessories": { "base": "block/stone/whitemarble/countertop" },
+		"lid": { "base": "block/stone/whitemarble/acacia" },
+		"sides2": { "base": "block/wood/acacia/cabinet" },
+		"cabinet-detail": { "base": "block/wood/acacia/cabinet-detail" }
 	},
 	"attributes": {
 		"partialAttachable": true,
-		"capacityLitres": 50
+		"capacityLitres": 30
 	},
 	"sideao": {
 		"all": false

@@ -5,35 +5,88 @@
 	"maxStackSize": 1,
 	"attributes": {
 		"partialAttachable": true,
-		"inventoryClassName": "chest",
+		"inventoryClassName": "upper",
 		"defaultType": "acacia-cabinet",
-		"types": [ "acacia-cabinet" ],
+		"types": [
+			"oak-cabinet",
+			"oak-cabinet-halfplane-1",
+			"acacia-cabinet",
+			"acacia-cabinet-halfplane-1",
+			"maple-cabinet",
+			"maple-cabinet-halfplane-1"
+		],
 		"rotatatableInterval": {
-			"acacia-cabinet": "22.5degnot45deg"
+			"oak-cabinet": "22.5degnot45deg",
+			"oak-cabinet-halfplane-1": "22.5degnot45deg",
+			"acacia-cabinet": "22.5degnot45deg",
+			"acacia-cabinet-halfplane-1": "22.5degnot45deg",
+			"maple-cabinet": "22.5degnot45deg",
+			"maple-cabinet-halfplane-1": "22.5degnot45deg"
 		},
 		"drop": {
-			"acacia-cabinet": true
+			"oak-cabinet": true,
+			"oak-cabinet-halfplane-1": true,
+			"acacia-cabinet": true,
+			"acacia-cabinet-halfplane-1": true,
+			"maple-cabinet": true,
+			"maple-cabinet-halfplane-1": true
 		},
 		"quantitySlots": {
-			"acacia-cabinet": 10
+			"oak-cabinet": 10,
+			"oak-cabinet-halfplain-1": 10,
+			"acacia-cabinet": 10,
+			"acacia-cabinet-halfplain-1": 10,
+			"maple-cabinet": 10,
+			"maple-cabinet-halfplain-1": 10
 		},
 		"dialogTitleLangCode": {
-			"acacia-cabinet": "Upper Kitchen Cabinet"
+			"oak-cabinet": "Upper Kitchen Cabinet",
+			"oak-cabinet-halfplain-1": "Upper Kitchen Cabinet",
+			"acacia-cabinet": "Upper Kitchen Cabinet",
+			"acacia-cabinet-halfplain-1": "Middle Kitchen Cabinet",
+			"maple-cabinet": "Upper Kitchen Cabinet",
+			"maple-cabinet-halfplain-1": "Upper Kitchen Cabinet"
 		},
 		"storageType": {
-			"acacia-cabinet": 150
+			"oak-cabinet": 189,
+			"oak-cabinet-halfplain-1": 189,
+			"acacia-cabinet": 189,
+			"acacia-cabinet-halfplain-1": 189,
+			"maple-cabinet": 189,
+			"maple-cabinet-halfplain-1": 189
 		},
 		"retrieveOnly": {
-			"acacia-cabinet": false
+			"oak-cabinet": false,
+			"oak-cabinet-halfplain-1": false,
+			"acacia-cabinet": false,
+			"acacia-cabinet-halfplain-1": false,
+			"maple-cabinet": false,
+			"maple-cabinet-halfplain-1": false
 		},
 		"shape": {
-			"acacia-cabinet": "block/wood/cabinet/upper/cabinet-normal"
+			"oak-cabinet": "block/wood/cabinet/upper/oak/cabinet-normal",
+			"oak-cabinet-halfplain-1": "block/wood/cabinet/upper/oak/glass/halfplain/cabinet-normal",
+			"acacia-cabinet": "block/wood/cabinet/upper/acacia/cabinet-normal",
+			"acacia-cabinet-halfplain-1": "block/wood/cabinet/upper/acacia/glass/halfplain/cabinet-normal",
+			"maple-cabinet": "block/wood/cabinet/upper/maple/cabinet-normal",
+			"maple-cabinet-halfplain-1": "block/wood/cabinet/upper/maple/glass/halfplain/cabinet-normal"
 		},
 		"typedOpenSound": {
-			"acacia-cabinet": "sounds/block/largechestopen"
+			"oak-cabinet": "game:sounds/block/largechestopen",
+			"oak-cabinet-halfplain-1": "game:sounds/block/largechestopen",
+			"acacia-cabinet": "game:sounds/block/largechestopen",
+			"acacia-cabinet-halfplain-1": "game:sounds/block/largechestopen",
+			"maple-cabinet": "game:sounds/block/largechestopen",
+			"maple-cabinet-halfplain-1": "game:sounds/block/largechestopen"
 		},
 		"typedCloseSound": {
-			"acacia-cabinet": "sounds/block/largechestclose"
+
+			"oak-cabinet": "game:sounds/block/largechestclose",
+			"oak-cabinet-halfplain-1": "game:sounds/block/largechestclose",
+			"acacia-cabinet": "game:sounds/block/largechestclose",
+			"acacia-cabinet-halfplain-1": "game:sounds/block/largechestclose",
+			"maple-cabinet": "game:sounds/block/largechestclose",
+			"maple-cabinet-halfplain-1": "game:sounds/block/largechestclose"
 		},
 		"variantByGroup": "side",
 		"variantByGroupInventory": null
@@ -57,8 +110,33 @@
 				"stacks": [
 					{
 						"type": "block",
-						"code": "upper-east",
+						"code": "Upper-east",
+						"attributes": { "type": "oak-cabinet" }
+					},
+					{
+						"type": "block",
+						"code": "Upper-east",
+						"attributes": { "type": "oak-cabinet-halfplain-1" }
+					},
+					{
+						"type": "block",
+						"code": "Upper-east",
 						"attributes": { "type": "acacia-cabinet" }
+					},
+					{
+						"type": "block",
+						"code": "Upper-east",
+						"attributes": { "type": "acacia-cabinet-halfplain-1" }
+					},
+					{
+						"type": "block",
+						"code": "Upper-east",
+						"attributes": { "type": "maple-cabinet" }
+					},
+					{
+						"type": "block",
+						"code": "Upper-east",
+						"attributes": { "type": "maple-cabinet-halfplain-1" }
 					}
 				]
 			}
@@ -89,10 +167,40 @@
 	},
 	"_comment": "Must declare textures so they get added to the block texture atlas",
 	"textures": {
-		"acacia-cabinet-cabinet": { "base": "block/wood/acacia/cabinet" },
-		"acacia-cabinet-shinybrass": { "base": "block/metal/shinybrass" },
-		"acacia-cabinet-cabinet-boreder": { "base": "block/wood/acacia/cabinet-boreder" },
-		"acacia-cabinet-cabinet-detail": { "base": "block/wood/acacia/cabinet-detail" }
+
+		"oak-cabinet-accessories": { "base": "block/wood/oak/countertop" },
+		"oak-cabinet-lid": { "base": "block/wood/oak/detail" },
+		"oak-cabinet-sides2": { "base": "block/wood/oak/cabinet" },
+		"oak-cabinet-cabinet-detail": { "base": "block/wood/oak/cabinet-detail" },
+
+		"oak-cabinet-halfplain-1-accessories": { "base": "block/wood/oak/countertop" },
+		"oak-cabinet-halfplain-1-lid": { "base": "block/wood/oak/detail" },
+		"oak-cabinet-halfplain-1-sides2": { "base": "block/wood/oak/cabinet" },
+		"oak-cabinet-halfplain-1-cabinet-detail": { "base": "block/wood/oak/cabinet-detail" },
+		"oak-cabinet-halfplain-1-leadedhaft": { "base": "block/glass/leadedhaft" },
+
+		"acacia-cabinet-accessories": { "base": "block/wood/acacia/countertop" },
+		"acacia-cabinet-lid": { "base": "block/wood/acacia/detail" },
+		"acacia-cabinet-sides2": { "base": "block/wood/acacia/cabinet" },
+		"acacia-cabinet-cabinet-detail": { "base": "block/wood/acacia/cabinet-detail" },
+
+		"acacia-cabinet-halfplain-1-accessories": { "base": "block/wood/acacia/countertop" },
+		"acacia-cabinet-halfplain-1-lid": { "base": "block/wood/acacia/detail" },
+		"acacia-cabinet-halfplain-1-sides2": { "base": "block/wood/acacia/cabinet" },
+		"acacia-cabinet-halfplain-1-cabinet-detail": { "base": "block/wood/acacia/cabinet-detail" },
+		"acacia-cabinet-halfplain-1-leadedhaft": { "base": "block/glass/leadedhaft" },
+
+		"maple-cabinet-accessories": { "base": "block/wood/maple/countertop" },
+		"maple-cabinet-lid": { "base": "block/wood/maple/detail" },
+		"maple-cabinet-sides2": { "base": "block/wood/maple/cabinet" },
+		"maple-cabinet-cabinet-detail": { "base": "block/wood/maple/cabinet-detail" },
+
+		"maple-cabinet-halfplain-1-accessories": { "base": "block/wood/maple/countertop" },
+		"maple-cabinet-halfplain-1-lid": { "base": "block/wood/maple/detail" },
+		"maple-cabinet-halfplain-1-sides2": { "base": "block/wood/maple/cabinet" },
+		"maple-cabinet-halfplain-1-cabinet-detail": { "base": "block/wood/maple/cabinet-detail" },
+		"maple-cabinet-halfplain-1-leadedhaft": { "base": "block/glass/leadedhaft" }
+
 	},
 	"blockmaterial": "Wood",
 	"replaceable": 900,
@@ -104,12 +212,6 @@
 	},
 	"sideopaque": {
 		"all": false
-	},
-	"collisionbox": {
-
-	},
-	"selectionbox": {
-
 	},
 	"combustibleProps": {
 		"burnTemperature": 600,

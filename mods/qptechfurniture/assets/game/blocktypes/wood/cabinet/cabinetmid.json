@@ -6,7 +6,7 @@
 	"attributes": {
 		"partialAttachable": true,
 		"inventoryClassName": "middle",
-		"defaultType": "oak-cabinet",
+		"defaultType": "acacia-cabinet",
 		"types": [
 			"oak-cabinet",
 			"oak-cabinet-halfplane-1",
@@ -72,21 +72,21 @@
 			"maple-cabinet-halfplain-1": "block/wood/cabinet/middle/maple/glass/halfplain/cabinet-normal"
 		},
 		"typedOpenSound": {
-			"oak-cabinet": "sounds/block/largechestopen",
-			"oak-cabinet-halfplain-1": "sounds/block/largechestopen",
-			"acacia-cabinet": "sounds/block/largechestopen",
-			"acacia-cabinet-halfplain-1": "sounds/block/largechestopen",
-			"maple-cabinet": "sounds/block/largechestopen",
-			"maple-cabinet-halfplain-1": "sounds/block/largechestopen"
+			"oak-cabinet": "game:sounds/block/largechestopen",
+			"oak-cabinet-halfplain-1": "game:sounds/block/largechestopen",
+			"acacia-cabinet": "game:sounds/block/largechestopen",
+			"acacia-cabinet-halfplain-1": "game:sounds/block/largechestopen",
+			"maple-cabinet": "game:sounds/block/largechestopen",
+			"maple-cabinet-halfplain-1": "game:sounds/block/largechestopen"
 		},
 		"typedCloseSound": {
 
-			"oak-cabinet": "sounds/block/largechestclose",
-			"oak-cabinet-halfplain-1": "sounds/block/largechestclose",
-			"acacia-cabinet": "sounds/block/largechestclose",
-			"acacia-cabinet-halfplain-1": "sounds/block/largechestclose",
-			"maple-cabinet": "sounds/block/largechestclose",
-			"maple-cabinet-halfplain-1": "sounds/block/largechestclose"
+			"oak-cabinet": "game:sounds/block/largechestclose",
+			"oak-cabinet-halfplain-1": "game:sounds/block/largechestclose",
+			"acacia-cabinet": "game:sounds/block/largechestclose",
+			"acacia-cabinet-halfplain-1": "game:sounds/block/largechestclose",
+			"maple-cabinet": "game:sounds/block/largechestclose",
+			"maple-cabinet-halfplain-1": "game:sounds/block/largechestclose"
 		},
 		"variantByGroup": "side",
 		"variantByGroupInventory": null
@@ -144,62 +144,56 @@
 	},
 	"heldTpIdleAnimation": "holdunderarm",
 	"shapeInventory": {
-		"base": "block/wood/cabinet/middle/oak/cabinet-normal",
+		"base": "block/wood/cabinet/middle/cabinet-normal",
 		"rotateY": 270
 	},
 	"shapeByType": {
 		"*-north": {
-			"base": "block/wood/cabinet/middle/oak/cabinet-normal",
+			"base": "block/wood/cabinet/middle/cabinet-normal",
 			"rotateY": 0
 		},
 		"*-east": {
-			"base": "block/wood/cabinet/middle/oak/cabinet-normal",
+			"base": "block/wood/cabinet/middle/cabinet-normal",
 			"rotateY": 270
 		},
 		"*-west": {
-			"base": "block/wood/cabinet/middle/oak/cabinet-normal",
+			"base": "block/wood/cabinet/middle/cabinet-normal",
 			"rotateY": 90
 		},
 		"*-south": {
-			"base": "block/wood/cabinet/middle/oak/cabinet-normal",
+			"base": "block/wood/cabinet/middle/cabinet-normal",
 			"rotateY": 180
 		}
 	},
 	"_comment": "Must declare textures so they get added to the block texture atlas",
 	"textures": {
-		"oak-cabinet-cabinet": { "base": "block/wood/oak/cabinet" },
-		"oak-cabinet-shinybrass": { "base": "block/metal/shinybrass" },
-		"oak-cabinet-cabinet-boreder": { "base": "block/wood/oak/cabinet-boreder" },
+
+		"oak-cabinet-lid": { "base": "block/wood/oak/detail" },
+		"oak-cabinet-sides2": { "base": "block/wood/oak/cabinet" },
 		"oak-cabinet-cabinet-detail": { "base": "block/wood/oak/cabinet-detail" },
 
-		"oak-cabinet-halfplain-1-cabinet": { "base": "block/wood/oak/cabinet" },
-		"oak-cabinet-halfplain-1-shinybrass": { "base": "block/metal/shinybrass" },
-		"oak-cabinet-halfplain-1-cabinet-boreder": { "base": "block/wood/oak/cabinet-boreder" },
+		"oak-cabinet-halfplain-1-lid": { "base": "block/wood/oak/detail" },
+		"oak-cabinet-halfplain-1-sides2": { "base": "block/wood/oak/cabinet" },
 		"oak-cabinet-halfplain-1-cabinet-detail": { "base": "block/wood/oak/cabinet-detail" },
 		"oak-cabinet-halfplain-1-leadedhaft": { "base": "block/glass/leadedhaft" },
 
-		"acacia-cabinet-cabinet": { "base": "block/wood/acacia/cabinet" },
-		"acacia-cabinet-shinybrass": { "base": "block/metal/shinybrass" },
-		"acacia-cabinet-cabinet-boreder": { "base": "block/wood/acacia/cabinet-boreder" },
+		"acacia-cabinet-lid": { "base": "block/wood/acacia/detail" },
+		"acacia-cabinet-sides2": { "base": "block/wood/acacia/cabinet" },
 		"acacia-cabinet-cabinet-detail": { "base": "block/wood/acacia/cabinet-detail" },
 
-		"acacia-cabinet-halfplain-1-cabinet": { "base": "block/wood/acacia/cabinet" },
-		"acacia-cabinet-halfplain-1-shinybrass": { "base": "block/metal/shinybrass" },
-		"acacia-cabinet-halfplain-1-cabinet-boreder": { "base": "block/wood/acacia/cabinet-boreder" },
+		"acacia-cabinet-halfplain-1-lid": { "base": "block/wood/acacia/detail" },
+		"acacia-cabinet-halfplain-1-sides2": { "base": "block/wood/acacia/cabinet" },
 		"acacia-cabinet-halfplain-1-cabinet-detail": { "base": "block/wood/acacia/cabinet-detail" },
 		"acacia-cabinet-halfplain-1-leadedhaft": { "base": "block/glass/leadedhaft" },
 
-		"maple-cabinet-cabinet": { "base": "block/wood/maple/cabinet" },
-		"maple-cabinet-shinybrass": { "base": "block/metal/shinybrass" },
-		"maple-cabinet-cabinet-boreder": { "base": "block/wood/maple/cabinet-boreder" },
+		"maple-cabinet-lid": { "base": "block/wood/maple/detail" },
+		"maple-cabinet-sides2": { "base": "block/wood/maple/cabinet" },
 		"maple-cabinet-cabinet-detail": { "base": "block/wood/maple/cabinet-detail" },
 
-		"maple-cabinet-halfplain-1-cabinet": { "base": "block/wood/maple/cabinet" },
-		"maple-cabinet-halfplain-1-shinybrass": { "base": "block/metal/shinybrass" },
-		"maple-cabinet-halfplain-1-cabinet-boreder": { "base": "block/wood/maple/cabinet-boreder" },
+		"maple-cabinet-halfplain-1-lid": { "base": "block/wood/maple/detail" },
+		"maple-cabinet-halfplain-1-sides2": { "base": "block/wood/maple/cabinet" },
 		"maple-cabinet-halfplain-1-cabinet-detail": { "base": "block/wood/maple/cabinet-detail" },
 		"maple-cabinet-halfplain-1-leadedhaft": { "base": "block/glass/leadedhaft" }
-
 	},
 	"blockmaterial": "Wood",
 	"replaceable": 900,

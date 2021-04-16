@@ -39,13 +39,11 @@
 	"maxStackSize": 1,
 	"lightAbsorption": 1,
 	"textures": {
-		"cabinet-detail": { "base": "block/wood/maple/cabinet-detail" },
+		"sides2": { "base": "block/wood/maple/cabinet" },
 		"copper": { "base": "block/metal/copper" },
-		"countertop": { "base": "block/stone/shale" },
-		"shinybrass": { "base": "block/metal/shinybrass" },
-		"cabinet-boreder": { "base": "block/wood/maple/cabinet-boreder" },
-		"countertop-border": { "base": "block/stone/shale-boreder" },
-		"cabinet": { "base": "block/wood/maple/cabinet" }
+		"accessories": { "base": "block/stone/shale/countertop" },
+		"lid": { "base": "block/stone/shale/maple" },
+		"cabinet-detail": { "base": "block/wood/maple/cabinet-detail" }
 	},
 	"attributes": {
 		"partialAttachable": true,
