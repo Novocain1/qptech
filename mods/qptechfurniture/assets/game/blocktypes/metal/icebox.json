@@ -12,34 +12,44 @@
 		"defaultType": "old-ice-box",
 		"types": [
 
-			"old-ice-box"
+			"old-ice-box",
+			"old-ice-box-med"
 		],
 		"rotatatableInterval": {
-			"old-ice-box": "22.5degnot45deg"
+			"old-ice-box": "22.5degnot45deg",
+			"old-ice-box-med": "22.5degnot45deg"
 		},
 		"drop": {
-			"old-ice-box": true
+			"old-ice-box": true,
+			"old-ice-box-med": true
 		},
 		"quantitySlots": {
-			"old-ice-box": 6
+			"old-ice-box": 6,
+			"old-ice-box-med": 12
 		},
 		"dialogTitleLangCode": {
-			"old-ice-box": "Old Ice Box"
+			"old-ice-box": "Old Ice Box",
+			"old-ice-box-med": "Old Ice Box"
 		},
 		"storageType": {
-			"old-ice-box": 189
+			"old-ice-box": 189,
+			"old-ice-box-med": 189
 		},
 		"retrieveOnly": {
-			"old-ice-box": false
+			"old-ice-box": false,
+			"old-ice-box-med": false
 		},
 		"shape": {
-			"old-ice-box": "block/metal/freeze/icebox"
+			"old-ice-box": "block/metal/freeze/icebox",
+			"old-ice-box-med": "block/metal/freeze/icebox-med"
 		},
 		"typedOpenSound": {
-			"old-ice-box": "game:sounds/block/cokeovendoor-open"
+			"old-ice-box": "game:sounds/block/cokeovendoor-open",
+			"old-ice-box-med": "game:sounds/block/cokeovendoor-open"
 		},
 		"typedCloseSound": {
-			"old-ice-box": "game:sounds/block/cokeovendoor-close"
+			"old-ice-box": "game:sounds/block/cokeovendoor-close",
+			"old-ice-box-med": "game:sounds/block/cokeovendoor-close"
 		},
 		"variantByGroup": "side",
 		"variantByGroupInventory": null
@@ -65,6 +75,11 @@
 						"type": "block",
 						"code": "oldbox-east",
 						"attributes": { "type": "old-ice-box" }
+					},
+					{
+						"type": "block",
+						"code": "oldbox-east",
+						"attributes": { "type": "old-ice-box-med" }
 					}
 				]
 			}
