@@ -19,7 +19,7 @@
   <ItemGroup>
     <None Include="qptechapi\modinfo.json" />
     <None Include="qptechfurniture\assets\game\blocktypes.zip" />
-    <None Include="qptechfurniture\assets\game\blocktypes\metal\icebox.json" />
+    <None Include="qptechfurniture\assets\game\blocktypes\metal\iceboxs.json" />
     <None Include="qptechfurniture\assets\game\blocktypes\wood\cabinet\cabinetlower.json" />
     <None Include="qptechfurniture\assets\game\blocktypes\wood\cabinet\cabinetmid.json" />
     <None Include="qptechfurniture\assets\game\blocktypes\wood\cabinet\cabinetupper.json" />
@@ -40,8 +40,13 @@
     <None Include="qptechfurniture\assets\game\recipes.zip" />
     <None Include="qptechfurniture\assets\game\shapes\block\metal\castironoven.json" />
     <None Include="qptechfurniture\assets\game\shapes\block\metal\castironovenlarge.json" />
+    <None Include="qptechfurniture\assets\game\shapes\block\metal\freeze\acacia-icebox-small.json" />
+    <None Include="qptechfurniture\assets\game\shapes\block\metal\freeze\icebox-big.json" />
+    <None Include="qptechfurniture\assets\game\shapes\block\metal\freeze\icebox-middle.json" />
+    <None Include="qptechfurniture\assets\game\shapes\block\metal\freeze\icebox-small.json" />
     <None Include="qptechfurniture\assets\game\shapes\block\metal\freeze\icebox-top.json" />
-    <None Include="qptechfurniture\assets\game\shapes\block\metal\freeze\icebox.json" />
+    <None Include="qptechfurniture\assets\game\shapes\block\metal\freeze\maple-icebox-small.json" />
+    <None Include="qptechfurniture\assets\game\shapes\block\metal\freeze\oak-icebox-small.json" />
     <None Include="qptechfurniture\assets\game\shapes\block\metal\itemhatch.json" />
     <None Include="qptechfurniture\assets\game\shapes\block\metal\smelter-furnace-closed.json" />
     <None Include="qptechfurniture\assets\game\shapes\block\wood\BlockLantern.json" />
@@ -118,6 +123,13 @@
     <None Include="qptechfurniture\assets\game\shapes\block\wood\sink\single\empty.json" />
     <None Include="qptechfurniture\assets\game\textures\block\stone\outlinebox.aseprite" />
     <None Include="qptechfurniture\assets\game\textures\block\stone\texture-border.aseprite" />
+    <None Include="qptechfurniture\assets\game\textures\block\wood\detail.aseprite" />
+    <None Include="qptechfurniture\assets\game\textures\block\wood\raw\countertop-boreder.aseprite" />
+    <None Include="qptechfurniture\assets\game\textures\block\wood\raw\countertop.aseprite" />
+    <None Include="qptechfurniture\assets\game\textures\block\wood\raw\detail.aseprite" />
+    <None Include="qptechfurniture\assets\game\textures\block\wood\raw\Maple.aseprite" />
+    <None Include="qptechfurniture\assets\game\textures\block\wood\raw\oak-boreder.aseprite" />
+    <None Include="qptechfurniture\assets\game\textures\block\wood\raw\oak.aseprite" />
     <None Include="qptechweapons\assets\game\entities\ball.json" />
     <None Include="qptechweapons\assets\game\itemtypes\tool\ball.json" />
     <None Include="qptechweapons\assets\game\itemtypes\tool\slingshot.json" />
@@ -244,8 +256,10 @@
     <Content Include="qptechfurniture\assets\game\textures\block\metal\castiron.png" />
     <Content Include="qptechfurniture\assets\game\textures\block\metal\copper.png" />
     <Content Include="qptechfurniture\assets\game\textures\block\metal\iron.png" />
+    <Content Include="qptechfurniture\assets\game\textures\block\metal\lead.png" />
     <Content Include="qptechfurniture\assets\game\textures\block\metal\machinery-tin.png" />
     <Content Include="qptechfurniture\assets\game\textures\block\metal\shinybrass.png" />
+    <Content Include="qptechfurniture\assets\game\textures\block\metal\tin.png" />
     <Content Include="qptechfurniture\assets\game\textures\block\stone\andesite1.png" />
     <Content Include="qptechfurniture\assets\game\textures\block\stone\basalt1.png" />
     <Content Include="qptechfurniture\assets\game\textures\block\stone\chalk1.png" />
@@ -282,6 +296,8 @@
     <Content Include="qptechfurniture\assets\game\textures\block\wood\oak\cabinet.png" />
     <Content Include="qptechfurniture\assets\game\textures\block\wood\oak\countertop.png" />
     <Content Include="qptechfurniture\assets\game\textures\block\wood\oak\detail.png" />
+    <Content Include="qptechfurniture\assets\game\textures\block\wood\raw\oak1.png" />
+    <Content Include="qptechfurniture\assets\game\textures\block\wood\raw\wood-overlay.png" />
     <Content Include="qptechweapons\assets\game\shapes\item\tool\slingshot\Slingshot.png" />
     <Content Include="qptech\assets\game\sounds\doorslide.ogg" />
     <Content Include="qptech\assets\game\sounds\electriczap.ogg" />

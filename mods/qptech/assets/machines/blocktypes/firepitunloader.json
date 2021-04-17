@@ -9,16 +9,15 @@
 	drawtype: "json",
 	shape: { "base":"block/firepit-unloader"},
 	resistance: 1,
-	sidesolid: {
-		horizontals: "false",
-		down: "false",
-		up: "true"
+	"sidesolid": {
+		"horizontals": false,
+		"down": false,
+		"up": true
 	},
-	
-	sideopaque: {
-		all: "false"
+	"sideAo": { "all": false },
+	"sideopaque": {
+		"all": false
 	},
-
 	sounds: {
 		"place": "game:block/anvil",
 		"walk": "game:walk/stone"

@@ -12,14 +12,9 @@
 		}
 	],
 	"blockmaterial": "Metal",
-	"drawtype": "json",
-
-
+	"drawtype": "BlockLayer_7",
 	"shape": { "base": "block/element-{status}" },
-
 	"resistance": 1,
-
-
 	"sounds": {
 		"place": "game:block/anvil",
 		"walk": "game:walk/stone"

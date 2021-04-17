@@ -51,10 +51,13 @@
 		}
 	},
 	"resistance": 1,
+	"sideAo": { "all": false },
+	"sidesolid": {
+		"all": false
+	},
 	"sideopaque": {
 		"all": false
 	},
-
 	"sounds": {
 		"place": "game:block/anvil",
 		"walk": "game:walk/stone"
