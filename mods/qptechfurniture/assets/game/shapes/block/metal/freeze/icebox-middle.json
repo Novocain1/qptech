@@ -404,6 +404,7 @@
 					"name": "Lid",
 					"from": [ 0.0, 14.0, 0.0 ], 
 					"to": [ 16.0, 14.5, 13.0 ], 
+					"renderInEditor": false,
 					"rotationOrigin": [ 0.0, 14.0, 0.0 ],
 					"faces": {
 						"north": { "texture": "#lid", "uv": [ 0.0, 13.5, 16.0, 16.0 ], "autoUv": false },
@@ -580,7 +581,7 @@
 					"name": "Wood Bar 2",
 					"from": [ -6.7, 3.0, 1.5 ], 
 					"to": [ 6.7, 3.3, 3.5 ], 
-					"rotationOrigin": [ -7.0, 3.0, 3.0 ],
+					"rotationOrigin": [ -6.7, 3.0, 4.0 ],
 					"faces": {
 						"north": { "texture": "#lid", "uv": [ 0.0, 13.5, 16.0, 16.0 ], "enabled": false, "autoUv": false },
 						"east": { "texture": "#lid", "uv": [ 0.0, 0.0, 2.0, 0.5 ], "enabled": false },
@@ -592,9 +593,9 @@
 				},
 				{
 					"name": "Wood Bar 1",
-					"from": [ -6.5, 3.0, 5.5 ], 
-					"to": [ 6.8, 3.3, 7.5 ], 
-					"rotationOrigin": [ -7.0, 3.0, 7.0 ],
+					"from": [ -6.7, 3.0, 5.5 ], 
+					"to": [ 6.7, 3.3, 7.5 ], 
+					"rotationOrigin": [ -6.7, 3.0, 7.0 ],
 					"faces": {
 						"north": { "texture": "#lid", "uv": [ 0.0, 13.5, 16.0, 16.0 ], "autoUv": false },
 						"east": { "texture": "#lid", "uv": [ 0.0, 0.0, 2.0, 0.5 ], "enabled": false },
@@ -606,9 +607,9 @@
 				},
 				{
 					"name": "Wood Bar 3",
-					"from": [ -6.5, 3.0, 9.5 ], 
-					"to": [ 6.8, 3.3, 11.5 ], 
-					"rotationOrigin": [ -7.0, 3.0, 11.0 ],
+					"from": [ -6.7, 3.0, 9.5 ], 
+					"to": [ 6.7, 3.3, 11.5 ], 
+					"rotationOrigin": [ -6.7, 3.0, 11.0 ],
 					"faces": {
 						"north": { "texture": "#lid", "uv": [ 0.0, 13.5, 16.0, 16.0 ], "autoUv": false },
 						"east": { "texture": "#lid", "uv": [ 0.0, 0.0, 2.0, 0.5 ], "enabled": false },
