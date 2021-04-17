@@ -148,6 +148,7 @@
     <None Include="qptech\assets\machines\blocktypes\icebox.json" />
     <None Include="qptech\assets\machines\blocktypes\itemhatch.json" />
     <None Include="qptech\assets\machines\blocktypes\dummy-element.json" />
+    <None Include="qptech\assets\machines\blocktypes\brassringedbarrel.json" />
     <None Include="qptech\assets\machines\blocktypes\statusflag-up.json" />
     <None Include="qptech\assets\machines\blocktypes\powerflag.json" />
     <None Include="qptech\assets\machines\blocktypes\machineryblock.json" />
@@ -203,6 +204,7 @@
     <None Include="qptech\assets\machines\shapes\block\basin.json" />
     <None Include="qptech\assets\machines\shapes\block\battery-primitive.json" />
     <None Include="qptech\assets\machines\shapes\block\BlockLantern.json" />
+    <None Include="qptech\assets\machines\shapes\block\brassringbarrel.json" />
     <None Include="qptech\assets\machines\shapes\block\cabinet-lower-door.json" />
     <None Include="qptech\assets\machines\shapes\block\cabinet-mid-door.json" />
     <None Include="qptech\assets\machines\shapes\block\cabinet-upper-door.json" />

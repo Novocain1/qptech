@@ -1,16 +1,16 @@
 {
-	code: "statusflag-up",
-	
+	code: "brassringedbarrel",
 	creativeinventory: {
-		"general": [  ],
-		"qptech": [  ]
+		"general": [ "*" ],
+		"qptech": [ "*" ]
 	},
 	blockmaterial: "Metal",
 	drawtype: "json",
-	"shape": { "base": "block/statusflag-up" },
-	
+	"shape": { "base": "block/brassringbarrel" },
 	resistance: 1,
-
+	sideopaque: {
+		all: false
+	},
 
 	sounds: {
 		"place": "game:block/anvil",
