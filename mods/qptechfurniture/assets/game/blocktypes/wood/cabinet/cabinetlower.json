@@ -5,8 +5,8 @@
 	"maxStackSize": 1,
 	"attributes": {
 		"partialAttachable": true,
-		"inventoryClassName": "lower",
-		"defaultType": "acacia-cabinet-woodtop",
+		"inventoryClassName": "chest",
+		"defaultType": "oak-cabinet",
 		"types": [
 
 			"oak-cabinet",

@@ -26,7 +26,7 @@
 	blockmaterial: "Metal",
 	drawtype: "json",
 	"shape": { "base": "block/battery-primitive" },
-"shapeByType": {
+	"shapeByType": {
 		"*-north": {
 			"base": "block/battery-primitive",
 			"rotateY": 0
@@ -45,8 +45,12 @@
 		}
 	},
 	resistance: 1,
-	sideopaque: {
-		all: false
+	"sideAo": { "all": false },
+	"sidesolid": {
+		"all": false
+	},
+	"sideopaque": {
+		"all": false
 	},
 	sounds: {
 		"place": "game:block/anvil",

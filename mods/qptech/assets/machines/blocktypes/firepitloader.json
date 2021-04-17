@@ -10,13 +10,13 @@
 	"shape": { "base": "block/firepit-loader" },
 	"resistance": 1,
 	"sidesolid": {
-		"horizontals": "false",
-		"down": "false",
-		"up": "true"
+		"horizontals": false,
+		"down": false,
+		"up": true
 	},
-
+	"sideAo": { "all": false },
 	"sideopaque": {
-		"all": "false"
+		"all": false
 	},
 	"sounds": {
 		"place": "game:block/anvil",

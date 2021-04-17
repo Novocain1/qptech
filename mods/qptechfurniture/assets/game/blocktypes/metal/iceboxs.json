@@ -1,0 +1,208 @@
+{
+	"code": "iceboxs",
+	"class": "BlockGenericTypedContainer",
+	"entityclass": "GenericTypedContainer",
+	"maxStackSize": 1,
+	"attributes": {
+		"partialAttachable": true,
+		"preserveBonus": 0.5,
+		"inventoryClassName": "chest",
+		"defaultType": "iceboxsmall-oak",
+		"types": [
+			"iceboxsmall-oak",
+			"iceboxsmall-maple",
+			"iceboxsmall-acacia",
+			"iceboxmiddle"
+		],
+		"rotatatableInterval": {
+			"iceboxsmall-oak": "22.5degnot45deg",
+			"iceboxsmall-maple": "22.5degnot45deg",
+			"iceboxsmall-acacia": "22.5degnot45deg"
+		},
+		"drop": {
+			"iceboxsmall-oak": true,
+			"iceboxsmall-maple": true,
+			"iceboxsmall-acacia": true
+		},
+		"quantitySlots": {
+			"iceboxsmall-oak": 6,
+			"iceboxsmall-maple": 6,
+			"iceboxsmall-acacia": 6
+		},
+		"dialogTitleLangCode": {
+			"iceboxsmall-oak": "Old Ice Box",
+			"iceboxsmall-maple": "Old Ice Box",
+			"iceboxsmall-acacia": "Old Ice Box"
+		},
+		"storageType": {
+			"iceboxsmall-oak": 189,
+			"iceboxsmall-maple": 189,
+			"iceboxsmall-acacia": 189
+		},
+		"retrieveOnly": {
+			"iceboxsmall-oak": false,
+			"iceboxsmall-maple": false,
+			"iceboxsmall-acacia": false
+		},
+		"shape": {
+			"iceboxsmall-oak": "block/metal/freeze/oak-icebox-small",
+			"iceboxsmall-maple": "block/metal/freeze/maple-icebox-small",
+			"iceboxsmall-acacia": "block/metal/freeze/acacia-icebox-small",
+			
+			"iceboxmiddle": "block/metal/freeze/icebox-middle"
+		},
+		"typedOpenSound": {
+			"iceboxsmall-oak": "game:sounds/block/cokeovendoor-open",
+			"iceboxsmall-maple": "game:sounds/block/cokeovendoor-open",
+			"iceboxsmall-acacia": "game:sounds/block/cokeovendoor-open"
+		},
+		"typedCloseSound": {
+			"iceboxsmall-oak": "game:sounds/block/cokeovendoor-close",
+			"iceboxsmall-maple": "game:sounds/block/cokeovendoor-close",
+			"iceboxsmall-acacia": "game:sounds/block/cokeovendoor-close"
+		},
+		"variantByGroup": "side",
+		"variantByGroupInventory": null
+	},
+	"behaviors": [
+		{ "name": "Lockable" },
+		{ "name": "Container" }
+	],
+	"entityBehaviors": [ { "name": "Animatable" } ],
+	"variantgroups": [
+		{
+			"code": "side",
+			"loadFromProperties": "abstract/horizontalorientation"
+		}
+	],
+	"creativeinventory": {},
+	"creativeinventoryStacksByType": {
+		"*-east": [
+			{
+				"tabs": [ "general", "decorative", "kitchen" ],
+				"stacks": [
+					{
+						"type": "block",
+						"code": "iceboxs-east",
+						"attributes": { "type": "iceboxsmall-oak" }
+					},
+					{
+						"type": "block",
+						"code": "iceboxs-east",
+						"attributes": { "type": "iceboxsmall-maple" }
+					},
+					{
+						"type": "block",
+						"code": "iceboxs-east",
+						"attributes": { "type": "iceboxsmall-acacia" }
+					},
+					{
+						"type": "block",
+						"code": "iceboxs-east",
+						"attributes": { "type": "iceboxmiddle" }
+					}
+				]
+			}
+		]
+	},
+	"heldTpIdleAnimation": "holdunderarm",
+	"shapeInventory": {
+		"base": "block/metal/freeze/oak-icebox-small",
+		"rotateY": 270
+	},
+	"shapeByType": {
+		"*-north": {
+			"base": "block/metal/freeze/oak-icebox-small",
+			"rotateY": 0
+		},
+		"*-east": {
+			"base": "block/metal/freeze/oak-icebox-small",
+			"rotateY": 270
+		},
+		"*-west": {
+			"base": "block/metal/freeze/oak-icebox-small",
+			"rotateY": 90
+		},
+		"*-south": {
+			"base": "block/metal/freeze/oak-icebox-small",
+			"rotateY": 180
+		}
+	},
+	"_Icebox": "Texture go here later",
+	"textures": {
+
+		"iceboxsmall-oak-lid": { "base": "block/wood/oak/detail" },
+		"iceboxsmall-oak-sides2": { "base": "block/wood/oak/cabinet" },
+		"iceboxsmall-oak-lead": { "base": "block/metal/lead" },
+
+		"iceboxsmall-maple-lid": { "base": "block/wood/maple/detail" },
+		"iceboxsmall-maple-sides2": { "base": "block/wood/maple/cabinet" },
+		"iceboxsmall-maple-lead": { "base": "block/metal/lead" },
+
+		"iceboxsmall-acacia-lid": { "base": "block/wood/acacia/detail" },
+		"iceboxsmall-acacia-sides2": { "base": "block/wood/acacia/cabinet" },
+		"iceboxsmall-acacia-lead": { "base": "block/metal/lead" },
+		
+		"iceboxmiddle-lid": { "base": "block/wood/acacia/detail" },
+		"iceboxmiddle-sides2": { "base": "block/wood/acacia/cabinet" },
+		"iceboxmiddle-lead": { "base": "block/metal/lead" }
+	},
+	"blockmaterial": "Wood",
+	"replaceable": 900,
+	"resistance": 3,
+	"lightAbsorption": 0,
+	"sideAo": { "all": false },
+	"sidesolid": {
+		"all": false
+	},
+	"sideopaque": {
+		"all": false
+	},
+	"combustibleProps": {
+		"burnTemperature": 600,
+		"burnDuration": 35
+	},
+	"sounds": {
+		"place": "game:block/planks",
+		"hit": "game:block/chute",
+		"break": "game:block/planks",
+		"walk": "game:walk/wood"
+	},
+	"materialDensity": 600,
+	"tpHandTransform": {
+		"translation": {
+			"x": -2,
+			"y": -0.5,
+			"z": -1
+		},
+		"rotation": {
+			"x": 0,
+			"y": 180,
+			"z": 0
+		},
+		"origin": {
+			"x": 0.7,
+			"y": 0.4,
+			"z": 0.6
+		},
+		"scale": 0.31
+	},
+	"guiTransform": {
+		"translation": {
+			"x": 0,
+			"y": 3,
+			"z": 0
+		},
+		"rotation": {
+			"x": -22.6,
+			"y": -55,
+			"z": 0
+		},
+		"origin": {
+			"x": 0.5,
+			"y": 0.4,
+			"z": 0.5
+		},
+		"scale": 1.03
+	}
+}
