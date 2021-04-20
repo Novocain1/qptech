@@ -17,8 +17,7 @@ namespace QptechFurniture.src
 			// Block Entity Class 
 			api.RegisterBlockEntityClass("SingleSink", typeof(BlockEntitySingleSink));
 			api.RegisterBlockEntityClass("DoubleSink", typeof(BlockEntityDoubleSink));
-			api.RegisterBlockEntityClass("IceBox", typeof(BlockEntityIceBox));  // taking from Github new one and better and less work.
-																				//api.RegisterBlockEntityClass("ModdedFirepit", typeof(BlockEntityModdedFirepit)); Deleted for now
+			api.RegisterBlockEntityClass("BlockEntityIceBox", typeof(BlockEntityIceBox));  // taking from Github new one and better and less work.
 		}
 	}
 }

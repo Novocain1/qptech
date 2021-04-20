@@ -1,65 +1,110 @@
 {
 	"code": "iceboxs",
 	"class": "BlockGenericTypedContainer",
-	"entityclass": "GenericTypedContainer",
+	"entityclass": "BlockEntityIceBox",
 	"maxStackSize": 1,
 	"attributes": {
 		"partialAttachable": true,
-		"preserveBonus": 0.5,
 		"inventoryClassName": "chest",
 		"defaultType": "iceboxsmall-oak",
 		"types": [
 			"iceboxsmall-oak",
 			"iceboxsmall-maple",
 			"iceboxsmall-acacia",
-			"iceboxmiddle"
+		    "iceboxmiddle-oak",
+			"iceboxmiddle-maple",
+			"iceboxmiddle-acacia"
 		],
 		"rotatatableInterval": {
 			"iceboxsmall-oak": "22.5degnot45deg",
 			"iceboxsmall-maple": "22.5degnot45deg",
-			"iceboxsmall-acacia": "22.5degnot45deg"
+			"iceboxsmall-acacia": "22.5degnot45deg",
+			
+		    "iceboxmiddle-oak": "22.5degnot45deg",
+			"iceboxmiddle-maple": "22.5degnot45deg",
+			"iceboxmiddle-acacia": "22.5degnot45deg"
+		},
+		"preserveBonus": {
+			"iceboxsmall-oak": 0.32,
+			"iceboxsmall-maple": 0.32,
+			"iceboxsmall-acacia": 0.32,
+			
+			"iceboxmiddle-oak": 0.22,
+			"iceboxmiddle-maple": 0.22,
+			"iceboxmiddle-acacia": 0.22
 		},
 		"drop": {
 			"iceboxsmall-oak": true,
 			"iceboxsmall-maple": true,
-			"iceboxsmall-acacia": true
+			"iceboxsmall-acacia": true,
+			
+			"iceboxmiddle-oak": true,
+			"iceboxmiddle-maple": true,
+			"iceboxmiddle-acacia": true
 		},
 		"quantitySlots": {
-			"iceboxsmall-oak": 6,
-			"iceboxsmall-maple": 6,
-			"iceboxsmall-acacia": 6
+			"iceboxsmall-oak": 4,
+			"iceboxsmall-maple": 4,
+			"iceboxsmall-acacia": 4,
+			
+		    "iceboxmiddle-oak": 8,
+			"iceboxmiddle-maple": 8,
+			"iceboxmiddle-acacia": 8
 		},
 		"dialogTitleLangCode": {
 			"iceboxsmall-oak": "Old Ice Box",
 			"iceboxsmall-maple": "Old Ice Box",
-			"iceboxsmall-acacia": "Old Ice Box"
+			"iceboxsmall-acacia": "Old Ice Box",
+			
+			"iceboxmiddle-oak": "Old Ice Box",
+			"iceboxmiddle-maple": "Old Ice Box",
+			"iceboxmiddle-acacia": "Old Ice Box"
 		},
 		"storageType": {
-			"iceboxsmall-oak": 189,
-			"iceboxsmall-maple": 189,
-			"iceboxsmall-acacia": 189
+			"iceboxsmall-oak": 16,
+			"iceboxsmall-maple": 16,
+			"iceboxsmall-acacia": 16,
+			
+			"iceboxsmall-oak": 32,
+			"iceboxsmall-maple": 32,
+			"iceboxsmall-acacia": 32
 		},
 		"retrieveOnly": {
 			"iceboxsmall-oak": false,
 			"iceboxsmall-maple": false,
-			"iceboxsmall-acacia": false
+			"iceboxsmall-acacia": false,
+			
+			"iceboxmiddle-oak": false,
+			"iceboxmiddle-maple": false,
+			"iceboxmiddle-acacia": false
 		},
 		"shape": {
 			"iceboxsmall-oak": "block/metal/freeze/oak-icebox-small",
 			"iceboxsmall-maple": "block/metal/freeze/maple-icebox-small",
 			"iceboxsmall-acacia": "block/metal/freeze/acacia-icebox-small",
 			
-			"iceboxmiddle": "block/metal/freeze/icebox-middle"
+			"iceboxmiddle-oak": "block/metal/freeze/oak-icebox-middle",
+			"iceboxmiddle-maple": "block/metal/freeze/maple-icebox-middle",
+			"iceboxmiddle-acacia": "block/metal/freeze/acacia-icebox-middle"
+			
 		},
 		"typedOpenSound": {
 			"iceboxsmall-oak": "game:sounds/block/cokeovendoor-open",
 			"iceboxsmall-maple": "game:sounds/block/cokeovendoor-open",
-			"iceboxsmall-acacia": "game:sounds/block/cokeovendoor-open"
+			"iceboxsmall-acacia": "game:sounds/block/cokeovendoor-open",
+			
+			"iceboxmiddle-oak": "game:sounds/block/cokeovendoor-open",
+			"iceboxmiddle-maple": "game:sounds/block/cokeovendoor-open",
+			"iceboxmiddle-acacia": "game:sounds/block/cokeovendoor-open"
 		},
 		"typedCloseSound": {
 			"iceboxsmall-oak": "game:sounds/block/cokeovendoor-close",
 			"iceboxsmall-maple": "game:sounds/block/cokeovendoor-close",
-			"iceboxsmall-acacia": "game:sounds/block/cokeovendoor-close"
+			"iceboxsmall-acacia": "game:sounds/block/cokeovendoor-close",
+			
+			"iceboxmiddle-oak": "game:sounds/block/cokeovendoor-close",
+			"iceboxmiddle-maple": "game:sounds/block/cokeovendoor-close",
+			"iceboxmiddle-acacia": "game:sounds/block/cokeovendoor-close"
 		},
 		"variantByGroup": "side",
 		"variantByGroupInventory": null
@@ -96,10 +141,20 @@
 						"code": "iceboxs-east",
 						"attributes": { "type": "iceboxsmall-acacia" }
 					},
+				    {
+						"type": "block",
+						"code": "iceboxs-east",
+						"attributes": { "type": "iceboxmiddle-oak" }
+					},
 					{
 						"type": "block",
 						"code": "iceboxs-east",
-						"attributes": { "type": "iceboxmiddle" }
+						"attributes": { "type": "iceboxmiddle-maple" }
+					},
+					{
+						"type": "block",
+						"code": "iceboxs-east",
+						"attributes": { "type": "iceboxmiddle-acacia" }
 					}
 				]
 			}
@@ -143,9 +198,17 @@
 		"iceboxsmall-acacia-sides2": { "base": "block/wood/acacia/cabinet" },
 		"iceboxsmall-acacia-lead": { "base": "block/metal/lead" },
 		
-		"iceboxmiddle-lid": { "base": "block/wood/acacia/detail" },
-		"iceboxmiddle-sides2": { "base": "block/wood/acacia/cabinet" },
-		"iceboxmiddle-lead": { "base": "block/metal/lead" }
+		"iceboxmiddle-oak-lid": { "base": "block/wood/oak/detail" },
+		"iceboxmiddle-oak-sides2": { "base": "block/wood/oak/cabinet" },
+		"iceboxmiddle-oak-lead": { "base": "block/metal/lead" },
+
+		"iceboxmiddle-maple-lid": { "base": "block/wood/maple/detail" },
+		"iceboxmiddle-maple-sides2": { "base": "block/wood/maple/cabinet" },
+		"iceboxmiddle-maple-lead": { "base": "block/metal/lead" },
+
+		"iceboxmiddle-acacia-lid": { "base": "block/wood/acacia/detail" },
+		"iceboxmiddle-acacia-sides2": { "base": "block/wood/acacia/cabinet" },
+		"iceboxmiddle-acacia-lead": { "base": "block/metal/lead" },
 	},
 	"blockmaterial": "Wood",
 	"replaceable": 900,

@@ -1,8 +1,10 @@
-﻿using Vintagestory.API.Client;
+﻿using System.Linq;
+using Vintagestory.API.Client;
 using Vintagestory.API.Common;
 using Vintagestory.API.Datastructures;
 using Vintagestory.API.MathTools;
 using Vintagestory.GameContent;
+
 
 namespace QptechFurniture.src
 {
@@ -35,32 +37,11 @@ namespace QptechFurniture.src
 				if (id == 0 || id == 2 || id == 3 || id == 4 || id == 5 || id == 6 || id == 7 || id == 8) return new ItemSlotBarrelInput(self);
 				else return new ItemSlotLiquidOnly(self, 50);
 			});
-			inventory.BaseWeight = 9;
-			inventory.OnGetSuitability = (sourceSlot, targetSlot, isMerge) => (isMerge ? (inventory.BaseWeight + 9) : (inventory.BaseWeight + 9)) + (sourceSlot.Inventory is InventoryBasePlayer ? 9 : 0);
+			inventory.BaseWeight = 1;
+			inventory.OnGetSuitability = (sourceSlot, targetSlot, isMerge) => (isMerge ? (inventory.BaseWeight + 3) : (inventory.BaseWeight + 3)) + (sourceSlot.Inventory is InventoryBasePlayer ? 9 : 0);
 
 
 			inventory.SlotModified += Inventory_SlotModified;
-		}
-
-
-		protected override float Inventory_OnAcquireTransitionSpeed(EnumTransitionType transType, ItemStack stack, float baseMul)
-		{
-			if (transType == EnumTransitionType.Dry) return 0;
-			if (Api == null) return 0;
-
-			if (transType == EnumTransitionType.Perish || transType == EnumTransitionType.Ripen)
-			{
-				float perishRate = GetPerishRate();
-				if (transType == EnumTransitionType.Ripen)
-				{
-					return GameMath.Clamp(((1 - perishRate) - 0.5f) * 3, 0, 1);
-				}
-
-				return baseMul * perishRate;
-			}
-
-			return 1;
-
 		}
 
 		public override void Initialize(ICoreAPI api)
@@ -80,6 +61,10 @@ namespace QptechFurniture.src
 				float rotY = Block.Shape.rotateY;
 				animUtil.InitializeAnimator("lidopen", new Vec3f(0, rotY, 0));
 			}
+
+
+			//inventory.OnGetAutoPullFromSlot = GetAutoPullFromSlot;
+			MarkDirty();
 		}
 
 		bool ignoreChange = false;
@@ -88,7 +73,7 @@ namespace QptechFurniture.src
 		{
 			if (ignoreChange) return;
 
-			if (slotId == 0 || slotId == 1 || slotId == 2 || slotId == 3 || slotId == 4 || slotId == 5 || slotId == 7 || slotId == 8)
+		    if (slotId == 0 || slotId == 1 || slotId == 2 || slotId == 3 || slotId == 4 || slotId == 5 || slotId == 7 || slotId == 8)
 			{
 				invDialog?.UpdateContents();
 				if (Api?.Side == EnumAppSide.Client)
@@ -263,5 +248,16 @@ namespace QptechFurniture.src
 
 			return initial / 3.2f;
 		}
-	}
+
+
+  //      public ItemSlot GetAutoPullFromSlot(BlockFacing atBlockFace)
+  //      {
+		//	if (atBlockFace == BlockFacing.DOWN)
+		//	{
+		//		ItemSlot sourceSlot = (inventory[1] as ItemSlotLiquidOnly);
+		//		return sourceSlot;
+		//	}
+		//	return null;
+		//}
+    }
 }
