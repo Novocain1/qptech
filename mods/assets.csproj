@@ -18,11 +18,12 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="qptechapi\modinfo.json" />
-    <None Include="qptechfurniture\assets\game\blocktypes.zip" />
-    <None Include="qptechfurniture\assets\game\blocktypes\metal\iceboxs.json" />
+    <None Include="qptechfurniture\assets\game\blocktypes\metal\oven\stove.json" />
     <None Include="qptechfurniture\assets\game\blocktypes\wood\cabinet\cabinetlower.json" />
     <None Include="qptechfurniture\assets\game\blocktypes\wood\cabinet\cabinetmid.json" />
     <None Include="qptechfurniture\assets\game\blocktypes\wood\cabinet\cabinetupper.json" />
+    <None Include="qptechfurniture\assets\game\blocktypes\wood\firepit\stonefirepit.json" />
+    <None Include="qptechfurniture\assets\game\blocktypes\wood\freeze\iceboxs.json" />
     <None Include="qptechfurniture\assets\game\blocktypes\wood\sink\double\acacia\acacia-cabinet-sink-shale.json" />
     <None Include="qptechfurniture\assets\game\blocktypes\wood\sink\double\acacia\acacia-cabinet-sink-whitemarble.json" />
     <None Include="qptechfurniture\assets\game\blocktypes\wood\sink\double\maple\maple-cabinet-sink-shale.json" />
@@ -35,9 +36,7 @@
     <None Include="qptechfurniture\assets\game\blocktypes\wood\sink\single\maple\maple-cabinet-sink-whitemarble.json" />
     <None Include="qptechfurniture\assets\game\blocktypes\wood\sink\single\oak\oak-cabinet-sink-shale.json" />
     <None Include="qptechfurniture\assets\game\blocktypes\wood\sink\single\oak\oak-cabinet-sink-whitemarble.json" />
-    <None Include="qptechfurniture\assets\game\config.zip" />
     <None Include="qptechfurniture\assets\game\lang\en.json" />
-    <None Include="qptechfurniture\assets\game\recipes.zip" />
     <None Include="qptechfurniture\assets\game\shapes\block\metal\castironoven.json" />
     <None Include="qptechfurniture\assets\game\shapes\block\metal\castironovenlarge.json" />
     <None Include="qptechfurniture\assets\game\shapes\block\metal\freeze\acacia-icebox-small.json" />
@@ -46,8 +45,12 @@
     <None Include="qptechfurniture\assets\game\shapes\block\metal\freeze\icebox-small.json" />
     <None Include="qptechfurniture\assets\game\shapes\block\metal\freeze\icebox-top.json" />
     <None Include="qptechfurniture\assets\game\shapes\block\metal\freeze\maple-icebox-small.json" />
+    <None Include="qptechfurniture\assets\game\shapes\block\metal\freeze\medium\acacia-icebox-medium.json" />
+    <None Include="qptechfurniture\assets\game\shapes\block\metal\freeze\medium\maple-icebox-medium.json" />
+    <None Include="qptechfurniture\assets\game\shapes\block\metal\freeze\medium\oak-icebox-medium.json" />
     <None Include="qptechfurniture\assets\game\shapes\block\metal\freeze\oak-icebox-small.json" />
     <None Include="qptechfurniture\assets\game\shapes\block\metal\itemhatch.json" />
+    <None Include="qptechfurniture\assets\game\shapes\block\metal\oven\castironstove.json" />
     <None Include="qptechfurniture\assets\game\shapes\block\metal\smelter-furnace-closed.json" />
     <None Include="qptechfurniture\assets\game\shapes\block\wood\BlockLantern.json" />
     <None Include="qptechfurniture\assets\game\shapes\block\wood\cabinet\lower\acacia\countertop\cabinet-normal.json" />
@@ -119,6 +122,17 @@
     <None Include="qptechfurniture\assets\game\shapes\block\wood\cabinet\upper\maple\glass\halfplain\cabinet-normal.json" />
     <None Include="qptechfurniture\assets\game\shapes\block\wood\cabinet\upper\oak\cabinet-normal.json" />
     <None Include="qptechfurniture\assets\game\shapes\block\wood\cabinet\upper\oak\glass\halfplain\cabinet-normal.json" />
+    <None Include="qptechfurniture\assets\game\shapes\block\wood\freeze\icebox-large.json" />
+    <None Include="qptechfurniture\assets\game\shapes\block\wood\freeze\icebox-medium.json" />
+    <None Include="qptechfurniture\assets\game\shapes\block\wood\freeze\icebox-small.json" />
+    <None Include="qptechfurniture\assets\game\shapes\block\wood\freeze\icebox-top-test.json" />
+    <None Include="qptechfurniture\assets\game\shapes\block\wood\freeze\large\icebox-large.json" />
+    <None Include="qptechfurniture\assets\game\shapes\block\wood\freeze\medium\acacia-icebox-medium.json" />
+    <None Include="qptechfurniture\assets\game\shapes\block\wood\freeze\medium\maple-icebox-medium.json" />
+    <None Include="qptechfurniture\assets\game\shapes\block\wood\freeze\medium\oak-icebox-medium.json" />
+    <None Include="qptechfurniture\assets\game\shapes\block\wood\freeze\small\acacia-icebox-small.json" />
+    <None Include="qptechfurniture\assets\game\shapes\block\wood\freeze\small\maple-icebox-small.json" />
+    <None Include="qptechfurniture\assets\game\shapes\block\wood\freeze\small\oak-icebox-small.json" />
     <None Include="qptechfurniture\assets\game\shapes\block\wood\sink\double\empty.json" />
     <None Include="qptechfurniture\assets\game\shapes\block\wood\sink\single\empty.json" />
     <None Include="qptechfurniture\assets\game\textures\block\stone\outlinebox.aseprite" />

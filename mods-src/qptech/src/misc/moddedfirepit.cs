@@ -22,15 +22,16 @@ namespace Vintagestory.GameContent
 
         public class BlockEntityModdedFirepit : BlockEntityFirepit
         {
-            public float heatMod=1f;
-            bool blockinit = false;
+            public float heatMod = 1f;
+            public bool Blockinit { get; set; } = false;
+
             public override void Initialize(ICoreAPI api)
             {
                 base.Initialize(api);
                 if (Block.Attributes != null)
                 {
                     heatMod = Block.Attributes["heatModifier"].AsFloat(1f);
-                    blockinit = true;
+                    Blockinit = true;
                 }
             }
             public override bool OnTesselation(ITerrainMeshPool mesher, ITesselatorAPI tesselator)

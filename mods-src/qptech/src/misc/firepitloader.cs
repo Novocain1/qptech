@@ -45,7 +45,7 @@ namespace qptech.src
                 base.Initialize(api);
                 RegisterGameTickListener(OnTick, 200);
             }
-            BlockEntity checkblock;
+             BlockEntity checkblock;
             
             public void OnTick(float par)
             {

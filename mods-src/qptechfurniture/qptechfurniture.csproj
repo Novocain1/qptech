@@ -77,21 +77,23 @@
   <ItemGroup>
     <Content Include="modinfo.json" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="src\item\" />
-  </ItemGroup>
-  <ItemGroup>
+    <Compile Include="src\blockentityrenderer\StoneFirePit.cs" />
     <Compile Include="src\blockEntity\BlockEntityDoubleSink .cs" />
     <Compile Include="src\blockEntity\BlockEntityicebox.cs" />
     <Compile Include="src\blockEntity\BlockEntitySingleSink.cs" />
+    <Compile Include="src\blockEntity\BlockEntityStoneFirePit.cs" />
     <Compile Include="src\block\BlockDoubleSink.cs" />
     <Compile Include="src\block\BlockIceBox.cs" />
     <Compile Include="src\block\BlockLiquidContainerBase.cs" />
     <Compile Include="src\block\BlockSingleSink.cs" />
+    <Compile Include="src\block\BlockStoneFirePit.cs" />
     <Compile Include="src\gui\GuiDialogDoubleSink.cs" />
     <Compile Include="src\gui\GuiDialogSingleSink.cs" />
     <Compile Include="src\gui\GuiIceBox.cs" />
     <Compile Include="src\inventory\ItemSlotSinkInput.cs" />
+    <Compile Include="src\item\ItemStoneFirePitBase.cs" />
     <Compile Include="src\Main.cs" />
   </ItemGroup>
   <ItemGroup>
