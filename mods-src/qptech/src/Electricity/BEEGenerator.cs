@@ -23,7 +23,18 @@ namespace qptech.src
         bool fueled = false;            //whether device is currently fueld
         bool animInit = false;
         bool usesFuelWhileOn = false;  //always use fuel, even if no load (unless turned off)
-        
+        bool requiresHeat = false;      //will check for heat to produce power
+        float requiredHeat =0;      //how much heat is necessary
+        BlockFacing heatFace = BlockFacing.DOWN; //which face to check for heat
+        bool requiresWater = false;     //will check for water to produce power
+        int waterUsage = 0;             //how much water to use up
+        float waterUsePeriod = 2;       //how often to use water
+        BlockFacing waterFace = BlockFacing.UP;
+        bool overloadIfNoWater = false;  //will it explode if it can't find water (assuming it uses water)
+        double lastwaterused = 0;
+        bool generating = false;
+        bool haswater = true;
+        bool heated = false;
         public override void Initialize(ICoreAPI api)
         {
             base.Initialize(api);
@@ -37,7 +48,17 @@ namespace qptech.src
                 fuelTicks = Block.Attributes["fuelTicks"].AsInt(1);
                 usesFuel = Block.Attributes["usesFuel"].AsBool(false);
                 usesFuelWhileOn = Block.Attributes["usesFuelWhileOn"].AsBool(false);
+                requiredHeat = Block.Attributes["requiredHeat"].AsFloat(requiredHeat);
+                if (requiredHeat > 0) { requiresHeat = true; }
+                heatFace = BlockFacing.FromCode(Block.Attributes["heatFace"].AsString("down"));
+                heatFace = OrientFace(Block.Code.ToShortString(), heatFace);
+                waterUsage = Block.Attributes["waterUsage"].AsInt(waterUsage);
+                if (waterUsage > 0) { requiresWater = true; }
+                waterUsePeriod = Block.Attributes["waterUsePeriod"].AsFloat(waterUsePeriod);
+                overloadIfNoWater = Block.Attributes["overloadIfNoWater"].AsBool(overloadIfNoWater);
+                waterFace = BlockFacing.FromCode(Block.Attributes["waterFace"].AsString("up"));
                 fuelCounter = 0;
+                if (lastwaterused == 0) { lastwaterused = Api.World.Calendar.TotalHours; }
             }
             if (api.World.Side == EnumAppSide.Client&&animUtil!=null)
             {
@@ -54,7 +75,7 @@ namespace qptech.src
             base.OnTick(par);
             if (isOn) {
                 GeneratePower(); //Create power packets if possible, base.Ontick will handle distribution attempts
-                
+                if (requiresHeat && requiresWater && heated && !haswater && overloadIfNoWater) { DoOverload(); }
             }
             
         }
@@ -62,7 +83,7 @@ namespace qptech.src
         public virtual void GeneratePower()
         {
             bool trypower = DoGeneratePower();
-            
+            generating = trypower;
                 
             if (Api.World.Side == EnumAppSide.Client && animUtil != null && animInit)
             {
@@ -89,8 +110,14 @@ namespace qptech.src
         public virtual bool DoGeneratePower()
         {
             if (!isOn) { return false; }
+            
+            //if (Capacitor == Capacitance && !usesFuelWhileOn) { return false; }//not necessary to generate power
+            if (requiresHeat&&!CheckHeat()) { return false; } //perform a check for heat
+            if (requiresWater&&(!requiresHeat||heated) && !CheckWater()) { return false; } //check if water available
+            
             if (!usesFuel) { return true; } //if we don't use fuel, we can make power
-            if (Capacitor == Capacitance && !usesFuelWhileOn) { return false; }//not necessary to generate power
+            
+            //should really move fuel use to its own function
             if (fueled && fuelCounter < fuelTicks) //on going burning of current fuel item
             {
                 fuelCounter++;
@@ -167,6 +194,71 @@ namespace qptech.src
         public override int NeedPower()
         {
             return 0;
+        }
+
+        //will check and see if there's enough water, and will use water if necessary
+        bool CheckWater()
+        {
+            //find a block with water
+            //if there is water check and see if it's time to use up some water
+
+            //assume if we had water before (or just started) that there is water
+            //TODO - need to add haswater, lastwaterused to treeattributes
+            double nextwater = lastwaterused + waterUsePeriod;
+            double currenttime = Api.World.Calendar.TotalHours;
+            if (currenttime < nextwater && haswater) { return true; }
+            haswater = false;
+            lastwaterused = currenttime;
+            BlockPos bp = Pos.Copy().Offset(waterFace);
+            BlockEntity checkblock = Api.World.BlockAccessor.GetBlockEntity(bp);
+            if (checkblock == null) { haswater = false; return false; }
+            var checkcontainer = checkblock as BlockEntityContainer;
+            if (checkcontainer != null)
+            {
+                for (int c = 0; c < checkcontainer.Inventory.Count; c++)
+                {
+                    ItemSlot checkslot = checkcontainer.Inventory[c];
+                    if (checkslot == null) { continue; }
+                    if (checkslot.StackSize == 0) { continue; }
+
+                    bool match = false;
+                    if (checkslot.Itemstack.Item != null && checkslot.Itemstack.Item.Code.ToString().Contains("waterportion")) { match = true; }
+                    
+                    if (match && checkslot.StackSize > 0)
+                    {
+
+                        checkslot.TakeOut(1);
+                        checkslot.MarkDirty();
+                        haswater = true;
+                        break;
+                    }
+                }
+            }
+            
+            return haswater;
+        }
+        
+        //will check and see if there is an appropriate heated block in order to generator power
+        bool CheckHeat()
+        {
+            //find heated blocks - firepits, furnaces, burning coal piles
+            heated = false;
+            BlockPos bp = Pos.Copy().Offset(heatFace);
+            BlockEntity checkblock = Api.World.BlockAccessor.GetBlockEntity(bp);
+            if (checkblock == null) { return false; }
+            //check for hot firepit
+            var checkFirePit = checkblock as BlockEntityFirepit;
+            if (checkFirePit != null)
+            {
+                if (checkFirePit.furnaceTemperature >= requiredHeat) { heated = true;return true; }
+            }
+            //check for coal piles: Note need to add check for how hot
+            var checkCoalPile = checkblock as BlockEntityCoalPile;
+            if (checkCoalPile != null)
+            {
+                if (checkCoalPile.IsBurning) { heated = true; return true; }
+            }
+            return false;
         }
     }
 }

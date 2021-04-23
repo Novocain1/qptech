@@ -13,10 +13,13 @@
 		"capacitance": 4,
 		"genAmps": 2,
 		"distributionFaces": [ "north" ],
-		"usesFuel": true,
-		"fuelHopperFace": "up",
-		"fuelCodes": [ "game:coke" ],
-		"fuelTicks": 50
+		"requiredHeat": 900,
+		"heatFace": "down",
+		"waterUsage": 1,
+		"waterUsePeriod": 0.25,
+		"waterFace": "up",
+		"overloadIfNoWater": "true"
+
 	},
 	"variantgroups": [
 		{
@@ -53,7 +56,8 @@
 	},
 	"resistance": 1,
 	"sidesolid": {
-		"all": false
+		"all": false,
+		"up": true
 	},
 	"sideAo": { "all": false },
 	"sideopaque": {
