@@ -91,6 +91,7 @@
     <Compile Include="src\block\BlockStoneFirePit.cs" />
     <Compile Include="src\gui\GuiDialogDoubleSink.cs" />
     <Compile Include="src\gui\GuiDialogSingleSink.cs" />
+    <Compile Include="src\gui\GuiDialogStoneFirePit.cs" />
     <Compile Include="src\gui\GuiIceBox.cs" />
     <Compile Include="src\inventory\ItemSlotSinkInput.cs" />
     <Compile Include="src\item\ItemStoneFirePitBase.cs" />

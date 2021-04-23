@@ -10,7 +10,7 @@ using Vintagestory.GameContent;
 
 namespace QptechFurniture.src
 {
-    public class FirepitContentsRenderer : IRenderer
+    public class StoneFirePitContentsRenderer : IRenderer
     {
         MeshRef meshref;
         ICoreClientAPI api;
@@ -41,7 +41,7 @@ namespace QptechFurniture.src
             get { return 48; }
         }
 
-        public FirepitContentsRenderer(ICoreClientAPI api, BlockPos pos)
+        public StoneFirePitContentsRenderer(ICoreClientAPI api, BlockPos pos)
         {
             this.api = api;
             this.pos = pos;

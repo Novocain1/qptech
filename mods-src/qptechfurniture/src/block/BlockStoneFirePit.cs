@@ -136,7 +136,7 @@ namespace QptechFurniture.src
                         HotKeyCode = "sneak",
                         Itemstacks = canIgniteStacks.ToArray(),
                         GetMatchingStacks = (wi, bs, es) => {
-                            BlockEntityFirepit bef = api.World.BlockAccessor.GetBlockEntity(bs.Position) as BlockEntityFirepit;
+                            BlockEntityStoneFirePit bef = api.World.BlockAccessor.GetBlockEntity(bs.Position) as BlockEntityStoneFirePit;
                             if (bef?.fuelSlot != null && !bef.fuelSlot.Empty && !bef.IsBurning)
                             {
                                 return wi.Itemstacks;
@@ -157,7 +157,7 @@ namespace QptechFurniture.src
 
         public override EnumIgniteState OnTryIgniteBlock(EntityAgent byEntity, BlockPos pos, float secondsIgniting)
         {
-            BlockEntityFirepit bef = api.World.BlockAccessor.GetBlockEntity(pos) as BlockEntityFirepit;
+            BlockEntityStoneFirePit bef = api.World.BlockAccessor.GetBlockEntity(pos) as BlockEntityStoneFirePit;
             if (bef != null && bef.fuelSlot.Empty) return EnumIgniteState.NotIgnitablePreventDefault;
             if (bef != null && bef.IsBurning) return EnumIgniteState.NotIgnitablePreventDefault;
 
@@ -166,7 +166,7 @@ namespace QptechFurniture.src
 
         public override void OnTryIgniteBlockOver(EntityAgent byEntity, BlockPos pos, float secondsIgniting, ref EnumHandling handling)
         {
-            BlockEntityFirepit bef = api.World.BlockAccessor.GetBlockEntity(pos) as BlockEntityFirepit;
+            BlockEntityStoneFirePit bef = api.World.BlockAccessor.GetBlockEntity(pos) as BlockEntityStoneFirePit;
             if (bef != null && !bef.canIgniteFuel)
             {
                 bef.canIgniteFuel = true;
@@ -192,24 +192,6 @@ namespace QptechFurniture.src
                 base.OnAsyncClientParticleTick(manager, pos, windAffectednessAtPos, secondsTicking);
                 return;
             }
-
-            BlockEntityStoneFirePit bef = manager.BlockAccess.GetBlockEntity(pos) as BlockEntityStoneFirePit;
-            if (bef != null && bef.CurrentModel == EnumFirepitModel.Wide)
-            {
-                for (int i = 0; i < ringParticles.Length; i++)
-                {
-                    AdvancedParticleProperties bps = ringParticles[i];
-                    bps.WindAffectednesAtPos = windAffectednessAtPos;
-                    bps.basePos.X = pos.X + basePos[i].X;
-                    bps.basePos.Y = pos.Y + basePos[i].Y;
-                    bps.basePos.Z = pos.Z + basePos[i].Z;
-
-                    manager.Spawn(bps);
-                }
-
-                return;
-            }
-
             base.OnAsyncClientParticleTick(manager, pos, windAffectednessAtPos, secondsTicking);
         }
 
@@ -221,7 +203,7 @@ namespace QptechFurniture.src
 
             if (stage == 5)
             {
-                BlockEntityFirepit bef = world.BlockAccessor.GetBlockEntity(blockSel.Position) as BlockEntityFirepit;
+                BlockEntityStoneFirePit bef = world.BlockAccessor.GetBlockEntity(blockSel.Position) as BlockEntityStoneFirePit;
 
                 if (bef != null && stack?.Block != null && stack.Block.HasBehavior<BlockBehaviorCanIgnite>())
                 {
@@ -230,7 +212,7 @@ namespace QptechFurniture.src
 
                 if (bef != null && stack != null && byPlayer.Entity.Controls.Sneak)
                 {
-                    if (stack.Collectible.CombustibleProps != null && stack.Collectible.CombustibleProps.MeltingPoint > 0)
+                    if (stack.Collectible.CombustibleProps != null && stack.Collectible.CombustibleProps.MeltingPoint < 250)
                     {
                         ItemStackMoveOperation op = new ItemStackMoveOperation(world, EnumMouseButton.Button1, 0, EnumMergePriority.DirectMerge, 1);
                         byPlayer.InventoryManager.ActiveHotbarSlot.TryPutInto(bef.inputSlot, ref op);
@@ -241,7 +223,7 @@ namespace QptechFurniture.src
                         }
                     }
 
-                    if (stack.Collectible.CombustibleProps != null && stack.Collectible.CombustibleProps.BurnTemperature > 0)
+                    if (stack.Collectible.CombustibleProps != null && stack.Collectible.CombustibleProps.BurnTemperature < 250)
                     {
                         ItemStackMoveOperation op = new ItemStackMoveOperation(world, EnumMouseButton.Button1, 0, EnumMergePriority.DirectMerge, 1);
                         byPlayer.InventoryManager.ActiveHotbarSlot.TryPutInto(bef.fuelSlot, ref op);
@@ -252,48 +234,6 @@ namespace QptechFurniture.src
                         }
                     }
                 }
-
-                if (stack?.Collectible.Attributes?.IsTrue("mealContainer") == true)
-                {
-                    ItemSlot potSlot = null;
-                    if (bef?.inputStack?.Collectible is BlockCookedContainer)
-                    {
-                        potSlot = bef.inputSlot;
-                    }
-                    if (bef?.outputStack?.Collectible is BlockCookedContainer)
-                    {
-                        potSlot = bef.outputSlot;
-                    }
-
-                    if (potSlot != null)
-                    {
-                        BlockCookedContainer blockPot = potSlot.Itemstack.Collectible as BlockCookedContainer;
-                        ItemSlot targetSlot = byPlayer.InventoryManager.ActiveHotbarSlot;
-                        if (byPlayer.InventoryManager.ActiveHotbarSlot.StackSize > 1)
-                        {
-                            targetSlot = new DummySlot(targetSlot.TakeOut(1));
-                            byPlayer.InventoryManager.ActiveHotbarSlot.MarkDirty();
-                            blockPot.ServeIntoBowlStack(targetSlot, potSlot, world);
-                            if (!byPlayer.InventoryManager.TryGiveItemstack(targetSlot.Itemstack, true))
-                            {
-                                world.SpawnItemEntity(targetSlot.Itemstack, byPlayer.Entity.ServerPos.XYZ);
-                            }
-                        }
-                        else
-                        {
-                            blockPot.ServeIntoBowlStack(targetSlot, potSlot, world);
-                        }
-
-                    }
-                    else
-                    {
-                        return false;
-                    }
-
-                    return true;
-                }
-
-
 
                 return base.OnBlockInteractStart(world, byPlayer, blockSel);
             }
@@ -344,9 +284,9 @@ namespace QptechFurniture.src
             if (stage == 4)
             {
                 BlockEntity be = world.BlockAccessor.GetBlockEntity(pos);
-                if (be is BlockEntityFirepit)
+                if (be is BlockEntityStoneFirePit)
                 {
-                    ((BlockEntityFirepit)be).Inventory[0].Itemstack = new ItemStack(obj, 4);
+                    ((BlockEntityStoneFirePit)be).Inventory[0].Itemstack = new ItemStack(obj, 4);
                 }
             }
 

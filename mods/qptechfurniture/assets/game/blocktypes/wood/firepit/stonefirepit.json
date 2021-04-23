@@ -10,7 +10,7 @@
 				{ title: "firepit-handbook-help-title", text: "firepit-handbook-help-text" }
 			]
 		}
-	},	
+	},
 	class: "BlockStoneFirePit",
 	entityClass: "StoneFirePit",
 	behaviors: [{name: "Container"}, {name: "Unstable"}, { name: "Ignitable" }, { name: "HeatSource" }],
@@ -25,12 +25,12 @@
 		"tinder": { base: "block/hay/normal-side" },
 		"stone": {base: "block/stone/rock/shale"}
 	},
-	creativeinventory: { general: ["stonefirepit-extinct"], decorative: ["stonefirepit-extinct"] },
+	creativeinventory: { general: ["stonefirepit-extinct"], decorative: ["stonefirepit-extinct"], kitchen: ["stonefirepit-extinct"] },
 	blockmaterial: "Wood",
 	lightAbsorption: 0,
 	lightHsvByType: {
-		"stonefirepit-extinct": [7, 7, 3],
-		"stonefirepit-lit": [7, 7, 16],
+		"stonefirepit-extinct": [7, 7, 2],
+		"stonefirepit-lit": [7, 7, 12],
 	},
 	particlePropertiesByType: {
 		"stonefirepit-extinct": [
