@@ -70,16 +70,27 @@ namespace qptech.src
                     var firepit = checkblock as BlockEntityFirepit;
                     //NO Firepit then you musta quit
                     if (firepit == null) {continue; }
-                    
-                    if (firepit.inputSlot == null) { continue; }
-                    //Don't bother trying to add fuel if nothing is being cooked
-                    if (firepit.inputSlot.StackSize == 0) { continue; }
-                    if (firepit.fuelSlot==null) { continue; }
-                    //IF fuel is in the fuelSlot don't bother
-                    if (firepit.fuelSlot.StackSize > 0) { 
-                        
+                    if (firepit.fuelSlot == null) { continue; }
+                    if (firepit.fuelSlot.StackSize > 0)
+                    {
+
                         continue;
                     }
+
+                    //check if firepit needs fuel - is it cooking something, or has a heat using generator above it
+                    bool dofuel = false;
+                    BlockPos checkforgenerator = checkPos.UpCopy();
+                    checkblock = Api.World.BlockAccessor.GetBlockEntity(checkforgenerator);
+                    var generator = checkblock as BEEGenerator;
+                    if (generator != null)
+                    {
+                        if (generator.IsOn&&generator.RequiresHeat) { dofuel = true; }
+                    }
+                    if (firepit.inputSlot != null&&firepit.inputSlot.StackSize>0) { dofuel=true; }
+                    if (!dofuel) { continue; }
+                    
+                    //IF fuel is in the fuelSlot don't bother
+                    
                     //TODO figure out how to keep firepit lit, also figure out how to verify fuel
                     //OK looks like we need fuel, attempt to add a piece
                     ItemSlot sourceSlot = inputContainer.Inventory.GetAutoPullFromSlot(BlockFacing.DOWN);
@@ -90,7 +101,10 @@ namespace qptech.src
                     int qmoved = sourceSlot.TryPutInto(firepit.fuelSlot, ref op);
                     firepit.fuelSlot.MarkDirty();
                     sourceSlot.MarkDirty();
-
+                    if (!firepit.canIgniteFuel&& !firepit.IsBurning)
+                    {
+                        firepit.igniteFuel();
+                    }
                     
                     
                 }

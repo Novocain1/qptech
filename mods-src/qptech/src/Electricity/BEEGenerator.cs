@@ -24,6 +24,7 @@ namespace qptech.src
         bool animInit = false;
         bool usesFuelWhileOn = false;  //always use fuel, even if no load (unless turned off)
         bool requiresHeat = false;      //will check for heat to produce power
+        public bool RequiresHeat => requiresHeat;
         float requiredHeat =0;      //how much heat is necessary
         BlockFacing heatFace = BlockFacing.DOWN; //which face to check for heat
         bool requiresWater = false;     //will check for water to produce power
