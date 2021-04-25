@@ -14,16 +14,16 @@ namespace QptechFurniture.src
 			api.RegisterBlockClass("BlockDoubleSink", typeof(BlockDoubleSink));
 			api.RegisterBlockClass("BlockIceBox", typeof(BlockIceBox)); 
 			api.RegisterBlockClass("ModdedBlockLiquidContainerBase", typeof(ModdedBlockLiquidContainerBase));
-			api.RegisterBlockClass("BlockStoneFirePit", typeof(BlockStoneFirePit));
+			api.RegisterBlockClass("BlockCampFire", typeof(BlockCampFire));
 
 			// Item Class 
 
-			api.RegisterItemClass("ItemStoneFirePitBase", typeof(ItemStoneFirePitBase));
+			api.RegisterItemClass("ItemCampFire", typeof(ItemCampFire));
 			// Block Entity Class 
 			api.RegisterBlockEntityClass("SingleSink", typeof(BlockEntitySingleSink));
 			api.RegisterBlockEntityClass("DoubleSink", typeof(BlockEntityDoubleSink));
 			api.RegisterBlockEntityClass("BlockEntityIceBox", typeof(BlockEntityIceBox));
-			api.RegisterBlockEntityClass("StoneFirePit", typeof(BlockEntityStoneFirePit));
+			api.RegisterBlockEntityClass("CampFire", typeof(BlockEntityCampFire));
 		}
 	}
 }

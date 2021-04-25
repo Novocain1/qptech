@@ -62,12 +62,30 @@ namespace QptechFurniture.src
 			{
 				new WorldInteraction()
 				{
+					ActionLangCode = "heldhelp-fill",
+					MouseButton = EnumMouseButton.Right,
+					ShouldApply = (wi, bs, es) => {
+						return GetCurrentLitres(api.World, inSlot.Itemstack) < CapacityLitres;
+					}
+				},
+				new WorldInteraction()
+				{
+					ActionLangCode = "heldhelp-empty",
+					HotKeyCode = "sprint",
+					MouseButton = EnumMouseButton.Right,
+					ShouldApply = (wi, bs, es) => {
+						return GetCurrentLitres(api.World, inSlot.Itemstack) > 0;
+					}
+				},
+				new WorldInteraction()
+				{
 					ActionLangCode = "heldhelp-place",
+					HotKeyCode = "sneak",
 					MouseButton = EnumMouseButton.Right,
 					ShouldApply = (wi, bs, es) => {
 						return true;
 					}
-				}
+				},
 			};
 		}
 

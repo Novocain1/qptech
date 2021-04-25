@@ -1,13 +1,12 @@
 ﻿using Vintagestory.API.Client;
 using Vintagestory.API.Common;
-using Vintagestory.API.Common.Entities;
 using Vintagestory.API.MathTools;
 using Vintagestory.API.Util;
 
 
 namespace QptechFurniture.src
 {
-    public class ItemStoneFirePitBase: Item
+    public class ItemCampFire : Item
     {
 
         public override void OnHeldInteractStart(ItemSlot itemslot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel, bool firstEvent, ref EnumHandHandling handHandling)
@@ -15,8 +14,8 @@ namespace QptechFurniture.src
             if (blockSel == null || byEntity?.World == null || !byEntity.Controls.Sneak) return;
 
             IWorldAccessor world = byEntity.World;
-            Block stonefirepitBlock = world.GetBlock(new AssetLocation("stonefirepit-construct1"));
-            if (stonefirepitBlock == null) return;
+            Block campfireBlock = world.GetBlock(new AssetLocation("furniture:campfire-construct1"));
+            if (campfireBlock == null) return;
 
 
             BlockPos onPos = blockSel.DidOffset ? blockSel.Position : blockSel.Position.AddCopy(blockSel.Face);
@@ -34,12 +33,12 @@ namespace QptechFurniture.src
 
             string useless = "";
 
-            if (!block.CanAttachBlockAt(byEntity.World.BlockAccessor, stonefirepitBlock, onPos.DownCopy(), BlockFacing.UP)) return;
-            if (!stonefirepitBlock.CanPlaceBlock(world, byPlayer, new BlockSelection() { Position = onPos, Face = BlockFacing.UP }, ref useless)) return;
+            if (!block.CanAttachBlockAt(byEntity.World.BlockAccessor, campfireBlock, onPos.DownCopy(), BlockFacing.UP)) return;
+            if (!campfireBlock.CanPlaceBlock(world, byPlayer, new BlockSelection() { Position = onPos, Face = BlockFacing.UP }, ref useless)) return;
 
-            world.BlockAccessor.SetBlock(stonefirepitBlock.BlockId, onPos);
+            world.BlockAccessor.SetBlock(campfireBlock.BlockId, onPos);
 
-            if (stonefirepitBlock.Sounds != null) world.PlaySoundAt(stonefirepitBlock.Sounds.Place, blockSel.Position.X, blockSel.Position.Y, blockSel.Position.Z, byPlayer);
+            if (campfireBlock.Sounds != null) world.PlaySoundAt(campfireBlock.Sounds.Place, blockSel.Position.X, blockSel.Position.Y, blockSel.Position.Z, byPlayer);
 
             itemslot.Itemstack.StackSize--;
             handHandling = EnumHandHandling.PreventDefaultAction;

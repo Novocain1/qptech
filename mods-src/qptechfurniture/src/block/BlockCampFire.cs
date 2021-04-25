@@ -1,16 +1,13 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
-using Vintagestory.API.Datastructures;
 using Vintagestory.API.MathTools;
-using Vintagestory.GameContent;
-using System.Collections.Generic;
-using Vintagestory.API;
 using Vintagestory.API.Util;
+using Vintagestory.GameContent;
 
 namespace QptechFurniture.src
 {
-    public class BlockStoneFirePit : Block
+    public class BlockCampFire : Block
     {
         public int Stage
         {
@@ -103,7 +100,7 @@ namespace QptechFurniture.src
             }
 
 
-            interactions = ObjectCacheUtil.GetOrCreate(api, "firepitInteractions-" + Stage, () =>
+            interactions = ObjectCacheUtil.GetOrCreate(api, "campefireInteractions-" + Stage, () =>
             {
                 List<ItemStack> canIgniteStacks = new List<ItemStack>();
 
@@ -136,7 +133,7 @@ namespace QptechFurniture.src
                         HotKeyCode = "sneak",
                         Itemstacks = canIgniteStacks.ToArray(),
                         GetMatchingStacks = (wi, bs, es) => {
-                            BlockEntityStoneFirePit bef = api.World.BlockAccessor.GetBlockEntity(bs.Position) as BlockEntityStoneFirePit;
+                            BlockEntityCampFire bef = api.World.BlockAccessor.GetBlockEntity(bs.Position) as BlockEntityCampFire;
                             if (bef?.fuelSlot != null && !bef.fuelSlot.Empty && !bef.IsBurning)
                             {
                                 return wi.Itemstacks;
@@ -157,7 +154,7 @@ namespace QptechFurniture.src
 
         public override EnumIgniteState OnTryIgniteBlock(EntityAgent byEntity, BlockPos pos, float secondsIgniting)
         {
-            BlockEntityStoneFirePit bef = api.World.BlockAccessor.GetBlockEntity(pos) as BlockEntityStoneFirePit;
+            BlockEntityCampFire bef = api.World.BlockAccessor.GetBlockEntity(pos) as BlockEntityCampFire;
             if (bef != null && bef.fuelSlot.Empty) return EnumIgniteState.NotIgnitablePreventDefault;
             if (bef != null && bef.IsBurning) return EnumIgniteState.NotIgnitablePreventDefault;
 
@@ -166,7 +163,7 @@ namespace QptechFurniture.src
 
         public override void OnTryIgniteBlockOver(EntityAgent byEntity, BlockPos pos, float secondsIgniting, ref EnumHandling handling)
         {
-            BlockEntityStoneFirePit bef = api.World.BlockAccessor.GetBlockEntity(pos) as BlockEntityStoneFirePit;
+            BlockEntityCampFire bef = api.World.BlockAccessor.GetBlockEntity(pos) as BlockEntityCampFire;
             if (bef != null && !bef.canIgniteFuel)
             {
                 bef.canIgniteFuel = true;
@@ -192,6 +189,24 @@ namespace QptechFurniture.src
                 base.OnAsyncClientParticleTick(manager, pos, windAffectednessAtPos, secondsTicking);
                 return;
             }
+
+            BlockEntityCampFire bef = manager.BlockAccess.GetBlockEntity(pos) as BlockEntityCampFire;
+            if (bef != null && bef.CurrentModel == EnumCampFireModel.Over)
+            {
+                for (int i = 0; i < ringParticles.Length; i++)
+                {
+                    AdvancedParticleProperties bps = ringParticles[i];
+                    bps.WindAffectednesAtPos = windAffectednessAtPos;
+                    bps.basePos.X = pos.X + basePos[i].X;
+                    bps.basePos.Y = pos.Y + basePos[i].Y;
+                    bps.basePos.Z = pos.Z + basePos[i].Z;
+
+                    manager.Spawn(bps);
+                }
+
+                return;
+            }
+
             base.OnAsyncClientParticleTick(manager, pos, windAffectednessAtPos, secondsTicking);
         }
 
@@ -203,7 +218,7 @@ namespace QptechFurniture.src
 
             if (stage == 5)
             {
-                BlockEntityStoneFirePit bef = world.BlockAccessor.GetBlockEntity(blockSel.Position) as BlockEntityStoneFirePit;
+                BlockEntityCampFire bef = world.BlockAccessor.GetBlockEntity(blockSel.Position) as BlockEntityCampFire;
 
                 if (bef != null && stack?.Block != null && stack.Block.HasBehavior<BlockBehaviorCanIgnite>())
                 {
@@ -212,7 +227,7 @@ namespace QptechFurniture.src
 
                 if (bef != null && stack != null && byPlayer.Entity.Controls.Sneak)
                 {
-                    if (stack.Collectible.CombustibleProps != null && stack.Collectible.CombustibleProps.MeltingPoint < 250)
+                    if (stack.Collectible.CombustibleProps != null && stack.Collectible.CombustibleProps.MeltingPoint > 0)
                     {
                         ItemStackMoveOperation op = new ItemStackMoveOperation(world, EnumMouseButton.Button1, 0, EnumMergePriority.DirectMerge, 1);
                         byPlayer.InventoryManager.ActiveHotbarSlot.TryPutInto(bef.inputSlot, ref op);
@@ -223,7 +238,7 @@ namespace QptechFurniture.src
                         }
                     }
 
-                    if (stack.Collectible.CombustibleProps != null && stack.Collectible.CombustibleProps.BurnTemperature < 250)
+                    if (stack.Collectible.CombustibleProps != null && stack.Collectible.CombustibleProps.BurnTemperature > 0)
                     {
                         ItemStackMoveOperation op = new ItemStackMoveOperation(world, EnumMouseButton.Button1, 0, EnumMergePriority.DirectMerge, 1);
                         byPlayer.InventoryManager.ActiveHotbarSlot.TryPutInto(bef.fuelSlot, ref op);
@@ -234,7 +249,6 @@ namespace QptechFurniture.src
                         }
                     }
                 }
-
                 return base.OnBlockInteractStart(world, byPlayer, blockSel);
             }
 
@@ -284,12 +298,11 @@ namespace QptechFurniture.src
             if (stage == 4)
             {
                 BlockEntity be = world.BlockAccessor.GetBlockEntity(pos);
-                if (be is BlockEntityStoneFirePit)
+                if (be is BlockEntityCampFire)
                 {
-                    ((BlockEntityStoneFirePit)be).Inventory[0].Itemstack = new ItemStack(obj, 4);
+                    ((BlockEntityCampFire)be).inventory[0].Itemstack = new ItemStack(obj, 4);
                 }
             }
-
 
             (player as IClientPlayer)?.TriggerFpAnimation(EnumHandInteract.HeldItemInteract);
 

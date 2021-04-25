@@ -10,7 +10,7 @@ using Vintagestory.GameContent;
 
 namespace QptechFurniture.src
 {
-    public class StoneFirePitContentsRenderer : IRenderer
+    public class CampfireContentsRenderer : IRenderer
     {
         MeshRef meshref;
         ICoreClientAPI api;
@@ -22,7 +22,7 @@ namespace QptechFurniture.src
         ModelTransform transform;
         ModelTransform defaultTransform;
 
-        public IInFirepitRenderer contentStackRenderer;
+        public IInCampFireRenderer contentStackRenderer;
         public bool RequireSpit
         {
             get
@@ -41,7 +41,7 @@ namespace QptechFurniture.src
             get { return 48; }
         }
 
-        public StoneFirePitContentsRenderer(ICoreClientAPI api, BlockPos pos)
+        public CampfireContentsRenderer(ICoreClientAPI api, BlockPos pos)
         {
             this.api = api;
             this.pos = pos;
@@ -64,7 +64,7 @@ namespace QptechFurniture.src
         }
 
 
-        internal void SetChildRenderer(ItemStack contentStack, IInFirepitRenderer renderer)
+        internal void SetChildRenderer(ItemStack contentStack, IInCampFireRenderer renderer)
         {
             this.ContentStack = contentStack;
             meshref?.Dispose();

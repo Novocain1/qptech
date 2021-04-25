@@ -16,9 +16,6 @@ namespace QptechFurniture.src
 		public virtual float CapacityLitres => capacityLitresFromAttributes;
 		public virtual int ContainerSlotId => 0;
 
-
-
-
 		public override void OnLoadCollectibleMappings(IWorldAccessor worldForResolve, ItemSlot inSlot, Dictionary<int, AssetLocation> oldBlockIdMapping, Dictionary<int, AssetLocation> oldItemIdMapping)
 		{
 			base.OnLoadCollectibleMappings(worldForResolve, inSlot, oldBlockIdMapping, oldItemIdMapping);
@@ -78,7 +75,6 @@ namespace QptechFurniture.src
 			return base.GetPlacedBlockInteractionHelp(world, selection, forPlayer).Append(interactions);
 		}
 
-
 		public override WorldInteraction[] GetHeldInteractionHelp(ItemSlot inSlot)
 		{
 			return new WorldInteraction[]
@@ -103,6 +99,7 @@ namespace QptechFurniture.src
 				new WorldInteraction()
 				{
 					ActionLangCode = "heldhelp-place",
+					HotKeyCode = "sneak",
 					MouseButton = EnumMouseButton.Right,
 					ShouldApply = (wi, bs, es) => {
 						return true;

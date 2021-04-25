@@ -9,12 +9,9 @@ using Vintagestory.API.Config;
 
 namespace Vintagestory.GameContent
 {
-    public class GuiDialogBlockEntityStoneFirePit : GuiDialogBlockEntity
+    public class GuiDialogBlockCampFire : GuiDialogBlockEntity
     {
-        bool haveCookingContainer;
         string currentOutputText;
-
-        ElementBounds cookingSlotsSlotBounds;
 
         long lastRedrawMs;
         EnumPosFlag screenPos;
@@ -24,7 +21,7 @@ namespace Vintagestory.GameContent
 
         public override double DrawOrder => 0.2;
 
-        public GuiDialogBlockEntityStoneFirePit(string dialogTitle, InventoryBase Inventory, BlockPos BlockEntityPosition,
+        public GuiDialogBlockCampFire(string dialogTitle, InventoryBase Inventory, BlockPos BlockEntityPosition,
                                            SyncedTreeAttribute tree, ICoreClientAPI capi)
             : base(dialogTitle, Inventory, BlockEntityPosition, capi)
         {
@@ -47,21 +44,16 @@ namespace Vintagestory.GameContent
                 hoveredSlot = null;
             }
 
-
-
-
             string newOutputText = Attributes.GetString("outputText", "");
-            bool newHaveCookingContainer = Attributes.GetInt("haveCookingContainer") > 0;
 
             GuiElementDynamicText outputTextElem;
 
-            if (haveCookingContainer == newHaveCookingContainer && SingleComposer != null)
+            if (SingleComposer != null)
             {
                 outputTextElem = SingleComposer.GetDynamicText("outputText");
                 outputTextElem.SetNewText(newOutputText, true);
                 SingleComposer.GetCustomDraw("symbolDrawer").Redraw();
 
-                haveCookingContainer = newHaveCookingContainer;
                 currentOutputText = newOutputText;
 
                 outputTextElem.Bounds.fixedOffsetY = 0;
@@ -76,22 +68,15 @@ namespace Vintagestory.GameContent
                 return;
             }
 
-
-            haveCookingContainer = newHaveCookingContainer;
             currentOutputText = newOutputText;
+    
 
-            int qCookingSlots = Attributes.GetInt("quantityCookingSlots");
+            ElementBounds stoveBounds = ElementBounds.Fixed(0, 0, 210 + 10, 250);
 
-            ElementBounds stoveBounds = ElementBounds.Fixed(0, 0, 210, 250);
+            ElementBounds inputSlotBounds = ElementStdBounds.SlotGrid(EnumDialogArea.None, 0, 30 + 40, 1, 1);
+            ElementBounds fuelSlotBounds = ElementStdBounds.SlotGrid(EnumDialogArea.None, 0, 130 + 50, 1, 1);
+            ElementBounds outputSlotBounds = ElementStdBounds.SlotGrid(EnumDialogArea.None, 153, 30 + 40, 1, 1);
 
-            cookingSlotsSlotBounds = ElementStdBounds.SlotGrid(EnumDialogArea.None, 0, 30 + 45, 4, qCookingSlots / 4);
-            cookingSlotsSlotBounds.fixedHeight += 10;
-
-            double top = cookingSlotsSlotBounds.fixedHeight + cookingSlotsSlotBounds.fixedY;
-
-            ElementBounds inputSlotBounds = ElementStdBounds.SlotGrid(EnumDialogArea.None, 0, top, 1, 1);
-            ElementBounds fuelSlotBounds = ElementStdBounds.SlotGrid(EnumDialogArea.None, 0, 110 + top, 1, 1);
-            ElementBounds outputSlotBounds = ElementStdBounds.SlotGrid(EnumDialogArea.None, 153, top, 1, 1);
 
             // 2. Around all that is 10 pixel padding
             ElementBounds bgBounds = ElementBounds.Fill.WithFixedPadding(GuiStyle.ElementToDialogPadding);
@@ -101,18 +86,8 @@ namespace Vintagestory.GameContent
             // 3. Finally Dialog
             ElementBounds dialogBounds = ElementStdBounds.AutosizedMainDialog
                 .WithFixedAlignmentOffset(IsRight(screenPos) ? -GuiStyle.DialogToScreenPadding : GuiStyle.DialogToScreenPadding, 0)
-                .WithAlignment(IsRight(screenPos) ? EnumDialogArea.RightMiddle : EnumDialogArea.LeftMiddle)
-            ;
-
-
-            if (!capi.Settings.Bool["immersiveMouseMode"])
-            {
-                dialogBounds.fixedOffsetY += (stoveBounds.fixedHeight + 65 + (haveCookingContainer ? 25 : 0)) * YOffsetMul(screenPos);
-            }
-
-
-            int[] cookingSlotIds = new int[qCookingSlots];
-            for (int i = 0; i < qCookingSlots; i++) cookingSlotIds[i] = 0 + i;
+                .WithAlignment(IsRight(screenPos) ? EnumDialogArea.RightMiddle : EnumDialogArea.LeftMiddle);
+            
 
             SingleComposer = capi.Gui
                 .CreateCompo("blockentitystove" + BlockEntityPosition, dialogBounds)
@@ -120,15 +95,11 @@ namespace Vintagestory.GameContent
                 .AddDialogTitleBar(DialogTitle, OnTitleBarClose)
                 .BeginChildElements(bgBounds)
                     .AddDynamicCustomDraw(stoveBounds, OnBgDraw, "symbolDrawer")
-                    .AddDynamicText("", CairoFont.WhiteDetailText(), EnumTextOrientation.Left, ElementBounds.Fixed(0, 30, 210, 45), "outputText")
-                    .AddIf(haveCookingContainer)
-                        .AddItemSlotGrid(Inventory, SendInvPacket, 4, cookingSlotIds, cookingSlotsSlotBounds, "ingredientSlots")
-                    .EndIf()
+                    .AddDynamicText("", CairoFont.WhiteDetailText(), EnumTextOrientation.Left, ElementBounds.Fixed(0, 18, 210, 45), "outputText")
                     .AddItemSlotGrid(Inventory, SendInvPacket, 1, new int[] { 0 }, fuelSlotBounds, "fuelslot")
                     .AddDynamicText("", CairoFont.WhiteDetailText(), EnumTextOrientation.Left, fuelSlotBounds.RightCopy(17, 16).WithFixedSize(60, 30), "fueltemp")
                     .AddItemSlotGrid(Inventory, SendInvPacket, 1, new int[] { 1 }, inputSlotBounds, "oreslot")
-                    .AddDynamicText("", CairoFont.WhiteDetailText(), EnumTextOrientation.Left, inputSlotBounds.RightCopy(23, 16).WithFixedSize(60, 30), "oretemp")
-
+                    .AddDynamicText("", CairoFont.WhiteDetailText(), EnumTextOrientation.Left, inputSlotBounds.RightCopy(28, 15).WithFixedSize(60, 40), "oretemp")
                     .AddItemSlotGrid(Inventory, SendInvPacket, 1, new int[] { 2 }, outputSlotBounds, "outputslot")
                 .EndChildElements()
                 .Compose();
@@ -184,12 +155,11 @@ namespace Vintagestory.GameContent
 
         private void OnBgDraw(Context ctx, ImageSurface surface, ElementBounds currentBounds)
         {
-            double top = cookingSlotsSlotBounds.fixedHeight + cookingSlotsSlotBounds.fixedY;
 
             // 1. Fire
             ctx.Save();
             Matrix m = ctx.Matrix;
-            m.Translate(GuiElement.scaled(5), GuiElement.scaled(53 + top));
+            m.Translate(GuiElement.scaled(5), GuiElement.scaled(53 + 70));
             m.Scale(GuiElement.scaled(0.25), GuiElement.scaled(0.25));
             ctx.Matrix = m;
             capi.Gui.Icons.DrawFlame(ctx);
@@ -209,7 +179,7 @@ namespace Vintagestory.GameContent
             // 2. Arrow Right
             ctx.Save();
             m = ctx.Matrix;
-            m.Translate(GuiElement.scaled(63), GuiElement.scaled(top + 2));
+            m.Translate(GuiElement.scaled(63), GuiElement.scaled(1 + 72));
             m.Scale(GuiElement.scaled(0.6), GuiElement.scaled(0.6));
             ctx.Matrix = m;
             capi.Gui.Icons.DrawArrowRight(ctx, 2);
@@ -259,7 +229,6 @@ namespace Vintagestory.GameContent
             SingleComposer.GetSlotGrid("fuelslot").OnGuiClosed(capi);
             SingleComposer.GetSlotGrid("oreslot").OnGuiClosed(capi);
             SingleComposer.GetSlotGrid("outputslot").OnGuiClosed(capi);
-            SingleComposer.GetSlotGrid("ingredientSlots")?.OnGuiClosed(capi);
 
             base.OnGuiClosed();
 

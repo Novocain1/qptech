@@ -1,11 +1,11 @@
 {
-	"code": "upper",
+	"code": "middle",
 	"class": "BlockGenericTypedContainer",
 	"entityclass": "GenericTypedContainer",
 	"maxStackSize": 1,
 	"attributes": {
 		"partialAttachable": true,
-		"inventoryClassName": "upper",
+		"inventoryClassName": "middle",
 		"defaultType": "acacia-cabinet",
 		"types": [
 			"oak-cabinet",
@@ -40,12 +40,12 @@
 			"maple-cabinet-halfplain-1": 10
 		},
 		"dialogTitleLangCode": {
-			"oak-cabinet": "Upper Kitchen Cabinet",
-			"oak-cabinet-halfplain-1": "Upper Kitchen Cabinet",
-			"acacia-cabinet": "Upper Kitchen Cabinet",
+			"oak-cabinet": "Middle Kitchen Cabinet",
+			"oak-cabinet-halfplain-1": "Middle Kitchen Cabinet",
+			"acacia-cabinet": "Middle Kitchen Cabinet",
 			"acacia-cabinet-halfplain-1": "Middle Kitchen Cabinet",
-			"maple-cabinet": "Upper Kitchen Cabinet",
-			"maple-cabinet-halfplain-1": "Upper Kitchen Cabinet"
+			"maple-cabinet": "Middle Kitchen Cabinet",
+			"maple-cabinet-halfplain-1": "Middle Kitchen Cabinet"
 		},
 		"storageType": {
 			"oak-cabinet": 189,
@@ -64,12 +64,12 @@
 			"maple-cabinet-halfplain-1": false
 		},
 		"shape": {
-			"oak-cabinet": "block/wood/cabinet/upper/oak/cabinet-normal",
-			"oak-cabinet-halfplain-1": "block/wood/cabinet/upper/oak/glass/halfplain/cabinet-normal",
-			"acacia-cabinet": "block/wood/cabinet/upper/acacia/cabinet-normal",
-			"acacia-cabinet-halfplain-1": "block/wood/cabinet/upper/acacia/glass/halfplain/cabinet-normal",
-			"maple-cabinet": "block/wood/cabinet/upper/maple/cabinet-normal",
-			"maple-cabinet-halfplain-1": "block/wood/cabinet/upper/maple/glass/halfplain/cabinet-normal"
+			"oak-cabinet": "block/wood/cabinet/middle/oak/cabinet-normal",
+			"oak-cabinet-halfplain-1": "block/wood/cabinet/middle/oak/glass/halfplain/cabinet-normal",
+			"acacia-cabinet": "block/wood/cabinet/middle/acacia/cabinet-normal",
+			"acacia-cabinet-halfplain-1": "block/wood/cabinet/middle/acacia/glass/halfplain/cabinet-normal",
+			"maple-cabinet": "block/wood/cabinet/middle/maple/cabinet-normal",
+			"maple-cabinet-halfplain-1": "block/wood/cabinet/middle/maple/glass/halfplain/cabinet-normal"
 		},
 		"typedOpenSound": {
 			"oak-cabinet": "game:sounds/block/largechestopen",
@@ -110,32 +110,32 @@
 				"stacks": [
 					{
 						"type": "block",
-						"code": "Upper-east",
+						"code": "middle-east",
 						"attributes": { "type": "oak-cabinet" }
 					},
 					{
 						"type": "block",
-						"code": "Upper-east",
+						"code": "middle-east",
 						"attributes": { "type": "oak-cabinet-halfplain-1" }
 					},
 					{
 						"type": "block",
-						"code": "Upper-east",
+						"code": "middle-east",
 						"attributes": { "type": "acacia-cabinet" }
 					},
 					{
 						"type": "block",
-						"code": "Upper-east",
+						"code": "middle-east",
 						"attributes": { "type": "acacia-cabinet-halfplain-1" }
 					},
 					{
 						"type": "block",
-						"code": "Upper-east",
+						"code": "middle-east",
 						"attributes": { "type": "maple-cabinet" }
 					},
 					{
 						"type": "block",
-						"code": "Upper-east",
+						"code": "middle-east",
 						"attributes": { "type": "maple-cabinet-halfplain-1" }
 					}
 				]
@@ -144,63 +144,56 @@
 	},
 	"heldTpIdleAnimation": "holdunderarm",
 	"shapeInventory": {
-		"base": "block/wood/cabinet/upper/cabinet-normal",
+		"base": "block/wood/cabinet/middle/cabinet-normal",
 		"rotateY": 270
 	},
 	"shapeByType": {
 		"*-north": {
-			"base": "block/wood/cabinet/upper/cabinet-normal",
+			"base": "block/wood/cabinet/middle/cabinet-normal",
 			"rotateY": 0
 		},
 		"*-east": {
-			"base": "block/wood/cabinet/upper/cabinet-normal",
+			"base": "block/wood/cabinet/middle/cabinet-normal",
 			"rotateY": 270
 		},
 		"*-west": {
-			"base": "block/wood/cabinet/upper/cabinet-normal",
+			"base": "block/wood/cabinet/middle/cabinet-normal",
 			"rotateY": 90
 		},
 		"*-south": {
-			"base": "block/wood/cabinet/upper/cabinet-normal",
+			"base": "block/wood/cabinet/middle/cabinet-normal",
 			"rotateY": 180
 		}
 	},
 	"_comment": "Must declare textures so they get added to the block texture atlas",
 	"textures": {
 
-		"oak-cabinet-accessories": { "base": "block/wood/oak/countertop" },
 		"oak-cabinet-lid": { "base": "block/wood/oak/detail" },
 		"oak-cabinet-sides2": { "base": "block/wood/oak/cabinet" },
 		"oak-cabinet-cabinet-detail": { "base": "block/wood/oak/cabinet-detail" },
 
-		"oak-cabinet-halfplain-1-accessories": { "base": "block/wood/oak/countertop" },
 		"oak-cabinet-halfplain-1-lid": { "base": "block/wood/oak/detail" },
 		"oak-cabinet-halfplain-1-sides2": { "base": "block/wood/oak/cabinet" },
 		"oak-cabinet-halfplain-1-cabinet-detail": { "base": "block/wood/oak/cabinet-detail" },
 		"oak-cabinet-halfplain-1-leadedhaft": { "base": "block/glass/leadedhaft" },
 
-		"acacia-cabinet-accessories": { "base": "block/wood/acacia/countertop" },
 		"acacia-cabinet-lid": { "base": "block/wood/acacia/detail" },
 		"acacia-cabinet-sides2": { "base": "block/wood/acacia/cabinet" },
 		"acacia-cabinet-cabinet-detail": { "base": "block/wood/acacia/cabinet-detail" },
 
-		"acacia-cabinet-halfplain-1-accessories": { "base": "block/wood/acacia/countertop" },
 		"acacia-cabinet-halfplain-1-lid": { "base": "block/wood/acacia/detail" },
 		"acacia-cabinet-halfplain-1-sides2": { "base": "block/wood/acacia/cabinet" },
 		"acacia-cabinet-halfplain-1-cabinet-detail": { "base": "block/wood/acacia/cabinet-detail" },
 		"acacia-cabinet-halfplain-1-leadedhaft": { "base": "block/glass/leadedhaft" },
 
-		"maple-cabinet-accessories": { "base": "block/wood/maple/countertop" },
 		"maple-cabinet-lid": { "base": "block/wood/maple/detail" },
 		"maple-cabinet-sides2": { "base": "block/wood/maple/cabinet" },
 		"maple-cabinet-cabinet-detail": { "base": "block/wood/maple/cabinet-detail" },
 
-		"maple-cabinet-halfplain-1-accessories": { "base": "block/wood/maple/countertop" },
 		"maple-cabinet-halfplain-1-lid": { "base": "block/wood/maple/detail" },
 		"maple-cabinet-halfplain-1-sides2": { "base": "block/wood/maple/cabinet" },
 		"maple-cabinet-halfplain-1-cabinet-detail": { "base": "block/wood/maple/cabinet-detail" },
 		"maple-cabinet-halfplain-1-leadedhaft": { "base": "block/glass/leadedhaft" }
-
 	},
 	"blockmaterial": "Wood",
 	"replaceable": 900,
@@ -218,10 +211,10 @@
 		"burnDuration": 35
 	},
 	"sounds": {
-		"place": "block/planks",
-		"hit": "block/planks",
-		"break": "block/planks",
-		"walk": "walk/wood"
+		"place": "game:block/planks",
+		"hit": "game:block/planks",
+		"break": "game:block/planks",
+		"walk": "game:walk/wood"
 	},
 	"materialDensity": 600,
 	"tpHandTransform": {
