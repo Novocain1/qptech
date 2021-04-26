@@ -11,7 +11,8 @@
 			"normal-generic": "chestcontents"
 		},
 		"typedOpenSound": { "normal-generic": "sounds/block/largechestopen" },
-		"typedCloseSound": { "normal-generic": "sounds/block/largechestclose" }
+		"typedCloseSound": { "normal-generic": "sounds/block/largechestclose" },
+		
 	},
 	"behaviors": [
 		{ "name": "Lockable" },

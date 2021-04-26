@@ -176,6 +176,7 @@
     <None Include="qptechweapons\assets\game\shapes\item\tool\slingshot\crude-charge2.json" />
     <None Include="qptechweapons\assets\game\shapes\item\tool\slingshot\crude-charge3.json" />
     <None Include="qptechweapons\assets\game\shapes\item\tool\slingshot\crude.json" />
+    <None Include="qptech\assets\game\blocktypes\tincan-sealed.json" />
     <None Include="qptech\assets\game\blocktypes\tincan-full.json" />
     <None Include="qptech\assets\game\blocktypes\tincan-open.json" />
     <None Include="qptech\assets\game\shapes\block\can-full.json" />
@@ -416,6 +417,7 @@
     <Content Include="qptech\assets\game\sounds\electriczap.ogg" />
     <Content Include="qptech\assets\game\sounds\industrial01.ogg" />
     <Content Include="qptech\assets\game\sounds\quarrytemp.ogg" />
+    <Content Include="qptech\assets\game\sounds\steamburst.ogg" />
     <Content Include="qptech\assets\game\textures\block\tincan.png" />
     <Content Include="qptech\assets\machines\textures\block\castiron.png" />
     <Content Include="qptech\assets\machines\textures\block\lightblock.png" />

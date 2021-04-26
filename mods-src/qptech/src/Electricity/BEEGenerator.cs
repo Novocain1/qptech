@@ -229,13 +229,14 @@ namespace qptech.src
                     {
 
                         checkslot.TakeOut(1);
+                        Api.World.PlaySoundAt(new AssetLocation("sounds/steamburst"), Pos.X, Pos.Y, Pos.Z, null, false, 8, 1);
                         checkslot.MarkDirty();
                         haswater = true;
                         break;
                     }
                 }
             }
-            
+
             return haswater;
         }
         

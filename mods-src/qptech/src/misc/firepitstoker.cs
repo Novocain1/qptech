@@ -73,7 +73,15 @@ namespace qptech.src
                     if (firepit.fuelSlot == null) { continue; }
                     if (firepit.fuelSlot.StackSize > 0)
                     {
-
+                        if (!firepit.canIgniteFuel && !firepit.IsBurning)
+                        {
+                            CombustibleProperties fuelCopts = firepit.fuelSlot.Itemstack.Collectible.CombustibleProps;
+                            CollectibleObject co = firepit.fuelSlot.Itemstack.Collectible;
+                            if (co == null) { continue; }
+                            CombustibleProperties cp = co.CombustibleProps;
+                            if (cp == null) { continue; }
+                            firepit.igniteFuel();
+                        }
                         continue;
                     }
 
@@ -101,10 +109,7 @@ namespace qptech.src
                     int qmoved = sourceSlot.TryPutInto(firepit.fuelSlot, ref op);
                     firepit.fuelSlot.MarkDirty();
                     sourceSlot.MarkDirty();
-                    if (!firepit.canIgniteFuel&& !firepit.IsBurning)
-                    {
-                        firepit.igniteFuel();
-                    }
+                    
                     
                     
                 }

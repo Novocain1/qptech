@@ -1,51 +1,35 @@
 ﻿{
-	code: "tincan",
+	code: "tincan-sealed",
 	behaviors: [
-		{ name: "SneakPlacing"}, 
 		{ name: "UnstableFalling", properties: { attachmentArea: { x1: 5, y1: 0, z1: 5, x2: 10, y2: 0, z2: 10 } }}, 
-		{ name: "RightClickPickup"} 
 	],
-	variantgroups: [
-		{ code:"type", states: ["open"] },
-	],
-	attributesByType: {
-		"*-open": {
-			shelvable: true,
-			mealContainer: true,
-			mealBlockCode: "tincan-sealed",
-			servingCapacity: 1,
-			bowlContents: null,
-		},
-
-		"*": {
-			shelvable: true,
-			bowlContents: null
-		}
+	class: "BlockMeal",
+	attributes: {
+		shelvable: true,
+		eatenBlock: "tincan-open",
+		handleCookingContainerInteract: false,
+		spoilSpeedMulByFoodCat: {
+          "normal": {
+            "vegetable": 0.07,
+            "grain": 0.05,
+			"other" : 0.05
+          }
+        }
 	},
-	"__comment": "BlockBowl handles emptying/filling of honey over the bucket.",
-	class: "BlockBowl",
-	shapeByType: {
+	entityClass: "Meal",
+	heldTpIdleAnimation: "holdbothhands",
+	shape: { base: "block/can-sealed" },
 
-		"*": { base: "game:block/can-open" },
-	},
 	blockmaterial: "Ceramic",
-	creativeinventory: { "general": ["*"], "decorative": ["*"] },
+	creativeinventory: { "general": [""], "decorative": [""] },
 	replaceable: 300,
 	resistance: 0.75,
-	maxStackSizeByType: {
-		"*": 64,
-	},
+	maxStackSize: 4,
 	lightAbsorption: 0,
-	texturesByType: {
-		"*": { 
-			all: { base: "block/tincan" },
-			
-		},
-		
-	},
 	sounds: {
 		walk: "walk/stone",
 	},
+
 	sideopaque: {
 		all: false
 	},
@@ -68,10 +52,9 @@
 		scale: 2
 	},
 	tpHandTransform: {
-		translation: { x: -0.9, y: -0.1, z: -0.8 },
-		rotation: { x: 0, y: -56, z: 0 },
+		translation: { x: -0.84, y: -0.2, z: -0.58 },
+		rotation: { x: 90, y: 0, z: -60 },
 		origin: { x: 0.5, y: 0.1, z: 0.5 },
 		scale: 0.66
-	},
-	
+	}
 }
