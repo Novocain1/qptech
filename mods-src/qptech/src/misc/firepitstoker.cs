@@ -75,11 +75,11 @@ namespace qptech.src
                     {
                         if (!firepit.canIgniteFuel && !firepit.IsBurning)
                         {
-                            CombustibleProperties fuelCopts = firepit.fuelSlot.Itemstack.Collectible.CombustibleProps;
-                            CollectibleObject co = firepit.fuelSlot.Itemstack.Collectible;
-                            if (co == null) { continue; }
-                            CombustibleProperties cp = co.CombustibleProps;
-                            if (cp == null) { continue; }
+                            
+                            CollectibleObject cob = firepit.fuelSlot.Itemstack.Collectible;
+                            if (cob == null) { continue; }
+                            CombustibleProperties cpr = cob.CombustibleProps;
+                            if (cpr == null) { continue; }
                             firepit.igniteFuel();
                         }
                         continue;
@@ -103,6 +103,13 @@ namespace qptech.src
                     //OK looks like we need fuel, attempt to add a piece
                     ItemSlot sourceSlot = inputContainer.Inventory.GetAutoPullFromSlot(BlockFacing.DOWN);
                     if (sourceSlot == null) { continue; }
+                    
+                    //check if slot contains fuel
+                    CollectibleObject co = sourceSlot.Itemstack.Collectible;
+                    if (co == null) { continue; }
+                    CombustibleProperties cp = co.CombustibleProps;
+                    if (cp == null) { continue; }
+
                     int quantity = 1;
                     ItemStackMoveOperation op = new ItemStackMoveOperation(Api.World, EnumMouseButton.Left, 0, EnumMergePriority.DirectMerge, quantity);
 
