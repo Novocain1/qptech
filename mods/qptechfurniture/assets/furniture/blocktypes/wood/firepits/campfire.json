@@ -1,5 +1,5 @@
 {
-	code: "stonefirepit",
+	code: "campfire",
 	variantgroups: [
 		{ code:"burnstate", states: ["construct1", "construct2", "construct3", "construct4", "extinct", "lit", "cold"] }
 	],
@@ -9,31 +9,31 @@
 			extraSections: [
 				{ title: "firepit-handbook-help-title", text: "firepit-handbook-help-text" }
 			]
-		}
+		},
 	},
-	class: "BlockStoneFirePit",
-	entityClass: "StoneFirePit",
+	class: "BlockCampFire",
+	entityClass: "CampFire",
 	behaviors: [{name: "Container"}, {name: "Unstable"}, { name: "Ignitable" }, { name: "HeatSource" }],
 	renderpass: "OpaqueNoCull",
-	shape: { base: "block/wood/stonefirepit/{burnstate}-normal" },
+	shape: { base: "block/wood/campfire/{burnstate}-normal" },
 	textures: {
-		"log": { base: "block/wood/firepit/log" },
-		"ceramic": { base: "block/clay/ceramic" },
-		"ember": { base: "block/coal/ember" },
-		"ashes": { base: "block/wood/firepit/ground" },
-		"fire": { base: "block/wood/firepit/fire" },
-		"tinder": { base: "block/hay/normal-side" },
-		"stone": {base: "block/stone/rock/shale"}
+		"log": { base: "game:block/wood/firepit/log" },
+		"ceramic": { base: "game:block/clay/ceramic" },
+		"ember": { base: "game:block/coal/ember" },
+		"ashes": { base: "game:block/wood/firepit/ground" },
+		"fire": { base: "game:block/wood/firepit/fire" },
+		"tinder": { base: "game:block/hay/normal-side" },
+		"stone": {base: "game:block/stone/rock/shale1"}
 	},
-	creativeinventory: { general: ["stonefirepit-extinct"], decorative: ["stonefirepit-extinct"], kitchen: ["stonefirepit-extinct"] },
+	creativeinventory: { general: ["campfire-extinct"], kitchen: ["campfire-extinct"] },
 	blockmaterial: "Wood",
 	lightAbsorption: 0,
 	lightHsvByType: {
-		"stonefirepit-extinct": [7, 7, 2],
-		"stonefirepit-lit": [7, 7, 12],
+		"campfire-extinct": [7, 7, 2],
+		"campfire-lit": [7, 7, 6],
 	},
 	particlePropertiesByType: {
-		"stonefirepit-extinct": [
+		"campfire-extinct": [
 			{
 				hsvaColor: [{ avg: 0, var: 0 }, { avg: 0, var: 0 }, { avg: 70, var: 30 },  { avg: 220, var: 50 }],
 				opacityEvolve: { transform: "quadratic", factor: -16 },
@@ -47,7 +47,7 @@
 				windAffectednes: 0.7
 			}
 		],
-		"stonefirepit-lit": [
+		"campfire-lit": [
 			{
 				"__comment": "Ember cubicles",
 				hsvaColor: [{ avg: 30, var: 20 }, { avg: 255, var: 50 }, { avg: 255, var: 50 },  { avg: 255, var: 0 }],
@@ -110,8 +110,8 @@
 	drops: [],
 	materialDensity: 600,
 	sounds: {
-		"place": "block/planks",
-		"hit": "block/planks",
-		"break": "block/planks"
+		"place": "game:block/planks",
+		"hit": "game:block/planks",
+		"break": "game:block/planks"
 	},
 }

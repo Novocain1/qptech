@@ -12,14 +12,14 @@ using Vintagestory.GameContent;
 
 namespace QptechFurniture.src
 {
-        public enum EnumFirepitModel
+        public enum EnumCampFireModel
         {
             Normal = 0,
             Spit = 1,
-            Wide = 2
+            Over = 2
         }
 
-        public interface IInFirepitMeshSupplier
+        public interface IInCampFireMeshSupplier
         {
             /// <summary>
             /// Return the mesh you want to be rendered in the firepit. You can return null to signify that you do not wish to use a custom mesh.
@@ -27,18 +27,18 @@ namespace QptechFurniture.src
             /// <param name="stack"></param>
             /// <param name="world"></param>
             /// <param name="pos"></param>
-            /// <param name="firepitModel"></param>
+            /// <param name="campfireModel"></param>
             /// <returns></returns>
-            MeshData GetMeshWhenInFirepit(ItemStack stack, IWorldAccessor world, BlockPos pos, ref EnumFirepitModel firepitModel);
+            MeshData GetMeshWhenInCampfire(ItemStack stack, IWorldAccessor world, BlockPos pos, ref EnumCampFireModel campfireModel);
         }
 
-        public class InFirePitProps
+        public class InCampFireProps
         {
             public ModelTransform Transform;
-            public EnumFirepitModel UseFirepitModel;
+            public EnumCampFireModel UseCampfireModel;
         }
 
-        public interface IInFirepitRenderer : IRenderer
+        public interface IInCampFireRenderer : IRenderer
         {
             /// <summary>
             /// Called every 100ms in case you want to do custom stuff, such as playing a sound after a certain temperature
@@ -52,8 +52,8 @@ namespace QptechFurniture.src
             void OnCookingComplete();
         }
 
-        public interface IInFirepitRendererSupplier
-        {
+        public interface IInCampFireRendererSupplier
+    {
             /// <summary>
             /// Return the renderer that perfroms the rendering of your block/item in the firepit. You can return null to signify that you do not wish to use a custom renderer
             /// </summary>
@@ -61,7 +61,7 @@ namespace QptechFurniture.src
             /// <param name="world"></param>
             /// <param name="pos"></param>
             /// <returns></returns>
-            IInFirepitRenderer GetRendererWhenInFirepit(ItemStack stack, BlockEntityStoneFirePit stonefirepit, bool forOutputSlot);
+            IInCampFireRenderer GetRendererWhenInCampfire(ItemStack stack, BlockEntityCampFire campfire, bool forOutputSlot);
 
             /// <summary>
             /// The model type the firepit should be using while you render your custom item
@@ -70,21 +70,20 @@ namespace QptechFurniture.src
             /// <param name="world"></param>
             /// <param name="pos"></param>
             /// <returns></returns>
-            EnumFirepitModel GetDesiredFirepitModel(ItemStack stack, BlockEntityStoneFirePit stonefirepit, bool forOutputSlot);
+            EnumCampFireModel GetDesiredCampfireModel(ItemStack stack, BlockEntityCampFire campfire, bool forOutputSlot);
         }
 
-    public class BlockEntityStoneFirePit : BlockEntityOpenableContainer, IHeatSource
+    public class BlockEntityCampFire : BlockEntityOpenableContainer, IHeatSource
     {
         ILoadedSound ambientSound;
 
-        internal InventorySmelting inventory;
-
+        internal InventoryCooking inventory;
 
         // Temperature before the half second tick
-        public float prevFurnaceTemperature = 25;
+        public float prevFurnaceTemperature = 20;
 
         // Current temperature of the furnace
-        public float furnaceTemperature = 25;
+        public float furnaceTemperature = 20;
         // Current temperature of the ore (Degree Celsius * deg
         //public float oreTemperature = 20;
         // Maximum temperature that can be reached with the currently used fuel
@@ -97,10 +96,6 @@ namespace QptechFurniture.src
         public float maxFuelBurnTime;
         // How much smoke the current fuel burns?
         public float smokeLevel;
-        // Max burn temperature
-        public int oreTemperature;
-
-        public float BurnTemperature;
         /// <summary>
         /// If true, then the fire pit is currently hot enough to ignite fuel
         /// </summary>
@@ -110,10 +105,11 @@ namespace QptechFurniture.src
 
         public double extinguishedTotalHours;
 
-        GuiDialogBlockEntityStoneFirePit clientDialog;
+
+        GuiDialogBlockCampFire clientDialog;
         bool clientSidePrevBurning;
 
-        StoneFirePitContentsRenderer renderer;
+        CampfireContentsRenderer renderer;
 
         bool shouldRedraw;
 
@@ -126,34 +122,28 @@ namespace QptechFurniture.src
         }
         public virtual float HeatModifier
         {
-            get { return 1.02f; }
+            get { return 450f; }
         }
-           
         public virtual float BurnDurationModifier
         {
-            get { return 1f; }
-        }
-
-        public virtual float BurnTemperatureModifier
-        {
-            get { return -100f; }
+            get { return 1.1f; }
         }
 
         public virtual float SoundLevel
         {
-            get { return 0.55f; }
+            get { return 0.66f; }
         }
 
         // Resting temperature
         public virtual int enviromentTemperature()
         {
-            return 25;
+            return 20;
         }
 
         // seconds it requires to melt the ore once beyond melting point
         public virtual float maxCookingTime()
         {
-            return inputSlot.Itemstack != null ? inputSlot.Itemstack.Collectible.GetMeltingDuration(Api.World, (ISlotProvider)inventory, inputSlot) : 30f;
+            return inputSlot.Itemstack == null ? 30f : inputSlot.Itemstack.Collectible.GetMeltingDuration(Api.World, inventory, inputSlot);
         }
 
         public override string InventoryClassName
@@ -163,7 +153,7 @@ namespace QptechFurniture.src
 
         public virtual string DialogTitle
         {
-            get { return Lang.Get("Stone Firepit"); }
+            get { return Lang.Get("Campfire"); }
         }
 
         public override InventoryBase Inventory
@@ -174,9 +164,10 @@ namespace QptechFurniture.src
         #endregion
 
 
-        public BlockEntityStoneFirePit()
+
+        public BlockEntityCampFire()
         {
-            inventory = new InventorySmelting(null, null);
+            inventory = new InventoryCooking(null, null);
             inventory.SlotModified += OnSlotModifid;
         }
 
@@ -193,9 +184,9 @@ namespace QptechFurniture.src
 
             if (api is ICoreClientAPI)
             {
-                renderer = new StoneFirePitContentsRenderer(api as ICoreClientAPI, Pos);
+                renderer = new CampfireContentsRenderer(api as ICoreClientAPI, Pos);
 
-                (api as ICoreClientAPI).Event.RegisterRenderer(renderer, EnumRenderStage.Opaque, "stonefirepit");
+                (api as ICoreClientAPI).Event.RegisterRenderer(renderer, EnumRenderStage.Opaque, "campfire");
 
                 UpdateRenderer();
             }
@@ -212,7 +203,7 @@ namespace QptechFurniture.src
                 {
                     ambientSound = ((IClientWorldAccessor)Api.World).LoadSound(new SoundParams()
                     {
-                        Location = new AssetLocation("sounds/environment/fireplace.ogg"),
+                        Location = new AssetLocation("game:sounds/environment/fireplace.ogg"),
                         ShouldLoop = true,
                         Position = Pos.ToVec3f().Add(0.5f, 0.25f, 0.5f),
                         DisposeOnFinish = false,
@@ -365,7 +356,7 @@ namespace QptechFurniture.src
                     double rainLevel = wsys.GetPrecipitation(tmpPos);
                     if (rainLevel > 0.04 && Api.World.Rand.NextDouble() < rainLevel * 5)
                     {
-                        Api.World.PlaySoundAt(new AssetLocation("sounds/effect/extinguish"), Pos.X + 0.5, Pos.Y, Pos.Z + 0.5, null, false, 16);
+                        Api.World.PlaySoundAt(new AssetLocation("game:sounds/effect/extinguish"), Pos.X + 0.5, Pos.Y, Pos.Z + 0.5, null, false, 16);
 
                         fuelBurnTime -= (float)rainLevel / 10f;
 
@@ -412,6 +403,10 @@ namespace QptechFurniture.src
 
 
 
+
+
+
+
         private bool canSmelt()
         {
             CombustibleProperties fuelCopts = fuelCombustibleOpts;
@@ -423,8 +418,9 @@ namespace QptechFurniture.src
                     (BurnsAllFuell || smeltableInput)
                     // Require fuel
                     && fuelCopts.BurnTemperature * HeatModifier > 0;
-        
         }
+
+
 
         public void heatInput(float dt)
         {
@@ -435,11 +431,11 @@ namespace QptechFurniture.src
             // Only Heat ore. Cooling happens already in the itemstack
             if (oldTemp < furnaceTemperature)
             {
-                float f = (1 + GameMath.Clamp((furnaceTemperature - oldTemp) / 30, 0, 1.6f)) * dt;
+                float f = (1 + GameMath.Clamp((furnaceTemperature - oldTemp) / 30, 3, 1.6f)) * dt;
                 if (nowTemp >= meltingPoint) f /= 11;
 
                 float newTemp = changeTemperature(oldTemp, furnaceTemperature, f);
-                int maxTemp = Math.Max(inputStack.Collectible.CombustibleProps == null ? 0 : inputStack.Collectible.CombustibleProps.MaxTemperature, inputStack.ItemAttributes?["maxTemperature"] == null ? 0 : inputStack.ItemAttributes["maxTemperature"].AsInt(250));
+                int maxTemp = Math.Max(inputStack.Collectible.CombustibleProps == null ? 0 : inputStack.Collectible.CombustibleProps.MaxTemperature, inputStack.ItemAttributes?["maxTemperature"] == null ? 0 : inputStack.ItemAttributes["maxTemperature"].AsInt(0));
                 if (maxTemp > 0)
                 {
                     newTemp = Math.Min(maxTemp, newTemp);
@@ -456,7 +452,7 @@ namespace QptechFurniture.src
             if (nowTemp >= meltingPoint)
             {
                 float diff = nowTemp / meltingPoint;
-                inputStackCookingTime += GameMath.Clamp((int)(diff), 15, 30) * dt;
+                inputStackCookingTime += GameMath.Clamp((int)(diff), 3, 30) * dt;
             }
             else
             {
@@ -492,6 +488,10 @@ namespace QptechFurniture.src
         }
 
 
+
+
+
+
         public float InputStackTemp
         {
             get
@@ -521,13 +521,13 @@ namespace QptechFurniture.src
         {
             if (stack == null) return enviromentTemperature();
 
-            if (inventory.CookingSlots.Length > 0)
+            if (inventory.Slots.Length > 0)
             {
                 bool haveStack = false;
                 float lowestTemp = 0;
-                for (int i = 0; i < inventory.CookingSlots.Length; i++)
+                for (int i = 0; i < inventory.Slots.Length; i++)
                 {
-                    ItemStack cookingStack = inventory.CookingSlots[i].Itemstack;
+                    ItemStack cookingStack = inventory.Slots[i].Itemstack;
                     if (cookingStack != null)
                     {
                         float stackTemp = cookingStack.Collectible.GetTemperature(Api.World, cookingStack);
@@ -549,11 +549,11 @@ namespace QptechFurniture.src
         void SetTemp(ItemStack stack, float value)
         {
             if (stack == null) return;
-            if (inventory.CookingSlots.Length > 0)
+            if (inventory.Slots.Length > 0)
             {
-                for (int i = 0; i < inventory.CookingSlots.Length; i++)
+                for (int i = 0; i < inventory.Slots.Length; i++)
                 {
-                    inventory.CookingSlots[i].Itemstack?.Collectible.SetTemperature(Api.World, inventory.CookingSlots[i].Itemstack, value);
+                    inventory.Slots[i].Itemstack?.Collectible.SetTemperature(Api.World, inventory.Slots[i].Itemstack, value);
                 }
             }
             else
@@ -584,10 +584,13 @@ namespace QptechFurniture.src
             CombustibleProperties fuelCopts = stack.Collectible.CombustibleProps;
 
             maxFuelBurnTime = fuelBurnTime = fuelCopts.BurnDuration * BurnDurationModifier;
-            maxTemperature = (int)(fuelCopts.BurnTemperature * HeatModifier) & (int)(fuelCopts.BurnTemperature - BurnTemperatureModifier);
+            maxTemperature = (int)(fuelCopts.BurnTemperature - HeatModifier);
             smokeLevel = fuelCopts.SmokeLevel;
             setBlockState("lit");
         }
+
+
+
 
         public void setBlockState(string state)
         {
@@ -623,11 +626,12 @@ namespace QptechFurniture.src
                 && (inputStack.Collectible.CombustibleProps == null || !inputStack.Collectible.CombustibleProps.RequiresContainer);
         }
 
+
         public void smeltItems()
         {
             inputStack.Collectible.DoSmelt(Api.World, inventory, inputSlot, outputSlot);
             InputStackTemp = enviromentTemperature();
-            inputStackCookingTime = 5f;
+            inputStackCookingTime = 0;
             MarkDirty(true);
             inputSlot.MarkDirty();
         }
@@ -676,12 +680,12 @@ namespace QptechFurniture.src
                 Inventory.AfterBlocksLoaded(Api.World);
             }
 
+
             furnaceTemperature = tree.GetFloat("furnaceTemperature");
             maxTemperature = tree.GetInt("maxTemperature");
             inputStackCookingTime = tree.GetFloat("oreCookingTime");
             fuelBurnTime = tree.GetFloat("fuelBurnTime");
             maxFuelBurnTime = tree.GetFloat("maxFuelBurnTime");
-            BurnTemperature = tree.GetFloat("BurnTemperature");
             extinguishedTotalHours = tree.GetDouble("extinguishedTotalHours");
             canIgniteFuel = tree.GetBool("canIgniteFuel", true);
             cachedFuel = tree.GetFloat("cachedFuel", 0);
@@ -713,7 +717,7 @@ namespace QptechFurniture.src
             bool useOldRenderer =
                 renderer.ContentStack != null &&
                 renderer.contentStackRenderer != null &&
-                contentStack?.Collectible is IInFirepitRendererSupplier &&
+                contentStack?.Collectible is IInCampFireRendererSupplier &&
                 renderer.ContentStack.Equals(Api.World, contentStack, GlobalConstants.IgnoredStackAttributes)
             ;
 
@@ -722,9 +726,9 @@ namespace QptechFurniture.src
             renderer.contentStackRenderer?.Dispose();
             renderer.contentStackRenderer = null;
 
-            if (contentStack?.Collectible is IInFirepitRendererSupplier)
+            if (contentStack?.Collectible is IInCampFireRendererSupplier)
             {
-                IInFirepitRenderer childrenderer = (contentStack?.Collectible as IInFirepitRendererSupplier).GetRendererWhenInFirepit(contentStack, this, contentStack == outputStack);
+                IInCampFireRenderer childrenderer = (contentStack?.Collectible as IInCampFireRendererSupplier).GetRendererWhenInCampfire(contentStack, this, contentStack == outputStack);
                 if (childrenderer != null)
                 {
                     renderer.SetChildRenderer(contentStack, childrenderer);
@@ -732,8 +736,8 @@ namespace QptechFurniture.src
                 }
             }
 
-            InFirePitProps props = GetRenderProps(contentStack);
-            if (contentStack?.Collectible != null && !(contentStack?.Collectible is IInFirepitMeshSupplier) && props != null)
+            InCampFireProps props = GetRenderProps(contentStack);
+            if (contentStack?.Collectible != null && !(contentStack?.Collectible is IInCampFireMeshSupplier) && props != null)
             {
                 renderer.SetContents(contentStack, props.Transform);
             }
@@ -749,7 +753,6 @@ namespace QptechFurniture.src
             dialogTree.SetFloat("furnaceTemperature", furnaceTemperature);
 
             dialogTree.SetInt("maxTemperature", maxTemperature);
-            dialogTree.SetFloat("burnTemperature", BurnTemperature);
             dialogTree.SetFloat("oreCookingTime", inputStackCookingTime);
             dialogTree.SetFloat("maxFuelBurnTime", maxFuelBurnTime);
             dialogTree.SetFloat("fuelBurnTime", fuelBurnTime);
@@ -767,6 +770,7 @@ namespace QptechFurniture.src
             }
 
             dialogTree.SetString("outputText", inventory.GetOutputText());
+            dialogTree.SetInt("quantityCookingSlots", inventory.Slots.Length);
         }
 
 
@@ -783,7 +787,6 @@ namespace QptechFurniture.src
             tree.SetInt("maxTemperature", maxTemperature);
             tree.SetFloat("oreCookingTime", inputStackCookingTime);
             tree.SetFloat("fuelBurnTime", fuelBurnTime);
-            tree.SetFloat("burnTemperature", BurnTemperature);
             tree.SetFloat("maxFuelBurnTime", maxFuelBurnTime);
             tree.SetDouble("extinguishedTotalHours", extinguishedTotalHours);
             tree.SetBool("canIgniteFuel", canIgniteFuel);
@@ -819,7 +822,7 @@ namespace QptechFurniture.src
             base.OnBlockBroken();
         }
 
-        ~BlockEntityStoneFirePit()
+        ~BlockEntityCampFire()
         {
             if (ambientSound != null)
             {
@@ -876,7 +879,7 @@ namespace QptechFurniture.src
                     }
                     else
                     {
-                        clientDialog = new GuiDialogBlockEntityStoneFirePit(dialogTitle, Inventory, Pos, dtree, Api as ICoreClientAPI);
+                        clientDialog = new GuiDialogBlockCampFire(dialogTitle, Inventory, Pos, dtree, Api as ICoreClientAPI);
                         clientDialog.OnClosed += () => { clientDialog?.Dispose(); clientDialog = null; };
                         clientDialog.TryOpen();
 
@@ -897,6 +900,8 @@ namespace QptechFurniture.src
         #region Helper getters
 
 
+
+
         public ItemSlot fuelSlot
         {
             get { return inventory[0]; }
@@ -910,11 +915,6 @@ namespace QptechFurniture.src
         public ItemSlot outputSlot
         {
             get { return inventory[2]; }
-        }
-
-        public  ItemSlot[] otherCookingSlots
-        {
-            get { return inventory.CookingSlots; }
         }
 
         public ItemStack fuelStack
@@ -969,7 +969,7 @@ namespace QptechFurniture.src
                 slot.Itemstack.Collectible.OnStoreCollectibleMappings(Api.World, slot, blockIdMapping, itemIdMapping);
             }
 
-            foreach (ItemSlot slot in inventory.CookingSlots)
+            foreach (ItemSlot slot in inventory.Slots)
             {
                 if (slot.Itemstack == null) continue;
 
@@ -1001,7 +1001,7 @@ namespace QptechFurniture.src
                 }
             }
 
-            foreach (ItemSlot slot in inventory.CookingSlots)
+            foreach (ItemSlot slot in inventory.Slots)
             {
                 if (slot.Itemstack == null) continue;
                 if (!slot.Itemstack.FixMapping(oldBlockIdMapping, oldItemIdMapping, Api.World))
@@ -1015,7 +1015,7 @@ namespace QptechFurniture.src
             }
         }
 
-        public EnumFirepitModel CurrentModel { get; private set; }
+        public EnumCampFireModel CurrentModel { get; private set; }
 
         public override bool OnTesselation(ITerrainMeshPool mesher, ITesselatorAPI tesselator)
         {
@@ -1040,14 +1040,14 @@ namespace QptechFurniture.src
 
         private MeshData getContentMesh(ItemStack contentStack, ITesselatorAPI tesselator)
         {
-            CurrentModel = EnumFirepitModel.Normal;
+            CurrentModel = EnumCampFireModel.Normal;
 
             if (contentStack == null) return null;
 
-            if (contentStack.Collectible is IInFirepitMeshSupplier)
+            if (contentStack.Collectible is IInCampFireMeshSupplier)
             {
-                EnumFirepitModel model = EnumFirepitModel.Normal;
-                MeshData mesh = (contentStack.Collectible as IInFirepitMeshSupplier).GetMeshWhenInFirepit(contentStack, Api.World, Pos, ref model);
+                EnumCampFireModel model = EnumCampFireModel.Normal;
+                MeshData mesh = (contentStack.Collectible as IInCampFireMeshSupplier).GetMeshWhenInCampfire(contentStack, Api.World, Pos, ref model);
                 this.CurrentModel = model;
 
                 if (mesh != null)
@@ -1057,18 +1057,18 @@ namespace QptechFurniture.src
 
             }
 
-            if (contentStack.Collectible is IInFirepitRendererSupplier)
+            if (contentStack.Collectible is IInCampFireMeshSupplier)
             {
-                EnumFirepitModel model = (contentStack.Collectible as IInFirepitRendererSupplier).GetDesiredFirepitModel(contentStack, this, contentStack == outputStack);
+                EnumCampFireModel model = (contentStack.Collectible as IInCampFireRendererSupplier).GetDesiredCampfireModel(contentStack, this, contentStack == outputStack);
                 this.CurrentModel = model;
                 return null;
             }
 
-            InFirePitProps renderProps = GetRenderProps(contentStack);
+            InCampFireProps renderProps = GetRenderProps(contentStack);
 
             if (renderProps != null)
             {
-                this.CurrentModel = renderProps.UseFirepitModel;
+                this.CurrentModel = renderProps.UseCampfireModel;
 
                 if (contentStack.Class != EnumItemClass.Item)
                 {
@@ -1078,7 +1078,7 @@ namespace QptechFurniture.src
                     ingredientMesh.ModelTransform(renderProps.Transform);
 
                     // Lower by 1 voxel if extinct
-                    if (!IsBurning && renderProps.UseFirepitModel != EnumFirepitModel.Spit) ingredientMesh.Translate(0, -1 / 16f, 0);
+                    if (!IsBurning && renderProps.UseCampfireModel != EnumCampFireModel.Spit) ingredientMesh.Translate(0, -1 / 16f, 0);
 
                     return ingredientMesh;
                 }
@@ -1089,7 +1089,7 @@ namespace QptechFurniture.src
             {
                 if (renderer.RequireSpit)
                 {
-                    this.CurrentModel = EnumFirepitModel.Spit;
+                    this.CurrentModel = EnumCampFireModel.Spit;
                 }
                 return null; // Mesh drawing is handled by the FirepitContentsRenderer
             }
@@ -1103,11 +1103,11 @@ namespace QptechFurniture.src
             renderer?.Dispose();
         }
 
-        InFirePitProps GetRenderProps(ItemStack contentStack)
+        InCampFireProps GetRenderProps(ItemStack contentStack)
         {
-            if (contentStack?.ItemAttributes?.KeyExists("inFirePitProps") == true)
+            if (contentStack?.ItemAttributes?.KeyExists("InCampFireProps") == true)
             {
-                InFirePitProps props = contentStack.ItemAttributes["inFirePitProps"].AsObject<InFirePitProps>();
+                InCampFireProps props = contentStack.ItemAttributes["InCampFireProps"].AsObject<InCampFireProps>();
                 props.Transform.EnsureDefaultValues();
                 return props;
             }
@@ -1117,7 +1117,7 @@ namespace QptechFurniture.src
 
         public MeshData getOrCreateMesh(string burnstate, string contentstate)
         {
-            Dictionary<string, MeshData> Meshes = ObjectCacheUtil.GetOrCreate(Api, "firepit-meshes", () => new Dictionary<string, MeshData>());
+            Dictionary<string, MeshData> Meshes = ObjectCacheUtil.GetOrCreate(Api, "campfire-meshes", () => new Dictionary<string, MeshData>());
 
             string key = burnstate + "-" + contentstate;
             MeshData meshdata;
@@ -1129,7 +1129,7 @@ namespace QptechFurniture.src
                 MeshData[] meshes = new MeshData[17];
                 ITesselatorAPI mesher = ((ICoreClientAPI)Api).Tesselator;
 
-                mesher.TesselateShape(block, Api.Assets.TryGet("shapes/block/wood/stonefirepit/" + key + ".json")?.ToObject<Shape>(), out meshdata);
+                mesher.TesselateShape(block, Api.Assets.TryGet("furniture:shapes/block/wood/campfire/" + key + ".json")?.ToObject<Shape>(), out meshdata);
             }
 
             return meshdata;

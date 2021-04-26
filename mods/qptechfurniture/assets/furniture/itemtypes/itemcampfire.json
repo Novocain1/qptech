@@ -1,7 +1,14 @@
 {
-	code: "FirePitBase",
-	class: "ItemStoneFirePitBase",
-	shape: { base: "item/stone/firepitbase" },
+	code: "itemcampfire",
+	class: "ItemCampFire",
+	shape: { base: "item/stone/itemcampfire" },
+	"textures": {
+		"hay": { base: "block/grass/hay/normal-side"},
+		"string": { base: "item/campfire/string"},
+		"bundle": { base: "item/campfire/bundle"},
+		"roge": { base: "item/campfire/roge"},
+		"stone": { base: "game:block/stone/rock/shale1"}
+	},
 	creativeinventory: { "general": ["*"], "items": ["*"] },
 	maxstacksize: 1,
 	materialDensity: 258,
