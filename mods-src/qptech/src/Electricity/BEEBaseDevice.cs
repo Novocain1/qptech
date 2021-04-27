@@ -133,7 +133,7 @@ namespace qptech.src
         {
             base.GetBlockInfo(forPlayer, dsc);
             dsc.AppendLine("Stat :" + DeviceState.ToString());
-            dsc.AppendLine("Prog :" + tickCounter.ToString() + "/" + processingTicks.ToString());
+            
         }
 
         

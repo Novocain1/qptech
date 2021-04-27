@@ -1,7 +1,7 @@
 {
 	code: "powerflag",
 	entityclass: "BEPowerFlag",
-	behaviors: [{name: "UnstableFalling"}, { name: "RightClickPickup", properties: { dropsPickupMode: true, sound: "sounds/block/loosestone" } }],
+	behaviors: [{ name: "RightClickPickup", properties: { dropsPickupMode: true, sound: "sounds/block/loosestone" } }],
 	maxstacksize: 32,
 	creativeinventory: {
 		"general": [ "*" ],

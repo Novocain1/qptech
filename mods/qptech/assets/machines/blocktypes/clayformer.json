@@ -26,7 +26,13 @@
 		"requiredAmps": 2,
 		"inputFace": "west",
 		"outputFace": "east",
-		"processingTicks": 45
+		"processingTicks": 45,
+		"inputQuantity": 4,
+		"outputQuantity": 1,
+		"recipe": "game:bowl-raw",
+		"ingredient": "game:clay-blue",
+		"processingTime": 0.17,
+		"animationSpeed": 0.05
 	},
 	"blockmaterial": "Metal",
 	"drawtype": "json",

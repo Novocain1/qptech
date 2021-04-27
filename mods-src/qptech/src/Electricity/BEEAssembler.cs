@@ -20,10 +20,13 @@ namespace qptech.src
         protected string ingredient = "game:clay-blue";
         protected int inputQuantity = 4;
         protected int internalQuantity = 0; //will store ingredients virtually
+        protected float animationSpeed = 0.05f;
+        protected double processingTime = 10;
         protected BlockFacing rmInputFace; //what faces will be checked for input containers
         protected BlockFacing outputFace; //what faces will be checked for output containers
         //protected BlockFacing recipeFace; //what face will be used to look for a container with the model object
          DummyInventory dummy;
+        double processstarted;
          
         /// </summary>
         public override void Initialize(ICoreAPI api)
@@ -36,10 +39,14 @@ namespace qptech.src
                 rmInputFace = BlockFacing.FromCode(Block.Attributes["inputFace"].AsString("up"));
                 
                 outputFace = BlockFacing.FromCode(Block.Attributes["outputFace"].AsString("down"));
-                
+                animationSpeed = Block.Attributes["animationSpeed"].AsFloat(animationSpeed);
+                inputQuantity = Block.Attributes["inputQuantity"].AsInt(inputQuantity);
+                outputQuantiy = Block.Attributes["outputQuantity"].AsInt(outputQuantiy);
+                recipe = Block.Attributes["recipe"].AsString(recipe);
+                ingredient = Block.Attributes["ingredient"].AsString(ingredient);
                 rmInputFace = OrientFace(Block.Code.ToString(), rmInputFace);
                 outputFace = OrientFace(Block.Code.ToString(), outputFace);
-
+                processingTime = Block.Attributes["processingTime"].AsDouble(processingTime);
             }
             //TEMP CODE TO ADD faces, should be loaded from attributes
             //rmInputFace.Add(BlockFacing.UP);
@@ -51,12 +58,10 @@ namespace qptech.src
         protected override void DoDeviceStart()
         {
             //TODO
-            //Check for power
-            //Check for supplies
-            //If ok - begin process, use up supplies
+            
             if (Capacitor < requiredAmps) { return; }//not enough power
             FetchMaterial();
-                  
+            processstarted = Api.World.Calendar.TotalHours;      
             if (internalQuantity<inputQuantity) { deviceState = enDeviceState.MATERIALHOLD; return; }//check for and extract the required RM
             //TODO - do we make sure there's an output container?
             if (Capacitor >= requiredAmps)
@@ -77,7 +82,7 @@ namespace qptech.src
                     {
                         Animation = "process",
                         Code = "process",
-                        AnimationSpeed = 0.05f,
+                        AnimationSpeed = animationSpeed,
                         EaseInSpeed = 1,
                         EaseOutSpeed = 1,
                         Weight = 1,
@@ -90,6 +95,23 @@ namespace qptech.src
                 DoDeviceProcessing();
             }
             else { DoFailedStart(); }
+        }
+        protected override void DoDeviceProcessing()
+        {
+            
+            if (Api.World.Calendar.TotalHours>= processingTime + processstarted)
+            {
+                DoDeviceComplete();
+                return;
+            }
+            if (Capacitor < requiredAmps)
+            {
+                DoFailedProcessing();
+                return;
+            }
+            tickCounter++;
+            ChangeCapacitor(-requiredAmps);
+
         }
         protected override void DoDeviceComplete()
         {
@@ -167,13 +189,14 @@ namespace qptech.src
         {
             base.FromTreeAttributes(tree, worldAccessForResolve);
             internalQuantity = tree.GetInt("internalQuantity");
+            processstarted = tree.GetDouble("processstarted");
             
         }
         public override void ToTreeAttributes(ITreeAttribute tree)
         {
             base.ToTreeAttributes(tree);
             tree.SetInt("internalQuantity", internalQuantity);
-            
+            tree.SetDouble("processstarted", processstarted);
         }
         public override void GetBlockInfo(IPlayer forPlayer, StringBuilder dsc)
         {
@@ -181,6 +204,13 @@ namespace qptech.src
             
             dsc.AppendLine("RM   :" + internalQuantity.ToString() + "/" + inputQuantity.ToString());
             dsc.AppendLine("Make :" + recipe);
+            if (deviceState == enDeviceState.RUNNING)
+            {
+                double timeleft = (processingTime + processstarted - Api.World.Calendar.TotalHours);
+                timeleft = Math.Floor(timeleft * 100);
+                
+                dsc.AppendLine("Time Rem :"+timeleft.ToString());
+            }
         }
     }
 }
