@@ -60,4 +60,6 @@
 	"block-powerflag": "Power Indicator",
 	"block-clayformer-bowl-*": "Clayformer-Bowls (LV)",
 	"block-clayformer-clayplanter-*": "Clayformer-Planter (LV)",
+	"block-clayformer-flowerpot-*": "Clayformer-Flower Pot (LV)",
+	"block-clayformer-ingotmold-*": "Clayformer-Ingot Mold (LV)",
 }

@@ -18,6 +18,7 @@ namespace qptech.src
             //must have a relevant item
             ItemStack stack = byPlayer.InventoryManager.ActiveHotbarSlot?.Itemstack;
             string itemorblockcode = "";
+            if (stack==null) { return base.OnBlockInteractStart(world, byPlayer, blockSel); }
             if (stack.Item != null) { itemorblockcode = stack.Item.Code.ToString(); }
             else if (stack.Block != null) { itemorblockcode = stack.Block.Code.ToString(); }
             if (itemorblockcode == "") { return base.OnBlockInteractStart(world, byPlayer, blockSel); }
@@ -36,6 +37,8 @@ namespace qptech.src
             variantlist = new Dictionary<string, string>();
             variantlist.Add("game:bowl-burned", "machines:clayformer-bowl");
             variantlist.Add("game:clayplanter-burnt","machines:clayformer-clayplanter");
+            variantlist.Add("game:flowerpot-burnt", "machines:clayformer-flowerpot");
+            variantlist.Add("game:ingotmold-burned", "machines:clayformer-ingotmold");
         }
     }
 }

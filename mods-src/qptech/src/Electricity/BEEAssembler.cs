@@ -129,9 +129,12 @@ namespace qptech.src
             if (outputContainer != null)
             {
                 WeightedSlot tryoutput = outputContainer.Inventory.GetBestSuitedSlot(dummy[0]);
-                if (tryoutput != null) {
+
+                if (tryoutput.slot != null) {
                     ItemStackMoveOperation op = new ItemStackMoveOperation(Api.World, EnumMouseButton.Left, 0, EnumMergePriority.DirectMerge, outputQuantiy);
-                    int qmoved = dummy[0].TryPutInto(tryoutput.slot, ref op);
+                    
+                    dummy[0].TryPutInto(tryoutput.slot, ref op);
+                    
                 }
             }
  
