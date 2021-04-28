@@ -2,7 +2,7 @@
 	code: "brassringedbarrel",
 	creativeinventory: {
 		"general": [ "*" ],
-		"qptech": [ "*" ]
+		
 	},
 	blockmaterial: "Metal",
 	drawtype: "json",

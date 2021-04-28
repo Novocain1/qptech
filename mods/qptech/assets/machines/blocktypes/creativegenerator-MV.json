@@ -5,7 +5,7 @@
 	"entityBehaviors": [ { "name": "Animatable" } ],
 	"creativeinventory": {
 		"general": [ "*-east" ],
-		"qptech": [ "*-east" ]
+		
 	},
 	"attributes": {
 		"capacitance": 4,

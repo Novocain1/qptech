@@ -3,8 +3,8 @@
 	"class": "BlockFirepit",
 	"entityClass": "ModdedFirepit",
 	"creativeinventory": {
-		"general": [ "*-east" ],
-		"qptech": [ "*-east" ]
+		"general": [ "*-cold-east" ],
+		"qptech": [ "*-cold-east" ]
 	},
 	"variantgroups": [
 		{

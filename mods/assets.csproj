@@ -171,7 +171,7 @@
     <None Include="qptech\assets\machines\blocktypes\blocklantern.json" />
     <None Include="qptech\assets\machines\blocktypes\cabinet.json" />
     <None Include="qptech\assets\machines\blocktypes\castironovenlarge.json" />
-    <None Include="qptech\assets\machines\blocktypes\clayformer.json" />
+    <None Include="qptech\assets\machines\blocktypes\clayformer-bowl.json" />
     <None Include="qptech\assets\machines\blocktypes\creativegenerator-MV.json" />
     <None Include="qptech\assets\machines\blocktypes\creativegenerator.json" />
     <None Include="qptech\assets\machines\blocktypes\firepitloader.json" />
@@ -214,6 +214,7 @@
     <None Include="qptech\assets\machines\recipes\grid\decor\castironovenlarge.json" />
     <None Include="qptech\assets\machines\recipes\grid\decor\icebox.json" />
     <None Include="qptech\assets\machines\recipes\grid\decor\sink.json" />
+    <None Include="qptech\assets\machines\recipes\grid\industrial\battery-lv.json" />
     <None Include="qptech\assets\machines\recipes\grid\industrial\battery-primitive.json" />
     <None Include="qptech\assets\machines\recipes\grid\industrial\clayformer.json" />
     <None Include="qptech\assets\machines\recipes\grid\industrial\firepitloader.json" />
@@ -223,6 +224,7 @@
     <None Include="qptech\assets\machines\recipes\grid\industrial\generator-primitive.json" />
     <None Include="qptech\assets\machines\recipes\grid\industrial\itemhatch.json" />
     <None Include="qptech\assets\machines\recipes\grid\industrial\smelterfurnace.json" />
+    <None Include="qptech\assets\machines\recipes\grid\industrial\wireplate-tin-4a.json" />
     <None Include="qptech\assets\machines\recipes\grid\industrial\wireplate-tin-2a.json" />
     <None Include="qptech\assets\machines\recipes\grid\part\machineplate.json" />
     <None Include="qptech\assets\machines\recipes\grid\part\machineryblock.json" />
