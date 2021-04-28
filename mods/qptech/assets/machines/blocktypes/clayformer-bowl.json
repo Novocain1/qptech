@@ -1,6 +1,6 @@
 {
 	"code": "clayformer",
-	"class": "ElectricalBlock",
+	"class": "BlockClayformer",
 	"entityclass": "BEEAssembler",
 	"entityBehaviors": [ { "name": "Animatable" } ],
 	"creativeinventory": {
@@ -20,21 +20,9 @@
 			"properties": { "dropBlockFace": "east" }
 		}
 	],
-	"attributes": {
-		"maxAmps": 2,
-		"maxVolts": 16,
-		"capacitance": 2,
-		"requiredAmps": 2,
-		"inputFace": "west",
-		"outputFace": "east",
-		"inputQuantity": 4,
-		"outputQuantity": 1,
-		"recipe": "game:bowl-raw",
-		"ingredient": "game:clay-blue",
-		"processingTime": 0.17,
-		"animationSpeed": 0.05
-	},
+	
 	"attributesbytype":{
+		
 		"*-bowl-*":{
 			"maxAmps": 2,
 			"maxVolts": 16,

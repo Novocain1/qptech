@@ -27,7 +27,7 @@ namespace qptech.src
         //protected BlockFacing recipeFace; //what face will be used to look for a container with the model object
          DummyInventory dummy;
         double processstarted;
-         
+        
         /// </summary>
         public override void Initialize(ICoreAPI api)
         {
@@ -47,6 +47,7 @@ namespace qptech.src
                 rmInputFace = OrientFace(Block.Code.ToString(), rmInputFace);
                 outputFace = OrientFace(Block.Code.ToString(), outputFace);
                 processingTime = Block.Attributes["processingTime"].AsDouble(processingTime);
+                
             }
             //TEMP CODE TO ADD faces, should be loaded from attributes
             //rmInputFace.Add(BlockFacing.UP);
