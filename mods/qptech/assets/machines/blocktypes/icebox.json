@@ -3,7 +3,7 @@
 	"entityclass": "IceBoxEntity",
 	"creativeinventory": {
 		"general": [ "*-east" ],
-		"qptech": [ "*-east" ]
+		"kitchen": [ "*-east" ]
 	},
 	"attributes": {
 		"types": [ "normal-generic" ],

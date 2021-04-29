@@ -3,7 +3,8 @@
 
 	"creativeinventory": {
 		"general": [ "*" ],
-		"qptech": [ "*" ]
+		"qptech": [ "*" ],
+		"kitchen": [ "*" ]
 	},
 	"blockmaterial": "Metal",
 	"textures": {

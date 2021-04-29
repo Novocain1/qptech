@@ -3,7 +3,7 @@
 	"entityclass": "GenericTypedContainer",
 	"creativeinventory": {
 		"general": [ "*-east" ],
-		"qptech": [ "*-east" ]
+		"kitchen": [ "*-east" ]
 	},
 	"attributes": {
 		"partialAttachable": true,

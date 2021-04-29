@@ -4,7 +4,7 @@
 	"entityClass": "ModdedFirepit",
 	"creativeinventory": {
 		"general": [ "*-cold-east" ],
-		"qptech": [ "*-cold-east" ]
+		"kitchen": [ "*-cold-east" ]
 	},
 	"variantgroups": [
 		{

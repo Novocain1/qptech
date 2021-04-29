@@ -1,7 +1,8 @@
 {
 	code: "pullplate",
 	creativeinventory: {
-		"general": ["*"]
+		"general": ["*"],
+		"qptech": [ "*" ]
 	},
 	drawtype: "json",
 	shape: { base: "item/tool/pullplate" },
