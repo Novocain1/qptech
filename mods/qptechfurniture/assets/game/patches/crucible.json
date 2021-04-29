@@ -1,0 +1,30 @@
+[
+  {
+    "op": "remove",
+    "path": "/attributesByType/crucible-burned/inFirePitProps",
+    "file": "blocktypes/clay/crucible.json"
+  },
+  {
+    "op": "add",
+    "path": "/attributesByType/crucible-burned/inKilnProps",
+    "value": {
+      "transform": {},
+      "useKilnModel": "Wide"
+    },
+    "file": "blocktypes/clay/crucible.json"
+  },
+  {
+    "op": "remove",
+    "path": "/attributesByType/crucible-smelted/inFirePitProps",
+    "file": "blocktypes/clay/crucible.json"
+  },
+  {
+    "op": "add",
+    "path": "/attributesByType/crucible-smelted/inKilnProps",
+    "value": {
+      "transform": {},
+      "useKilnModel": "Wide"
+    },
+    "file": "blocktypes/clay/crucible.json"
+  }
+]

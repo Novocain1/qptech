@@ -1,0 +1,8 @@
+[
+  {
+    "op": "add",
+    "path": "/attributes/kilnConstructable",
+    "value": true,
+    "file": "itemtypes/resource/stonebrick.json"
+  }
+]

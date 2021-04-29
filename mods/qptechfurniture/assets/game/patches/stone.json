@@ -1,0 +1,8 @@
+[
+  {
+    "op": "add",
+    "path": "/attributes/campfireConstructable",
+    "value": true,
+    "file": "itemtypes/resource/stone.json"
+  }
+]
