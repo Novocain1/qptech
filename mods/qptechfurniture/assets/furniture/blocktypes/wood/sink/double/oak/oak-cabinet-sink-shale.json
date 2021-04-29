@@ -1,0 +1,90 @@
+{
+	"code": "oak-cabinet-double-sink-shale",
+	"class": "BlockDoubleSink",
+	"entityClass": "DoubleSink",
+	"behaviors": [
+		{ "name": "Container" },
+		{ "name": "HorizontalOrientable" }
+	],
+	"entityBehaviors": [ { "name": "Animatable" } ],
+	"variantgroups": [
+		{ "loadFromProperties": "abstract/horizontalorientation" }
+	],
+	"blockmaterial": "Wood",
+	"shapebytype": {
+		"*-north": {
+			"base": "block/wood/sink/double/empty",
+			"rotateY": 0
+		},
+		"*-east": {
+			"base": "block/wood/sink/double/empty",
+			"rotateY": 270
+		},
+		"*-south": {
+			"base": "block/wood/sink/double/empty",
+			"rotateY": 180
+		},
+		"*-west": {
+			"base": "block/wood/sink/double/empty",
+			"rotateY": 90
+		}
+	},
+	"creativeinventory": {
+		"general": [ "*-north" ],
+		"decorative": [ "*-north" ],
+		"kitchen": [ "*-north" ]
+	},
+	"replaceable": 900,
+	"resistance": 1.5,
+	"maxStackSize": 1,
+	"lightAbsorption": 1,
+	"textures": {
+		"lid": { "base": "block/stone/shale/oak" },
+		"copper": { "base": "block/metal/copper" },
+		"accessories": { "base": "block/stone/shale/countertop" },
+		"sides2": { "base": "block/wood/oak/cabinet" },
+		"cabinet-detail": { "base": "block/wood/oak/cabinet-detail" }
+	},
+	"attributes": {
+		"partialAttachable": true,
+		"capacityLitres": 50
+	},
+	"sideao": {
+		"all": false
+	},
+	"sidesolid": {
+		"all": false
+	},
+	"emitsideao": {
+		"all": false
+	},
+	"sideopaque": {
+		"all": false
+	},
+	"combustibleProps": {
+		"burnTemperature": 600,
+		"burnDuration": 20
+	},
+	"sounds": {
+		"place": "block/planks",
+		"hit": "block/planks",
+		"break": "block/planks",
+		"walk": "walk/wood"
+	},
+	"materialDensity": 600,
+	"heldTpIdleAnimation": "holdbothhandslarge",
+	"heldTpUseAnimation": "twohandplaceblock",
+	"tpHandTransform": {
+		"translation": {
+			"x": -1.4,
+			"y": -0.878,
+			"z": -0.5
+		},
+		"rotation": {
+			"x": -82,
+			"y": 10,
+			"z": -105
+		},
+		"scale": 0.39
+	}
+}
