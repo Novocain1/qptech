@@ -24,7 +24,7 @@
 		"capacitance": 2,
 		"requiredAmps": 1,
 		"maxHeat": 1000,
-		"degreesPerHour": 1000,
+		"degreesPerHour": 1500,
 		"maxItems": 2,
 		"stackRenderHeight": 0.1
 	},
