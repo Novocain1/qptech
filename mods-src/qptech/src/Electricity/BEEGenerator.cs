@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Vintagestory.API.Common;
 using Vintagestory.GameContent;
 using Vintagestory.API.MathTools;
+using Vintagestory.API.Client;  
 using Electricity.API;
 
 namespace qptech.src
@@ -15,7 +16,7 @@ namespace qptech.src
         //how many power packets we can generate - will see if every more than one
         bool usesFuel = false;          //Whether item uses fuel
         protected List<string> fuelCodes;   //Valid item & block codes usable as fuel
-        
+        ILoadedSound ambientSound;
         protected int fuelTicks = 0;    //how many OnTicks a piece of fuel will last for
         int fuelCounter = 0;            //counts down to use fuel
         protected int genAmps = 1;      //how many amps (power packets) are generated per OnTick
@@ -36,6 +37,10 @@ namespace qptech.src
         bool generating = false;
         bool haswater = true;
         bool heated = false;
+        public virtual float SoundLevel
+        {
+            get { return 0.3f; }
+        }
         public override void Initialize(ICoreAPI api)
         {
             base.Initialize(api);
@@ -104,7 +109,7 @@ namespace qptech.src
             }
 
             if (trypower) { ChangeCapacitor(MaxAmps); }
-            
+            ToggleAmbientSounds(trypower);
             return;
         }
 
@@ -170,6 +175,8 @@ namespace qptech.src
             
             if (justswitched) { return; }
             isOn = !isOn;
+
+            ToggleAmbientSounds(isOn);
             justswitched = true;
             if (Api.World.Side == EnumAppSide.Client&&animUtil!=null)
             {
@@ -229,7 +236,14 @@ namespace qptech.src
                     {
 
                         checkslot.TakeOut(1);
-                        Api.World.PlaySoundAt(new AssetLocation("sounds/steamburst"), Pos.X, Pos.Y, Pos.Z, null, false, 8, 1);
+                        if (checkslot.StackSize < 5)
+                        {
+                            Api.World.PlaySoundAt(new AssetLocation("sounds/waterslosh"), Pos.X, Pos.Y, Pos.Z, null, false, 8, 1);
+                        }
+                        else
+                        {
+                            Api.World.PlaySoundAt(new AssetLocation("sounds/steamburst"), Pos.X, Pos.Y, Pos.Z, null, false, 8, 1);
+                        }
                         checkslot.MarkDirty();
                         haswater = true;
                         break;
@@ -261,6 +275,49 @@ namespace qptech.src
                 if (checkCoalPile.IsBurning) { heated = true; return true; }
             }
             return false;
+        }
+        public void ToggleAmbientSounds(bool on)
+        {
+            if (Api.Side != EnumAppSide.Client) return;
+
+            if (on)
+            {
+                if (ambientSound == null || !ambientSound.IsPlaying)
+                {
+                    ambientSound = ((IClientWorldAccessor)Api.World).LoadSound(new SoundParams()
+                    {
+                        Location = new AssetLocation("sounds/genloop"),
+                        ShouldLoop = true,
+                        Position = Pos.ToVec3f().Add(0.5f, 0.25f, 0.5f),
+                        DisposeOnFinish = false,
+                        Volume = SoundLevel
+                    });
+
+                    ambientSound.Start();
+                }
+            }
+            else
+            {
+                ambientSound?.Stop();
+                ambientSound?.Dispose();
+                ambientSound = null;
+            }
+
+        }
+        public override void OnBlockBroken()
+        {
+            ToggleAmbientSounds(false);
+            base.OnBlockBroken();
+        }
+        public override void OnBlockRemoved()
+        {
+            ToggleAmbientSounds(false);
+            base.OnBlockRemoved();
+        }
+        public override void OnBlockUnloaded()
+        {
+            ToggleAmbientSounds(false);
+            base.OnBlockUnloaded();
         }
     }
 }
