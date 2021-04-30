@@ -191,7 +191,7 @@ namespace QptechFurniture.src
             }
 
             BlockEntityCampFire bef = manager.BlockAccess.GetBlockEntity(pos) as BlockEntityCampFire;
-            if (bef != null && bef.CurrentModel == EnumCampFireModel.Over)
+            if (bef != null && bef.CurrentModel == EnumCampFireModel.Wide)
             {
                 for (int i = 0; i < ringParticles.Length; i++)
                 {

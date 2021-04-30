@@ -1,0 +1,7 @@
+[
+  {
+    "op": "remove",
+    "path": "/class",
+    "file": "itemtypes/resource/drygrass.json"
+  }
+]

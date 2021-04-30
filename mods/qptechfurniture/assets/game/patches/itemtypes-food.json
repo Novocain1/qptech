@@ -1,0 +1,8 @@
+[
+  {
+    "op": "add",
+    "path": "/class",
+    "value": "ItemFood",
+    "file": "itemtypes/food/bushmeat.json"
+  }
+]

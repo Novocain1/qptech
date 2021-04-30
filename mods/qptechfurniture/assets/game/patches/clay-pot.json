@@ -1,0 +1,22 @@
+[
+  {
+    "op": "remove",
+    "path": "/attributesByType/claypot-burned/inFirePitProps",
+    "file": "blocktypes/clay/pot.json"
+  },
+  {
+    "op": "add",
+    "path": "/attributesByType/claypot-burned/inCampFireProps",
+    "value": {
+      "transform": {
+        "translation": {
+          "x": 0,
+          "y": 0.125,
+          "z": 0
+        }
+      },
+      "useCampfireModel": "Wide"
+    },
+    "file": "blocktypes/clay/pot.json"
+  }
+]
