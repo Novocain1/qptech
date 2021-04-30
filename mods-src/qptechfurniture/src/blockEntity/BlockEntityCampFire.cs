@@ -16,7 +16,7 @@ namespace QptechFurniture.src
         {
             Normal = 0,
             Spit = 1,
-            Over = 2
+            Wide = 2
         }
 
         public interface IInCampFireMeshSupplier
@@ -411,7 +411,6 @@ namespace QptechFurniture.src
         {
             CombustibleProperties fuelCopts = fuelCombustibleOpts;
             if (fuelCopts == null) return false;
-
             bool smeltableInput = canHeatInput();
 
             return
@@ -486,10 +485,6 @@ namespace QptechFurniture.src
                 }
             }
         }
-
-
-
-
 
 
         public float InputStackTemp
@@ -1129,7 +1124,7 @@ namespace QptechFurniture.src
                 MeshData[] meshes = new MeshData[17];
                 ITesselatorAPI mesher = ((ICoreClientAPI)Api).Tesselator;
 
-                mesher.TesselateShape(block, Api.Assets.TryGet("furniture:shapes/block/wood/campfire/" + key + ".json")?.ToObject<Shape>(), out meshdata);
+                mesher.TesselateShape(block, Api.Assets.TryGet("furniture:shapes/block/stone/firepits/campfire/" + key + ".json")?.ToObject<Shape>(), out meshdata);
             }
 
             return meshdata;

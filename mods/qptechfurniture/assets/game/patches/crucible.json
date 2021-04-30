@@ -9,7 +9,7 @@
     "path": "/attributesByType/crucible-burned/inKilnProps",
     "value": {
       "transform": {},
-      "useKilnModel": "Wide"
+      "useKilnModel": "Smelting"
     },
     "file": "blocktypes/clay/crucible.json"
   },
@@ -23,7 +23,7 @@
     "path": "/attributesByType/crucible-smelted/inKilnProps",
     "value": {
       "transform": {},
-      "useKilnModel": "Wide"
+      "useKilnModel": "Smelting"
     },
     "file": "blocktypes/clay/crucible.json"
   }

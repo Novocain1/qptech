@@ -18,7 +18,7 @@ namespace QptechFurniture.src
         ModelTransform defaultTransform;
 
         public IInKilnRenderer contentStackRenderer;
-        public bool RequireSpit
+        public bool RequireIngot
         {
             get
             {

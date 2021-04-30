@@ -17,8 +17,6 @@ namespace QptechFurniture.src
 
         ItemSlot[] slots;
 
-        public string String = "You cant do that";
-
         public BlockPos pos;
 
         /// <summary>

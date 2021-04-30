@@ -35,7 +35,7 @@ namespace QptechFurniture.src
     public class InKilnProps
     {
         public ModelTransform Transform;
-        public EnumKilnModel UseKilnModel;
+        public EnumKilnModel useKilnModel;
     }
 
     public interface IInKilnRenderer : IRenderer
@@ -627,7 +627,6 @@ namespace QptechFurniture.src
         {
             inputStack.Collectible.DoSmelt(Api.World, inventory, inputSlot, outputSlot);
             InputStackTemp = enviromentTemperature();
-            inputStack.Collectible.CombustibleProps.SmeltingType = EnumSmeltType.Smelt;
             inputStackCookingTime = 0;
             MarkDirty(true);
             inputSlot.MarkDirty();
@@ -1068,7 +1067,7 @@ namespace QptechFurniture.src
 
             if (renderProps != null)
             {
-                this.CurrentModel = renderProps.UseKilnModel;
+                this.CurrentModel = renderProps.useKilnModel;
 
                 if (contentStack.Class != EnumItemClass.Item)
                 {
@@ -1078,7 +1077,7 @@ namespace QptechFurniture.src
                     ingredientMesh.ModelTransform(renderProps.Transform);
 
                     // Lower by 1 voxel if extinct
-                    if (!IsBurning && renderProps.UseKilnModel != EnumKilnModel.Ingot) ingredientMesh.Translate(0, -1 / 16f, 0);
+                    if (!IsBurning && renderProps.useKilnModel != EnumKilnModel.Ingot) ingredientMesh.Translate(0, -1 / 16f, 0);
 
                     return ingredientMesh;
                 }
@@ -1087,7 +1086,7 @@ namespace QptechFurniture.src
             }
             else
             {
-                if (renderer.RequireSpit)
+                if (renderer.RequireIngot)
                 {
                     this.CurrentModel = EnumKilnModel.Ingot;
                 }
@@ -1105,9 +1104,9 @@ namespace QptechFurniture.src
 
         InKilnProps GetRenderProps(ItemStack contentStack)
         {
-            if (contentStack?.ItemAttributes?.KeyExists("InKilnProps") == true)
+            if (contentStack?.ItemAttributes?.KeyExists("inKilnProps") == true)
             {
-                InKilnProps props = contentStack.ItemAttributes["InKilnProps"].AsObject<InKilnProps>();
+                InKilnProps props = contentStack.ItemAttributes["inKilnProps"].AsObject<InKilnProps>();
                 props.Transform.EnsureDefaultValues();
                 return props;
             }
@@ -1129,7 +1128,7 @@ namespace QptechFurniture.src
                 MeshData[] meshes = new MeshData[17];
                 ITesselatorAPI mesher = ((ICoreClientAPI)Api).Tesselator;
 
-                mesher.TesselateShape(block, Api.Assets.TryGet("furniture:shapes/block/stone/brick/kiln/" + key + ".json")?.ToObject<Shape>(), out meshdata);
+                mesher.TesselateShape(block, Api.Assets.TryGet("furniture:shapes/block/stone/kiln/" + key + ".json")?.ToObject<Shape>(), out meshdata);
             }
 
             return meshdata;

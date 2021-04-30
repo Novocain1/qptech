@@ -8,7 +8,6 @@
 	"textureSizes": {
 	},
 	"textures": {
-		"string": "C:/Users/andy-/Documents/GitHub/qptech/mods/qptechfurniture/assets/furniture/textures/item/campfire/string",
 		"tinder": "C:/Users/andy-/Documents/GitHub/qptech/mods/qptechfurniture/assets/furniture/textures/block/grass/hay/normal-side",
 		"log": "C:/Users/andy-/Documents/GitHub/qptech/mods/qptechfurniture/assets/furniture/textures/block/wood/stonefirepit/log",
 		"ground": "C:/Users/andy-/Documents/GitHub/qptech/mods/qptechfurniture/assets/furniture/textures/block/wood/stonefirepit/ground",
@@ -21,12 +20,12 @@
 			"to": [ 8.0, 8.0, 8.0 ], 
 			"rotationOrigin": [ 8.0, 8.0, 8.0 ],
 			"faces": {
-				"north": { "texture": "#string", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
-				"east": { "texture": "#string", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
-				"south": { "texture": "#string", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
-				"west": { "texture": "#string", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
-				"up": { "texture": "#string", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
-				"down": { "texture": "#string", "uv": [ 0.0, 0.0, 0.5, 0.5 ] }
+				"north": { "texture": "#stone", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+				"east": { "texture": "#stone", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+				"south": { "texture": "#stone", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+				"west": { "texture": "#stone", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+				"up": { "texture": "#stone", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+				"down": { "texture": "#stone", "uv": [ 0.0, 0.0, 0.5, 0.5 ] }
 			},
 			"children": [
 				{
@@ -36,12 +35,12 @@
 					"rotationOrigin": [ -7.0, -7.99, 7.0 ],
 					"rotationX": -89.99997456787236,
 					"faces": {
-						"north": { "texture": "#string", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
-						"east": { "texture": "#string", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
-						"south": { "texture": "#string", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
-						"west": { "texture": "#string", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
-						"up": { "texture": "#string", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
-						"down": { "texture": "#string", "uv": [ 0.0, 0.0, 0.5, 0.5 ] }
+						"north": { "texture": "#ground", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"east": { "texture": "#ground", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"south": { "texture": "#ground", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"west": { "texture": "#ground", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"up": { "texture": "#ground", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"down": { "texture": "#ground", "uv": [ 0.0, 0.0, 0.5, 0.5 ] }
 					},
 					"children": [
 						{
@@ -129,12 +128,12 @@
 					"rotationOrigin": [ -8.75, -7.567, -0.65 ],
 					"rotationZ": -29.99999455988642,
 					"faces": {
-						"north": { "texture": "#string", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
-						"east": { "texture": "#string", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
-						"south": { "texture": "#string", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
-						"west": { "texture": "#string", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
-						"up": { "texture": "#string", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
-						"down": { "texture": "#string", "uv": [ 0.0, 0.0, 0.5, 0.5 ] }
+						"north": { "texture": "#log", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"east": { "texture": "#log", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"south": { "texture": "#log", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"west": { "texture": "#log", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"up": { "texture": "#log", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"down": { "texture": "#log", "uv": [ 0.0, 0.0, 0.5, 0.5 ] }
 					},
 					"children": [
 						{
@@ -212,12 +211,12 @@
 					"rotationOrigin": [ 0.0, -3.5, 0.0 ],
 					"rotationY": -29.999998352813325,
 					"faces": {
-						"north": { "texture": "#null", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
-						"east": { "texture": "#null", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
-						"south": { "texture": "#null", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
-						"west": { "texture": "#null", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
-						"up": { "texture": "#null", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
-						"down": { "texture": "#null", "uv": [ 0.0, 0.0, 0.5, 0.5 ] }
+						"north": { "texture": "#stone", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"east": { "texture": "#stone", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"south": { "texture": "#stone", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"west": { "texture": "#stone", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"up": { "texture": "#stone", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"down": { "texture": "#stone", "uv": [ 0.0, 0.0, 0.5, 0.5 ] }
 					},
 					"children": [
 						{
@@ -491,12 +490,12 @@
 					"rotationOrigin": [ -1.2, -8.3, -3.0 ],
 					"rotationY": -89.9802127184967,
 					"faces": {
-						"north": { "texture": "#string", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
-						"east": { "texture": "#string", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
-						"south": { "texture": "#string", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
-						"west": { "texture": "#string", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
-						"up": { "texture": "#string", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
-						"down": { "texture": "#string", "uv": [ 0.0, 0.0, 1.0, 1.0 ] }
+						"north": { "texture": "#log", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
+						"east": { "texture": "#log", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
+						"south": { "texture": "#log", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
+						"west": { "texture": "#log", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
+						"up": { "texture": "#log", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
+						"down": { "texture": "#log", "uv": [ 0.0, 0.0, 1.0, 1.0 ] }
 					},
 					"children": [
 						{
@@ -545,26 +544,6 @@
 								"up": { "texture": "#log", "uv": [ 7.0, 7.0, 12.0, 9.0 ] },
 								"down": { "texture": "#log", "uv": [ 8.0, 7.0, 13.0, 9.0 ] }
 							}
-						}
-					]
-				},
-				{
-					"name": "Rope",
-					"from": [ 0.0, 0.0, 0.0 ], 
-					"to": [ 0.2, 8.2, 0.2 ], 
-					"faces": {
-						"north": { "texture": "#string", "uv": [ 0.0, 0.0, 0.5, 7.0 ] },
-						"east": { "texture": "#string", "uv": [ 0.0, 0.0, 0.5, 7.0 ] },
-						"south": { "texture": "#string", "uv": [ 0.0, 0.0, 0.5, 7.0 ] },
-						"west": { "texture": "#string", "uv": [ 0.0, 0.0, 0.5, 7.0 ] },
-						"up": { "texture": "#string", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
-						"down": { "texture": "#string", "uv": [ 0.0, 0.0, 0.5, 0.5 ] }
-					},
-					"attachmentpoints": [
-						{
-							"code": "pot",
-							"posX": "0.1","posY": "-2.0","posZ": "0.0",
-							"rotationX": "0.0","rotationY": "0.0","rotationZ": "0.0"
 						}
 					]
 				}

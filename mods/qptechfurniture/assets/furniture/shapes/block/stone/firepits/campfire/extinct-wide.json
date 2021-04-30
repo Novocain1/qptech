@@ -8,7 +8,6 @@
 	"textureSizes": {
 	},
 	"textures": {
-		"string": "C:/Users/andy-/Documents/GitHub/qptech/mods/qptechfurniture/assets/furniture/textures/item/campfire/string",
 		"log": "C:/Users/andy-/Documents/GitHub/qptech/mods/qptechfurniture/assets/furniture/textures/block/wood/stonefirepit/log",
 		"ground": "C:/Users/andy-/Documents/GitHub/qptech/mods/qptechfurniture/assets/furniture/textures/block/wood/stonefirepit/ground",
 		"stone": "C:/Users/andy-/Documents/GitHub/qptech/mods/qptechfurniture/assets/furniture/textures/block/stone/forge/stoneshale"
@@ -20,12 +19,12 @@
 			"to": [ 8.0, 8.0, 8.0 ], 
 			"rotationOrigin": [ 8.0, 8.0, 8.0 ],
 			"faces": {
-				"north": { "texture": "#string", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
-				"east": { "texture": "#string", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
-				"south": { "texture": "#string", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
-				"west": { "texture": "#string", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
-				"up": { "texture": "#string", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
-				"down": { "texture": "#string", "uv": [ 0.0, 0.0, 0.5, 0.5 ] }
+				"north": { "texture": "#stone", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+				"east": { "texture": "#stone", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+				"south": { "texture": "#stone", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+				"west": { "texture": "#stone", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+				"up": { "texture": "#stone", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+				"down": { "texture": "#stone", "uv": [ 0.0, 0.0, 0.5, 0.5 ] }
 			},
 			"children": [
 				{
@@ -35,12 +34,12 @@
 					"rotationOrigin": [ -8.75, -7.567, -0.65 ],
 					"rotationZ": -29.99999455988642,
 					"faces": {
-						"north": { "texture": "#string", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
-						"east": { "texture": "#string", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
-						"south": { "texture": "#string", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
-						"west": { "texture": "#string", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
-						"up": { "texture": "#string", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
-						"down": { "texture": "#string", "uv": [ 0.0, 0.0, 0.5, 0.5 ] }
+						"north": { "texture": "#log", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"east": { "texture": "#log", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"south": { "texture": "#log", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"west": { "texture": "#log", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"up": { "texture": "#log", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"down": { "texture": "#log", "uv": [ 0.0, 0.0, 0.5, 0.5 ] }
 					},
 					"children": [
 						{
@@ -387,26 +386,6 @@
 								"up": { "texture": "#stone", "uv": [ 5.0, 7.0, 8.0, 11.5 ] },
 								"down": { "texture": "#stone", "uv": [ 7.0, 2.0, 10.0, 6.5 ] }
 							}
-						}
-					]
-				},
-				{
-					"name": "Rope",
-					"from": [ 0.0, 0.0, 0.0 ], 
-					"to": [ 0.2, 8.2, 0.2 ], 
-					"faces": {
-						"north": { "texture": "#string", "uv": [ 0.0, 0.0, 0.5, 7.0 ] },
-						"east": { "texture": "#string", "uv": [ 0.0, 0.0, 0.5, 7.0 ] },
-						"south": { "texture": "#string", "uv": [ 0.0, 0.0, 0.5, 7.0 ] },
-						"west": { "texture": "#string", "uv": [ 0.0, 0.0, 0.5, 7.0 ] },
-						"up": { "texture": "#string", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
-						"down": { "texture": "#string", "uv": [ 0.0, 0.0, 0.5, 0.5 ] }
-					},
-					"attachmentpoints": [
-						{
-							"code": "pot",
-							"posX": "0.1","posY": "-2.0","posZ": "0.0",
-							"rotationX": "0.0","rotationY": "0.0","rotationZ": "0.0"
 						}
 					]
 				},
