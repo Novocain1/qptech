@@ -79,9 +79,11 @@
     <Compile Include="src\Electricity\BlockEForge.cs" />
     <Compile Include="src\Electricity\BlockWire.cs" />
     <Compile Include="src\Electricity\EForgeContentsRenderer.cs" />
+    <Compile Include="src\misc\APIExtensions.cs" />
     <Compile Include="src\misc\BlockCannedMeal.cs" />
     <Compile Include="src\Electricity\ElectricalBlock.cs" />
     <Compile Include="src\Electricity\ElectricityLoader.cs" />
+    <Compile Include="src\misc\BlockTemporalPocket.cs" />
     <Compile Include="src\misc\icebox.cs" />
     <Compile Include="src\misc\ItemJetPack.cs" />
     <Compile Include="src\misc\ItemQuarryTool.cs" />
@@ -90,6 +92,7 @@
     <Compile Include="src\misc\firepitunloader.cs" />
     <Compile Include="src\misc\firepitloader.cs" />
     <Compile Include="src\misc\PowerSink.cs" />
+    <Compile Include="src\misc\BETemporalPocket.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Update="modinfo.json">

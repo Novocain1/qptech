@@ -200,6 +200,7 @@
     <None Include="qptech\assets\machines\blocktypes\electricforge.json" />
     <None Include="qptech\assets\machines\blocktypes\generator-primitive.json" />
     <None Include="qptech\assets\machines\blocktypes\icebox.json" />
+    <None Include="qptech\assets\machines\blocktypes\temporalpocket.json" />
     <None Include="qptech\assets\machines\blocktypes\itemhatch.json" />
     <None Include="qptech\assets\machines\blocktypes\dummy-element.json" />
     <None Include="qptech\assets\machines\blocktypes\brassringedbarrel.json" />
