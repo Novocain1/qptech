@@ -49,7 +49,7 @@ namespace QptechFurniture.src
         {
             base.OnLoaded(api);
 
-            defaultType = Attributes["defaultType"].AsString("normal-generic");
+            defaultType = Attributes["defaultType"].AsString("iceboxsmall-oak");
             variantByGroup = Attributes["variantByGroup"].AsString(null);
             variantByGroupInventory = Attributes["variantByGroupInventory"].AsString(null);
         }

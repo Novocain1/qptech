@@ -21,12 +21,12 @@ namespace QptechFurniture.src
         public float preserveBonus = 0f;
 
         internal InventoryGeneric inventory;
-        public string type = "normal-generic";
+        public string type = "iceboxsmall-oak";
         public string defaultType;
 
         public int quantitySlots = 16;
-        public string inventoryClassName = "chest";
-        public string dialogTitleLangCode = "chestcontents";
+        public string inventoryClassName = "icebox";
+        public string dialogTitleLangCode = "icebox";
         public bool retrieveOnly = false;
 
         float meshangle;
@@ -70,8 +70,8 @@ namespace QptechFurniture.src
 
         public override void Initialize(ICoreAPI api)
         {
-            defaultType = Block.Attributes?["defaultType"]?.AsString("normal-generic");
-            if (defaultType == null) defaultType = "normal-generic";
+            defaultType = Block.Attributes?["defaultType"]?.AsString("iceboxsmall-oak");
+            if (defaultType == null) defaultType = "iceboxsmall-oak";
 
             // Newly placed 
             if (inventory == null)
@@ -186,7 +186,7 @@ namespace QptechFurniture.src
             inventory = new InventoryGeneric(quantitySlots, null, null, null);
             inventory.BaseWeight = 1f;
             inventory.OnGetSuitability = (sourceSlot, targetSlot, isMerge) => (isMerge ? (inventory.BaseWeight + 3) : (inventory.BaseWeight + 1)) + (sourceSlot.Inventory is InventoryBasePlayer ? 1 : 0);
-            inventory.OnGetAutoPullFromSlot = GetAutoPullFromSlot;
+
 
 
             if (block?.Attributes != null)
@@ -205,16 +205,6 @@ namespace QptechFurniture.src
             inventory.PutLocked = retrieveOnly;
             inventory.OnInventoryClosed += OnInvClosed;
             inventory.OnInventoryOpened += OnInvOpened;
-        }
-
-        private ItemSlot GetAutoPullFromSlot(BlockFacing atBlockFace)
-        {
-            if (atBlockFace == BlockFacing.DOWN)
-            {
-                return inventory.FirstOrDefault(slot => !slot.Empty);
-            }
-
-            return null;
         }
 
         protected virtual void OnInvOpened(IPlayer player)

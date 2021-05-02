@@ -39,11 +39,11 @@
 	"maxStackSize": 1,
 	"lightAbsorption": 1,
 	"textures": {
-		"sides2": { "base": "block/wood/oak/cabinet" },
 		"copper": { "base": "block/metal/copper" },
-		"accessories": { "base": "block/stone/whitemarble/countertop" },
-		"lid": { "base": "block/stone/whitemarble/oak" },
-		"cabinet-detail": { "base": "block/wood/oak/cabinet-detail" }
+		"accessories": { "base": "block/stone/rock/whitemarble/countertop" },
+		"lid": { "base": "block/stone/rock/whitemarble/oak" },
+		"sides2": { "base": "block/wood/cabinets/oak/cabinet" },
+		"cabinet-detail": { "base": "block/wood/cabinets/oak/cabinet-detail" }
 	},
 	"attributes": {
 		"partialAttachable": true,

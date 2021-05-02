@@ -96,7 +96,7 @@
     <Compile Include="src\gui\GuiDialogSingleSink.cs" />
     <Compile Include="src\gui\GuiDialogCampFire.cs" />
     <Compile Include="src\gui\GuiIceBox.cs" />
-    <Compile Include="src\inventory\CookingSlot.cs" />
+    <Compile Include="src\inventory\ItemSlotCooking.cs" />
     <Compile Include="src\inventory\InventoryCooking.cs" />
     <Compile Include="src\inventory\InventoryStoneKiln.cs" />
     <Compile Include="src\inventory\InventoryStove.cs" />

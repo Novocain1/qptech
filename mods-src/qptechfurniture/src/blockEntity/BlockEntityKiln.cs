@@ -15,8 +15,7 @@ namespace QptechFurniture.src
     public enum EnumKilnModel
     {
         Normal = 0,
-        Ingot = 1,
-        Smelting = 2
+        Smelting = 1
     }
 
     public interface IInKilnMeshSupplier
@@ -35,7 +34,7 @@ namespace QptechFurniture.src
     public class InKilnProps
     {
         public ModelTransform Transform;
-        public EnumKilnModel useKilnModel;
+        public EnumKilnModel UseKilnModel;
     }
 
     public interface IInKilnRenderer : IRenderer
@@ -1062,37 +1061,26 @@ namespace QptechFurniture.src
                 this.CurrentModel = model;
                 return null;
             }
+          
 
             InKilnProps renderProps = GetRenderProps(contentStack);
-
             if (renderProps != null)
             {
-                this.CurrentModel = renderProps.useKilnModel;
+                this.CurrentModel = renderProps.UseKilnModel;
 
                 if (contentStack.Class != EnumItemClass.Item)
                 {
-                    MeshData ingredientMesh;
-                    tesselator.TesselateBlock(contentStack.Block, out ingredientMesh);
+                    MeshData ObjMesh;
+                    tesselator.TesselateBlock(contentStack.Block, out ObjMesh);
 
-                    ingredientMesh.ModelTransform(renderProps.Transform);
+                    ObjMesh.ModelTransform(renderProps.Transform);
 
-                    // Lower by 1 voxel if extinct
-                    if (!IsBurning && renderProps.useKilnModel != EnumKilnModel.Ingot) ingredientMesh.Translate(0, -1 / 16f, 0);
-
-                    return ingredientMesh;
+                    return ObjMesh;
                 }
 
                 return null;
             }
-            else
-            {
-                if (renderer.RequireIngot)
-                {
-                    this.CurrentModel = EnumKilnModel.Ingot;
-                }
-                return null; // Mesh drawing is handled by the FirepitContentsRenderer
-            }
-
+            return null;
         }
 
         public override void OnBlockUnloaded()

@@ -11,20 +11,12 @@ namespace QptechFurniture.src
         ICoreClientAPI api;
         BlockPos pos;
         public ItemStack ContentStack;
-        int textureId;
         Matrixf ModelMat = new Matrixf();
 
         ModelTransform transform;
         ModelTransform defaultTransform;
 
         public IInKilnRenderer contentStackRenderer;
-        public bool RequireIngot
-        {
-            get
-            {
-                return contentStackRenderer == null && ContentStack?.Item != null;
-            }
-        }
 
         public double RenderOrder
         {
@@ -86,19 +78,11 @@ namespace QptechFurniture.src
                 return;
             }
 
-            MeshData ingredientMesh;
-            if (newContentStack.Class == EnumItemClass.Item)
+            if (newContentStack == null || newContentStack.Class == EnumItemClass.Item)
             {
-                api.Tesselator.TesselateItem(newContentStack.Item, out ingredientMesh);
-                textureId = api.ItemTextureAtlas.Positions[newContentStack.Item.FirstTexture.Baked.TextureSubId].atlasTextureId;
+                this.ContentStack = null;
+                return;
             }
-            else
-            {
-                api.Tesselator.TesselateBlock(newContentStack.Block, out ingredientMesh);
-                textureId = api.ItemTextureAtlas.Positions[newContentStack.Block.Textures.FirstOrDefault().Value.Baked.TextureSubId].atlasTextureId;
-            }
-
-            meshref = api.Render.UploadMesh(ingredientMesh);
             this.ContentStack = newContentStack;
         }
 
@@ -143,13 +127,13 @@ namespace QptechFurniture.src
 
             prog.RgbaLightIn = lightrgbs;
 
-            prog.ExtraGlow = (int)GameMath.Clamp((temp - 500) / 4, 0, 255);
+            prog.ExtraGlow = (int)GameMath.Clamp((temp - 800) / 8, 0, 255);
 
 
             prog.ModelMatrix = ModelMat
                 .Identity()
                 .Translate(pos.X - camPos.X + transform.Translation.X, pos.Y - camPos.Y + transform.Translation.Y, pos.Z - camPos.Z + transform.Translation.Z)
-                .Translate(transform.Origin.X, 0.6f + transform.Origin.Y, transform.Origin.Z)
+                .Translate(transform.Origin.X, 0.12f + transform.Origin.Y, transform.Origin.Z)
                 .RotateX((90 + transform.Rotation.X) * GameMath.DEG2RAD)
                 .RotateY(transform.Rotation.Y * GameMath.DEG2RAD)
                 .RotateZ(transform.Rotation.Z * GameMath.DEG2RAD)

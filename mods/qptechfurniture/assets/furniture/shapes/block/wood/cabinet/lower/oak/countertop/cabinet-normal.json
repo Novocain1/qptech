@@ -12,10 +12,10 @@
 		"accessories": [16,16]
 	},
 	"textures": {
-		"cabinet-detail": "block/wood/acacia/cabinet-detail",
-		"sides2": "block/wood/acacia/cabinet",
-		"lid": "block/wood/acacia/detail",
-		"accessories": "block/wood/acacia/countertop"
+		"cabinet-detail": "C:/Users/andy-/Documents/GitHub/qptech/mods/qptechfurniture/assets/furniture/textures/block/wood/cabinets/pine/cabinet-detail",
+		"sides2": "C:/Users/andy-/Documents/GitHub/qptech/mods/qptechfurniture/assets/furniture/textures/block/wood/cabinets/pine/cabinet",
+		"lid": "C:/Users/andy-/Documents/GitHub/qptech/mods/qptechfurniture/assets/furniture/textures/block/wood/cabinets/pine/detail",
+		"accessories": "C:/Users/andy-/Documents/GitHub/qptech/mods/qptechfurniture/assets/furniture/textures/block/wood/cabinets/pine/coutertop"
 	},
 	"elements": [
 		{
