@@ -31,6 +31,15 @@ namespace QptechFurniture.src
             }
         }
 
+        public bool RequireOver
+        {
+            get
+            {
+                return contentStackRenderer == null && ContentStack?.Item != null;
+            }
+        }
+
+
         public double RenderOrder
         {
             get { return 0.5; }

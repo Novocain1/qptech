@@ -23,14 +23,9 @@
     <None Include="qptechfurniture\assets\furniture\blocktypes\stone\stonekiln.json" />
     <None Include="qptechfurniture\assets\furniture\blocktypes\wood\cabinet\cabinetlower.json" />
     <None Include="qptechfurniture\assets\furniture\blocktypes\wood\cabinet\cabinetmid.json" />
+    <None Include="qptechfurniture\assets\furniture\blocktypes\wood\cabinet\cabinets.json" />
     <None Include="qptechfurniture\assets\furniture\blocktypes\wood\cabinet\cabinetupper.json" />
     <None Include="qptechfurniture\assets\furniture\blocktypes\wood\freeze\iceboxs.json" />
-    <None Include="qptechfurniture\assets\furniture\blocktypes\wood\sink\double\acacia\acacia-cabinet-sink-shale.json" />
-    <None Include="qptechfurniture\assets\furniture\blocktypes\wood\sink\double\acacia\acacia-cabinet-sink-whitemarble.json" />
-    <None Include="qptechfurniture\assets\furniture\blocktypes\wood\sink\double\maple\maple-cabinet-sink-shale.json" />
-    <None Include="qptechfurniture\assets\furniture\blocktypes\wood\sink\double\maple\maple-cabinet-sink-whitemarble.json" />
-    <None Include="qptechfurniture\assets\furniture\blocktypes\wood\sink\double\oak\oak-cabinet-sink-shale.json" />
-    <None Include="qptechfurniture\assets\furniture\blocktypes\wood\sink\double\oak\oak-cabinet-sink-whitemarble.json" />
     <None Include="qptechfurniture\assets\furniture\blocktypes\wood\sink\single\acacia\acacia-cabinet-sink-shale.json" />
     <None Include="qptechfurniture\assets\furniture\blocktypes\wood\sink\single\acacia\acacia-cabinet-sink-whitemarble.json" />
     <None Include="qptechfurniture\assets\furniture\blocktypes\wood\sink\single\maple\maple-cabinet-sink-shale.json" />
@@ -126,7 +121,6 @@
     <None Include="qptechfurniture\assets\furniture\shapes\block\wood\cabinet\lower\maple\whitemarble\glass\fourplain\cabinet-normal.json" />
     <None Include="qptechfurniture\assets\furniture\shapes\block\wood\cabinet\lower\maple\whitemarble\glass\fullplain\cabinet-normal.json" />
     <None Include="qptechfurniture\assets\furniture\shapes\block\wood\cabinet\lower\maple\whitemarble\glass\halfplain\cabinet-normal.json" />
-    <None Include="qptechfurniture\assets\furniture\shapes\block\wood\cabinet\lower\middle-table.json" />
     <None Include="qptechfurniture\assets\furniture\shapes\block\wood\cabinet\lower\oak\countertop\cabinet-normal.json" />
     <None Include="qptechfurniture\assets\furniture\shapes\block\wood\cabinet\lower\oak\countertop\glass\fourplain\cabinet-normal.json" />
     <None Include="qptechfurniture\assets\furniture\shapes\block\wood\cabinet\lower\oak\countertop\glass\fullplain\cabinet-normal.json" />
@@ -202,7 +196,6 @@
     <None Include="qptechfurniture\assets\furniture\shapes\block\wood\freeze\small\acacia-icebox-small.json" />
     <None Include="qptechfurniture\assets\furniture\shapes\block\wood\freeze\small\maple-icebox-small.json" />
     <None Include="qptechfurniture\assets\furniture\shapes\block\wood\freeze\small\oak-icebox-small.json" />
-    <None Include="qptechfurniture\assets\furniture\shapes\block\wood\sink\double\empty.json" />
     <None Include="qptechfurniture\assets\furniture\shapes\block\wood\sink\single\empty.json" />
     <None Include="qptechfurniture\assets\furniture\shapes\item\grassbundle.json" />
     <None Include="qptechfurniture\assets\furniture\shapes\item\stone\firepitbase.json" />
@@ -218,10 +211,12 @@
     <None Include="qptechfurniture\assets\furniture\textures\block\wood\raw\oak-boreder.aseprite" />
     <None Include="qptechfurniture\assets\furniture\textures\block\wood\raw\oak.aseprite" />
     <None Include="qptechfurniture\assets\game\lang\en.json" />
-    <None Include="qptechfurniture\assets\game\patches\clay-pot.json" />
-    <None Include="qptechfurniture\assets\game\patches\crucible.json" />
+    <None Include="qptechfurniture\assets\game\patches\cooking pot.json" />
     <None Include="qptechfurniture\assets\game\patches\drygrass.json" />
-    <None Include="qptechfurniture\assets\game\patches\itemtypes-food.json" />
+    <None Include="qptechfurniture\assets\game\patches\food\bushmeat.json" />
+    <None Include="qptechfurniture\assets\game\patches\food\poultry.json" />
+    <None Include="qptechfurniture\assets\game\patches\food\redmeat.json" />
+    <None Include="qptechfurniture\assets\game\patches\food\vegetable.json" />
     <None Include="qptechfurniture\assets\game\patches\stone.json" />
     <None Include="qptechfurniture\assets\game\patches\stonebrick.json" />
     <None Include="qptechfurniture\modinfo.json" />

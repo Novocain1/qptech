@@ -2180,7 +2180,8 @@
 	"lightAbsorption": 0,
 	"sideAo": { "all": false },
 	"sidesolid": {
-		"all": false
+		"all": false,
+		"up": true
 	},
 	"sideopaque": {
 		"all": false

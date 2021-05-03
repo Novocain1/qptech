@@ -78,7 +78,7 @@ namespace QptechFurniture.src
     {
         ILoadedSound ambientSound;
 
-        internal InventorySmelting inventory;
+        internal InventoryKiln inventory;
 
 
         // Temperature before the half second tick
@@ -169,7 +169,7 @@ namespace QptechFurniture.src
 
         public BlockEntityKiln()
         {
-            inventory = new InventorySmelting(null, null);
+            inventory = new InventoryKiln(null, null);
             inventory.SlotModified += OnSlotModifid;
         }
 

@@ -1,15 +1,16 @@
 {
-	code: "campfire",
+	"code": "campfire",
 	variantgroups: [
 		{ code:"burnstate", states: ["construct1", "construct2", "construct3", "construct4", "extinct", "lit", "cold"] }
 	],
-	attributes: {
+	"attributes": {
 		handbook: {
 			include: true,
 			extraSections: [
 				{ title: "firepit-handbook-help-title", text: "firepit-handbook-help-text" }
 			]
 		},
+		"speedBonus": 1.5
 	},
 	class: "BlockCampFire",
 	entityClass: "CampFire",

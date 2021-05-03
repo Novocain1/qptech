@@ -1,14 +1,10 @@
 [
   {
-    "op": "remove",
-    "path": "/attributesByType/claypot-burned/inFirePitProps",
-    "file": "blocktypes/clay/pot.json"
-  },
-  {
     "op": "add",
     "path": "/attributesByType/claypot-burned/inCampFireProps",
     "value": {
       "transform": {
+	  	scale: 0.90,
         "translation": {
           "x": 0,
           "y": 0.125,

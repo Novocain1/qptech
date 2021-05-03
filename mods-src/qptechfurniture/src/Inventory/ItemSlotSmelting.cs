@@ -3,12 +3,12 @@ using Vintagestory.GameContent;
 
 namespace QptechFurniture.src
 {
-    class SmelthingSlot : ItemSlot
+    class ItemSlotSmelthing : ItemSlot
     {
 
         public int outputSlotId;
 
-        public SmelthingSlot(InventoryBase inventory, int outputSlotId)
+        public ItemSlotSmelthing(InventoryBase inventory, int outputSlotId)
           : base(inventory)
           => this.outputSlotId = outputSlotId;
 
@@ -16,8 +16,8 @@ namespace QptechFurniture.src
         private bool IsCooking(ItemSlot itemSlot)
         {
             if (itemSlot.Itemstack != null)
-            { return itemSlot.Itemstack.Collectible is BlockSmeltingContainer is false; }
-            //{ return itemSlot.Itemstack.Collectible is ItemFood is false && itemSlot.Itemstack.Collectible is BlockCookingContainer is false; }
+
+            { return itemSlot.Itemstack.Collectible is ItemFood is false && itemSlot.Itemstack.Collectible is BlockCookingContainer is false; }
             else
                 return false;
         }

@@ -100,7 +100,7 @@ namespace QptechFurniture.src
             }
 
 
-            interactions = ObjectCacheUtil.GetOrCreate(api, "campefireInteractions-" + Stage, () =>
+            interactions = ObjectCacheUtil.GetOrCreate(api, "campfireInteractions-" + Stage, () =>
             {
                 List<ItemStack> canIgniteStacks = new List<ItemStack>();
 
@@ -249,6 +249,49 @@ namespace QptechFurniture.src
                         }
                     }
                 }
+
+                if (stack?.Collectible.Attributes?.IsTrue("mealContainer") == true)
+                {
+                    ItemSlot potSlot = null;
+                    if (bef?.inputStack?.Collectible is BlockCookedContainer)
+                    {
+                        potSlot = bef.inputSlot;
+                    }
+                    if (bef?.outputStack?.Collectible is BlockCookedContainer)
+                    {
+                        potSlot = bef.outputSlot;
+                    }
+
+                    if (potSlot != null)
+                    {
+                        BlockCookedContainer blockPot = potSlot.Itemstack.Collectible as BlockCookedContainer;
+                        ItemSlot targetSlot = byPlayer.InventoryManager.ActiveHotbarSlot;
+                        if (byPlayer.InventoryManager.ActiveHotbarSlot.StackSize > 1)
+                        {
+                            targetSlot = new DummySlot(targetSlot.TakeOut(1));
+                            byPlayer.InventoryManager.ActiveHotbarSlot.MarkDirty();
+                            blockPot.ServeIntoBowlStack(targetSlot, potSlot, world);
+                            if (!byPlayer.InventoryManager.TryGiveItemstack(targetSlot.Itemstack, true))
+                            {
+                                world.SpawnItemEntity(targetSlot.Itemstack, byPlayer.Entity.ServerPos.XYZ);
+                            }
+                        }
+                        else
+                        {
+                            blockPot.ServeIntoBowlStack(targetSlot, potSlot, world);
+                        }
+
+                    }
+                    else
+                    {
+                        return false;
+                    }
+
+                    return true;
+                }
+
+
+
                 return base.OnBlockInteractStart(world, byPlayer, blockSel);
             }
 
@@ -270,11 +313,11 @@ namespace QptechFurniture.src
         {
             int stage = Stage;
 
-            if (obj.Attributes?.IsTrue("firepitConstructable") != true) return false;
+            if (obj.Attributes?.IsTrue("campfireConstructable") != true) return false;
 
             if (stage == 5) return false;
 
-            if (stage == 4 && world.BlockAccessor.GetBlock(pos.DownCopy()).Code.Path.Equals("firewoodpile"))
+            if (stage == 4 && world.BlockAccessor.GetBlock(pos.DownCopy()).Code.Path.Equals("stone"))
             {
                 Block charcoalPitBlock = world.GetBlock(new AssetLocation("charcoalpit"));
                 if (charcoalPitBlock != null)
@@ -294,15 +337,6 @@ namespace QptechFurniture.src
             world.BlockAccessor.ExchangeBlock(block.BlockId, pos);
             world.BlockAccessor.MarkBlockDirty(pos);
             if (block.Sounds != null) world.PlaySoundAt(block.Sounds.Place, pos.X, pos.Y, pos.Z, player);
-
-            if (stage == 4)
-            {
-                BlockEntity be = world.BlockAccessor.GetBlockEntity(pos);
-                if (be is BlockEntityCampFire)
-                {
-                    ((BlockEntityCampFire)be).inventory[0].Itemstack = new ItemStack(obj, 4);
-                }
-            }
 
             (player as IClientPlayer)?.TriggerFpAnimation(EnumHandInteract.HeldItemInteract);
 
