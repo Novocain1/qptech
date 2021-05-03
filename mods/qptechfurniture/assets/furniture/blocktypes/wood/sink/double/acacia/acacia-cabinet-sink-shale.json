@@ -40,10 +40,10 @@
 	"lightAbsorption": 1,
 	"textures": {
 		"copper": { "base": "block/metal/copper" },
-		"accessories": { "base": "block/stone/shale/countertop" },
-		"lid": { "base": "block/stone/shale/acacia" },
-		"sides2": { "base": "block/wood/acacia/cabinet" },
-		"cabinet-detail": { "base": "block/wood/acacia/cabinet-detail" }
+		"accessories": { "base": "block/stone/rock/shale/countertop" },
+		"lid": { "base": "block/stone/rock/shale/acacia" },
+		"sides2": { "base": "block/wood/cabinets/acacia/cabinet" },
+		"cabinet-detail": { "base": "block/wood/cabinets/acacia/cabinet-detail" }
 	},
 	"attributes": {
 		"partialAttachable": true,

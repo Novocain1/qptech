@@ -1,5 +1,21 @@
 [
   {
+    "op": "add",
+    "path": "/attributesByType/crucible-raw",
+    "value": {
+      "shelvable": true,
+      "inKilnProps": {
+        "transform": {
+          "x": 0,
+          "y": 0.125,
+          "z": 0
+        },
+        "useKilnModel": "Smelting"
+      }
+    },
+    "file": "blocktypes/clay/crucible.json"
+  },
+  {
     "op": "remove",
     "path": "/attributesByType/crucible-burned/inFirePitProps",
     "file": "blocktypes/clay/crucible.json"
@@ -8,7 +24,11 @@
     "op": "add",
     "path": "/attributesByType/crucible-burned/inKilnProps",
     "value": {
-      "transform": {},
+      "transform": {
+        "x": 0,
+        "y": 0.125,
+        "z": 0
+      },
       "useKilnModel": "Smelting"
     },
     "file": "blocktypes/clay/crucible.json"
@@ -22,7 +42,11 @@
     "op": "add",
     "path": "/attributesByType/crucible-smelted/inKilnProps",
     "value": {
-      "transform": {},
+      "transform": {
+        "x": 0,
+        "y": 0.125,
+        "z": 0
+      },
       "useKilnModel": "Smelting"
     },
     "file": "blocktypes/clay/crucible.json"

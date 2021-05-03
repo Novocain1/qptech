@@ -39,11 +39,11 @@
 	"maxStackSize": 1,
 	"lightAbsorption": 1,
 	"textures": {
-		"lid": { "base": "block/stone/shale/oak" },
 		"copper": { "base": "block/metal/copper" },
-		"accessories": { "base": "block/stone/shale/countertop" },
-		"sides2": { "base": "block/wood/oak/cabinet" },
-		"cabinet-detail": { "base": "block/wood/oak/cabinet-detail" }
+		"accessories": { "base": "block/stone/rock/shale/countertop" },
+		"lid": { "base": "block/stone/rock/shale/oak" },
+		"sides2": { "base": "block/wood/cabinets/oak/cabinet" },
+		"cabinet-detail": { "base": "block/wood/cabinets/oak/cabinet-detail" }
 	},
 	"attributes": {
 		"partialAttachable": true,

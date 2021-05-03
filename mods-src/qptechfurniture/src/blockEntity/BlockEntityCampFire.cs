@@ -33,7 +33,7 @@ namespace QptechFurniture.src
         }
 
         public class InCampFireProps
-        {
+    {
             public ModelTransform Transform;
             public EnumCampFireModel UseCampfireModel;
         }
@@ -1100,9 +1100,9 @@ namespace QptechFurniture.src
 
         InCampFireProps GetRenderProps(ItemStack contentStack)
         {
-            if (contentStack?.ItemAttributes?.KeyExists("InCampFireProps") == true)
+            if (contentStack?.ItemAttributes?.KeyExists("inCampFireProps") == true)
             {
-                InCampFireProps props = contentStack.ItemAttributes["InCampFireProps"].AsObject<InCampFireProps>();
+                InCampFireProps props = contentStack.ItemAttributes["inCampFireProps"].AsObject<InCampFireProps>();
                 props.Transform.EnsureDefaultValues();
                 return props;
             }

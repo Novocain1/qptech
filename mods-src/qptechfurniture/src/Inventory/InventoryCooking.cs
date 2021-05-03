@@ -12,7 +12,7 @@ namespace QptechFurniture.src
     /// <summary>
     /// Inventory with one fuel slot, one ore slot, one output slot and an optional 4 cooking slots
     /// </summary>
-    public class InventoryCooking : InventoryBase, ISlotProvider
+    public class InventoryCooking : InventoryBase, ISlotProvider 
     {
 
         ItemSlot[] slots;
@@ -109,8 +109,8 @@ namespace QptechFurniture.src
         protected override ItemSlot NewSlot(int i)
         {
             if (i == 0) return new ItemSlotSurvival(this); // Fuel
-            if (i == 1) return new ItemSlotInput(this, 2); // Input for cooking.
-            if (i == 2) return new ItemSlotOutput(this); // Output for things that are smeth
+            if (i == 1) return new ItemSlotCooking(this, 2); // Input for cooking.
+            if (i == 2) return new ItemSlotOutput(this); // Output for things that are smelted
 
             return new ItemSlotWatertight(this);
         }
@@ -140,8 +140,7 @@ namespace QptechFurniture.src
             ItemStack inputStack = slots[1].Itemstack;
 
             if (inputStack == null) return null;
-            if (inputStack.Collectible is BlockSmeltingContainer) return "You can't use Crucible in this Campfire";
-            if (inputStack.Collectible is BlockCookingContainer) return "You can't use Cooking Pot in this Campfire";
+            if (inputStack.Collectible is BlockSmeltingContainer) return "You can't use (Crucible) in this, Use (Kiln)";
    
             ItemStack smeltedStack = inputStack.Collectible.CombustibleProps?.SmeltedStack?.ResolvedItemstack;
             if (smeltedStack == null) return null;
