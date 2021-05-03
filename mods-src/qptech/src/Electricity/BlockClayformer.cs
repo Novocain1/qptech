@@ -4,6 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Vintagestory.API.Common;
+using Vintagestory.API.Config;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System.IO;
+
 
 namespace qptech.src
 {
@@ -12,7 +17,7 @@ namespace qptech.src
         static Dictionary<string, string> variantlist;
         public override bool OnBlockInteractStart(IWorldAccessor world, IPlayer byPlayer, BlockSelection blockSel)
         {
-            if (variantlist == null) { LoadVariantList(); }
+            if (variantlist == null) { LoadVariantList(api); }
             //must sneak click
             if (!byPlayer.Entity.Controls.Sneak) { return base.OnBlockInteractStart(world, byPlayer, blockSel); }
             //must have a relevant item
@@ -32,13 +37,38 @@ namespace qptech.src
             return true;
         }
 
-        static void LoadVariantList()
+        static void LoadVariantList(ICoreAPI api)
         {
+
+            //TODO Need to either swap the hardcoded path name out or figure out correct reference for the path
+            string path = Path.Combine(GamePaths.Cache, @"assets\machines\config\clayformerswaps.json");
+            if (System.Diagnostics.Debugger.IsAttached)
+            {
+                path = "C:\\Users\\quent\\source\\repos\\qptech\\mods\\qptech\\assets\\machines\\config\\clayformerswaps.json";
+            }
             variantlist = new Dictionary<string, string>();
-            variantlist.Add("game:bowl-burned", "machines:clayformer-bowl");
-            variantlist.Add("game:clayplanter-burnt","machines:clayformer-clayplanter");
-            variantlist.Add("game:flowerpot-burnt", "machines:clayformer-flowerpot");
-            variantlist.Add("game:ingotmold-burned", "machines:clayformer-ingotmold");
+            if (File.Exists(path))
+            {
+                var content = File.ReadAllText(path);
+                JObject json = JObject.Parse(content);
+                foreach (JProperty j in json.Properties())
+                {
+                    variantlist.Add((string)j.Name, (string)j.Value);
+                }
+
+            }
+            else
+            {
+                api.World.Logger.Error(path + " was not found sowee!");
+            }
+
+        }
+        public static string GetModCacheFolder(string modArchiveName)
+        {
+            var modCacheDir = new DirectoryInfo(Path.Combine(GamePaths.DataPath, "Cache", "unpack"));
+            var myModCacheDir = modCacheDir.EnumerateDirectories()
+                .FirstOrDefault(p => p.Name.StartsWith(modArchiveName));
+            return myModCacheDir?.FullName;
         }
     }
 }

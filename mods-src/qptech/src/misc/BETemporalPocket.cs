@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 using Vintagestory.API.Common;
 using Vintagestory.API.Datastructures;
 using Vintagestory.API.MathTools;
@@ -22,12 +23,13 @@ namespace qptech.src
     class BETemporalPocket:BlockEntityGenericContainer
     {
         string accessing = "";
+        public bool Busy => (accessing!="");
         protected override void OnInvOpened(IPlayer player)
         {
             if (simpleinventory.openinventories == null) { simpleinventory.openinventories = new List<string>(); }
-            if (simpleinventory.openinventories.Contains(player.PlayerUID)) { return; }
-            if (accessing != "") { return; }
-            accessing = player.PlayerUID;
+           // if (simpleinventory.openinventories.Contains(player.PlayerUID)) { return; }
+            //if (accessing != "") { return; }
+            //accessing = player.PlayerUID;
             simpleinventory.openinventories.Add(player.PlayerUID);
             TryLoadInventory(player);
             base.OnInvOpened(player);
@@ -49,49 +51,31 @@ namespace qptech.src
             simpleinventory loadedinv = ApiExtensions.LoadOrCreateDataFile<simpleinventory>(Api, "helloworld.json");
             
             if (loadedinv == null) { return; }
-            if (loadedinv.inventory == null) { return; }
-            if (loadedinv.inventory.Count == 0) { return; }
-            ItemSlot[] myslots = this.Inventory.ToArray();
-            int maxslots = Math.Min(myslots.Length, loadedinv.blockoritem.Count);
-
-            for (int c= 0;c<maxslots;c++)
-            {
-                //if too many slots are stored the inventory will be truncated
-                
-                if (loadedinv.blockoritem[c] == "BLOCK")
-                {
-                    Block outputItem = Api.World.GetBlock(new AssetLocation(loadedinv.inventory[c]));
-                    if (outputItem == null) {  continue; }
-
-                    ItemStack outputStack = new ItemStack(outputItem, loadedinv.quantity[c]);
-                    myslots[c].Itemstack = outputStack;
-                    
-                }
-                else if (loadedinv.blockoritem[c] == "ITEM")
-                {
-                    Item outputItem = Api.World.GetItem(new AssetLocation(loadedinv.inventory[c]));
-                    if (outputItem == null) { continue; }
-
-                    ItemStack outputStack = new ItemStack(outputItem, loadedinv.quantity[c]);
-                    myslots[c].Itemstack = outputStack;
-                }
-            }
+            
             this.MarkDirty();
         }
         public override void OnBlockBroken()
         {
-            this.Inventory.DiscardAll();
+            Cleanup();
             base.OnBlockBroken();
         }
-
+        void Cleanup()
+        {
+            
+            this.Inventory.DiscardAll();
+            if (accessing != "" && simpleinventory.openinventories != null && simpleinventory.openinventories.Contains(accessing))
+            {
+                simpleinventory.openinventories.Remove(accessing);
+            }
+        }
         public override void OnBlockRemoved()
         {
-            this.Inventory.DiscardAll();
+            Cleanup();
             base.OnBlockRemoved();
         }
         public override void OnBlockUnloaded()
         {
-            this.Inventory.DiscardAll();
+            Cleanup();
             base.OnBlockUnloaded();
         }
         void TrySaveInventory(IPlayer player)
@@ -110,42 +94,24 @@ namespace qptech.src
     {
         public string uid;
         public string uname;
-        public List<string> inventory;
-        public List<int> quantity;
-        public List<string> blockoritem;
+                
         
-        //TODO NEED TO FIX THIS UP SO THAT THE KEY IS SLOT# AND NOT INVENTORY KEY
+        
         public simpleinventory()
         {
             if (openinventories == null) { openinventories = new List<string>(); }
-            inventory = new List<string>();
-            quantity = new List<int>();
-            blockoritem = new List<string>();
+
         }
         public void StoreInventory(List<ItemSlot> itemslots)
         {
-            inventory = new List<string>();
-            quantity = new List<int>();
-            blockoritem = new List<string>();
+            
+        
             foreach (ItemSlot itemslot in itemslots)
             {
                 if (itemslot.StackSize > 0)
                 {
-                    
-                    if (itemslot.Itemstack.Item != null)
-                    {
-                        string code = itemslot.Itemstack.Item.Code.ToShortString();
-                        inventory.Add(code);
-                        quantity.Add(itemslot.StackSize);
-                        blockoritem.Add("ITEM");
-                    }
-                    if (itemslot.Itemstack.Block != null)
-                    {
-                        string code = itemslot.Itemstack.Block.Code.ToShortString();
-                        inventory.Add(code);
-                        quantity.Add(itemslot.StackSize);
-                        blockoritem.Add("BLOCK");
-                    }
+
+        
                 }
             }
 

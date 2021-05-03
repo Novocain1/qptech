@@ -212,6 +212,7 @@
     <None Include="qptech\assets\machines\blocktypes\sink.json" />
     <None Include="qptech\assets\machines\blocktypes\smelterfurnace.json" />
     <None Include="qptech\assets\machines\blocktypes\wireplate.json" />
+    <None Include="qptech\assets\machines\config\clayformerswaps.json" />
     <None Include="qptech\assets\machines\config\handbook\qptech.json" />
     <None Include="qptech\assets\machines\itemtypes\part\drilledplate.json" />
     <None Include="qptech\assets\machines\itemtypes\part\machineplate.json" />

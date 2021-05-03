@@ -1,22 +1,22 @@
 {
 	"code": "temporalpocket",
 	"entityclass": "BETemporalPocket",
-	
+	"class": "BlockTemporalPocket",
 	"attributes": {
 		"partialAttachable": true,
-		"inventoryClassName": "chest",
+		"inventoryClassName": "BlockTemporalPocket",
 		"types": [ "normal-generic" ],
 		"quantitySlots": { "normal-generic": 16 },
 		"storageType": { "normal-generic": 169 },
 		"dialogTitleLangCode": {
-			"normal-generic": "chestcontents"
+			"normal-generic": "pocketcontents"
 		},
 		"typedOpenSound": { "normal-generic": "sounds/block/largechestopen" },
 		"typedCloseSound": { "normal-generic": "sounds/block/largechestclose" },
 		
 	},
 	"behaviors": [
-		{ "name": "Lockable" },
+		
 		{ "name": "Container" },
 		{
 			"name": "HorizontalOrientable",
@@ -69,13 +69,6 @@
 		"place": "game:block/anvil",
 		"walk": "game:walk/stone"
 	},
-	"guiTransform": {
-		"origin": {
-			"x": 0.5,
-			"y": 0.5,
-			"z": 0.5
-		},
-		"scale": 1
-	}
+	
 
 }

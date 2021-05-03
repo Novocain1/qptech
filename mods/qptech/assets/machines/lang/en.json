@@ -95,4 +95,5 @@
 	"block-clayformer-flowerpot-*": "Clayformer-Flower Pot (LV)",
 	"block-clayformer-ingotmold-*": "Clayformer-Ingot Mold (LV)",
 	"blockdesc-clayformer-*": "Place a container of clay on the input side, and if powered it will create unfired clay pieces of the current type. Sneak click with a valid completed & fired clay object to set the output. (Currently supports bowls, flowerpots, ingots, and planters)",
+	"pocketcontents": "Dimensional Storage",
 }
