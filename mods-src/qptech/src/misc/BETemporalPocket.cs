@@ -94,13 +94,15 @@ namespace qptech.src
     {
         public string uid;
         public string uname;
-                
+        public Dictionary<string, string> testdic;        
         
         
         public simpleinventory()
         {
             if (openinventories == null) { openinventories = new List<string>(); }
-
+            testdic = new Dictionary<string, string>();
+            testdic.Add("keya", "valuea");
+            testdic.Add("keyb", "valueb");
         }
         public void StoreInventory(List<ItemSlot> itemslots)
         {

@@ -41,26 +41,20 @@ namespace qptech.src
         {
 
             //TODO Need to either swap the hardcoded path name out or figure out correct reference for the path
-            string path = Path.Combine(GamePaths.Cache, @"assets\machines\config\clayformerswaps.json");
-            if (System.Diagnostics.Debugger.IsAttached)
-            {
-                path = "C:\\Users\\quent\\source\\repos\\qptech\\mods\\qptech\\assets\\machines\\config\\clayformerswaps.json";
-            }
-            variantlist = new Dictionary<string, string>();
-            if (File.Exists(path))
-            {
-                var content = File.ReadAllText(path);
-                JObject json = JObject.Parse(content);
-                foreach (JProperty j in json.Properties())
-                {
-                    variantlist.Add((string)j.Name, (string)j.Value);
-                }
+            //string path = Path.Combine(GamePaths.Cache, @"assets\machines\config\clayformerswaps.json");
+            //string ad = AppDomain.CurrentDomain.BaseDirectory;
+            //string appdata = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            
+            
+            
+           variantlist = api.Assets.TryGet("qptech:config/clayformerswaps.json").ToObject<Dictionary<string,string>>();
 
-            }
-            else
+            if (variantlist==null) 
             {
-                api.World.Logger.Error(path + " was not found sowee!");
+                variantlist = new Dictionary<string, string>();
+                api.World.Logger.Error("clayformerswaps was not found sowee!");
             }
+            
 
         }
         public static string GetModCacheFolder(string modArchiveName)
