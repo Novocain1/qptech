@@ -127,7 +127,7 @@ namespace QptechFurniture.src
 
             prog.RgbaLightIn = lightrgbs;
 
-            prog.ExtraGlow = (int)GameMath.Clamp((temp - 800) / 8, 0, 255);
+            prog.ExtraGlow = (int)GameMath.Clamp((temp - 400) / 80, 0, 255);
 
 
             prog.ModelMatrix = ModelMat

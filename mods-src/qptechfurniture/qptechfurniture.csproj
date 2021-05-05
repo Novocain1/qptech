@@ -81,18 +81,15 @@
   <ItemGroup>
     <Compile Include="src\blockentityrenderer\Campfire.cs" />
     <Compile Include="src\blockentityrenderer\Kiln.cs" />
-    <Compile Include="src\blockEntity\BlockEntityDoubleSink .cs" />
     <Compile Include="src\blockEntity\BlockEntityicebox.cs" />
     <Compile Include="src\blockEntity\BlockEntityKiln.cs" />
     <Compile Include="src\blockEntity\BlockEntitySingleSink.cs" />
     <Compile Include="src\blockEntity\BlockEntityCampFire.cs" />
-    <Compile Include="src\block\BlockDoubleSink.cs" />
     <Compile Include="src\block\BlockIceBox.cs" />
     <Compile Include="src\block\BlockKiln.cs" />
     <Compile Include="src\block\BlockLiquidContainerBase.cs" />
     <Compile Include="src\block\BlockSingleSink.cs" />
     <Compile Include="src\block\BlockCampFire.cs" />
-    <Compile Include="src\gui\GuiDialogDoubleSink.cs" />
     <Compile Include="src\gui\GuiDialogSingleSink.cs" />
     <Compile Include="src\gui\GuiDialogCampFire.cs" />
     <Compile Include="src\gui\GuiIceBox.cs" />
@@ -100,7 +97,7 @@
     <Compile Include="src\inventory\InventoryCooking.cs" />
     <Compile Include="src\inventory\InventoryStoneKiln.cs" />
     <Compile Include="src\inventory\InventoryStove.cs" />
-    <Compile Include="src\inventory\SmelthingSlot.cs" />
+    <Compile Include="src\inventory\ItemSlotSmelting.cs" />
     <Compile Include="src\item\ItemCamFire.cs" />
     <Compile Include="src\item\ItemFood.cs" />
     <Compile Include="src\item\ItemKiln.cs" />

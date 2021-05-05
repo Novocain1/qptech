@@ -8,12 +8,7 @@
 	"textureSizes": {
 	},
 	"textures": {
-		"tinder": "C:/Users/andy-/Documents/GitHub/qptech/mods/qptechfurniture/assets/furniture/textures/block/grass/hay/normal-side",
-		"log": "C:/Users/andy-/Documents/GitHub/qptech/mods/qptechfurniture/assets/furniture/textures/block/wood/stonefirepit/log",
-		"fire": "C:/Users/andy-/Documents/GitHub/qptech/mods/qptechfurniture/assets/furniture/textures/block/wood/stonefirepit/fire",
-		"ground": "C:/Users/andy-/Documents/GitHub/qptech/mods/qptechfurniture/assets/furniture/textures/block/wood/stonefirepit/ground",
-		"groundfire": "C:/Users/andy-/Documents/GitHub/qptech/mods/qptechfurniture/assets/furniture/textures/block/wood/stonefirepit/groundfire",
-		"stone": "C:/Users/andy-/Documents/GitHub/qptech/mods/qptechfurniture/assets/furniture/textures/block/stone/forge/stoneshale"
+		"tinder": "C:/Users/andy-/Documents/GitHub/qptech/mods/qptechfurniture/assets/furniture/textures/block/grass/hay/normal-side"
 	},
 	"elements": [
 		{
@@ -542,90 +537,6 @@
 		}
 	],
 	"animations": [
-		{
-			"name": "Rota",
-			"code": "Rota",
-			"quantityframes": 61,
-			"onActivityStopped": "EaseOut",
-			"onAnimationEnd": "Repeat",
-			"keyframes": [
-				{
-					"frame": 0,
-					"elements": {
-						"Main": { "rotationX": 0.0, "rotationY": -180.0, "rotationZ": 0.0 }
-					}
-				},
-				{
-					"frame": 30,
-					"elements": {
-						"Main": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
-					}
-				},
-				{
-					"frame": 60,
-					"elements": {
-						"Main": { "rotationX": 0.0, "rotationY": 179.0, "rotationZ": 0.0 }
-					}
-				}
-			]
-		},
-
-		{
-			"name": "Rota",
-			"code": "Rota",
-			"quantityframes": 61,
-			"onActivityStopped": "EaseOut",
-			"onAnimationEnd": "Repeat",
-			"keyframes": [
-				{
-					"frame": 0,
-					"elements": {
-						"Main": { "rotationX": 0.0, "rotationY": -180.0, "rotationZ": 0.0 }
-					}
-				},
-				{
-					"frame": 30,
-					"elements": {
-						"Main": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
-					}
-				},
-				{
-					"frame": 60,
-					"elements": {
-						"Main": { "rotationX": 0.0, "rotationY": 179.0, "rotationZ": 0.0 }
-					}
-				}
-			]
-		},
-
-		{
-			"name": "Rota",
-			"code": "Rota",
-			"quantityframes": 61,
-			"onActivityStopped": "EaseOut",
-			"onAnimationEnd": "Repeat",
-			"keyframes": [
-				{
-					"frame": 0,
-					"elements": {
-						"Main": { "rotationX": 0.0, "rotationY": -180.0, "rotationZ": 0.0 }
-					}
-				},
-				{
-					"frame": 30,
-					"elements": {
-						"Main": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
-					}
-				},
-				{
-					"frame": 60,
-					"elements": {
-						"Main": { "rotationX": 0.0, "rotationY": 179.0, "rotationZ": 0.0 }
-					}
-				}
-			]
-		},
-
 		{
 			"name": "Rota",
 			"code": "Rota",

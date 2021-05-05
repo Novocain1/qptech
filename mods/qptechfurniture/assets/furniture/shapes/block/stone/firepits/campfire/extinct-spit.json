@@ -8,9 +8,6 @@
 	"textureSizes": {
 	},
 	"textures": {
-		"log": "C:/Users/andy-/Documents/GitHub/qptech/mods/qptechfurniture/assets/furniture/textures/block/wood/stonefirepit/log",
-		"ground": "C:/Users/andy-/Documents/GitHub/qptech/mods/qptechfurniture/assets/furniture/textures/block/wood/stonefirepit/ground",
-		"stone": "C:/Users/andy-/Documents/GitHub/qptech/mods/qptechfurniture/assets/furniture/textures/block/stone/forge/stoneshale"
 	},
 	"elements": [
 		{
@@ -458,17 +455,6 @@
 		}
 	],
 	"animations": [
-		{
-			"name": "Rota",
-			"code": "Rota",
-			"quantityframes": 61,
-			"onActivityStopped": "EaseOut",
-			"onAnimationEnd": "Repeat",
-			"keyframes": [
-
-			]
-		},
-
 		{
 			"name": "Rota",
 			"code": "Rota",

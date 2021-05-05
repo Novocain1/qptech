@@ -45,7 +45,7 @@
 				size: { avg: 0.3, var: 0.05 },
 				sizeEvolve: { transform: "linear", factor: 1.5 },
 				particleModel: "Quad",
-				windAffectednes: 0.7
+				windAffectednes: 0
 			}
 		],
 		"kiln-lit": [
@@ -60,29 +60,29 @@
 				sizeEvolve: { transform: "quadratic", factor: -0.7 },
 				lifeLength: { avg: 1.5 },
 				vertexFlags: 128,
-				windAffectednes: 0.2
+				windAffectednes: 0
 			},
 			{
 				"__comment": "Smoke quads",
 				hsvaColor: [{ avg: 0, var: 0 }, { avg: 0, var: 0 }, { avg: 70, var: 30 },  { avg: 220, var: 50 }],
 				opacityEvolve: { transform: "linear", factor: -255 },
 				gravityEffect: { avg: 0, var: 0 },
-				posOffset: [ { avg: 0, var: 0.2 }, { avg: -0.4, var: 0 }, { avg: 0, var: 0.2 }],
+				posOffset: [ { avg: 0, var: 0 }, { avg: 0.35, var: 0 }, { avg: 0, var: 0 }],
 				velocity: [ { avg: 0, var: 0.025 }, { avg: 0.2, var: 0.05 }, { avg: 0, var: 0.025 }],
 				quantity: { avg: 0.08 },
-				size: { avg: 0.3, var: 0.05 },
+				size: { avg: 0.5, var: 0.15 },
 				sizeEvolve: { transform: "linear", factor: 1.5 },
 				particleModel: "Quad",
 				lifeLength: { avg: 18 },
 				selfPropelled: true,
-				windAffectednes: 0.7
+				windAffectednes: 0.2
 			},
 			{
 				"__comment": "Fire quads",
 				hsvaColor: [{ avg: 20, var: 20 }, { avg: 255, var: 50 }, { avg: 255, var: 50 },  { avg: 255, var: 0 }],
 				opacityEvolve: { transform: "quadratic", factor: -16 },
 				gravityEffect: { avg: 0, var: 0 },
-				posOffset: [ { avg: 0, var: 0.1 }, { avg: -0.4, var: 0 }, { avg: 0, var: 0.1 }],
+				posOffset: [ { avg: 0, var: 0.1 }, { avg: -0.9, var: 0 }, { avg: 0, var: 0.1 }],
 				velocity: [ { avg: 0, var: 0.1 }, { avg: 0.125, var: 0.05 }, { avg: 0, var: 0.1 }],
 				quantity: { avg: 0.4 },
 				size: { avg: 0.25, var: 0.05 },
@@ -90,7 +90,7 @@
 				sizeEvolve: { transform: "linear", factor: 0.5 },
 				particleModel: "Quad",
 				vertexFlags: 128,
-				windAffectednes: 0.7
+				windAffectednes: 0
 			}
 		]
 	},
