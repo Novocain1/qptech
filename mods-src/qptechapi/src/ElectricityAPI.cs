@@ -31,26 +31,26 @@ namespace Electricity.API
 
     public interface IElectricity
     {
-        //the block entity this IElectricity belongs to
+        ///the block entity this IElectricity belongs to
         BlockEntity EBlock { get; }
-        //MaxAmps - How much power can be transferred in one turn
+        ///MaxAmps - How much power can be transferred in one turn
 
         int MaxAmps { get;  }
-        //MaxVolts - the voltage class of this device (should match whatever its hooked up to)
+        ///MaxVolts - the voltage class of this device (should match whatever its hooked up to)
         int MaxVolts { get; }
-        //if device is on
+        ///if device is on
         bool IsOn { get;  }
-        //Device has power
+        ///Device has power
         bool IsPowered { get; }
-        //Receive an offer for a power packet, return how much power it uses
+        ///Receive an offer for a power packet, return how much power it uses
         int ReceivePacketOffer(IElectricity from, int inVolt, int inAmp);
-        //return if this object needs any power
+        ///return if this object needs any power
         int NeedPower();
-        //Try to accept an IElectricity as a connected power source (return false to refuse connection)
+        ///Try to accept an IElectricity as a connected power source (return false to refuse connection)
         bool TryInputConnection(IElectricity connectto);
-        //Try to accept an IElectricity as a connected power destination
+        ///Try to accept an IElectricity as a connected power destination
         bool TryOutputConnection(IElectricity connectto);
-        //Delete any connection the the supplied IElectricity (should be called on every connection when the block is deleted, removed etc)
+        ///Delete any connection the the supplied IElectricity (should be called on every connection when the block is deleted, removed etc)
         void RemoveConnection(IElectricity disconnect);
 
     }

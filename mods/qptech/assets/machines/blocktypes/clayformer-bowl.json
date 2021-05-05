@@ -8,7 +8,7 @@
 		"qptech": [ "*-east" ]
 	},
 	"variantgroups": [
-		{ code: "type", states: ["bowl", "clayplanter","flowerpot","ingotmold"] },
+		{ code: "type", states: ["bowl", "clayplanter","flowerpot","ingotmold","testingot"] },
 		{
 			"code": "side",
 			"loadFromProperties": "abstract/horizontalorientation"
@@ -35,7 +35,8 @@
 			"recipe": "game:bowl-raw",
 			"ingredient": "game:clay-blue",
 			"processingTime": 0.17,
-			"animationSpeed": 0.05
+			"animationSpeed": 0.05,
+			
 		},
 		"*-clayplanter-*":{
 			"maxAmps": 2,
@@ -78,6 +79,22 @@
 			"ingredient": "game:clay-blue",
 			"processingTime": 0.17,
 			"animationSpeed": 0.05
+		},
+		"*-testingot-*":{
+			"maxAmps": 2,
+			"maxVolts": 16,
+			"capacitance": 2,
+			"requiredAmps": 2,
+			"inputFace": "west",
+			"outputFace": "east",
+			"inputQuantity": 2,
+			"outputQuantity": 1,
+			"recipe": "game:metalplate-copper",
+			"ingredient": "game:ingot-copper",
+			"processingTime": 0.01,
+			"animationSpeed": 0.05,
+			"heatRequirement": 1000,
+			"blockoritem": "item"
 		},
 	},
 	"blockmaterial": "Metal",

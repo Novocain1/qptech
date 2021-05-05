@@ -16,18 +16,20 @@ namespace qptech.src
     class BEEAssembler:BEEBaseDevice
     {
         protected string recipe = "game:bowl-raw";
+        protected string blockoritem = "block";
         protected int outputQuantiy = 1;
         protected string ingredient = "game:clay-blue";
         protected int inputQuantity = 4;
         protected int internalQuantity = 0; //will store ingredients virtually
         protected float animationSpeed = 0.05f;
         protected double processingTime = 10;
+        protected float heatRequirement = 0;
         protected BlockFacing rmInputFace; //what faces will be checked for input containers
         protected BlockFacing outputFace; //what faces will be checked for output containers
         //protected BlockFacing recipeFace; //what face will be used to look for a container with the model object
          DummyInventory dummy;
         double processstarted;
-        
+        float lastheatreading = 0;
         /// </summary>
         public override void Initialize(ICoreAPI api)
         {
@@ -47,7 +49,8 @@ namespace qptech.src
                 rmInputFace = OrientFace(Block.Code.ToString(), rmInputFace);
                 outputFace = OrientFace(Block.Code.ToString(), outputFace);
                 processingTime = Block.Attributes["processingTime"].AsDouble(processingTime);
-                
+                heatRequirement = Block.Attributes["heatRequirement"].AsFloat(heatRequirement);
+                blockoritem = Block.Attributes["blockoritem"].AsString(blockoritem);
             }
             //TEMP CODE TO ADD faces, should be loaded from attributes
             //rmInputFace.Add(BlockFacing.UP);
@@ -117,12 +120,21 @@ namespace qptech.src
         protected override void DoDeviceComplete()
         {
             deviceState = enDeviceState.IDLE;
-            Block outputItem = Api.World.GetBlock(new AssetLocation(recipe));
-            if (outputItem == null) { deviceState = enDeviceState.ERROR;return; }
-           
-            ItemStack outputStack = new ItemStack(outputItem, outputQuantiy);
+            Block outputBlock = Api.World.GetBlock(new AssetLocation(recipe));
+            Item outputItem = Api.World.GetItem(new AssetLocation(recipe));
+            if (outputBlock == null&&outputItem==null) { deviceState = enDeviceState.ERROR;return; }
+            ItemStack outputStack;
+            if (blockoritem == "block")
+            {
+                outputStack = new ItemStack(outputBlock, outputQuantiy);
+            }
+            else
+            {
+                outputStack = new ItemStack(outputItem, outputQuantiy);
+            }
+            
             dummy[0].Itemstack = outputStack;
-  
+            outputStack.Collectible.SetTemperature(Api.World, outputStack, lastheatreading);
             BlockPos bp = Pos.Copy().Offset(outputFace);
             BlockEntity checkblock = Api.World.BlockAccessor.GetBlockEntity(bp);
             var outputContainer = checkblock as BlockEntityContainer;
@@ -178,11 +190,19 @@ namespace qptech.src
                 else if (checkslot.Itemstack.Block!=null && checkslot.Itemstack.Block.FirstCodePart() == rm.FirstCodePart()) { match = true; }
                 if (match)
                 {
-                    int reqQty = Math.Min(checkslot.StackSize, inputQuantity - internalQuantity);
-                    checkslot.TakeOut(reqQty);
-                    internalQuantity += reqQty;
-                    checkslot.MarkDirty();
-
+                    bool heatok = true;
+                    lastheatreading= checkslot.Itemstack.Collectible.GetTemperature(Api.World, checkslot.Itemstack);
+                    if (heatRequirement > 0 && lastheatreading<heatRequirement)
+                    {
+                        heatok = false;
+                    }
+                    if (heatok)
+                    {
+                        int reqQty = Math.Min(checkslot.StackSize, inputQuantity - internalQuantity);
+                        checkslot.TakeOut(reqQty);
+                        internalQuantity += reqQty;
+                        checkslot.MarkDirty();
+                    }
                 }
             }
                 
@@ -214,6 +234,10 @@ namespace qptech.src
                 timeleft = Math.Floor(timeleft * 100);
                 
                 dsc.AppendLine("Time Rem :"+timeleft.ToString());
+            }
+            if (heatRequirement > 0)
+            {
+                dsc.AppendLine("Input Item Heat must be " + heatRequirement.ToString() + "C");
             }
         }
     }
