@@ -261,6 +261,7 @@
     <None Include="qptech\assets\machines\blocktypes\sink.json" />
     <None Include="qptech\assets\machines\blocktypes\smelterfurnace.json" />
     <None Include="qptech\assets\machines\blocktypes\wireplate.json" />
+    <None Include="qptech\assets\machines\shapes\block\metalpress.json" />
     <None Include="qptech\assets\qptech\config\clayformerswaps.json" />
     <None Include="qptech\assets\machines\config\handbook\qptech.json" />
     <None Include="qptech\assets\machines\itemtypes\part\drilledplate.json" />
@@ -537,6 +538,7 @@
     <Content Include="qptech\assets\machines\textures\block\machinery-pileup.png" />
     <Content Include="qptech\assets\machines\textures\block\machinery-tin.png" />
     <Content Include="qptech\assets\machines\textures\block\machinery.png" />
+    <Content Include="qptech\assets\machines\textures\block\notchedbrass.png" />
     <Content Include="qptech\assets\machines\textures\block\oak1.png" />
     <Content Include="qptech\assets\machines\textures\block\redfabric.png" />
     <Content Include="qptech\assets\machines\textures\block\shinybrass.png" />

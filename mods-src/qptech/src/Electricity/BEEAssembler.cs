@@ -19,11 +19,13 @@ namespace qptech.src
         protected string blockoritem = "block";
         protected int outputQuantiy = 1;
         protected string ingredient = "game:clay-blue";
+        protected string ingredient_subtype ="";
         protected int inputQuantity = 4;
         protected int internalQuantity = 0; //will store ingredients virtually
         protected float animationSpeed = 0.05f;
         protected double processingTime = 10;
         protected float heatRequirement = 0;
+        string[] materials;
         protected BlockFacing rmInputFace; //what faces will be checked for input containers
         protected BlockFacing outputFace; //what faces will be checked for output containers
         //protected BlockFacing recipeFace; //what face will be used to look for a container with the model object
@@ -51,6 +53,7 @@ namespace qptech.src
                 processingTime = Block.Attributes["processingTime"].AsDouble(processingTime);
                 heatRequirement = Block.Attributes["heatRequirement"].AsFloat(heatRequirement);
                 blockoritem = Block.Attributes["blockoritem"].AsString(blockoritem);
+                materials=Block.Attributes["materials"].AsArray<string>(materials);
             }
             //TEMP CODE TO ADD faces, should be loaded from attributes
             //rmInputFace.Add(BlockFacing.UP);
@@ -120,11 +123,16 @@ namespace qptech.src
         protected override void DoDeviceComplete()
         {
             deviceState = enDeviceState.IDLE;
-            Block outputBlock = Api.World.GetBlock(new AssetLocation(recipe));
-            Item outputItem = Api.World.GetItem(new AssetLocation(recipe));
+            string userecipe = recipe;
+            if (ingredient_subtype != "")
+            {
+                userecipe += "-" + ingredient_subtype;
+            }
+            Block outputBlock = Api.World.GetBlock(new AssetLocation(userecipe));
+            Item outputItem = Api.World.GetItem(new AssetLocation(userecipe));
             if (outputBlock == null&&outputItem==null) { deviceState = enDeviceState.ERROR;return; }
             ItemStack outputStack;
-            if (blockoritem == "block")
+            if (outputBlock!=null)
             {
                 outputStack = new ItemStack(outputBlock, outputQuantiy);
             }
@@ -168,13 +176,8 @@ namespace qptech.src
         protected void FetchMaterial()
         {
             internalQuantity = Math.Min(internalQuantity, inputQuantity); //this shouldn't be necessary
-            Item rm = Api.World.GetItem(new AssetLocation(ingredient));
-            if (rm == null)
-            {
-                deviceState = enDeviceState.ERROR;
-                return;
-            }
-            
+           
+
             BlockPos bp = Pos.Copy().Offset(rmInputFace);
             BlockEntity checkblock = Api.World.BlockAccessor.GetBlockEntity(bp);
             var inputContainer = checkblock as BlockEntityContainer;
@@ -184,10 +187,32 @@ namespace qptech.src
             {
                 ItemSlot checkslot = inputContainer.Inventory[c];
                 if (checkslot == null) { continue; }
-                if (checkslot.StackSize == 0) { continue; }
+                if (checkslot.StackSize < inputQuantity) { continue; }
                 bool match = false;
-                if (checkslot.Itemstack.Item!=null && checkslot.Itemstack.Item.FirstCodePart() == rm.FirstCodePart()) { match = true; }
-                else if (checkslot.Itemstack.Block!=null && checkslot.Itemstack.Block.FirstCodePart() == rm.FirstCodePart()) { match = true; }
+                Item checkitem = checkslot.Itemstack.Item;
+                Block checkiblock = checkslot.Itemstack.Block;
+                ingredient_subtype = "";
+
+                if (checkitem == null && checkiblock == null) { return; }
+                if (checkitem != null) {
+                    string fcp = checkitem.FirstCodePart().ToString();
+                    string lcp = checkitem.LastCodePart().ToString();
+                    //no materials list so we don't need check for subtypes
+                    if (checkitem.FirstCodePart() == ingredient && (materials == null || materials.Length == 0)) { match = true; }
+                    else if (checkitem.FirstCodePart().ToString() == ingredient && materials.Contains(checkitem.LastCodePart().ToString()))
+                    {
+                        match = true;
+                        ingredient_subtype = checkitem.LastCodePart();
+                    }
+
+                }
+                else if (checkiblock != null) {
+                    if(checkiblock.FirstCodePart().ToString() == ingredient && (materials == null || materials.Length == 0)) { match = true; }
+                    else if (checkiblock.FirstCodePart().ToString()==ingredient && materials.Contains(checkiblock.LastCodePart().ToString())){
+                        match = true;
+                        ingredient_subtype = checkiblock.LastCodePart();
+                    }
+                }
                 if (match)
                 {
                     bool heatok = true;
@@ -238,6 +263,14 @@ namespace qptech.src
             if (heatRequirement > 0)
             {
                 dsc.AppendLine("Input Item Heat must be " + heatRequirement.ToString() + "C");
+            }
+            if (materials != null && materials.Length > 0)
+            {
+                dsc.AppendLine("Usable Materials:");
+                foreach (string ing in materials)
+                {
+                    dsc.AppendLine(ing + ",");
+                }
             }
         }
     }

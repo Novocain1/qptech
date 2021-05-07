@@ -1,0 +1,83 @@
+{
+	"code": "metalpress",
+	"class": "BlockClayformer",
+	"entityclass": "BEEAssembler",
+	"entityBehaviors": [ { "name": "Animatable" } ],
+	"creativeinventory": {
+		"general": [ "*-east" ],
+		"qptech": [ "*-east" ]
+	},
+	"variantgroups": [
+		{
+			"code": "type",
+			"states": [ "lvsoftplate" ]
+		},
+		{
+			"code": "side",
+			"loadFromProperties": "abstract/horizontalorientation"
+		}
+	],
+	"behaviors": [
+		{
+			"name": "HorizontalOrientable",
+			"properties": { "dropBlockFace": "east" }
+		}
+	],
+
+	"attributesbytype": {
+
+		"*-lvsoftplate-*": {
+			"maxAmps": 4,
+			"maxVolts": 16,
+			"capacitance": 4,
+			"requiredAmps": 4,
+			"inputFace": "west",
+			"outputFace": "east",
+			"inputQuantity": 2,
+			"outputQuantity": 1,
+			"recipe": "game:metalplate",
+			"ingredient": "ingot",
+			"processingTime": 0.045,
+			"animationSpeed": 0.5,
+			"materials": ["copper","brass","gold","silver","tin","lead","bismuth","zinc"]
+
+		}
+		
+	},
+	"blockmaterial": "Metal",
+	"drawtype": "json",
+
+	"shape": { "base": "block/metalpress" },
+	"shapeByType": {
+		"*-north": {
+			"base": "block/metalpress",
+			"rotateY": 0
+		},
+		"*-east": {
+			"base": "block/metalpress",
+			"rotateY": 270
+		},
+		"*-west": {
+			"base": "block/metalpress",
+			"rotateY": 90
+		},
+		"*-south": {
+			"base": "block/metalpress",
+			"rotateY": 180
+		}
+	},
+	"resistance": 1,
+	"sideAo": { "all": false },
+	"sidesolid": {
+		"all": false
+	},
+	"sideopaque": {
+		"all": false
+	},
+	"sounds": {
+		"place": "game:block/anvil",
+		"walk": "game:walk/stone"
+	}
+
+
+}
