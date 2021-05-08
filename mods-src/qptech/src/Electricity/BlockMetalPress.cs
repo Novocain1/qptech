@@ -12,11 +12,7 @@ using System.IO;
 
 namespace qptech.src
 {
-    /// <summary>
-    /// BlockClayformer allows for swapping out the block with other clayformer configurations
-    /// using objects in the players hands as specified in qptech/config/clayformerswaps.json
-    /// </summary>
-    class BlockClayformer:ElectricalBlock
+    class BlockMetalPress:ElectricalBlock
     {
         static Dictionary<string, string> variantlist;
         public override bool OnBlockInteractStart(IWorldAccessor world, IPlayer byPlayer, BlockSelection blockSel)
@@ -27,8 +23,9 @@ namespace qptech.src
             //must have a relevant item
             ItemStack stack = byPlayer.InventoryManager.ActiveHotbarSlot?.Itemstack;
             string itemorblockcode = "";
-            if (stack==null) {
-                BEEAssembler bee = (BEEAssembler) api.World.BlockAccessor.GetBlockEntity(blockSel.Position);
+            if (stack == null)
+            {
+                BEEAssembler bee = (BEEAssembler)api.World.BlockAccessor.GetBlockEntity(blockSel.Position);
                 if (bee != null) { bee.OpenStatusGUI(); return true; }
                 return base.OnBlockInteractStart(world, byPlayer, blockSel);
             }
@@ -53,18 +50,20 @@ namespace qptech.src
             //string ad = AppDomain.CurrentDomain.BaseDirectory;
             //string appdata = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
 
-            //TODO - extend this to have multiple classes, so you could have a list of clayformerswaps, list of metal plate swaps etc
-            
-            
-            
-           variantlist = api.Assets.TryGet("qptech:config/clayformerswaps.json").ToObject<Dictionary<string,string>>();
+            //TODO Make sure to uncomment loading code once some swaps have been setup
 
-            if (variantlist==null) 
+
+            /*try
+            {
+                variantlist = api.Assets.TryGet("qptech:config/metalpressswaps.json").ToObject<Dictionary<string, string>>();
+            }
+            catch
             {
                 variantlist = new Dictionary<string, string>();
-                api.World.Logger.Error("clayformerswaps was not found sowee!");
-            }
-            
+                api.World.Logger.Error("metalpressswaps was not found sowee!");
+            }*/
+            variantlist = new Dictionary<string, string>();
+
 
         }
         public static string GetModCacheFolder(string modArchiveName)

@@ -29,7 +29,7 @@ namespace qptech.src
             api.RegisterBlockClass("BlockEForge", typeof(BlockEForge));
             api.RegisterBlockEntityClass("BEPowerFlag", typeof(BEPowerFlag));
             api.RegisterBlockClass("BlockClayformer",typeof(BlockClayformer));
-
+            api.RegisterBlockClass("BlockMetalPress",typeof(BlockMetalPress));
             api.RegisterBlockClass("BlockTemporalPocket", typeof(BlockTemporalPocket));
             api.RegisterBlockEntityClass("BETemporalPocket", typeof(BETemporalPocket));
             //api.RegisterBlockEntityBehaviorClass("BEBMPMotor", typeof(BEBMPMotor));

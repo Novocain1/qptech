@@ -8,23 +8,43 @@ using Vintagestory.API.Common;
 using Vintagestory.API.Datastructures;
 using Vintagestory.API.MathTools;
 using Vintagestory.GameContent;
+using Vintagestory.API.Client;
+
 
 
 namespace qptech.src
 {
-    //Finds items in a container and using power, assembles into new items
+    /// <summary>
+    /// The BEEAssembler device uses energy and will create an item and place in
+    /// an output chest if the relevant item is found on the input chest. Also
+    /// will optionally check for the temperature of the input material (for using smelted metals etc)
+    /// 
+    /// If give a list of materials it will attempt to pattern match the input and output:
+    /// eg: ingredient of "ingot" with an output of "game:metalplate" and a material list of
+    /// "copper","tin" would look for copper & tin ingots and make the proper type of plate
+    /// </summary>
     class BEEAssembler:BEEBaseDevice
     {
         protected string recipe = "game:bowl-raw";
         protected string blockoritem = "block";
         protected int outputQuantiy = 1;
-        protected string ingredient = "game:clay-blue";
+        protected string ingredient = "clay";
         protected string ingredient_subtype ="";
         protected int inputQuantity = 4;
         protected int internalQuantity = 0; //will store ingredients virtually
         protected float animationSpeed = 0.05f;
         protected double processingTime = 10;
         protected float heatRequirement = 0;
+        public string Making => outputQuantiy.ToString()+"x "+ recipe + ingredient_subtype;
+        public string RM
+        {
+            get
+            {
+                string outstring=inputQuantity.ToString() + "x " + ingredient + ingredient_subtype;
+                if (heatRequirement > 0) { outstring += " at " + heatRequirement.ToString() + "°C"; }
+                return outstring;
+            }
+        }
         string[] materials;
         protected BlockFacing rmInputFace; //what faces will be checked for input containers
         protected BlockFacing outputFace; //what faces will be checked for output containers
@@ -55,13 +75,36 @@ namespace qptech.src
                 blockoritem = Block.Attributes["blockoritem"].AsString(blockoritem);
                 materials=Block.Attributes["materials"].AsArray<string>(materials);
             }
-            //TEMP CODE TO ADD faces, should be loaded from attributes
-            //rmInputFace.Add(BlockFacing.UP);
-            //outputFaces.Add(BlockFacing.DOWN);
+
             dummy = new DummyInventory(api);
             
           
         }
+
+
+        public void OpenStatusGUI()
+        {
+            ICoreClientAPI capi = Api as ICoreClientAPI;
+            if (capi != null)
+            {
+                if (gas == null)
+                {
+                    gas = new GUIAssemblerStatus("Assembler Status", Pos, capi);
+                    
+                    gas.TryOpen();
+                    gas.SetupDialog(this);
+                    
+                }
+                else
+                {
+                    gas.TryClose();
+                    gas.TryOpen();
+                    gas.SetupDialog(this);
+                }
+            }
+            
+        }
+
         protected override void DoDeviceStart()
         {
             //TODO
@@ -76,7 +119,7 @@ namespace qptech.src
                 internalQuantity = 0;
                 tickCounter = 0;
                 deviceState = enDeviceState.RUNNING;
-
+                
                 if (Api.World.Side == EnumAppSide.Client && animUtil != null)
                 {
                     if (!animInit)
@@ -120,8 +163,12 @@ namespace qptech.src
             ChangeCapacitor(-requiredAmps);
 
         }
+        GUIAssemblerStatus gas;
         protected override void DoDeviceComplete()
         {
+
+           
+            
             deviceState = enDeviceState.IDLE;
             string userecipe = recipe;
             if (ingredient_subtype != "")

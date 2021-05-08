@@ -1,6 +1,6 @@
 {
 	"code": "metalpress",
-	"class": "BlockClayformer",
+	"class": "BlockMetalPress",
 	"entityclass": "BEEAssembler",
 	"entityBehaviors": [ { "name": "Animatable" } ],
 	"creativeinventory": {
@@ -39,7 +39,8 @@
 			"ingredient": "ingot",
 			"processingTime": 0.045,
 			"animationSpeed": 0.5,
-			"materials": ["copper","brass","gold","silver","tin","lead","bismuth","zinc"]
+			"heatRequirement": 800,
+			"materials": [ "copper", "brass", "gold", "silver", "tin", "lead", "bismuth", "zinc" ]
 
 		}
 		

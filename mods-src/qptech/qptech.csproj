@@ -61,6 +61,10 @@
       <HintPath>$(AppData)\Vintagestory\Lib\Newtonsoft.Json.dll</HintPath>
       <Private>False</Private>
     </Reference>
+<Reference Include="cairo">
+      <HintPath>$(AppData)\Vintagestory\Lib\cairo-sharp.dll</HintPath>
+      <Private>false</Private>
+</Reference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="modinfo.json" />
@@ -77,8 +81,10 @@
     <Compile Include="src\Electricity\BEPowerFlag.cs" />
     <Compile Include="src\Electricity\BlockClayformer.cs" />
     <Compile Include="src\Electricity\BlockEForge.cs" />
+    <Compile Include="src\Electricity\BlockMetalPress.cs" />
     <Compile Include="src\Electricity\BlockWire.cs" />
     <Compile Include="src\Electricity\EForgeContentsRenderer.cs" />
+    <Compile Include="src\Electricity\GUIAssemblerStatus.cs" />
     <Compile Include="src\misc\APIExtensions.cs" />
     <Compile Include="src\misc\BlockCannedMeal.cs" />
     <Compile Include="src\Electricity\ElectricalBlock.cs" />
