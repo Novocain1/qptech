@@ -10,7 +10,7 @@
 	"variantgroups": [
 		{
 			"code": "type",
-			"states": [ "lvsoftplate" ]
+			"states": [ "lvsoftmetalplate","lvsoftscrew" ]
 		},
 		{
 			"code": "side",
@@ -26,7 +26,7 @@
 
 	"attributesbytype": {
 
-		"*-lvsoftplate-*": {
+		"*-lvsoftmetalplate-*": {
 			"maxAmps": 4,
 			"maxVolts": 16,
 			"capacitance": 4,
@@ -42,8 +42,26 @@
 			"heatRequirement": 800,
 			"materials": [ "copper", "brass", "gold", "silver", "tin", "lead", "bismuth", "zinc" ]
 
-		}
+		},
 		
+		"*-lvsoftscrew-*": {
+			"maxAmps": 4,
+			"maxVolts": 16,
+			"capacitance": 4,
+			"requiredAmps": 4,
+			"inputFace": "west",
+			"outputFace": "east",
+			"inputQuantity": 1,
+			"outputQuantity": 18,
+			"recipe": "machines:screw",
+			"ingredient": "metalplate",
+			"processingTime": 0.045,
+			"animationSpeed": 0.5,
+			"heatRequirement": 800,
+			"materials": [ "brass" ]
+
+		}
+
 	},
 	"blockmaterial": "Metal",
 	"drawtype": "json",

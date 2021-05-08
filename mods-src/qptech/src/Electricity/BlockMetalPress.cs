@@ -53,7 +53,7 @@ namespace qptech.src
             //TODO Make sure to uncomment loading code once some swaps have been setup
 
 
-            /*try
+            try
             {
                 variantlist = api.Assets.TryGet("qptech:config/metalpressswaps.json").ToObject<Dictionary<string, string>>();
             }
@@ -61,8 +61,8 @@ namespace qptech.src
             {
                 variantlist = new Dictionary<string, string>();
                 api.World.Logger.Error("metalpressswaps was not found sowee!");
-            }*/
-            variantlist = new Dictionary<string, string>();
+            }
+            
 
 
         }

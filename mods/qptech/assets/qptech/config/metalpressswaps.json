@@ -1,0 +1,5 @@
+﻿{
+		"machines:heavymold-screw": "machines:metalpress-lvsoftscrew",
+		"machines:heavymold-metalplate": "machines:metalpress-lvsoftmetalplate"
+		
+}

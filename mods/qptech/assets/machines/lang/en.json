@@ -10,7 +10,7 @@
 	"block-smelterfurnace-*": "Bronze Industrial Oven",
 	"blockdesc-smelterfurnace-*": "Right now just a fancy firepit - heats up more than a fire pit - eventually will self unload & load",
 	"qptech:qptech-quickstart-title": "Electricity (QPTECH)",
-	"qptech:qptech-quickstart-text": "<strong>Welcome to QPTECH</strong><br><br><strong>Electricity</strong><br>Begin your quest for power with the <a href=\"handbook://block-machines:generator-primitive-east\">Primitive Electric Generator</a><br><br>What can you do with your new found power? Check out the <a href=\"handbook://block-machines:clayformer-bowl-east\">Clayformer</a> and <a href=\"handbook://block-machines:electricforge-lv-east\">Electric Forge</a>.<br><br>The <a href=\"handbook://block-machines:battery-primitive-east\">Battery block</a> and <a href=\"handbook://block-machines:wireplate-tin-2a\">wire plate blocks</a> will allow you to extend your power system.<br><br>Other useful things include the <a href=\"handbook://block-machines:firepitstoker\">firepit stoker</a>, <a href=\"handbook://block-machines:firepitunloader\">unloader</a>, and <a href=\"handbook://block-machines:firepitloader\">loader</a>.",
+	"qptech:qptech-quickstart-text": "<strong>Welcome to QPTECH</strong><br><br><strong>Electricity</strong><br>Begin your quest for power with the <a href=\"handbook://block-machines:generator-primitive-east\">Primitive Electric Generator</a><br><br>What can you do with your new found power? Check out the <a href=\"handbook://block-machines:clayformer-bowl-east\">Clayformer</a>, <a href=\"handbook://block-machines:metalpress-lvsoftmetalplate-east\">Metal Press</a> and <a href=\"handbook://block-machines:electricforge-lv-east\">Electric Forge</a>.<br><br>The <a href=\"handbook://block-machines:battery-primitive-east\">Battery block</a> and <a href=\"handbook://block-machines:wireplate-tin-2a\">wire plate blocks</a> will allow you to extend your power system.<br><br>Other useful things include the <a href=\"handbook://block-machines:firepitstoker\">firepit stoker</a>, <a href=\"handbook://block-machines:firepitunloader\">unloader</a>, and <a href=\"handbook://block-machines:firepitloader\">loader</a>.",
 	"block-castironoven-*": "Cast Iron Oven",
 	"blockdesc-castironoven*": "Fancier than a fire pit. Quite cozy actually",
 	"block-castironovenlarge-*": "Large Cast Iron Oven",
@@ -67,7 +67,7 @@
 	"item-rod-tin": "Metal Rod (Tin)",
 	"item-rod-copper": "Metal Rod (Copper)",
 	"item-rod-brass": "Metal Rod (Brass)",
-	"itemdesc-rod-*":"Inanimate Rod, hero of the people",
+	"itemdesc-rod-*": "Inanimate Rod, hero of the people",
 	"item-screw-brass": "Metal Screw (Brass)",
 	"itemdesc-screw-*": "Screw this!",
 	"item-wire-tin": "Metal Wire (Tin)",
@@ -96,4 +96,10 @@
 	"block-clayformer-ingotmold-*": "Clayformer-Ingot Mold (LV)",
 	"blockdesc-clayformer-*": "Place a container of clay on the input side, and if powered it will create unfired clay pieces of the current type. Sneak click with a valid completed & fired clay object to set the output. (Currently supports bowls, flowerpots, ingots, and planters)",
 	"pocketcontents": "Dimensional Storage",
+	"block-metalpress-lvsoftscrew-*": "Soft Metal Press [Screws] (LV)",
+	"blockdesc-metalpress-*": "The Metal Press will take heated Raw Materials and using the appropriate Heavy Mold, output various metal items. Note that heavy molds are consumed when switching products!",
+	"block-metalpress-lvsoftmetalplate-*": "Soft Metal Press [Metal Plates] (LV)",
+	"item-heavymold-screw": "Heavy Mold - Screws",
+	"item-heavymold-metalplate": "Heavy Mold - Metal Plates",
+	"itemdesc-heavymold-*": "Insert (Sneak+Right Click in hand) into Metal Press to change recipe - molds are not returned"
 }

@@ -262,7 +262,15 @@
     <None Include="qptech\assets\machines\blocktypes\sink.json" />
     <None Include="qptech\assets\machines\blocktypes\smelterfurnace.json" />
     <None Include="qptech\assets\machines\blocktypes\wireplate.json" />
+    <None Include="qptech\assets\machines\itemtypes\part\heavymold.json" />
+    <None Include="qptech\assets\machines\recipes\grid\industrial\metalpress-lvsoftscrew.json" />
+    <None Include="qptech\assets\machines\recipes\grid\industrial\metalpress-lvsoftmetalplate.json" />
+    <None Include="qptech\assets\machines\recipes\smithing\part\heavymold-metalplate.json" />
+    <None Include="qptech\assets\machines\recipes\smithing\part\heavymold-screw.json" />
     <None Include="qptech\assets\machines\shapes\block\metalpress.json" />
+    <None Include="qptech\assets\machines\shapes\item\part\mold-metalplate.json" />
+    <None Include="qptech\assets\machines\shapes\item\part\mold-screw.json" />
+    <None Include="qptech\assets\qptech\config\metalpressswaps.json" />
     <None Include="qptech\assets\qptech\config\clayformerswaps.json" />
     <None Include="qptech\assets\machines\config\handbook\qptech.json" />
     <None Include="qptech\assets\machines\itemtypes\part\drilledplate.json" />
