@@ -99,7 +99,9 @@
 	"block-metalpress-lvsoftscrew-*": "Soft Metal Press [Screws] (LV)",
 	"blockdesc-metalpress-*": "The Metal Press will take heated Raw Materials and using the appropriate Heavy Mold, output various metal items. Note that heavy molds are consumed when switching products!",
 	"block-metalpress-lvsoftmetalplate-*": "Soft Metal Press [Metal Plates] (LV)",
+	"block-metalpress-lvsoftrod-*": "Soft Metal Press [Rods] (LV)",
 	"item-heavymold-screw": "Heavy Mold - Screws",
 	"item-heavymold-metalplate": "Heavy Mold - Metal Plates",
+	"item-heavymold-rod": "Heavy Mold - Rods",
 	"itemdesc-heavymold-*": "Insert (Sneak+Right Click in hand) into Metal Press to change recipe - molds are not returned"
 }

@@ -10,7 +10,7 @@
 	"variantgroups": [
 		{
 			"code": "type",
-			"states": [ "lvsoftmetalplate","lvsoftscrew" ]
+			"states": [ "lvsoftmetalplate","lvsoftscrew","lvsoftrod" ]
 		},
 		{
 			"code": "side",
@@ -43,7 +43,7 @@
 			"materials": [ "copper", "brass", "gold", "silver", "tin", "lead", "bismuth", "zinc" ]
 
 		},
-		
+
 		"*-lvsoftscrew-*": {
 			"maxAmps": 4,
 			"maxVolts": 16,
@@ -52,7 +52,7 @@
 			"inputFace": "west",
 			"outputFace": "east",
 			"inputQuantity": 1,
-			"outputQuantity": 18,
+			"outputQuantity": 12,
 			"recipe": "machines:screw",
 			"ingredient": "metalplate",
 			"processingTime": 0.045,
@@ -60,8 +60,24 @@
 			"heatRequirement": 800,
 			"materials": [ "brass" ]
 
-		}
+		},
+		"*-lvsoftrod-*": {
+			"maxAmps": 4,
+			"maxVolts": 16,
+			"capacitance": 4,
+			"requiredAmps": 4,
+			"inputFace": "west",
+			"outputFace": "east",
+			"inputQuantity": 1,
+			"outputQuantity": 3,
+			"recipe": "machines:rod",
+			"ingredient": "ingot",
+			"processingTime": 0.045,
+			"animationSpeed": 0.5,
+			"heatRequirement": 800,
+			"materials": [ "brass" ]
 
+		}
 	},
 	"blockmaterial": "Metal",
 	"drawtype": "json",

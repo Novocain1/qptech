@@ -8,7 +8,7 @@
   "variantgroups": [
     {
       "code": "part",
-      "states": [ "screw", "metalplate" ]
+      "states": [ "screw", "metalplate","rod" ]
     }
   ],
 
