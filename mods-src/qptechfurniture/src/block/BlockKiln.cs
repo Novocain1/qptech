@@ -41,9 +41,9 @@ namespace QptechFurniture.src
                     case "construct3":
                         return "construct4";
                     case "construct4":
-                        return "cold";
+                        return "empty";
                 }
-                return "cold";
+                return "empty";
             }
         }
 
@@ -119,7 +119,7 @@ namespace QptechFurniture.src
                 {
                     new WorldInteraction()
                     {
-                        ActionLangCode = "blockhelp-firepit-open",
+                        ActionLangCode = "blockhelp-kiln-open",
                         MouseButton = EnumMouseButton.Right,
                         ShouldApply = (WorldInteraction wi, BlockSelection blockSelection, EntitySelection entitySelection) =>
                         {
@@ -128,7 +128,7 @@ namespace QptechFurniture.src
                     },
                     new WorldInteraction()
                     {
-                        ActionLangCode = "blockhelp-firepit-ignite",
+                        ActionLangCode = "blockhelp-kiln-ignite",
                         MouseButton = EnumMouseButton.Right,
                         HotKeyCode = "sneak",
                         Itemstacks = canIgniteStacks.ToArray(),
@@ -143,7 +143,7 @@ namespace QptechFurniture.src
                     },
                     new WorldInteraction()
                     {
-                        ActionLangCode = "blockhelp-firepit-refuel",
+                        ActionLangCode = "blockhelp-kiln-refuel",
                         MouseButton = EnumMouseButton.Right,
                         HotKeyCode = "sneak"
                     }

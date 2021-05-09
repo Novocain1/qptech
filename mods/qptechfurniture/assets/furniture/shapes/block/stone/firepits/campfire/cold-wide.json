@@ -8,10 +8,6 @@
 	"textureSizes": {
 	},
 	"textures": {
-		"tinder": "C:/Users/andy-/Documents/GitHub/qptech/mods/qptechfurniture/assets/furniture/textures/block/grass/hay/normal-side",
-		"log": "C:/Users/andy-/Documents/GitHub/qptech/mods/qptechfurniture/assets/furniture/textures/block/wood/stonefirepit/log",
-		"ground": "C:/Users/andy-/Documents/GitHub/qptech/mods/qptechfurniture/assets/furniture/textures/block/wood/stonefirepit/ground",
-		"stone": "C:/Users/andy-/Documents/GitHub/qptech/mods/qptechfurniture/assets/furniture/textures/block/stone/forge/stoneshale"
 	},
 	"elements": [
 		{

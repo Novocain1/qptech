@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Text;
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
 using Vintagestory.API.Config;
@@ -287,13 +288,19 @@ namespace QptechFurniture.src
                 }
             }
 
-            // Too cold to ignite fuel after 2 hours
+            // Too cold to ignite fuel after 2 hours // edited to fixed the issue below
             if (!IsBurning && Block.Variant["burnstate"] == "extinct" && Api.World.Calendar.TotalHours - extinguishedTotalHours > 2)
+            {
+                canIgniteFuel = false;
+                setBlockState("empty");
+            }
+
+            // think this fixed the fuel model issue?
+            if (!fuelSlot.Empty && Block.Variant["burnstate"] == "extinct")
             {
                 canIgniteFuel = false;
                 setBlockState("cold");
             }
-
             // Furnace is burning: Heat furnace
             if (IsBurning)
             {
@@ -1029,9 +1036,11 @@ namespace QptechFurniture.src
 
             string burnState = Block.Variant["burnstate"];
             string contentState = CurrentModel.ToString().ToLowerInvariant();
-            if (burnState == "cold" && fuelSlot.Empty) burnState = "extinct";
+            if (burnState == "empty" && !fuelSlot.Empty) burnState = "cold";
 
             mesher.AddMeshData(getOrCreateMesh(burnState, contentState));
+
+            MarkDirty();
 
             return true;
         }
@@ -1120,6 +1129,13 @@ namespace QptechFurniture.src
             }
 
             return meshdata;
+        }
+        public override void GetBlockInfo(IPlayer forPlayer, StringBuilder dsc)
+        {
+            base.GetBlockInfo(forPlayer, dsc);
+            dsc.AppendLine("" + furnaceTemperature.ToString());
+            dsc.AppendLine("" + maxFuelBurnTime.ToString());
+            dsc.AppendLine("" + inputStackCookingTime.ToString());
         }
 
         public float GetHeatStrength(IWorldAccessor world, BlockPos heatSourcePos, BlockPos heatReceiverPos)
