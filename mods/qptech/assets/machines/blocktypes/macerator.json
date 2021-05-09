@@ -1,0 +1,63 @@
+{
+	"code": "macerator",
+	"creativeinventory": {
+		"general": [ "*-east" ],
+		"qptech": [ "*-east" ]
+	},
+	"behaviors": [
+		{
+			"name": "HorizontalOrientable",
+			"properties": { "dropBlockFace": "east" }
+		}
+
+	],
+	"variantgroups": [
+		{
+			"code": "class",
+			"states": [ "lv" ]
+		},
+		{
+			"code": "side",
+			"loadFromProperties": "abstract/horizontalorientation"
+		}
+	],
+	"blockmaterial": "Metal",
+	"drawtype": "json",
+	"shape": { "base": "block/macerator-lv" },
+	"shapeByType": {
+		"*-north": {
+			"base": "block/macerator-lv",
+			"rotateY": 0
+		},
+		"*-east": {
+			"base": "block/macerator-lv",
+			"rotateY": 270
+		},
+		"*-west": {
+			"base": "block/macerator-lv",
+			"rotateY": 90
+		},
+		"*-south": {
+			"base": "block/macerator-lv",
+			"rotateY": 180
+		}
+	},
+	"resistance": 1,
+	"sideopaque": {
+		"all": false
+	},
+	"fpHandTransform": {
+		"rotation": {
+			"x": 53,
+			"y": 46,
+			"z": 0
+		},
+		"scale": 1.28
+	},
+	"sounds": {
+		"place": "game:block/anvil",
+		"walk": "game:walk/stone"
+	}
+
+
+}

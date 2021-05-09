@@ -103,5 +103,7 @@
 	"item-heavymold-screw": "Heavy Mold - Screws",
 	"item-heavymold-metalplate": "Heavy Mold - Metal Plates",
 	"item-heavymold-rod": "Heavy Mold - Rods",
-	"itemdesc-heavymold-*": "Insert (Sneak+Right Click in hand) into Metal Press to change recipe - molds are not returned"
+	"itemdesc-heavymold-*": "Insert (Sneak+Right Click in hand) into Metal Press to change recipe - molds are not returned",
+	"block-macerator-lv-*": "Macerator (LV)",
+	"blockdesc-macerator-*": "Basic Ore and Aggregate procesing. May yield extra ore or different bonus ores."
 }
