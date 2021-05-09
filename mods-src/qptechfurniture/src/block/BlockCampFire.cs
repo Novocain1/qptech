@@ -41,9 +41,9 @@ namespace QptechFurniture.src
                     case "construct3":
                         return "construct4";
                     case "construct4":
-                        return "cold";
+                        return "empty";
                 }
-                return "cold";
+                return "empty";
             }
         }
 

@@ -8,10 +8,6 @@
 	"textureSizes": {
 	},
 	"textures": {
-		"log": "C:/Users/andy-/Documents/GitHub/qptech/mods/qptechfurniture/assets/furniture/textures/block/wood/stonefirepit/log",
-		"tinder": "C:/Users/andy-/Documents/GitHub/qptech/mods/qptechfurniture/assets/furniture/textures/block/stone/forge/tinder",
-		"brick": "C:/Users/andy-/Documents/GitHub/qptech/mods/qptechfurniture/assets/furniture/textures/block/stone/forge/brick",
-		"stone": "C:/Users/andy-/Documents/GitHub/qptech/mods/qptechfurniture/assets/furniture/textures/block/stone/forge/stone"
 	},
 	"elements": [
 		{
@@ -20,32 +16,14 @@
 			"to": [ -1.44, 0.0, -1.44 ], 
 			"rotationOrigin": [ -0.96, 0.0, 0.0 ],
 			"faces": {
-				"north": { "texture": "#null", "uv": [ 0.0, 0.0, 0.4, 0.4 ] },
-				"east": { "texture": "#null", "uv": [ 0.0, 0.0, 0.4, 0.4 ] },
-				"south": { "texture": "#null", "uv": [ 0.0, 0.0, 0.4, 0.4 ] },
-				"west": { "texture": "#null", "uv": [ 0.0, 0.0, 0.4, 0.4 ] },
-				"up": { "texture": "#null", "uv": [ 0.0, 0.0, 0.4, 0.4 ] },
-				"down": { "texture": "#null", "uv": [ 0.0, 0.0, 0.4, 0.4 ] }
+				"north": { "texture": "#stone", "uv": [ 0.0, 0.0, 0.4, 0.4 ] },
+				"east": { "texture": "#stone", "uv": [ 0.0, 0.0, 0.4, 0.4 ] },
+				"south": { "texture": "#stone", "uv": [ 0.0, 0.0, 0.4, 0.4 ] },
+				"west": { "texture": "#stone", "uv": [ 0.0, 0.0, 0.4, 0.4 ] },
+				"up": { "texture": "#stone", "uv": [ 0.0, 0.0, 0.4, 0.4 ] },
+				"down": { "texture": "#stone", "uv": [ 0.0, 0.0, 0.4, 0.4 ] }
 			},
 			"children": [
-				{
-					"name": "coal",
-					"from": [ 1.9584, 0.576, -1.1405 ], 
-					"to": [ 16.3584, 14.976, -1.0829 ], 
-					"renderPass": 2,
-					"rotationOrigin": [ 10.368, 9.216, 8.064 ],
-					"rotationX": -90.00001554900759,
-					"rotationY": 3.256887814995224E-12,
-					"rotationZ": 1.73028483533985E-5,
-					"faces": {
-						"north": { "texture": "#tinder", "uv": [ 0.0, 0.0, 12.0, 12.0 ], "enabled": false },
-						"east": { "texture": "#tinder", "uv": [ 0.0, 0.0, 0.48, 12.0 ], "enabled": false },
-						"south": { "texture": "#tinder", "uv": [ 0.0, 0.0, 15.36, 15.36 ], "autoUv": false },
-						"west": { "texture": "#tinder", "uv": [ 0.0, 0.0, 0.48, 12.0 ], "enabled": false },
-						"up": { "texture": "#tinder", "uv": [ 0.0, 0.0, 12.0, 0.48 ], "enabled": false },
-						"down": { "texture": "#tinder", "uv": [ 0.0, 0.0, 12.0, 0.48 ], "enabled": false }
-					}
-				},
 				{
 					"name": "Stone Main 0",
 					"from": [ 8.64, 0.0, 9.216 ], 

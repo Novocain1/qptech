@@ -5,19 +5,19 @@ using Vintagestory.API.Common;
 using Vintagestory.API.Config;
 using Vintagestory.API.Datastructures;
 using Vintagestory.API.MathTools;
-using Vintagestory.GameContent;
+using QptechFurniture.src;
 
-namespace QptechFurniture.src
+namespace Vintagestory.GameContent
 {
     /// <summary>
     /// Inventory with one fuel slot, one ore slot, one output slot and an optional 4 cooking slots
     /// </summary>
-    public class InventoryKiln : InventoryBase, ISlotProvider
+    public class InventorySmelting : InventoryBase, ISlotProvider
     {
         ItemSlot[] slots;
         ItemSlot[] cookingSlots;
         public BlockPos pos;
-        int defaultStorageType = (int)( EnumItemStorageFlags.Jewellery | EnumItemStorageFlags.Metallurgy );
+        int defaultStorageType = (int)(EnumItemStorageFlags.General | EnumItemStorageFlags.Agriculture | EnumItemStorageFlags.Alchemy | EnumItemStorageFlags.Jewellery | EnumItemStorageFlags.Metallurgy | EnumItemStorageFlags.Outfit);
 
         public ItemSlot[] CookingSlots { get { return HaveCookingContainer ? cookingSlots : new ItemSlot[0]; } }
 
@@ -39,11 +39,11 @@ namespace QptechFurniture.src
             get
             {
                 if (!HaveCookingContainer) return 0;
-                return slots[1].Itemstack.Collectible.Attributes["maxContainerSlotStackSize"].AsInt(64);
+                return slots[1].Itemstack.Collectible.Attributes["maxContainerSlotStackSize"].AsInt(999);
             }
         }
 
-        public InventoryKiln(string inventoryID, ICoreAPI api) : base(inventoryID, api)
+        public InventorySmelting(string inventoryID, ICoreAPI api) : base(inventoryID, api)
         {
             // slot 0 = fuel
             // slot 1 = input
@@ -55,7 +55,7 @@ namespace QptechFurniture.src
 
         }
 
-        public InventoryKiln(string className, string instanceID, ICoreAPI api) : base(className, instanceID, api)
+        public InventorySmelting(string className, string instanceID, ICoreAPI api) : base(className, instanceID, api)
         {
             slots = GenEmptySlots(7);
             cookingSlots = new ItemSlot[] { slots[3], slots[4], slots[5], slots[6] };
@@ -177,7 +177,7 @@ namespace QptechFurniture.src
         protected override ItemSlot NewSlot(int i)
         {
             if (i == 0) return new ItemSlotSurvival(this); // Fuel
-            if (i == 1) return new ItemSlotSmelthing(this, 2);
+            if (i == 1) return new ItemSlotCooking(this, 2);
             if (i == 2) return new ItemSlotOutput(this);
 
             return new ItemSlotWatertight(this);
@@ -206,7 +206,7 @@ namespace QptechFurniture.src
         {
             ItemStack stack = sourceSlot.Itemstack;
 
-            if (targetSlot == slots[1] && (stack.Collectible is BlockSmeltingContainer)) return 2.2f;
+            if (targetSlot == slots[1] && (stack.Collectible is BlockSmeltingContainer || stack.Collectible is BlockCookingContainer)) return 2.2f;
 
             if (targetSlot == slots[0] && (stack.Collectible.CombustibleProps == null || stack.Collectible.CombustibleProps.BurnTemperature <= 0)) return 0;
             if (targetSlot == slots[1] && (stack.Collectible.CombustibleProps == null || stack.Collectible.CombustibleProps.SmeltedStack == null)) return 0.5f;
@@ -226,7 +226,11 @@ namespace QptechFurniture.src
             {
                 return ((BlockSmeltingContainer)inputStack.Collectible).GetOutputText(Api.World, this, slots[1]);
             }
-   
+            if (inputStack.Collectible is BlockCookingContainer)
+            {
+                return ((BlockCookingContainer)inputStack.Collectible).GetOutputText(Api.World, this, slots[1]);
+            }
+
             ItemStack smeltedStack = inputStack.Collectible.CombustibleProps?.SmeltedStack?.ResolvedItemstack;
 
             if (smeltedStack == null) return null;

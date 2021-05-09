@@ -1,13 +1,13 @@
 {
 	"code": "campfire",
 	variantgroups: [
-		{ code:"burnstate", states: ["construct1", "construct2", "construct3", "construct4", "extinct", "lit", "cold"] }
+		{ code:"burnstate", states: ["construct1", "construct2", "construct3", "construct4", "extinct", "lit", "cold", "empty"] }
 	],
 	"attributes": {
 		handbook: {
 			include: true,
 			extraSections: [
-				{ title: "firepit-handbook-help-title", text: "firepit-handbook-help-text" }
+				{ title: "campfire-handbook-help-title", text: "campfire-handbook-help-text" }
 			]
 		},
 		"speedBonus": 1.5
@@ -28,7 +28,7 @@
 		"stone": {base: "game:block/stone/rock/shale1"}
 		
 	},
-	creativeinventory: { general: ["campfire-extinct"], kitchen: ["campfire-extinct"] },
+	creativeinventory: { general: ["campfire-empty"], kitchen: ["campfire-empty"] },
 	blockmaterial: "Wood",
 	lightAbsorption: 0,
 	lightHsvByType: {

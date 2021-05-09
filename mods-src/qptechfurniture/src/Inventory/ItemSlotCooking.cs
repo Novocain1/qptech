@@ -17,7 +17,6 @@ namespace QptechFurniture.src
         {
             if (itemSlot.Itemstack != null)
             { return itemSlot.Itemstack.Collectible is BlockSmeltingContainer is false; } // Block people from using things in a slot. :P
-            //{ return itemSlot.Itemstack.Collectible is ItemFood is false && itemSlot.Itemstack.Collectible is BlockCookingContainer is false; }
             else
                 return false;
         }
