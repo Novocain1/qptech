@@ -1,9 +1,12 @@
 {
 	"code": "macerator",
+	"class": "ElectricalBlock",
+	"entityclass": "BEEMacerator",
 	"creativeinventory": {
 		"general": [ "*-east" ],
 		"qptech": [ "*-east" ]
 	},
+	"entityBehaviors": [ { "name": "Animatable" } ],
 	"behaviors": [
 		{
 			"name": "HorizontalOrientable",
@@ -21,6 +24,18 @@
 			"loadFromProperties": "abstract/horizontalorientation"
 		}
 	],
+
+	"attributesbytype": {
+
+		"*-lv-*": {
+			"maxAmps": 1,
+			"maxVolts": 16,
+			"capacitance": 1,
+			"requiredAmps": 1,
+			"processingTicks": 5
+		}
+	},
+
 	"blockmaterial": "Metal",
 	"drawtype": "json",
 	"shape": { "base": "block/macerator-lv" },

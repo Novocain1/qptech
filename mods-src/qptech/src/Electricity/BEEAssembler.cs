@@ -240,7 +240,7 @@ namespace qptech.src
                 Block checkiblock = checkslot.Itemstack.Block;
                 ingredient_subtype = "";
 
-                if (checkitem == null && checkiblock == null) { return; }
+                if (checkitem == null && checkiblock == null) { continue; }
                 if (checkitem != null) {
                     string fcp = checkitem.FirstCodePart().ToString();
                     string lcp = checkitem.LastCodePart().ToString();

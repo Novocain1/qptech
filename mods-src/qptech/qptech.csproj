@@ -61,10 +61,10 @@
       <HintPath>$(AppData)\Vintagestory\Lib\Newtonsoft.Json.dll</HintPath>
       <Private>False</Private>
     </Reference>
-<Reference Include="cairo">
+    <Reference Include="cairo">
       <HintPath>$(AppData)\Vintagestory\Lib\cairo-sharp.dll</HintPath>
       <Private>false</Private>
-</Reference>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="modinfo.json" />
@@ -77,6 +77,7 @@
     <Compile Include="src\Electricity\BEEForge.cs" />
     <Compile Include="src\Electricity\BEElectric.cs" />
     <Compile Include="src\Electricity\BEEGenerator.cs" />
+    <Compile Include="src\Electricity\BEEMacerator.cs" />
     <Compile Include="src\Electricity\BEEWire.cs" />
     <Compile Include="src\Electricity\BEPowerFlag.cs" />
     <Compile Include="src\Electricity\BlockClayformer.cs" />

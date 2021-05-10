@@ -1,0 +1,14 @@
+﻿{
+
+	"game:rock-granite":
+		 [
+			{
+				"outputmaterial": "game:gravel-granite",
+				"outputquantity": 1,
+				"odds": 100
+			}
+		]
+	
+
+	
+}
