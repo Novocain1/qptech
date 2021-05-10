@@ -139,22 +139,26 @@ namespace qptech.src
         public float odds=1;
 
         static Dictionary<string, List<MacerationRecipe>> maceratelist;
-        static Dictionary<string, string>basiccodeswaplist;
-        static bool failload;
+        static Dictionary<string, List<MacerationRecipe>> codeswaplist;
+        
         public MacerationRecipe()
         {
 
+        }
+        public MacerationRecipe(string materialout,int quantityout,float oddsout)
+        {
+            outputmaterial = materialout;
+            outputquantity = quantityout;
+            odds = oddsout;
         }
         public static bool CanMacerate(CollectibleObject co,ICoreAPI api)
         {
             //TODO: change this to "CanMacerate", add a FindMacerate that returns items:
             //   - from the maceratelist directly - adding extra output based on RNG
             //   - generically where possible - eg stone block to stone gravel etc
-            if (maceratelist == null) { LoadMacerateList(api); }
+            if (maceratelist == null) { LoadMacerateLists(api); }
             if (co == null) { return false; }
-            if (basiccodeswaplist.ContainsKey(co.FirstCodePart())) { return true; }
-            
-            if (maceratelist == null) { return false; }//list failed to load
+            if (codeswaplist.ContainsKey(co.FirstCodePart())) { return true; }
             if (maceratelist.ContainsKey(co.Code.ToString())) { return true; }
             return false;
         }
@@ -166,35 +170,39 @@ namespace qptech.src
             if (!CanMacerate(co, api)) { return outputstack; }
             string fcp = co.FirstCodePart();
             //Handle basic maceration - eg stone to equivalent gravel
-            if (basiccodeswaplist.ContainsKey(fcp))
+            if (codeswaplist.ContainsKey(fcp))
             {
-                string al = co.Code.ToString();
-                al=al.Replace(fcp, basiccodeswaplist[fcp]);
-                
-                Block outputBlock = api.World.GetBlock(new AssetLocation(al));
-                Item outputItem = api.World.GetItem(new AssetLocation(al));
-                if (outputBlock != null)
+                foreach (MacerationRecipe mr in codeswaplist[fcp])
                 {
-                    ItemStack itmstk = new ItemStack(outputBlock,1);
-                    outputstack.Add(itmstk);
-                }
-                if (outputItem != null)
-                {
-                    ItemStack itmstk = new ItemStack(outputItem, 1);
-                    outputstack.Add(itmstk);
+                    Random rand = new Random();
+                    double roll = rand.NextDouble() * 100;
+                    if (!(mr.odds == 100 || roll <= mr.odds)) { continue; }
+                    string al = co.Code.ToString();
+                    
+                    al = al.Replace(fcp, mr.outputmaterial);
+                    int outqty = 1;
+                    if (mr.odds != 100) { outqty = rand.Next(1, mr.outputquantity + 1); }
+                    Block outputBlock = api.World.GetBlock(new AssetLocation(al));
+                    Item outputItem = api.World.GetItem(new AssetLocation(al));
+                    if (outputBlock != null)
+                    {
+                        ItemStack itmstk = new ItemStack(outputBlock, outqty);
+                        outputstack.Add(itmstk);
+                    }
+                    if (outputItem != null)
+                    {
+                        ItemStack itmstk = new ItemStack(outputItem, outqty);
+                        outputstack.Add(itmstk);
+                    }
                 }
             }
             return outputstack;
         }
-        static void LoadMacerateList(ICoreAPI api)
+        static void LoadMacerateLists(ICoreAPI api)
         {
             //maceratelist = new Dictionary<string, List<MacerationRecipe>>();
             maceratelist = api.Assets.TryGet("qptech:config/macerationrecipes.json").ToObject<Dictionary<string, List<MacerationRecipe>>>();
-            if (maceratelist == null || maceratelist.Count == 0) { failload = true; }
-            basiccodeswaplist = new Dictionary<string, string>();
-            basiccodeswaplist["rock"] = "gravel";
-            basiccodeswaplist["gravel"] = "sand";
-
+            codeswaplist = api.Assets.TryGet("qptech:config/macerationpatternrecipes.json").ToObject<Dictionary<string, List<MacerationRecipe>>>();
         }
     }
 }
