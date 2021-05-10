@@ -27,7 +27,7 @@ namespace qptech.src
     {
         protected string recipe = "game:bowl-raw";
         protected string blockoritem = "block";
-        protected int outputQuantiy = 1;
+        protected int outputQuantity = 1;
         protected string ingredient = "clay";
         protected string ingredient_subtype ="";
         protected int inputQuantity = 4;
@@ -35,7 +35,7 @@ namespace qptech.src
         protected float animationSpeed = 0.05f;
         protected double processingTime = 10;
         protected float heatRequirement = 0;
-        public string Making => outputQuantiy.ToString()+"x "+ recipe + ingredient_subtype;
+        public string Making => outputQuantity.ToString()+"x "+ recipe + ingredient_subtype;
         public string RM
         {
             get
@@ -65,7 +65,7 @@ namespace qptech.src
                 outputFace = BlockFacing.FromCode(Block.Attributes["outputFace"].AsString("down"));
                 animationSpeed = Block.Attributes["animationSpeed"].AsFloat(animationSpeed);
                 inputQuantity = Block.Attributes["inputQuantity"].AsInt(inputQuantity);
-                outputQuantiy = Block.Attributes["outputQuantity"].AsInt(outputQuantiy);
+                outputQuantity = Block.Attributes["outputQuantity"].AsInt(outputQuantity);
                 recipe = Block.Attributes["recipe"].AsString(recipe);
                 ingredient = Block.Attributes["ingredient"].AsString(ingredient);
                 rmInputFace = OrientFace(Block.Code.ToString(), rmInputFace);
@@ -181,11 +181,11 @@ namespace qptech.src
             ItemStack outputStack;
             if (outputBlock!=null)
             {
-                outputStack = new ItemStack(outputBlock, outputQuantiy);
+                outputStack = new ItemStack(outputBlock, outputQuantity);
             }
             else
             {
-                outputStack = new ItemStack(outputItem, outputQuantiy);
+                outputStack = new ItemStack(outputItem, outputQuantity);
             }
             
             dummy[0].Itemstack = outputStack;
@@ -198,7 +198,7 @@ namespace qptech.src
                 WeightedSlot tryoutput = outputContainer.Inventory.GetBestSuitedSlot(dummy[0]);
 
                 if (tryoutput.slot != null) {
-                    ItemStackMoveOperation op = new ItemStackMoveOperation(Api.World, EnumMouseButton.Left, 0, EnumMergePriority.DirectMerge, outputQuantiy);
+                    ItemStackMoveOperation op = new ItemStackMoveOperation(Api.World, EnumMouseButton.Left, 0, EnumMergePriority.DirectMerge, outputQuantity);
                     
                     dummy[0].TryPutInto(tryoutput.slot, ref op);
                     
