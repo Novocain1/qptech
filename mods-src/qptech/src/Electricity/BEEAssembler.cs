@@ -23,29 +23,62 @@ namespace qptech.src
     /// eg: ingredient of "ingot" with an output of "game:metalplate" and a material list of
     /// "copper","tin" would look for copper & tin ingots and make the proper type of plate
     /// </summary>
-    class BEEAssembler:BEEBaseDevice
+    class BEEAssembler : BEEBaseDevice
     {
         protected string recipe = "game:bowl-raw";
         protected string blockoritem = "block";
         protected int outputQuantity = 1;
         protected string ingredient = "clay";
-        protected string ingredient_subtype ="";
+        protected string ingredient_subtype = "";
         protected int inputQuantity = 4;
         protected int internalQuantity = 0; //will store ingredients virtually
         protected float animationSpeed = 0.05f;
         protected double processingTime = 10;
         protected float heatRequirement = 0;
-        public string Making => outputQuantity.ToString()+"x "+ recipe + ingredient_subtype;
+        string readablerecipe="";
+        public string Making => outputQuantity.ToString() + "x " + recipe + ingredient_subtype;
         public string RM
         {
             get
             {
-                string outstring=inputQuantity.ToString() + "x " + ingredient + ingredient_subtype;
+                string outstring = inputQuantity.ToString() + "x " + ingredient + ingredient_subtype;
                 if (heatRequirement > 0) { outstring += " at " + heatRequirement.ToString() + "°C"; }
                 return outstring;
             }
         }
+        public string FG
+        {
+            get
+            {
+                if (readablerecipe == "")
+                {
+                    AssetLocation al = new AssetLocation(recipe);
+                    if (al == null) { return "error"; }
+                    readablerecipe = al.GetName();
+
+                }
+
+                return outputQuantity.ToString()+"x "+ readablerecipe;
+            }
+        }
+        public string Status
+        {
+            get
+            {
+                if (!IsOn) { return "OFF"; }
+                if (!IsPowered) { return "NO POWER! REQ "+maxVolts.ToString()+"V and "+RequiredAmps.ToString()+" Amps"; }
+                if (deviceState == enDeviceState.MATERIALHOLD) { return "NEEDS MATERIAL"; }
+                if (deviceState== enDeviceState.RUNNING) { return "PROCESSING"; }
+                if (deviceState == enDeviceState.IDLE) { return "READY"; }
+                if (deviceState== enDeviceState.WARMUP) { return "STARTING"; }
+
+                return "err";
+            }
+        }
+
+        
         string[] materials;
+        public string[] Materials => materials;
         protected BlockFacing rmInputFace; //what faces will be checked for input containers
         protected BlockFacing outputFace; //what faces will be checked for output containers
         //protected BlockFacing recipeFace; //what face will be used to look for a container with the model object
