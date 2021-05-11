@@ -274,7 +274,6 @@
     <None Include="qptech\assets\machines\shapes\item\part\mold-rod.json" />
     <None Include="qptech\assets\machines\shapes\item\part\mold-screw.json" />
     <None Include="qptech\assets\qptech\config\macerationrecipes.json" />
-    <None Include="qptech\assets\qptech\config\macerationpatternrecipes.json" />
     <None Include="qptech\assets\qptech\config\metalpressswaps.json" />
     <None Include="qptech\assets\qptech\config\clayformerswaps.json" />
     <None Include="qptech\assets\machines\config\handbook\qptech.json" />

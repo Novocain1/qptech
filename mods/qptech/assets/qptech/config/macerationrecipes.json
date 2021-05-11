@@ -1,14 +1,67 @@
 ﻿{
 
-	"game:rock-granite":
-		 [
-			{
-				"outputmaterial": "game:gravel-granite",
-				"outputquantity": 1,
-				"odds": 100
-			}
-		]
-	
+	"rock": [
+		{
+			"outputmaterial": "gravel",
+			"outputquantity": 1,
+			"odds": 100
+		},
+		{
+			"outputmaterial": "stone",
+			"outputquantity": 4,
+			"odds": 50
+		}
 
-	
+	],
+	"gravel": [
+		{
+			"outputmaterial": "sand",
+			"outputquantity": 1,
+			"odds": 100
+		},
+		{
+			"outputmaterial": "stone",
+			"outputquantity": 2,
+			"odds": 10
+		}
+	],
+	"stone": [
+		{
+			"outputmaterial": "sand",
+			"outputquantity": 1,
+			"odds": 25
+		},
+		{
+			"outputmaterial": "gravel",
+			"outputquantity": 1,
+			"odds": 25
+		}
+	],
+	"grain": [
+		{
+			"outputmaterial": "flour",
+			"outputquantity": 1,
+			"odds": 100
+		},
+		{
+			"outputmaterial": "flour",
+			"outputquantity": 1,
+			"odds": 25
+		}
+	],
+	"game:stone-halite": [
+		{
+			"outputmaterial": "game:salt",
+			"outputquantity": 2,
+			"odds": 100,
+			"type": 0
+		},
+		{
+			"outputmaterial": "game:salt",
+			"outputquantity": 2,
+			"odds": 15,
+			"type": 0
+		}
+	]
+
 }
