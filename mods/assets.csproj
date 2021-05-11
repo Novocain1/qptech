@@ -355,6 +355,17 @@
     <None Include="qptech\assets\machines\shapes\item\tool\screwdriver.json" />
     <None Include="qptech\assets\machines\shapes\item\tool\screwdriverhead.json" />
     <None Include="qptech\assets\machines\shapes\item\worn\jetpack.json" />
+    <None Include="roofs\assets\game\blocktypes\rooftypes\roof-accessories.json" />
+    <None Include="roofs\assets\game\blocktypes\rooftypes\roof.json" />
+    <None Include="roofs\assets\game\shapes\block\roof\types\roof-free-corner.json" />
+    <None Include="roofs\assets\game\shapes\block\roof\types\roof-free-hingover.json" />
+    <None Include="roofs\assets\game\shapes\block\roof\types\roof-free-normal.json" />
+    <None Include="roofs\assets\game\shapes\block\roof\types\roof-free-top.json" />
+    <None Include="roofs\assets\game\shapes\block\roof\types\roof-snow-corner.json" />
+    <None Include="roofs\assets\game\shapes\block\roof\types\roof-snow-hingover.json" />
+    <None Include="roofs\assets\game\shapes\block\roof\types\roof-snow-normal.json" />
+    <None Include="roofs\assets\game\shapes\block\roof\types\roof-snow-top.json" />
+    <None Include="roofs\modinfo.json" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="qptechapi\qptechapi.dll" />
