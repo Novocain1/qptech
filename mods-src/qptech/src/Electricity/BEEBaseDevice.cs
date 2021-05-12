@@ -51,6 +51,7 @@ namespace qptech.src
             if (DeviceState == enDeviceState.IDLE||DeviceState==enDeviceState.MATERIALHOLD)
             {
                 DoDeviceStart();
+                ChangeCapacitor(-1);
             }
             else if (deviceState == enDeviceState.WARMUP)
             {
@@ -93,7 +94,7 @@ namespace qptech.src
         //can do some feedback if device can't run
         protected virtual void DoFailedStart()
         {
-
+            
         }
         //feedback if device cannot process
         protected virtual void DoFailedProcessing()

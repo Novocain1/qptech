@@ -21,29 +21,53 @@ namespace qptech.src
             ElementBounds dialogBounds = ElementStdBounds.AutosizedMainDialog.WithAlignment(EnumDialogArea.CenterMiddle);
 
             // Just a simple 300x100 pixel box with 40 pixels top spacing for the title bar
-            ElementBounds textBounds = ElementBounds.Fixed(0, 40, 300, 600);
+            ElementBounds textBounds = ElementBounds.Fixed(0, 40, 600, 600);
 
             // Background boundaries. Again, just make it fit it's child elements, then add the text as a child element
             ElementBounds bgBounds = ElementBounds.Fill.WithFixedPadding(GuiStyle.ElementToDialogPadding);
             bgBounds.BothSizing = ElementSizing.FitToChildren;
             bgBounds.WithChildren(textBounds);
             string guicomponame = bea.Pos.ToString()+"Assembler";
-            string statustext = "REQUIRE INPUT: <strong>" + bea.RM.ToUpper()+"</strong><br>MAKING: <strong>"+bea.FG.ToUpper()+"</strong><br>STATUS: <strong>"+bea.Status+"</strong>";
+            string statustext = "";
+            string alertred = "<font color=\"#ffbbaa\">";//<font <color=\"#ffdddd\">>";
+            
+            if (!bea.IsPowered)
+            {
+                statustext += alertred;
+            }
+            else if (bea.DeviceState == BEEBaseDevice.enDeviceState.MATERIALHOLD)
+            {
+                statustext += alertred;
+            }
+            else if (bea.DeviceState == BEEBaseDevice.enDeviceState.RUNNING)
+            {
+                statustext += "<font color=\"#aaff55\">";
+            }
+            else
+            {
+                statustext += "<font>";
+            }
+            statustext += "<strong>STATUS: " + bea.Status + "</strong></font><br><br>";
+            statustext += "Making <strong>" + bea.FG.ToUpper() + "</strong><br><br>";
+            statustext += "Requires <strong>" + bea.RM +"</strong>";
             if (bea.Materials.Length > 0&&bea.DeviceState==BEEBaseDevice.enDeviceState.MATERIALHOLD)
             {
-                statustext += "<br>USABLE MATERIALS:<br><strong>";
-                int c = 0;
-                foreach (string i in bea.Materials)
+                
+                statustext += " of material ";
+                statustext += "<font><strong>";
+                
+                for (int c=0;c<bea.Materials.Length;c++)
                 {
                     if (c != 0) { statustext += ", "; }
-                    statustext += i.ToUpper();
-                    c++;
+                    else if (c == bea.Materials.Length - 1) { statustext += ", or "; }
+                    statustext += bea.Materials[c];
+                    
                 }
-                statustext += "</strong>";
+                statustext += ".</font></strong>";
             }
             SingleComposer = capi.Gui.CreateCompo(guicomponame, dialogBounds)
                 .AddShadedDialogBG(bgBounds)
-                .AddDialogTitleBar("Assembler Status", OnTitleBarCloseClicked)
+                .AddDialogTitleBar("Metal Press Status", OnTitleBarCloseClicked)
                 .AddRichtext(statustext, CairoFont.WhiteDetailText(), textBounds)
                 
                 .Compose()
@@ -59,16 +83,7 @@ namespace qptech.src
         {
             TryClose();
         }
-        public override void OnRenderGUI(float deltaTime)
-        {
-
-            base.OnRenderGUI(deltaTime);
-            if (api == null) { return; }
-            LoadedTexture textTexture = new LoadedTexture(api);
-            
-            api.Render.Render2DLoadedTexture(textTexture, 0, 0);
-            
-        }
+     
 
     }
 }

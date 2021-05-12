@@ -66,11 +66,11 @@ namespace qptech.src
             get
             {
                 if (!IsOn) { return "OFF"; }
-                if (!IsPowered) { return "NO POWER! REQ "+maxVolts.ToString()+"V and "+RequiredAmps.ToString()+" Amps"; }
-                if (deviceState == enDeviceState.MATERIALHOLD) { return "NEEDS MATERIAL"; }
-                if (deviceState== enDeviceState.RUNNING) { return "PROCESSING"; }
-                if (deviceState == enDeviceState.IDLE) { return "READY"; }
-                if (deviceState== enDeviceState.WARMUP) { return "STARTING"; }
+                else if (!IsPowered) { return "NO POWER! REQ "+maxVolts.ToString()+"V and "+RequiredAmps.ToString()+" Amps"; }
+                else if (deviceState == enDeviceState.MATERIALHOLD) { return "NEEDS MATERIAL"; }
+                else if (deviceState== enDeviceState.RUNNING) { return "PROCESSING"; }
+                else if (deviceState == enDeviceState.IDLE) { return "READY"; }
+                else if (deviceState== enDeviceState.WARMUP) { return "STARTING"; }
 
                 return "err";
             }
@@ -145,7 +145,7 @@ namespace qptech.src
             if (Capacitor < requiredAmps) { return; }//not enough power
             FetchMaterial();
             processstarted = Api.World.Calendar.TotalHours;      
-            if (internalQuantity<inputQuantity) { deviceState = enDeviceState.MATERIALHOLD; return; }//check for and extract the required RM
+            if (internalQuantity<inputQuantity) { ChangeCapacitor(-1); deviceState = enDeviceState.MATERIALHOLD; return; }//check for and extract the required RM
             //TODO - do we make sure there's an output container?
             if (Capacitor >= requiredAmps)
             {

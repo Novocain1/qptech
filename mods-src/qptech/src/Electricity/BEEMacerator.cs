@@ -84,7 +84,7 @@ namespace qptech.src
                     ItemSlot checkslot = inputContainer.Inventory[c];
                     if (checkslot == null) { continue; }
                     if (checkslot.StackSize == 0) { continue; }
-                    bool match = false;
+                    
                     Item checkitem = checkslot.Itemstack.Item;
                     Block checkiblock = checkslot.Itemstack.Block;
 
@@ -104,6 +104,7 @@ namespace qptech.src
                     checkslot.MarkDirty();
                     break;
                 }
+                
             }
         }
 
