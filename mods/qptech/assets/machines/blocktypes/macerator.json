@@ -28,9 +28,9 @@
 	"attributesbytype": {
 
 		"*-lv-*": {
-			"maxAmps": 1,
+			"maxAmps": 2,
 			"maxVolts": 16,
-			"capacitance": 1,
+			"capacitance": 2,
 			"requiredAmps": 1,
 			"processingTicks": 5
 		}

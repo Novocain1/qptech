@@ -150,10 +150,11 @@ namespace qptech.src
 
         
         static Dictionary<string, List<MacerationRecipe>> maceratelist;
-        
+        static Dictionary<string, string> orelookups;
+        static Dictionary<string, int> gradelookups;
         public MacerationRecipe()
         {
-
+         
         }
         public MacerationRecipe(string materialout,int quantityout,float oddsout)
         {
@@ -168,6 +169,8 @@ namespace qptech.src
             //   - generically where possible - eg stone block to stone gravel etc
             if (maceratelist == null) { LoadMacerateLists(api); }
             if (co == null) { return false; }
+            if (co.FirstCodePart() == "ore") { return true; }
+            
             if (maceratelist.ContainsKey(co.FirstCodePart())) { return true; }
             if (maceratelist.ContainsKey(co.Code.ToString())) { return true; }
             return false;
@@ -181,6 +184,36 @@ namespace qptech.src
             string fcp = co.FirstCodePart();
             string fullcode = co.Code.ToString();
             Random rand = new Random();
+            if (fcp == "ore")
+            {
+                ItemOre oreitem = co as ItemOre;
+                if (oreitem != null)
+                {
+                    string outitemcode = "game:nugget-";
+                    bool metalfound = false;
+                    foreach (string outmetal in orelookups.Keys)
+                    {
+                        if (fullcode.Contains(outmetal))
+                        {
+                            outitemcode += outmetal;
+                            metalfound = true;
+                            break;
+                        }
+                    }
+                    if (metalfound)
+                    {
+                        int outitemqty = oreitem.Attributes["metalUnits"].AsInt(1);
+                        
+                        Item outputItem = api.World.GetItem(new AssetLocation(outitemcode));
+                        if (outputItem != null)
+                        {
+                            ItemStack itmstk = new ItemStack(outputItem, outitemqty);
+                            outputstack.Add(itmstk);
+                        }
+                    }
+
+                }
+            }
             if (maceratelist.ContainsKey(fcp)) {
                 foreach (MacerationRecipe mr in maceratelist[fcp])
                 {
@@ -240,7 +273,14 @@ namespace qptech.src
         {
             //maceratelist = new Dictionary<string, List<MacerationRecipe>>();
             maceratelist = api.Assets.TryGet("qptech:config/macerationrecipes.json").ToObject<Dictionary<string, List<MacerationRecipe>>>();
+            orelookups = api.Assets.TryGet("qptech:config/orelookups.json").ToObject<Dictionary<string, string>>();
             
+            gradelookups = new Dictionary<string, int>();
+            gradelookups["poor"] = 10;
+            gradelookups["medium"] = 20;
+            gradelookups["rich"] = 25;
+            gradelookups["bountiful"] = 30;
+
         }
     }
 }

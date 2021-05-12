@@ -58,8 +58,9 @@ namespace qptech.src
                 
                 for (int c=0;c<bea.Materials.Length;c++)
                 {
-                    if (c != 0) { statustext += ", "; }
-                    else if (c == bea.Materials.Length - 1) { statustext += ", or "; }
+                    if (c == bea.Materials.Length - 1) { statustext += ", or "; }
+                    else if (c != 0) { statustext += ", "; }
+                    
                     statustext += bea.Materials[c];
                     
                 }

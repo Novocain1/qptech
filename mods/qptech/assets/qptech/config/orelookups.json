@@ -1,0 +1,19 @@
+﻿{
+	"bismuthinite": "bismuth",
+	"cassiterite": "tin",
+	"sphalerite": "zinc",
+	"nativecopper": "copper",
+	"malachite": "copper",
+	"galena": "lead",
+	"nativesilver": "silver",
+	"nativegold": "gold",
+	"limonite": "iron",
+	"hematite": "iron",
+	"magnetite": "iron",
+	"chromite": "chrome",
+	"rhodochrosite": "manganese",
+	"ilmenite": "iron",
+	"stibnite": "antimony",
+	"uranium": "uranium",
+	"pentlandite":  "nickel"
+}
