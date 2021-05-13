@@ -14,12 +14,6 @@
 		"cabinet": [16,16]
 	},
 	"textures": {
-		"cabinet-detail": "block/wood/acacia/cabinet-detail",
-		"sides2": "block/wood/acacia/cabinet",
-		"lid": "block/wood/acacia/detail",
-		"accessories": "block/wood/acacia/countertop",
-		"copper": "block/metal/copper",
-		"shinybrass": "block/metal/shinybrass"
 	},
 	"elements": [
 		{
@@ -720,8 +714,8 @@
 	],
 	"animations": [
 		{
-			"name": "lidopen",
-			"code": "lidopen",
+			"name": "sinkopen",
+			"code": "sinkopen",
 			"quantityframes": 30,
 			"onActivityStopped": "EaseOut",
 			"onAnimationEnd": "Hold",
