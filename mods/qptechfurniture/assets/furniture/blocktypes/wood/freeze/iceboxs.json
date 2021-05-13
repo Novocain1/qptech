@@ -77,11 +77,11 @@
 			"iceboxsmall-maple": 16,
 			"iceboxsmall-acacia": 16,
 			"iceboxsmall-pine": 16,
-			
-			"iceboxsmall-pine": 32,
-			"iceboxsmall-oak": 32,
-			"iceboxsmall-maple": 32,
-			"iceboxsmall-acacia": 32
+
+			"iceboxmedium-pine": 32,
+			"iceboxmedium-oak": 32,
+			"iceboxmedium-maple": 32,
+			"iceboxmedium-acacia": 32
 		},
 		"retrieveOnly": {
 			"iceboxsmall-oak": false,

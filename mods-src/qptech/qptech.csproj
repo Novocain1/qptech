@@ -90,6 +90,7 @@
     <Compile Include="src\misc\BlockCannedMeal.cs" />
     <Compile Include="src\Electricity\ElectricalBlock.cs" />
     <Compile Include="src\Electricity\ElectricityLoader.cs" />
+    <Compile Include="src\misc\BlockEntityHiddenHopper.cs" />
     <Compile Include="src\misc\BlockTemporalPocket.cs" />
     <Compile Include="src\misc\icebox.cs" />
     <Compile Include="src\misc\ItemJetPack.cs" />

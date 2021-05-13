@@ -794,6 +794,23 @@
 								"up": { "texture": "#bricks", "uv": [ 0.0, 0.0, 16.0, 1.0 ], "enabled": false },
 								"down": { "texture": "#bricks", "uv": [ 0.0, 0.0, 16.0, 1.0 ], "enabled": false }
 							}
+						},
+						{
+							"name": "Wall15",
+							"from": [ 0.0, 14.0, 12.5 ], 
+							"to": [ 16.0, 15.0, 13.5 ], 
+							"rotationOrigin": [ 0.0, 14.0, 13.0 ],
+							"rotationX": -1.628443907497612E-12,
+							"rotationY": 3.413353627936079E-19,
+							"rotationZ": 1.628443907497612E-12,
+							"faces": {
+								"north": { "texture": "#bricks", "uv": [ 0.0, 0.0, 16.0, 1.0 ], "enabled": false },
+								"east": { "texture": "#bricks", "uv": [ 0.0, 2.0, 1.0, 3.0 ] },
+								"south": { "texture": "#bricks", "uv": [ 0.0, 1.0, 16.0, 2.0 ] },
+								"west": { "texture": "#bricks", "uv": [ 15.0, 2.0, 16.0, 3.0 ] },
+								"up": { "texture": "#bricks", "uv": [ 0.0, 0.0, 16.0, 1.0 ], "enabled": false },
+								"down": { "texture": "#bricks", "uv": [ 0.0, 0.0, 16.0, 1.0 ], "enabled": false }
+							}
 						}
 					]
 				},
@@ -855,23 +872,6 @@
 								"west": { "texture": "#log", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
 								"up": { "texture": "#log", "uv": [ 0.0, 2.0, 16.0, 3.0 ], "enabled": false },
 								"down": { "texture": "#log", "uv": [ 0.0, 6.0, 16.0, 7.0 ] }
-							}
-						},
-						{
-							"name": "wood support top",
-							"from": [ 19.0, 19.86, 1.6385 ], 
-							"to": [ 35.0, 21.86, 2.6385 ], 
-							"rotationOrigin": [ 18.0, 19.8567, 1.0385 ],
-							"rotationX": -135.00000224700494,
-							"rotationY": 5.008946899510986E-6,
-							"rotationZ": -179.999976456504,
-							"faces": {
-								"north": { "texture": "#log", "uv": [ 0.0, 0.0, 16.0, 3.0 ], "enabled": false, "autoUv": false },
-								"east": { "texture": "#log", "uv": [ 15.0, 14.0, 16.0, 16.0 ], "enabled": false, "autoUv": false },
-								"south": { "texture": "#log", "uv": [ 0.0, 0.0, 16.0, 3.5 ], "autoUv": false },
-								"west": { "texture": "#log", "uv": [ 14.0, 14.0, 15.0, 16.0 ], "enabled": false, "autoUv": false },
-								"up": { "texture": "#log", "uv": [ 0.0, 5.5, 16.0, 9.0 ], "enabled": false, "autoUv": false },
-								"down": { "texture": "#log", "uv": [ 0.0, 7.5, 16.0, 11.0 ], "enabled": false, "autoUv": false }
 							}
 						}
 					]
