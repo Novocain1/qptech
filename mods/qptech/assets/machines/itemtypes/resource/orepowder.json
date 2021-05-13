@@ -1,0 +1,16 @@
+{
+  "code": "orepowder",
+  "variantgroups": [
+    {
+      "code": "material",
+      "states": [ "copper", "brass" ]
+    }
+  ],
+  "texture": { "base": "item/resource/orepowder/orepowder-{material}" },
+  "creativeinventory": {
+    "general": [ "*" ],
+    "items": [ "*" ]
+  },
+  "maxstacksize": 64,
+  "materialDensity": 900
+}

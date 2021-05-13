@@ -49,16 +49,24 @@ namespace qptech.src
                     if (outputContainer != null)
                     {
 
-
-                        WeightedSlot tryoutput = outputContainer.Inventory.GetBestSuitedSlot(dummy[0]);
-
-                        if (tryoutput.slot != null)
+                        bool stoptrying = false;
+                        int safetycounter = 0;
+                        while (!stoptrying)
                         {
-                            ItemStackMoveOperation op = new ItemStackMoveOperation(Api.World, EnumMouseButton.Left, 0, EnumMergePriority.DirectMerge, dummy[0].StackSize);
+                            WeightedSlot tryoutput = outputContainer.Inventory.GetBestSuitedSlot(dummy[0]);
 
-                            dummy[0].TryPutInto(tryoutput.slot, ref op);
-                            tryoutput.slot.MarkDirty();
+                            if (tryoutput.slot != null)
+                            {
+                                ItemStackMoveOperation op = new ItemStackMoveOperation(Api.World, EnumMouseButton.Left, 0, EnumMergePriority.DirectMerge, dummy[0].StackSize);
 
+                                dummy[0].TryPutInto(tryoutput.slot, ref op);
+                                tryoutput.slot.MarkDirty();
+                                if (dummy[0]==null) { stoptrying = true; }
+                                else if (dummy[0].StackSize == 0) { stoptrying = true; }
+                            }
+                            else { stoptrying = true; }
+                            safetycounter++;
+                            if (safetycounter > 24) { stoptrying = true; }
                         }
                     }
                     Vec3d pos = bp.ToVec3d();
@@ -146,12 +154,18 @@ namespace qptech.src
         public int outputquantity=1;
         public float odds=1;
         public enTypes type = enTypes.SWAP;
-        public enum enTypes {DIRECT,SWAP};
+        /// <summary>
+        /// enTypes
+        /// DIRECT - change one specific item into another specific item
+        /// SWAP   - change one item into another by swapping part of its Code
+        /// ORESWAP - swap part of the item code, plus swap the metal type using the orelookups list (eg: malachite->copper)
+        /// </summary>
+        public enum enTypes {DIRECT,SWAP,ORESWAP};
 
         
         static Dictionary<string, List<MacerationRecipe>> maceratelist;
         static Dictionary<string, string> orelookups;
-        static Dictionary<string, int> gradelookups;
+
         public MacerationRecipe()
         {
          
@@ -170,7 +184,7 @@ namespace qptech.src
             if (maceratelist == null) { LoadMacerateLists(api); }
             if (co == null) { return false; }
             if (co.FirstCodePart() == "ore") { return true; }
-            
+            if (co.FirstCodePart() == "nugget") { return true; }
             if (maceratelist.ContainsKey(co.FirstCodePart())) { return true; }
             if (maceratelist.ContainsKey(co.Code.ToString())) { return true; }
             return false;
@@ -202,7 +216,7 @@ namespace qptech.src
                     }
                     if (metalfound)
                     {
-                        int outitemqty = oreitem.Attributes["metalUnits"].AsInt(1);
+                        int outitemqty = oreitem.Attributes["metalUnits"].AsInt(1)+rand.Next(0, 5);
                         
                         Item outputItem = api.World.GetItem(new AssetLocation(outitemcode));
                         if (outputItem != null)
@@ -225,6 +239,17 @@ namespace qptech.src
                     string al = fullcode;
 
                     al = al.Replace(fcp, mr.outputmaterial);
+                    if (mr.type == enTypes.ORESWAP)
+                    {
+                        foreach (string nativemetal in orelookups.Keys)
+                        {
+                            if (fullcode.Contains(nativemetal))
+                            {
+                                al = al.Replace(nativemetal, orelookups[nativemetal]);
+                                al = al.Replace("game", "machines");//THIS IS A HACK PLZ FIX
+                            }
+                        }
+                    }
                     int outqty = mr.outputquantity;
                     if (mr.odds != 100) { outqty = rand.Next(1, mr.outputquantity + 1); }
                     Block outputBlock = api.World.GetBlock(new AssetLocation(al));
@@ -274,12 +299,6 @@ namespace qptech.src
             //maceratelist = new Dictionary<string, List<MacerationRecipe>>();
             maceratelist = api.Assets.TryGet("qptech:config/macerationrecipes.json").ToObject<Dictionary<string, List<MacerationRecipe>>>();
             orelookups = api.Assets.TryGet("qptech:config/orelookups.json").ToObject<Dictionary<string, string>>();
-            
-            gradelookups = new Dictionary<string, int>();
-            gradelookups["poor"] = 10;
-            gradelookups["medium"] = 20;
-            gradelookups["rich"] = 25;
-            gradelookups["bountiful"] = 30;
 
         }
     }

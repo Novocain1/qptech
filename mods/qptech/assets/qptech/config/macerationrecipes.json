@@ -62,6 +62,15 @@
 			"odds": 15,
 			"type": 0
 		}
+	],
+	"nugget": [
+		{
+			"outputmaterial": "orepowder",
+			"outputquantity": 1,
+			"odds": 100,
+			"type": 2
+		}
+
 	]
 
 }

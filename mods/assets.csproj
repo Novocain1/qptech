@@ -233,6 +233,7 @@
     <None Include="qptech\assets\game\blocktypes\tincan-sealed.json" />
     <None Include="qptech\assets\game\blocktypes\tincan-full.json" />
     <None Include="qptech\assets\game\blocktypes\tincan-open.json" />
+    <None Include="qptech\assets\machines\itemtypes\resource\orepowder.json" />
     <None Include="qptech\assets\game\shapes\block\can-full.json" />
     <None Include="qptech\assets\game\shapes\block\can-open.json" />
     <None Include="qptech\assets\game\shapes\block\can-sealed.json" />
@@ -567,9 +568,12 @@
     <Content Include="qptech\assets\machines\textures\block\oak1.png" />
     <Content Include="qptech\assets\machines\textures\block\redfabric.png" />
     <Content Include="qptech\assets\machines\textures\block\shinybrass.png" />
+    <Content Include="qptech\assets\machines\textures\item\resource\orepowder\orepowder-brass.png" />
+    <Content Include="qptech\assets\machines\textures\item\resource\orepowder\orepowder-copper.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="qptechfurniture\assets\furniture\blocktypes\metal\oven\" />
     <Folder Include="qptechfurniture\assets\furniture\textures\block\stone\rock\cabinets\" />
+    <Folder Include="qptech\assets\game\itemtypes\" />
   </ItemGroup>
 </Project>
