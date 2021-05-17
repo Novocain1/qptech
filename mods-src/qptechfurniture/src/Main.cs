@@ -17,6 +17,7 @@ namespace QptechFurniture.src
 			api.RegisterBlockClass("ModdedBlockLiquidContainerBase", typeof(ModdedBlockLiquidContainerBase));
 			api.RegisterBlockClass("BlockCampFire", typeof(BlockCampFire));
 			api.RegisterBlockClass("BlockKiln", typeof(BlockKiln));
+			api.RegisterBlockClass("BlockPlantLongContainer", typeof(BlockPlantLongContainer));
 
 			// Item Class 
 			api.RegisterItemClass("ItemCampFire", typeof(ItemCampFire));
@@ -26,6 +27,7 @@ namespace QptechFurniture.src
 			api.RegisterBlockEntityClass("BlockEntityIceBox", typeof(BlockEntityIceBox));
 			api.RegisterBlockEntityClass("CampFire", typeof(BlockEntityCampFire));
 			api.RegisterBlockEntityClass("Kiln", typeof(BlockEntityKiln));
+			api.RegisterBlockEntityClass("LongPlantContainer", typeof(BlockEntityLongPlantContainer));
 		}
 	}
 }

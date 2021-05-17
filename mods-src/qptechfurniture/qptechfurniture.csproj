@@ -79,6 +79,8 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Compile Include="src\blockEntity\test.cs" />
+    <Compile Include="src\block\test1.cs" />
     <Compile Include="src\inventory\InventorySmelting.cs" />
     <Compile Include="src\blockentityrenderer\Campfire.cs" />
     <Compile Include="src\blockentityrenderer\Kiln.cs" />

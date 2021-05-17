@@ -18,6 +18,7 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="qptechapi\modinfo.json" />
+    <None Include="qptechfurniture\assets\furniture\blocktypes\plantertypes\planter.json" />
     <None Include="qptechfurniture\assets\furniture\blocktypes\stone\campfire.json" />
     <None Include="qptechfurniture\assets\furniture\blocktypes\stone\chopfirewoodpile.json" />
     <None Include="qptechfurniture\assets\furniture\blocktypes\stone\stonekiln.json" />
@@ -39,20 +40,32 @@
     <None Include="qptechfurniture\assets\furniture\shapes\block\metal\freeze\medium\oak-icebox-medium.json" />
     <None Include="qptechfurniture\assets\furniture\shapes\block\metal\smelter-furnace-closed.json" />
     <None Include="qptechfurniture\assets\furniture\shapes\block\metal\stove\castironstove.json" />
+    <None Include="qptechfurniture\assets\furniture\shapes\block\planter\contents-lilyofthevalley.json" />
+    <None Include="qptechfurniture\assets\furniture\shapes\block\planter\contents.json" />
+    <None Include="qptechfurniture\assets\furniture\shapes\block\planter\empty.json" />
+    <None Include="qptechfurniture\assets\furniture\shapes\block\planter\full.json" />
     <None Include="qptechfurniture\assets\furniture\shapes\block\stone\firepits\campfire\cold-normal.json" />
+    <None Include="qptechfurniture\assets\furniture\shapes\block\stone\firepits\campfire\cold-over.json" />
     <None Include="qptechfurniture\assets\furniture\shapes\block\stone\firepits\campfire\cold-spit.json" />
     <None Include="qptechfurniture\assets\furniture\shapes\block\stone\firepits\campfire\cold-wide.json" />
     <None Include="qptechfurniture\assets\furniture\shapes\block\stone\firepits\campfire\construct1-normal.json" />
     <None Include="qptechfurniture\assets\furniture\shapes\block\stone\firepits\campfire\construct2-normal.json" />
     <None Include="qptechfurniture\assets\furniture\shapes\block\stone\firepits\campfire\construct3-normal.json" />
     <None Include="qptechfurniture\assets\furniture\shapes\block\stone\firepits\campfire\construct4-normal.json" />
+    <None Include="qptechfurniture\assets\furniture\shapes\block\stone\firepits\campfire\empty-normal.json" />
+    <None Include="qptechfurniture\assets\furniture\shapes\block\stone\firepits\campfire\empty-over.json" />
+    <None Include="qptechfurniture\assets\furniture\shapes\block\stone\firepits\campfire\empty-spit.json" />
+    <None Include="qptechfurniture\assets\furniture\shapes\block\stone\firepits\campfire\empty-wide.json" />
     <None Include="qptechfurniture\assets\furniture\shapes\block\stone\firepits\campfire\extinct-normal.json" />
+    <None Include="qptechfurniture\assets\furniture\shapes\block\stone\firepits\campfire\extinct-over.json" />
     <None Include="qptechfurniture\assets\furniture\shapes\block\stone\firepits\campfire\extinct-spit.json" />
     <None Include="qptechfurniture\assets\furniture\shapes\block\stone\firepits\campfire\extinct-wide.json" />
     <None Include="qptechfurniture\assets\furniture\shapes\block\stone\firepits\campfire\lit-normal.json" />
+    <None Include="qptechfurniture\assets\furniture\shapes\block\stone\firepits\campfire\lit-over.json" />
     <None Include="qptechfurniture\assets\furniture\shapes\block\stone\firepits\campfire\lit-spit.json" />
     <None Include="qptechfurniture\assets\furniture\shapes\block\stone\firepits\campfire\lit-wide.json" />
     <None Include="qptechfurniture\assets\furniture\shapes\block\stone\firepits\campfire\logs.json" />
+    <None Include="qptechfurniture\assets\furniture\shapes\block\stone\firepits\stove\stove.json" />
     <None Include="qptechfurniture\assets\furniture\shapes\block\stone\kiln\cold-ingot.json" />
     <None Include="qptechfurniture\assets\furniture\shapes\block\stone\kiln\cold-normal.json" />
     <None Include="qptechfurniture\assets\furniture\shapes\block\stone\kiln\cold-smelting.json" />
@@ -60,6 +73,8 @@
     <None Include="qptechfurniture\assets\furniture\shapes\block\stone\kiln\construct2-normal.json" />
     <None Include="qptechfurniture\assets\furniture\shapes\block\stone\kiln\construct3-normal.json" />
     <None Include="qptechfurniture\assets\furniture\shapes\block\stone\kiln\construct4-normal.json" />
+    <None Include="qptechfurniture\assets\furniture\shapes\block\stone\kiln\empty-normal.json" />
+    <None Include="qptechfurniture\assets\furniture\shapes\block\stone\kiln\empty-smelting.json" />
     <None Include="qptechfurniture\assets\furniture\shapes\block\stone\kiln\extinct-ingot.json" />
     <None Include="qptechfurniture\assets\furniture\shapes\block\stone\kiln\extinct-normal.json" />
     <None Include="qptechfurniture\assets\furniture\shapes\block\stone\kiln\extinct-smelting.json" />
@@ -94,6 +109,7 @@
     <None Include="qptechfurniture\assets\furniture\shapes\block\wood\cabinet\lower\acacia\whitemarble\glass\fullplain\cabinet-normal.json" />
     <None Include="qptechfurniture\assets\furniture\shapes\block\wood\cabinet\lower\acacia\whitemarble\glass\halfplain\cabinet-normal.json" />
     <None Include="qptechfurniture\assets\furniture\shapes\block\wood\cabinet\lower\cabinet-block.json" />
+    <None Include="qptechfurniture\assets\furniture\shapes\block\wood\cabinet\lower\cabinet-corner.json" />
     <None Include="qptechfurniture\assets\furniture\shapes\block\wood\cabinet\lower\cabinet-normal.json" />
     <None Include="qptechfurniture\assets\furniture\shapes\block\wood\cabinet\lower\cabinet-table.json" />
     <None Include="qptechfurniture\assets\furniture\shapes\block\wood\cabinet\lower\maple\countertop\cabinet-normal.json" />
@@ -193,9 +209,11 @@
     <None Include="qptechfurniture\assets\furniture\shapes\block\wood\freeze\medium\acacia-icebox-medium.json" />
     <None Include="qptechfurniture\assets\furniture\shapes\block\wood\freeze\medium\maple-icebox-medium.json" />
     <None Include="qptechfurniture\assets\furniture\shapes\block\wood\freeze\medium\oak-icebox-medium.json" />
+    <None Include="qptechfurniture\assets\furniture\shapes\block\wood\freeze\medium\pine-icebox-medium.json" />
     <None Include="qptechfurniture\assets\furniture\shapes\block\wood\freeze\small\acacia-icebox-small.json" />
     <None Include="qptechfurniture\assets\furniture\shapes\block\wood\freeze\small\maple-icebox-small.json" />
     <None Include="qptechfurniture\assets\furniture\shapes\block\wood\freeze\small\oak-icebox-small.json" />
+    <None Include="qptechfurniture\assets\furniture\shapes\block\wood\freeze\small\pine-icebox-small.json" />
     <None Include="qptechfurniture\assets\furniture\shapes\block\wood\sink\single\empty.json" />
     <None Include="qptechfurniture\assets\furniture\shapes\item\grassbundle.json" />
     <None Include="qptechfurniture\assets\furniture\shapes\item\stone\firepitbase.json" />
@@ -238,7 +256,6 @@
     <None Include="qptech\assets\game\shapes\block\can-open.json" />
     <None Include="qptech\assets\game\shapes\block\can-sealed.json" />
     <None Include="qptech\assets\machines\blocktypes\battery.json" />
-    <None Include="qptech\assets\machines\blocktypes\blockcover.json" />
     <None Include="qptech\assets\machines\blocktypes\blocklantern.json" />
     <None Include="qptech\assets\machines\blocktypes\brassringedbarrel.json" />
     <None Include="qptech\assets\machines\blocktypes\cabinet.json" />
@@ -365,11 +382,13 @@
     <None Include="qptech\assets\machines\shapes\item\tool\screwdriver.json" />
     <None Include="qptech\assets\machines\shapes\item\tool\screwdriverhead.json" />
     <None Include="qptech\assets\machines\shapes\item\worn\jetpack.json" />
+    <None Include="qptech\assets\machines\textures\block\generator\machinery-glass.aseprite" />
     <None Include="qptech\assets\machines\textures\block\stone\hopper\front-1.aseprite" />
     <None Include="qptech\assets\machines\textures\block\stone\hopper\front-2.aseprite" />
     <None Include="qptech\assets\qptech\config\clayformerswaps.json" />
     <None Include="qptech\assets\qptech\config\macerationrecipes.json" />
     <None Include="qptech\assets\qptech\config\metalpressswaps.json" />
+    <None Include="qptech\assets\qptech\config\orelookups.json" />
     <None Include="qptech\modinfo.json" />
     <None Include="qptech\qptech1.1.0-pre1.zip" />
     <None Include="qptech\qptech1.1.1-pre2.zip" />
@@ -472,16 +491,19 @@
     <Content Include="qptechfurniture\assets\furniture\textures\block\stone\rock\claystone\claystone.png" />
     <Content Include="qptechfurniture\assets\furniture\textures\block\stone\rock\conglomerate\conglomerate.png" />
     <Content Include="qptechfurniture\assets\furniture\textures\block\stone\rock\granite\acacia.png" />
+    <Content Include="qptechfurniture\assets\furniture\textures\block\stone\rock\granite\countertop.png" />
     <Content Include="qptechfurniture\assets\furniture\textures\block\stone\rock\granite\detail.png" />
     <Content Include="qptechfurniture\assets\furniture\textures\block\stone\rock\granite\granite.png" />
     <Content Include="qptechfurniture\assets\furniture\textures\block\stone\rock\granite\maple.png" />
     <Content Include="qptechfurniture\assets\furniture\textures\block\stone\rock\granite\oak.png" />
+    <Content Include="qptechfurniture\assets\furniture\textures\block\stone\rock\granite\pine.png" />
     <Content Include="qptechfurniture\assets\furniture\textures\block\stone\rock\greenmarble\acacia.png" />
     <Content Include="qptechfurniture\assets\furniture\textures\block\stone\rock\greenmarble\countertop.png" />
     <Content Include="qptechfurniture\assets\furniture\textures\block\stone\rock\greenmarble\detail.png" />
     <Content Include="qptechfurniture\assets\furniture\textures\block\stone\rock\greenmarble\greenmarble1.png" />
     <Content Include="qptechfurniture\assets\furniture\textures\block\stone\rock\greenmarble\maple.png" />
     <Content Include="qptechfurniture\assets\furniture\textures\block\stone\rock\greenmarble\oak.png" />
+    <Content Include="qptechfurniture\assets\furniture\textures\block\stone\rock\greenmarble\pine.png" />
     <Content Include="qptechfurniture\assets\furniture\textures\block\stone\rock\limestone\limestone.png" />
     <Content Include="qptechfurniture\assets\furniture\textures\block\stone\rock\peridotite\peridotite.png" />
     <Content Include="qptechfurniture\assets\furniture\textures\block\stone\rock\phyllite\1.png" />
@@ -490,6 +512,7 @@
     <Content Include="qptechfurniture\assets\furniture\textures\block\stone\rock\phyllite\detail.png" />
     <Content Include="qptechfurniture\assets\furniture\textures\block\stone\rock\phyllite\maple.png" />
     <Content Include="qptechfurniture\assets\furniture\textures\block\stone\rock\phyllite\oak.png" />
+    <Content Include="qptechfurniture\assets\furniture\textures\block\stone\rock\phyllite\pine.png" />
     <Content Include="qptechfurniture\assets\furniture\textures\block\stone\rock\redmarble\redmarble.png" />
     <Content Include="qptechfurniture\assets\furniture\textures\block\stone\rock\sandstone\sandstone.png" />
     <Content Include="qptechfurniture\assets\furniture\textures\block\stone\rock\shale.png" />
@@ -499,6 +522,7 @@
     <Content Include="qptechfurniture\assets\furniture\textures\block\stone\rock\shale\detail.png" />
     <Content Include="qptechfurniture\assets\furniture\textures\block\stone\rock\shale\maple.png" />
     <Content Include="qptechfurniture\assets\furniture\textures\block\stone\rock\shale\oak.png" />
+    <Content Include="qptechfurniture\assets\furniture\textures\block\stone\rock\shale\pine.png" />
     <Content Include="qptechfurniture\assets\furniture\textures\block\stone\rock\slate.png" />
     <Content Include="qptechfurniture\assets\furniture\textures\block\stone\rock\slate\slate.png" />
     <Content Include="qptechfurniture\assets\furniture\textures\block\stone\rock\stone.png" />
@@ -508,6 +532,7 @@
     <Content Include="qptechfurniture\assets\furniture\textures\block\stone\rock\whitemarble\detail.png" />
     <Content Include="qptechfurniture\assets\furniture\textures\block\stone\rock\whitemarble\maple.png" />
     <Content Include="qptechfurniture\assets\furniture\textures\block\stone\rock\whitemarble\oak.png" />
+    <Content Include="qptechfurniture\assets\furniture\textures\block\stone\rock\whitemarble\pine.png" />
     <Content Include="qptechfurniture\assets\furniture\textures\block\stone\sandstone\sandstone.png" />
     <Content Include="qptechfurniture\assets\furniture\textures\block\stone\shale\1.png" />
     <Content Include="qptechfurniture\assets\furniture\textures\block\stone\shale\acacia.png" />
@@ -575,15 +600,23 @@
     <Content Include="qptech\assets\game\sounds\waterslosh.ogg" />
     <Content Include="qptech\assets\game\textures\block\tincan.png" />
     <Content Include="qptech\assets\machines\textures\block\castiron.png" />
+    <Content Include="qptech\assets\machines\textures\block\generator\fan.png" />
+    <Content Include="qptech\assets\machines\textures\block\generator\machinery-back.png" />
+    <Content Include="qptech\assets\machines\textures\block\generator\machinery-border-small.png" />
+    <Content Include="qptech\assets\machines\textures\block\generator\machinery-border.png" />
+    <Content Include="qptech\assets\machines\textures\block\generator\machinery-fan.png" />
+    <Content Include="qptech\assets\machines\textures\block\generator\machinery-gate.png" />
+    <Content Include="qptech\assets\machines\textures\block\generator\machinery-glass.png" />
+    <Content Include="qptech\assets\machines\textures\block\generator\machinery-top.png" />
     <Content Include="qptech\assets\machines\textures\block\lightblock.png" />
     <Content Include="qptech\assets\machines\textures\block\machinery-bighatch.png" />
-    <Content Include="qptech\assets\machines\textures\block\machinery-border.png" />
     <Content Include="qptech\assets\machines\textures\block\machinery-grate.png" />
     <Content Include="qptech\assets\machines\textures\block\machinery-openhatch.png" />
     <Content Include="qptech\assets\machines\textures\block\machinery-piledown.png" />
     <Content Include="qptech\assets\machines\textures\block\machinery-pileup.png" />
     <Content Include="qptech\assets\machines\textures\block\machinery-tin.png" />
     <Content Include="qptech\assets\machines\textures\block\machinery.png" />
+    <Content Include="qptech\assets\machines\textures\block\metal\copper-wire.png" />
     <Content Include="qptech\assets\machines\textures\block\metal\hopper\machinery-border.png" />
     <Content Include="qptech\assets\machines\textures\block\metal\hopper\tinbronze1.png" />
     <Content Include="qptech\assets\machines\textures\block\notchedbrass.png" />
@@ -599,5 +632,6 @@
   <ItemGroup>
     <Folder Include="qptechfurniture\assets\furniture\blocktypes\metal\oven\" />
     <Folder Include="qptechfurniture\assets\furniture\textures\block\stone\rock\cabinets\" />
+    <Folder Include="qptechfurniture\assets\qptech\config\" />
   </ItemGroup>
 </Project>

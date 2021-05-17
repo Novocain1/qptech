@@ -49,6 +49,17 @@
 			"rotateY": 180
 		}
 	},
+	"textures": {
+		"machinery-back": { "base": "block/generator/machinery-back" },
+		"fan": { "base": "block/generator/fan" },
+		"machinery-gate": { "base": "block/generator/machinery-gate" },
+		"machinery-fan": { "base": "block/generator/machinery-fan" },
+		"machinery-glass": { "base": "block/generator/machinery-glass" },
+		"machinery-top": { "base": "block/generator/machinery-top" },
+		"copper": { "base": "game:block/metal/ingot/copper" },
+		"machinery": { "base": "block/generator/machinery-border-small" },
+		"bronze": { "base": "game:block/metal/sheet/tinbronze1" }
+	},
 	"resistance": 1,
 	"sideAo": { "all": false },
 	"sidesolid": {
