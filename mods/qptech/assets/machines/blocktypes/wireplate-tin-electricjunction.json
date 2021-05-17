@@ -1,0 +1,43 @@
+{
+	code: "wireplate",
+	class: "BlockWire",
+	entityclass: "BEEWire",
+	variantgroups: [
+		{ code: "type", states: ["tin-electricjunction"] }
+	],
+	creativeinventory: {
+		"general": [ "*" ],
+		"qptech": [ "*" ]
+	},
+	attributesByType: {
+		
+		"*tin-electricjunction": {
+			"maxAmps": 16,
+			"maxVolts": 16,
+			"capacitance": 8,
+			"receptionFaces": [ "up", "down", "north", "south", "east", "west" ],
+			"distributionFaces": [ "up", "down", "north", "south", "east", "west" ]
+		}
+	},
+	blockmaterial: "Metal",
+	drawtype: "json",
+	shape: { base: "block/wireplate-{type}" },
+	resistance: 1,
+	sideopaque: {
+		all: false
+	},
+	"sidesolid": {
+		"up": true,
+		"down": true,
+		"north": false,
+		"east": false,
+		"south": false,
+		"west":  false
+	},
+	sounds: {
+		"place": "game:block/anvil",
+		"walk": "game:walk/stone"
+	}
+
+
+}

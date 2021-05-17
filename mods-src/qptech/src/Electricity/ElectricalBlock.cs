@@ -28,5 +28,15 @@ namespace qptech.src
             }
             return base.OnBlockInteractStart(world, byPlayer, blockSel);
         }
+
+        public override void OnNeighbourBlockChange(IWorldAccessor world, BlockPos pos, BlockPos neibpos)
+        {
+            BEElectric bee = world.BlockAccessor.GetBlockEntity(pos) as BEElectric;
+            if (bee != null)
+            {
+                bee.FindConnections();
+            }
+            base.OnNeighbourBlockChange(world, pos, neibpos);
+        }
     }
 }

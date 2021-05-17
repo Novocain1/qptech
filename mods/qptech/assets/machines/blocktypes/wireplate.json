@@ -3,7 +3,10 @@
 	class: "BlockWire",
 	entityclass: "BEEWire",
 	variantgroups: [
-		{ code: "type", states: ["tin-4a", "tin-2a"] }
+		{
+			code: "type",
+			states: [ "tin-4a", "tin-2a" ]
+		}
 	],
 	creativeinventory: {
 		"general": [ "*" ],
@@ -11,7 +14,12 @@
 	},
 	attributesByType: {
 		"*tin-4a":{maxAmps:4,maxVolts:16,capacitance:4},
-		"*tin-2a":{maxAmps:2,maxVolts:16,capacitance:2}
+		"*tin-2a": {
+			maxAmps: 2,
+			maxVolts: 16,
+			capacitance: 2
+		},
+		
 	},
 	blockmaterial: "Metal",
 	drawtype: "json",

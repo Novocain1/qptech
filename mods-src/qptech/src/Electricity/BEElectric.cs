@@ -90,11 +90,32 @@ namespace qptech.src
             }
 
         }
+        
         public virtual void FindConnections()
         {
+            ClearConnections(); 
             FindInputConnections();
             FindOutputConnections();
 
+        }
+        void ClearConnections()
+        {
+            if (inputConnections != null)
+            {
+                foreach (IElectricity ie in inputConnections)
+                {
+                    if (ie != null) { ie.RemoveConnection(this); }
+                }
+                inputConnections = new List<IElectricity>();
+            }
+            if (outputConnections != null)
+            {
+                foreach (IElectricity ie in outputConnections)
+                {
+                    if (ie != null) { ie.RemoveConnection(this); }
+                }
+                outputConnections = new List<IElectricity>();
+            }
         }
         protected virtual void FindInputConnections()
         {

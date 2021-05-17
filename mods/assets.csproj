@@ -268,6 +268,7 @@
     <None Include="qptech\assets\machines\blocktypes\sink.json" />
     <None Include="qptech\assets\machines\blocktypes\smelterfurnace.json" />
     <None Include="qptech\assets\machines\blocktypes\statusflag-up.json" />
+    <None Include="qptech\assets\machines\blocktypes\wireplate-tin-electricjunction.json" />
     <None Include="qptech\assets\machines\blocktypes\wireplate.json" />
     <None Include="qptech\assets\machines\config\handbook\qptech.json" />
     <None Include="qptech\assets\machines\itemtypes\part\drilledplate.json" />
@@ -331,6 +332,7 @@
     <None Include="qptech\assets\machines\shapes\block\castironovenlarge.json" />
     <None Include="qptech\assets\machines\shapes\block\clayformer-bowl.json" />
     <None Include="qptech\assets\machines\shapes\block\electricforge-lv.json" />
+    <None Include="qptech\assets\machines\shapes\block\wireplate-tin-electricjunction.json" />
     <None Include="qptech\assets\machines\shapes\block\element-lit.json" />
     <None Include="qptech\assets\machines\shapes\block\element-unlit.json" />
     <None Include="qptech\assets\machines\shapes\block\firepit-loader.json" />

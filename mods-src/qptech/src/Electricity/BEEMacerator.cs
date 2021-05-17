@@ -184,7 +184,7 @@ namespace qptech.src
             if (maceratelist == null) { LoadMacerateLists(api); }
             if (co == null) { return false; }
             if (co.FirstCodePart() == "ore") { return true; }
-            if (co.FirstCodePart() == "nugget") { return true; }
+            if (co.FirstCodePart() == "nugget") { return false; } //disabling nugget processing for now
             if (maceratelist.ContainsKey(co.FirstCodePart())) { return true; }
             if (maceratelist.ContainsKey(co.Code.ToString())) { return true; }
             return false;
