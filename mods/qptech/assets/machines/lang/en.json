@@ -1,5 +1,6 @@
 {
 	"block-machineryblock": "Bronze Machine Hull",
+	"block-ringedbarrel": "Barrel With A Wooden Ring",
 	"blockdesc-machineryblock": "This intermediate part is the basis of LV electrical items. Also looks cool if you have lots of extra materials.",
 	"block-firepitloader": "Bronze Fire Pit Loader (Unpowered)",
 	"blockdesc-firepitloader": "Takes items from a container above itself and pushes them into firepits below itself",

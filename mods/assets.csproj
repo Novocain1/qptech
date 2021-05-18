@@ -265,6 +265,7 @@
     <None Include="qptech\assets\machines\blocktypes\creativegenerator.json" />
     <None Include="qptech\assets\machines\blocktypes\dummy-element.json" />
     <None Include="qptech\assets\machines\blocktypes\electricforge.json" />
+    <None Include="qptech\assets\machines\blocktypes\firebox.json" />
     <None Include="qptech\assets\machines\blocktypes\firepitloader.json" />
     <None Include="qptech\assets\machines\blocktypes\firepitstoker.json" />
     <None Include="qptech\assets\machines\blocktypes\firepitunloader.json" />
@@ -295,6 +296,7 @@
     <None Include="qptech\assets\machines\itemtypes\part\rod.json" />
     <None Include="qptech\assets\machines\itemtypes\part\screw.json" />
     <None Include="qptech\assets\machines\itemtypes\part\wire.json" />
+    <None Include="qptech\assets\machines\itemtypes\resource\orepowder.json" />
     <None Include="qptech\assets\machines\itemtypes\tool\jetpack.json" />
     <None Include="qptech\assets\machines\itemtypes\tool\jetpackcontrol.json" />
     <None Include="qptech\assets\machines\itemtypes\tool\pullplate.json" />
@@ -349,7 +351,6 @@
     <None Include="qptech\assets\machines\shapes\block\castironovenlarge.json" />
     <None Include="qptech\assets\machines\shapes\block\clayformer-bowl.json" />
     <None Include="qptech\assets\machines\shapes\block\electricforge-lv.json" />
-    <None Include="qptech\assets\machines\shapes\block\wireplate-tin-electricjunction.json" />
     <None Include="qptech\assets\machines\shapes\block\element-lit.json" />
     <None Include="qptech\assets\machines\shapes\block\element-unlit.json" />
     <None Include="qptech\assets\machines\shapes\block\firepit-loader.json" />
@@ -367,8 +368,10 @@
     <None Include="qptech\assets\machines\shapes\block\smelter-furnace-closed.json" />
     <None Include="qptech\assets\machines\shapes\block\statusflag-up.json" />
     <None Include="qptech\assets\machines\shapes\block\statusflag.json" />
+    <None Include="qptech\assets\machines\shapes\block\stone\firebox.json" />
     <None Include="qptech\assets\machines\shapes\block\wireplate-tin-2a.json" />
     <None Include="qptech\assets\machines\shapes\block\wireplate-tin-4a.json" />
+    <None Include="qptech\assets\machines\shapes\block\wireplate-tin-electricjunction.json" />
     <None Include="qptech\assets\machines\shapes\item\part\drilledplate.json" />
     <None Include="qptech\assets\machines\shapes\item\part\machineplate.json" />
     <None Include="qptech\assets\machines\shapes\item\part\mold-metalplate.json" />
@@ -610,6 +613,8 @@
     <Content Include="qptech\assets\machines\textures\block\generator\machinery-top.png" />
     <Content Include="qptech\assets\machines\textures\block\lightblock.png" />
     <Content Include="qptech\assets\machines\textures\block\machinery-bighatch.png" />
+    <Content Include="qptech\assets\machines\textures\block\machinery-firebox-back.png" />
+    <Content Include="qptech\assets\machines\textures\block\machinery-firebox.png" />
     <Content Include="qptech\assets\machines\textures\block\machinery-grate.png" />
     <Content Include="qptech\assets\machines\textures\block\machinery-openhatch.png" />
     <Content Include="qptech\assets\machines\textures\block\machinery-piledown.png" />
@@ -626,6 +631,8 @@
     <Content Include="qptech\assets\machines\textures\block\stone\hopper\front-1.png" />
     <Content Include="qptech\assets\machines\textures\block\stone\hopper\front-granite.png" />
     <Content Include="qptech\assets\machines\textures\block\wood\hopper\frame.png" />
+    <Content Include="qptech\assets\machines\textures\item\resource\orepowder\orepowder-brass.png" />
+    <Content Include="qptech\assets\machines\textures\item\resource\orepowder\orepowder-copper.png" />
     <Content Include="qptech\qptech.dll" />
     <Content Include="qptech\qptech.pdb" />
   </ItemGroup>

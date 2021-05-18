@@ -1,18 +1,26 @@
 {
-	code: "brassringedbarrel",
-	creativeinventory: {
+	"code": "ringedbarrel",
+	"creativeinventory": {
 		"general": [ "*" ],
-		
+		"qptech": [ "*" ]
+
 	},
-	blockmaterial: "Metal",
-	drawtype: "json",
+	"blockmaterial": "Metal",
+	"drawtype": "json",
 	"shape": { "base": "block/brassringbarrel" },
-	resistance: 1,
-	sideopaque: {
-		all: false
+	"textures": {
+		"walls": { "base": "block/generator/machinery-back" },
+		"rings": { "base": "block/wood/hopper/frame" },
+		"floor": { "base": "game:block/wood/planks/oak1" },
+		"inside": { "base": "game:block/wood/barrel/inside" },
+		"leg": { "base": "block/generator/machinery-border" }
+	},
+	"resistance": 1,
+	"sideopaque": {
+		"all": false
 	},
 
-	sounds: {
+	"sounds": {
 		"place": "game:block/anvil",
 		"walk": "game:walk/stone"
 	}
