@@ -8,9 +8,6 @@
 	"textureSizes": {
 	},
 	"textures": {
-		"redfabric": "block/redfabric",
-		"machinery-tin": "block/machinery-tin",
-		"oak1": "block/oak1"
 	},
 	"elements": [
 		{
@@ -57,8 +54,8 @@
 				},
 				{
 					"name": "Axle",
-					"from": [ -1.0, 1.0, 0.25 ], 
-					"to": [ 7.0, 1.5, 0.75 ], 
+					"from": [ -1.0, 0.25, 0.25 ], 
+					"to": [ 7.0, 0.75, 0.75 ], 
 					"rotationOrigin": [ 3.0, 1.0, 0.0 ],
 					"rotationX": -90.0,
 					"faces": {

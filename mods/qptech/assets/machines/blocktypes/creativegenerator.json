@@ -56,9 +56,9 @@
 		"machinery-fan": { "base": "block/generator/machinery-fan" },
 		"machinery-glass": { "base": "block/generator/machinery-glass" },
 		"machinery-top": { "base": "block/generator/machinery-top" },
-		"copper": { "base": "game:block/metal/ingot/copper" },
 		"machinery": { "base": "block/generator/machinery-border-small" },
-		"bronze": { "base": "game:block/metal/sheet/tinbronze1" }
+		"bronze": { "base": "game:block/metal/sheet/tinbronze1" },
+		"wires": { "base": "block/wires" }
 	},
 	"resistance": 1,
 	"sideAo": { "all": false },

@@ -257,6 +257,7 @@
     <None Include="qptech\assets\game\shapes\block\can-sealed.json" />
     <None Include="qptech\assets\machines\blocktypes\battery.json" />
     <None Include="qptech\assets\machines\blocktypes\blocklantern.json" />
+    <None Include="qptech\assets\machines\blocktypes\blocklightbulb.json" />
     <None Include="qptech\assets\machines\blocktypes\brassringedbarrel.json" />
     <None Include="qptech\assets\machines\blocktypes\cabinet.json" />
     <None Include="qptech\assets\machines\blocktypes\castironovenlarge.json" />
@@ -359,6 +360,7 @@
     <None Include="qptech\assets\machines\shapes\block\generator.json" />
     <None Include="qptech\assets\machines\shapes\block\hiddenhopper.json" />
     <None Include="qptech\assets\machines\shapes\block\itemhatch.json" />
+    <None Include="qptech\assets\machines\shapes\block\lightbuk.json" />
     <None Include="qptech\assets\machines\shapes\block\macerator-lv.json" />
     <None Include="qptech\assets\machines\shapes\block\metalpress.json" />
     <None Include="qptech\assets\machines\shapes\block\metal\chute\cross.json" />
@@ -369,6 +371,9 @@
     <None Include="qptech\assets\machines\shapes\block\statusflag-up.json" />
     <None Include="qptech\assets\machines\shapes\block\statusflag.json" />
     <None Include="qptech\assets\machines\shapes\block\stone\firebox.json" />
+    <None Include="qptech\assets\machines\shapes\block\wireplate-tin-2a-cross.json" />
+    <None Include="qptech\assets\machines\shapes\block\wireplate-tin-2a-l.json" />
+    <None Include="qptech\assets\machines\shapes\block\wireplate-tin-2a-t.json" />
     <None Include="qptech\assets\machines\shapes\block\wireplate-tin-2a.json" />
     <None Include="qptech\assets\machines\shapes\block\wireplate-tin-4a.json" />
     <None Include="qptech\assets\machines\shapes\block\wireplate-tin-electricjunction.json" />
@@ -386,6 +391,7 @@
     <None Include="qptech\assets\machines\shapes\item\tool\screwdriverhead.json" />
     <None Include="qptech\assets\machines\shapes\item\worn\jetpack.json" />
     <None Include="qptech\assets\machines\textures\block\generator\machinery-glass.aseprite" />
+    <None Include="qptech\assets\machines\textures\block\glass.aseprite" />
     <None Include="qptech\assets\machines\textures\block\stone\hopper\front-1.aseprite" />
     <None Include="qptech\assets\machines\textures\block\stone\hopper\front-2.aseprite" />
     <None Include="qptech\assets\qptech\config\clayformerswaps.json" />
@@ -395,6 +401,36 @@
     <None Include="qptech\modinfo.json" />
     <None Include="qptech\qptech1.1.0-pre1.zip" />
     <None Include="qptech\qptech1.1.1-pre2.zip" />
+    <None Include="roofs\assets\blocks\blocktypes\rooftypes\roof-others.json" />
+    <None Include="roofs\assets\blocks\blocktypes\rooftypes\roof.json" />
+    <None Include="roofs\assets\blocks\lang\en.json" />
+    <None Include="roofs\assets\blocks\recipes\grid\rooftypes\normal.json" />
+    <None Include="roofs\assets\blocks\shapes\block\roof\crate-supplies.json" />
+    <None Include="roofs\assets\blocks\shapes\block\roof\types\brick-walls\roof-free-corner.json" />
+    <None Include="roofs\assets\blocks\shapes\block\roof\types\brick-walls\roof-free-flat.json" />
+    <None Include="roofs\assets\blocks\shapes\block\roof\types\brick-walls\roof-free-hingover.json" />
+    <None Include="roofs\assets\blocks\shapes\block\roof\types\brick-walls\roof-free-normal.json" />
+    <None Include="roofs\assets\blocks\shapes\block\roof\types\brick-walls\roof-free-top.json" />
+    <None Include="roofs\assets\blocks\shapes\block\roof\types\brick-walls\roof-free-window.json" />
+    <None Include="roofs\assets\blocks\shapes\block\roof\types\brick-walls\roof-snow-corner.json" />
+    <None Include="roofs\assets\blocks\shapes\block\roof\types\brick-walls\roof-snow-flat.json" />
+    <None Include="roofs\assets\blocks\shapes\block\roof\types\brick-walls\roof-snow-hingover.json" />
+    <None Include="roofs\assets\blocks\shapes\block\roof\types\brick-walls\roof-snow-normal.json" />
+    <None Include="roofs\assets\blocks\shapes\block\roof\types\brick-walls\roof-snow-top.json" />
+    <None Include="roofs\assets\blocks\shapes\block\roof\types\wood beans\roof-free-corner.json" />
+    <None Include="roofs\assets\blocks\shapes\block\roof\types\wood beans\roof-free-flat.json" />
+    <None Include="roofs\assets\blocks\shapes\block\roof\types\wood beans\roof-free-hingover.json" />
+    <None Include="roofs\assets\blocks\shapes\block\roof\types\wood beans\roof-free-normal.json" />
+    <None Include="roofs\assets\blocks\shapes\block\roof\types\wood beans\roof-free-top.json" />
+    <None Include="roofs\assets\blocks\shapes\block\roof\types\wood beans\roof-free-window.json" />
+    <None Include="roofs\assets\blocks\shapes\block\roof\types\wood beans\roof-snow-corner.json" />
+    <None Include="roofs\assets\blocks\shapes\block\roof\types\wood beans\roof-snow-flat.json" />
+    <None Include="roofs\assets\blocks\shapes\block\roof\types\wood beans\roof-snow-hingover.json" />
+    <None Include="roofs\assets\blocks\shapes\block\roof\types\wood beans\roof-snow-normal.json" />
+    <None Include="roofs\assets\blocks\shapes\block\roof\types\wood beans\roof-snow-top.json" />
+    <None Include="roofs\assets\blocks\shapes\item\roof\types\block\corner-support.json" />
+    <None Include="roofs\assets\blocks\shapes\item\roof\types\block\corner.json" />
+    <None Include="roofs\assets\blocks\shapes\item\roof\types\wood-bean.json" />
     <None Include="roofs\assets\game\blocktypes\rooftypes\roof-accessories.json" />
     <None Include="roofs\assets\game\blocktypes\rooftypes\roof.json" />
     <None Include="roofs\assets\game\shapes\block\roof\types\roof-free-corner.json" />
@@ -611,9 +647,11 @@
     <Content Include="qptech\assets\machines\textures\block\generator\machinery-gate.png" />
     <Content Include="qptech\assets\machines\textures\block\generator\machinery-glass.png" />
     <Content Include="qptech\assets\machines\textures\block\generator\machinery-top.png" />
+    <Content Include="qptech\assets\machines\textures\block\glass.png" />
     <Content Include="qptech\assets\machines\textures\block\lightblock.png" />
     <Content Include="qptech\assets\machines\textures\block\machinery-bighatch.png" />
     <Content Include="qptech\assets\machines\textures\block\machinery-firebox-back.png" />
+    <Content Include="qptech\assets\machines\textures\block\machinery-firebox-top-export.png" />
     <Content Include="qptech\assets\machines\textures\block\machinery-firebox.png" />
     <Content Include="qptech\assets\machines\textures\block\machinery-grate.png" />
     <Content Include="qptech\assets\machines\textures\block\machinery-openhatch.png" />
@@ -630,6 +668,7 @@
     <Content Include="qptech\assets\machines\textures\block\shinybrass.png" />
     <Content Include="qptech\assets\machines\textures\block\stone\hopper\front-1.png" />
     <Content Include="qptech\assets\machines\textures\block\stone\hopper\front-granite.png" />
+    <Content Include="qptech\assets\machines\textures\block\wires.png" />
     <Content Include="qptech\assets\machines\textures\block\wood\hopper\frame.png" />
     <Content Include="qptech\assets\machines\textures\item\resource\orepowder\orepowder-brass.png" />
     <Content Include="qptech\assets\machines\textures\item\resource\orepowder\orepowder-copper.png" />
@@ -640,5 +679,7 @@
     <Folder Include="qptechfurniture\assets\furniture\blocktypes\metal\oven\" />
     <Folder Include="qptechfurniture\assets\furniture\textures\block\stone\rock\cabinets\" />
     <Folder Include="qptechfurniture\assets\qptech\config\" />
+    <Folder Include="qptech\assets\machines\shapes\block\wires\" />
+    <Folder Include="roofs\assets\blocks\itemtypes\rooftypes\" />
   </ItemGroup>
 </Project>
