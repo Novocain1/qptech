@@ -1,0 +1,107 @@
+{
+	"editor": {
+		"allAngles": false,
+		"entityTextureMode": false
+	},
+	"textureWidth": 16,
+	"textureHeight": 16,
+	"textureSizes": {
+	},
+	"textures": {
+		"redfabric": "block/redfabric",
+		"machinery-tin": "block/machinery-tin",
+		"oak1": "block/oak1"
+	},
+	"elements": [
+		{
+			"name": "Base",
+			"from": [ 5.0, 0.0, 5.0 ], 
+			"to": [ 11.0, 1.0, 11.0 ], 
+			"rotationOrigin": [ 5.0, 0.0, 5.0 ],
+			"faces": {
+				"north": { "texture": "#oak1", "uv": [ 0.0, 0.0, 6.0, 1.0 ] },
+				"east": { "texture": "#oak1", "uv": [ 0.0, 0.0, 6.0, 1.0 ] },
+				"south": { "texture": "#oak1", "uv": [ 0.0, 0.0, 6.0, 1.0 ] },
+				"west": { "texture": "#oak1", "uv": [ 0.0, 0.0, 6.0, 1.0 ] },
+				"up": { "texture": "#oak1", "uv": [ 0.0, 0.0, 6.0, 6.0 ] },
+				"down": { "texture": "#oak1", "uv": [ 0.0, 0.0, 6.0, 6.0 ] }
+			}
+		},
+		{
+			"name": "Strut",
+			"from": [ 5.0, 1.0, 6.0 ], 
+			"to": [ 6.0, 4.0, 7.0 ], 
+			"rotationOrigin": [ 5.0, 1.0, 6.0 ],
+			"faces": {
+				"north": { "texture": "#machinery-tin", "uv": [ 0.0, 0.0, 1.0, 3.0 ] },
+				"east": { "texture": "#machinery-tin", "uv": [ 0.0, 0.0, 1.0, 3.0 ] },
+				"south": { "texture": "#machinery-tin", "uv": [ 0.0, 0.0, 1.0, 3.0 ] },
+				"west": { "texture": "#machinery-tin", "uv": [ 0.0, 0.0, 1.0, 3.0 ] },
+				"up": { "texture": "#machinery-tin", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
+				"down": { "texture": "#machinery-tin", "uv": [ 0.0, 0.0, 1.0, 1.0 ] }
+			},
+			"children": [
+				{
+					"name": "Strut3",
+					"from": [ 5.0, 0.0, 0.0 ], 
+					"to": [ 6.0, 3.0, 1.0 ], 
+					"rotationOrigin": [ 5.0, 0.0, 0.0 ],
+					"faces": {
+						"north": { "texture": "#machinery-tin", "uv": [ 0.0, 0.0, 1.0, 3.0 ] },
+						"east": { "texture": "#machinery-tin", "uv": [ 0.0, 0.0, 1.0, 3.0 ] },
+						"south": { "texture": "#machinery-tin", "uv": [ 0.0, 0.0, 1.0, 3.0 ] },
+						"west": { "texture": "#machinery-tin", "uv": [ 0.0, 0.0, 1.0, 3.0 ] },
+						"up": { "texture": "#machinery-tin", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
+						"down": { "texture": "#machinery-tin", "uv": [ 0.0, 0.0, 1.0, 1.0 ] }
+					}
+				},
+				{
+					"name": "Axle",
+					"from": [ -1.0, 0.25, 0.25 ], 
+					"to": [ 7.0, 0.75, 0.75 ], 
+					"rotationOrigin": [ 3.0, 1.0, 0.0 ],
+					"rotationX": -90.0,
+					"faces": {
+						"north": { "texture": "#machinery-tin", "uv": [ 0.0, 0.0, 8.0, 0.5 ] },
+						"east": { "texture": "#machinery-tin", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"south": { "texture": "#machinery-tin", "uv": [ 0.0, 0.0, 8.0, 0.5 ] },
+						"west": { "texture": "#machinery-tin", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"up": { "texture": "#machinery-tin", "uv": [ 0.0, 0.0, 8.0, 0.5 ] },
+						"down": { "texture": "#machinery-tin", "uv": [ 0.0, 0.0, 8.0, 0.5 ] }
+					},
+					"children": [
+						{
+							"name": "Flag Pole",
+							"from": [ 3.9988, 0.25, -1.4972 ], 
+							"to": [ 8.9988, 0.75, -0.9972 ], 
+							"rotationOrigin": [ 4.0, 0.0, -1.25 ],
+							"rotationY": -89.9802127184967,
+							"faces": {
+								"north": { "texture": "#machinery-tin", "uv": [ 0.0, 0.0, 5.0, 0.5 ] },
+								"east": { "texture": "#machinery-tin", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+								"south": { "texture": "#machinery-tin", "uv": [ 0.0, 0.0, 5.0, 0.5 ] },
+								"west": { "texture": "#machinery-tin", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+								"up": { "texture": "#machinery-tin", "uv": [ 0.0, 0.0, 5.0, 0.5 ] },
+								"down": { "texture": "#machinery-tin", "uv": [ 0.0, 0.0, 5.0, 0.5 ] }
+							}
+						},
+						{
+							"name": "Flag Pole6",
+							"from": [ 4.0, 0.5, 2.62 ], 
+							"to": [ 6.0, 3.0, 2.87 ], 
+							"rotationOrigin": [ 4.0, 0.0, 2.75 ],
+							"rotationY": -89.9802127184967,
+							"faces": {
+								"north": { "texture": "#redfabric", "uv": [ 0.0, 0.0, 2.0, 2.5 ] },
+								"east": { "texture": "#redfabric", "uv": [ 0.0, 0.0, 0.5, 2.5 ] },
+								"south": { "texture": "#redfabric", "uv": [ 0.0, 0.0, 2.0, 2.5 ] },
+								"west": { "texture": "#redfabric", "uv": [ 0.0, 0.0, 0.5, 2.5 ] },
+								"up": { "texture": "#redfabric", "uv": [ 0.0, 0.0, 2.0, 0.5 ] },
+								"down": { "texture": "#redfabric", "uv": [ 0.0, 0.0, 2.0, 0.5 ] }
+							}
+						}
+					]
+				}
+			]
+		}
+	]}

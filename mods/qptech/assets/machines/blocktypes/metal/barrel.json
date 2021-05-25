@@ -1,0 +1,28 @@
+{
+	"code": "ringedbarrel",
+	"creativeinventory": {
+		"general": [ "*" ],
+		"qptech": [ "*" ]
+
+	},
+	"blockmaterial": "Metal",
+	"drawtype": "json",
+	"shape": { "base": "block/metal/barrel" },
+	"textures": {
+		"walls": { "base": "block/metal/generator/machinery-back" },
+		"rings": { "base": "block/wood/hopper/frame" },
+		"floor": { "base": "game:block/wood/planks/oak1" },
+		"inside": { "base": "game:block/wood/barrel/inside" },
+		"leg": { "base": "block/metal/generator/machinery-border" }
+	},
+	"resistance": 1,
+	"sideopaque": {
+		"all": false
+	},
+	"sounds": {
+		"place": "game:block/anvil",
+		"walk": "game:walk/stone"
+	}
+
+
+}

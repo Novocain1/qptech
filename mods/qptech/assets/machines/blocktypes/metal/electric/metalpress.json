@@ -1,0 +1,124 @@
+{
+	"code": "metalpress",
+	"class": "BlockMetalPress",
+	"entityclass": "BEEAssembler",
+	"entityBehaviors": [ { "name": "Animatable" } ],
+	"creativeinventory": {
+		"general": [ "*-east" ],
+		"qptech": [ "*-east" ]
+	},
+	"variantgroups": [
+		{
+			"code": "type",
+			"states": [ "lvsoftmetalplate", "lvsoftscrew", "lvsoftrod" ]
+		},
+		{
+			"code": "side",
+			"loadFromProperties": "abstract/horizontalorientation"
+		}
+	],
+	"behaviors": [
+		{
+			"name": "HorizontalOrientable",
+			"properties": { "dropBlockFace": "east" }
+		}
+	],
+	"attributesbytype": {
+		"*-lvsoftmetalplate-*": {
+			"maxAmps": 4,
+			"maxVolts": 16,
+			"capacitance": 4,
+			"requiredAmps": 4,
+			"receptionFaces": [ "north" ],
+			"inputFace": "west",
+			"outputFace": "east",
+			"inputQuantity": 2,
+			"outputQuantity": 1,
+			"recipe": "game:metalplate",
+			"ingredient": "ingot",
+			"processingTime": 0.045,
+			"animationSpeed": 0.45,
+			"heatRequirement": 800,
+			"materials": [ "copper", "brass", "gold", "silver", "tin", "lead", "bismuth", "zinc" ]
+
+		},
+		"*-lvsoftscrew-*": {
+			"maxAmps": 4,
+			"maxVolts": 16,
+			"capacitance": 4,
+			"requiredAmps": 4,
+			"receptionFaces": [ "north" ],
+			"inputFace": "west",
+			"outputFace": "east",
+			"inputQuantity": 1,
+			"outputQuantity": 12,
+			"recipe": "machines:screw",
+			"ingredient": "metalplate",
+			"processingTime": 0.045,
+			"animationSpeed": 0.45,
+			"heatRequirement": 800,
+			"materials": [ "brass" ]
+
+		},
+		"*-lvsoftrod-*": {
+			"maxAmps": 4,
+			"maxVolts": 16,
+			"capacitance": 4,
+			"requiredAmps": 4,
+			"receptionFaces": [ "north"],
+			"inputFace": "west",
+			"outputFace": "east",
+			"inputQuantity": 1,
+			"outputQuantity": 3,
+			"recipe": "machines:rod",
+			"ingredient": "ingot",
+			"processingTime": 0.045,
+			"animationSpeed": 0.45,
+			"heatRequirement": 800,
+			"materials": [ "brass" ]
+		}
+	},
+	"blockmaterial": "Metal",
+	"drawtype": "json",
+	"shape": { "base": "block/metal/electric/metalpress" },
+	"shapeByType": {
+		"*-north": {
+			"base": "block/metal/electric/metalpress",
+			"rotateY": 0
+		},
+		"*-east": {
+			"base": "block/metal/electric/metalpress",
+			"rotateY": 270
+		},
+		"*-west": {
+			"base": "block/metal/electric/metalpress",
+			"rotateY": 90
+		},
+		"*-south": {
+			"base": "block/metal/electric/metalpress",
+			"rotateY": 180
+		}
+	},
+	"textures": {
+		"machinery-back": { "base": "block/metal/generator/machinery-back" },
+		"castiron-bar": { "base": "block/metal/metalpress/castiron-bar" },
+		"castiron-top": { "base": "block/metal/metalpress/castiron-top" },
+		"castiron-back": { "base": "block/metal/metalpress/castiron-back" },
+		"machinery-border-small": { "base": "block/metal/metalpress/machinery-border-small" },
+		"wires": { "base": "block/metal/wires/tin-wires" }
+	},
+	"resistance": 1,
+	"sideAo": { "all": false },
+	"sidesolid": {
+		"all": false
+	},
+	"sideopaque": {
+		"all": false
+	},
+	"sounds": {
+		"place": "game:block/anvil",
+		"walk": "game:walk/stone"
+	}
+
+
+}

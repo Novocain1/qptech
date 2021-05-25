@@ -210,7 +210,7 @@ namespace qptech.src
         public override void GetBlockInfo(IPlayer forPlayer, StringBuilder dsc)
         {
             base.GetBlockInfo(forPlayer, dsc);
-            dsc.AppendLine("   On:" + isOn.ToString());
+            dsc.AppendLine("On:" + isOn.ToString());
             dsc.AppendLine("Volts:" + MaxVolts.ToString() + "V" + " Amps:" + maxAmps.ToString());
             dsc.AppendLine("Power:" + Capacitor.ToString() + "/" + Capacitance.ToString());
             dsc.AppendLine("IN:" + inputConnections.Count.ToString() + " OUT:" + outputConnections.Count.ToString());

@@ -52,7 +52,6 @@ namespace Electricity.API
         bool TryOutputConnection(IElectricity connectto);
         ///Delete any connection the the supplied IElectricity (should be called on every connection when the block is deleted, removed etc)
         void RemoveConnection(IElectricity disconnect);
-
     }
 
 }

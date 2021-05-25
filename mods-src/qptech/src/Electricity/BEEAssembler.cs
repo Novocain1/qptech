@@ -32,7 +32,7 @@ namespace qptech.src
         protected string ingredient_subtype = "";
         protected int inputQuantity = 4;
         protected int internalQuantity = 0; //will store ingredients virtually
-        protected float animationSpeed = 0.05f;
+        protected float animationSpeed = 0.5f;
         protected double processingTime = 10;
         protected float heatRequirement = 0;
         string readablerecipe="";
@@ -169,7 +169,7 @@ namespace qptech.src
                         EaseInSpeed = 1,
                         EaseOutSpeed = 1,
                         Weight = 1,
-                        BlendMode = EnumAnimationBlendMode.Add
+                        BlendMode = EnumAnimationBlendMode.Average
                     });
                     
                 }

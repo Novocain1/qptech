@@ -39,7 +39,7 @@ namespace qptech.src
         bool heated = false;
         public virtual float SoundLevel
         {
-            get { return 0.3f; }
+            get { return 0.1f; }
         }
         public override void Initialize(ICoreAPI api)
         {
@@ -70,7 +70,7 @@ namespace qptech.src
             {
                 float rotY = Block.Shape.rotateY;
                 animUtil.InitializeAnimator("run", new Vec3f(0, rotY, 0));
-                animUtil.StartAnimation(new AnimationMetaData() { Animation = "run", Code = "run", AnimationSpeed = 1, EaseInSpeed = 1, EaseOutSpeed = 1, Weight = 1, BlendMode = EnumAnimationBlendMode.Average });
+                animUtil.StartAnimation(new AnimationMetaData() { Animation = "run", Code = "run", AnimationSpeed = 1, EaseInSpeed = 4, EaseOutSpeed = 8, Weight = 1, BlendMode = EnumAnimationBlendMode.Average });
                 animInit = true;
             }
             
@@ -189,7 +189,7 @@ namespace qptech.src
                 if (isOn)
                 {
                     
-                    animUtil.StartAnimation(new AnimationMetaData() { Animation = "run", Code = "run", AnimationSpeed = 1, EaseInSpeed = 1, EaseOutSpeed = 1, Weight = 1, BlendMode = EnumAnimationBlendMode.Average });
+                    animUtil.StartAnimation(new AnimationMetaData() { Animation = "run", Code = "run", AnimationSpeed = 0.8f, EaseInSpeed = 4, EaseOutSpeed = 8, Weight = 1, BlendMode = EnumAnimationBlendMode.Average });
                 }
                 else
                 {

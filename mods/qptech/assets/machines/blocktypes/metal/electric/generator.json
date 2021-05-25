@@ -1,0 +1,81 @@
+{
+	"code": "generator-primitive",
+	"class": "ElectricalBlock",
+	"entityclass": "BEEGenerator",
+	"entityBehaviors": [ { "name": "Animatable" } ],
+	"creativeinventory": {
+		"general": [ "*-east" ],
+		"qptech": [ "*-east" ]
+	},
+	"attributes": {
+		"maxAmps": 2,
+		"maxVolts": 16,
+		"capacitance": 4,
+		"genAmps": 2,
+		"distributionFaces": [ "north" ],
+		"requiredHeat": 900,
+		"heatFace": "down",
+		"waterUsage": 1,
+		"waterUsePeriod": 0.25,
+		"waterFace": "up",
+		"overloadIfNoWater": "true"
+
+	},
+	"variantgroups": [
+		{
+			"code": "side",
+			"loadFromProperties": "abstract/horizontalorientation"
+		}
+	],
+	"behaviors": [
+		{
+			"name": "HorizontalOrientable",
+			"properties": { "dropBlockFace": "east" }
+		}
+	],
+	"blockmaterial": "Metal",
+	"drawtype": "json",
+	"shape": { "base": "block/metal/electric/generator" },
+	"shapeByType": {
+		"*-north": {
+			"base": "block/metal/electric/generator",
+			"rotateY": 0
+		},
+		"*-east": {
+			"base": "block/metal/electric/generator",
+			"rotateY": 270
+		},
+		"*-west": {
+			"base": "block/metal/electric/generator",
+			"rotateY": 90
+		},
+		"*-south": {
+			"base": "block/metal/electric/generator",
+			"rotateY": 180
+		}
+	},
+	"textures": {
+		"machinery-back": { "base": "block/metal/generator/machinery-back" },
+		"fan": { "base": "block/metal/generator/fan" },
+		"machinery-gate": { "base": "block/metal/generator/machinery-gate" },
+		"machinery-fan": { "base": "block/metal/generator/machinery-fan" },
+		"machinery-glass": { "base": "block/metal/generator/machinery-glass" },
+		"machinery-top": { "base": "block/metal/generator/machinery-top" },
+		"machinery": { "base": "block/metal/generator/machinery-border-small" },
+		"bronze": { "base": "game:block/metal/sheet/tinbronze1" },
+		"wires": { "base": "block/metal/wires/tin-wires" }
+	},
+	"resistance": 1,
+	"sidesolid": {
+		"all": false,
+		"up": true
+	},
+	"sideAo": { "all": false },
+	"sideopaque": {
+		"all": false
+	},
+	"sounds": {
+		"place": "game:block/anvil",
+		"walk": "game:walk/stone"
+	}
+}
