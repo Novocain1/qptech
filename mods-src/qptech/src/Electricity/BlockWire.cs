@@ -7,7 +7,7 @@ using Vintagestory.API.MathTools;
 using Vintagestory.API.Common.Entities;
 
 namespace qptech.src { 
-    class BlockWire:ElectricalBlock
+    class BlockWire: ElectricalBlock
     {
         public override void OnEntityCollide(IWorldAccessor world, Entity entity, BlockPos pos, BlockFacing facing, Vec3d collideSpeed, bool isImpact)
         {

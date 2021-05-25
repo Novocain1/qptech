@@ -9,7 +9,7 @@
 	"variantgroups": [
 		{
 			"code": "type",
-			"states": ["tin-2a", "tin-2a-l", "tin-2a-cross", "tin-2a-t" ]
+			"states": [ "tin-2a", "tin-2a-l", "tin-2a-cross", "tin-2a-t" ]
 		},
 		{
 			"code": "side",
@@ -23,28 +23,28 @@
 		}
 	],
 	"attributesByType": {
-		"*tin-2a": {
+		"*-tin-2a-*": {
 			"maxAmps": 2,
 			"maxVolts": 16,
 			"capacitance": 2,
-			"receptionFaces": [ "north", "south" ],
+			"receptionFaces": [ "south", "north" ],
 			"distributionFaces": [ "north", "south" ]
 		},
-		"*tin-2a-l": {
+		"*-tin-2a-l-*": {
 			"maxAmps": 2,
 			"maxVolts": 16,
 			"capacitance": 2,
 			"receptionFaces": [ "north", "south", "west" ],
 			"distributionFaces": [ "north", "south", "west" ]
 		},
-		"*tin-2a-cross": {
+		"*-tin-2a-cross-*": {
 			"maxAmps": 2,
 			"maxVolts": 16,
 			"capacitance": 2,
 			"receptionFaces": [ "north", "south", "west", "east" ],
 			"distributionFaces": [ "north", "south", "west", "east" ]
 		},
-		"*tin-2a-t": {
+		"*-tin-2a-t-*": {
 			"maxAmps": 2,
 			"maxVolts": 16,
 			"capacitance": 2,
@@ -58,8 +58,6 @@
 			"base": "block/metal/electric/wires/wireplate-{type}",
 			"rotateY": 0
 		},
-
-
 		"*-east": {
 			"base": "block/metal/electric/wires/wireplate-{type}",
 			"rotateY": 270

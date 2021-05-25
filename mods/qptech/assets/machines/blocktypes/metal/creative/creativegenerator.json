@@ -8,9 +8,9 @@
 		"qptech": [ "*-east" ]
 	},
 	"attributes": {
-		"capacitance": 4,
-		"maxVolts": 16,
 		"maxAmps": 2,
+		"maxVolts": 16,
+		"capacitance": 4,
 		"genAmps": 2,
 		"distributionFaces": [ "north" ]
 	},

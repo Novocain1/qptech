@@ -247,7 +247,7 @@ namespace qptech.src
                 prog.ViewMatrix = rpi.CameraMatrixOriginf;
                 prog.ProjectionMatrix = rpi.CurrentProjectionMatrix;
                 rpi.RenderMesh(elementMeshRef);
-                //rpi.RenderMesh(burning ? elementMeshRef : coalQuadRef);
+                //rpi.RenderMesh(ispower ? elementMeshRef : metalbarQuadRef);
 
             }
 
@@ -261,7 +261,7 @@ namespace qptech.src
         {
             capi.Event.UnregisterRenderer(this, EnumRenderStage.Opaque);
             //elementMeshRef?.Dispose();
-           // coalQuadRef?.Dispose();
+           //coalQuadRef?.Dispose();
             workItemMeshRef?.Dispose();
         }
     }

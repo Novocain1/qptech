@@ -21,7 +21,7 @@
 	"attributes": {
 		"maxAmps": 2,
 		"maxVolts": 16,
-		"capacitance": 2,
+		"capacitance": 4,
 		"requiredAmps": 1,
 		"maxHeat": 1000,
 		"degreesPerHour": 1500,
@@ -61,7 +61,13 @@
 	"sounds": {
 		"place": "game:block/anvil",
 		"walk": "game:walk/stone"
+	},
+	"selectionBox": {
+		"x1": 0,
+		"y1": 0.5625,
+		"z1": 0,
+		"x2": 1,
+		"y2": 1,
+		"z2": 1
 	}
-
-
 }
