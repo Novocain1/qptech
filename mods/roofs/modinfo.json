@@ -1,11 +1,11 @@
 {
   "type": "content",
-  "modid": "amodaboutroofsgles",
-  "name": "A mod about Roofs",
-  "description": "",
-  "author": "shingle man",
-  "version": "0.0.1",
+  "modid": "shinglesandthethings",
+  "name": "Shingles And The Things",
+  "description": "A mod what is about Roofs its all about the roofs",
+  "author": "MisterAndyDandy, Cynthal",
+  "version": "1.0.0",
   "dependency": {
-    "game": "1.14.10"
+    "game": "1.14.8"
   }
 }

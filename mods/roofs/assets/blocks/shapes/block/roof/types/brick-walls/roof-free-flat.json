@@ -50,11 +50,11 @@
 					"rotationX": -89.99998481315555,
 					"faces": {
 						"north": { "texture": "#shingles", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "enabled": false, "autoUv": false },
-						"east": { "texture": "#shingles", "uv": [ 0.0, 0.0, 0.5, 0.5 ], "autoUv": false },
+						"east": { "texture": "#log", "uv": [ 0.0, 0.0, 16.0, 1.0 ], "rotation": 90 },
 						"south": { "texture": "#shingles", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false },
-						"west": { "texture": "#shingles", "uv": [ 0.0, 0.0, 0.5, 0.5 ], "autoUv": false },
-						"up": { "texture": "#shingles", "uv": [ 0.0, 0.0, 16.0, 1.0 ] },
-						"down": { "texture": "#shingles", "uv": [ 0.0, 0.0, 16.0, 1.0 ] }
+						"west": { "texture": "#log", "uv": [ 0.0, 0.0, 16.0, 1.0 ], "rotation": 90 },
+						"up": { "texture": "#log", "uv": [ 0.0, 0.0, 16.0, 1.0 ] },
+						"down": { "texture": "#log", "uv": [ 0.0, 0.0, 16.0, 1.0 ] }
 					}
 				},
 				{

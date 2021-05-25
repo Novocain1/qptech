@@ -405,6 +405,10 @@
     <None Include="roofs\assets\blocks\blocktypes\rooftypes\roof-others.json" />
     <None Include="roofs\assets\blocks\blocktypes\rooftypes\roof.json" />
     <None Include="roofs\assets\blocks\lang\en.json" />
+    <None Include="roofs\assets\blocks\recipes\grid\rooftypes\hingover.json" />
+    <None Include="roofs\assets\blocks\recipes\grid\rooftypes\corners.json" />
+    <None Include="roofs\assets\blocks\recipes\grid\rooftypes\flat.json" />
+    <None Include="roofs\assets\blocks\recipes\grid\rooftypes\top.json" />
     <None Include="roofs\assets\blocks\recipes\grid\rooftypes\normal.json" />
     <None Include="roofs\assets\blocks\shapes\block\roof\crate-supplies.json" />
     <None Include="roofs\assets\blocks\shapes\block\roof\types\brick-walls\roof-free-corner.json" />

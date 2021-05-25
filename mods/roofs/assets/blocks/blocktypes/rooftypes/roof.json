@@ -2,11 +2,14 @@
   "code": "roof",
   "class": "BlockStairs",
   "attributes": {
-    "canChisel": true,
-    "chiselShapeFromCollisionBox": true,
+    "canChisel": false,
+    "chiselShapeFromCollisionBox": false,
     "partialAttachable": true,
     "handbook": {
-      "groupBy": [ "roof-*" ]
+      "excludeByType": {
+        "*-brown-*": true,
+        "*-red-*": true
+      }
     }
   },
   "variantgroups": [
@@ -53,7 +56,6 @@
     "log": { "base": "game:block/wood/firepit/log" },
     "snow": { "base": "game:block/snow/normal1" }
   },
-  "heldTpIdleAnimation": "holdunderarm",
   "creativeinventory": {
     "general": [ "roof-*-north-free" ],
     "decorative": [ "roof-*-north-free" ]
@@ -83,12 +85,12 @@
   "collisionSelectionBoxesByType": {
       "*-flat-*": [
       {
-		x1: 0,
-		y1: 0, 
-		z1: 0, 
-		x2: 1,
-		y2: 1,
-		z2: 1,
+		    "x1": 0,
+	      "y1": 0, 
+	      "z1": 0, 
+	      "x2": 1,
+		    "y2": 1,
+		    "z2": 1,
         "rotateYByType": {
           "*-north-*": 180,
           "*-east-*": 90,
@@ -239,30 +241,5 @@
         }
       }
     ]
-  },
-  "tpHandTransform": {
-    "translation": {
-      "x": -0.8,
-      "y": -0.68,
-      "z": -0.41
-    },
-    "rotation": {
-      "x": 99,
-      "y": -10,
-      "z": -6
-    },
-    "scale": 0.5
-  },
-  "fpHandTransform": {
-    "translation": {
-      "x": 0.08,
-      "y": -0.2,
-      "z": 0.6
-    },
-    "rotation": {
-      "x": 33,
-      "y": 134,
-      "z": -102
-    }
   }
 }

@@ -2,20 +2,23 @@
   "code": "roof",
   "class": "BlockStairs",
   "attributes": {
-    "canChisel": true,
-    "chiselShapeFromCollisionBox": true,
+    "canChisel": false,
+    "chiselShapeFromCollisionBox": false,
     "partialAttachable": true,
     "handbook": {
-      "groupBy": [ "roof-*" ]
+      "excludeByType": {
+        "*-brown-*": true,
+        "*-red-*": true
+      }
     }
   },
   "variantgroups": [
     {
       "code": "type",
-      "states": [ "hingover" ]
+      "states": [ "hangover" ]
     },
     {
-      "code": "color",
+      "code": "variant",
       "states": [ "blue", "brown", "fire", "red" ]
     },
     { "loadFromProperties": "abstract/horizontalorientation" },
@@ -43,11 +46,10 @@
     }
   },
   "textures": {
-    "shingles": { "base": "game:block/clay/shingles/{color}" },
+    "shingles": { "base": "game:block/clay/shingles/{variant}" },
     "log": { "base": "game:block/wood/firepit/log" },
     "snow": { "base": "game:block/snow/normal1" }
   },
-  "heldTpIdleAnimation": "holdunderarm",
   "creativeinventory": {
     "general": [ "roof-*-north-free" ],
     "decorative": [ "roof-*-north-free" ]
@@ -94,30 +96,5 @@
         }
       }
     ]
-  },
-  "tpHandTransform": {
-    "translation": {
-      "x": -0.8,
-      "y": -0.68,
-      "z": -0.41
-    },
-    "rotation": {
-      "x": 99,
-      "y": -10,
-      "z": -6
-    },
-    "scale": 0.5
-  },
-  "fpHandTransform": {
-    "translation": {
-      "x": 0.08,
-      "y": -0.2,
-      "z": 0.6
-    },
-    "rotation": {
-      "x": 33,
-      "y": 134,
-      "z": -102
-    }
   }
 }

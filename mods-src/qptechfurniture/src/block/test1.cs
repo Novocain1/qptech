@@ -106,8 +106,8 @@ namespace QptechFurniture.src
                     double dz = (float)byPlayer.Entity.Pos.Z - (targetPos.Z + blockSel.HitPosition.Z);
                     float angleHor = (float)Math.Atan2(dx, dz);
 
-                    float deg22dot5rad = GameMath.PIHALF / 4;
-                    float roundRad = ((int)Math.Round(angleHor / deg22dot5rad)) * deg22dot5rad;
+                    float deg45rad = GameMath.PI / 4;
+                    float roundRad = ((int)Math.Round(angleHor / deg45rad)) * deg45rad;
                     bect.MeshAngle = roundRad;
                 }
             }
