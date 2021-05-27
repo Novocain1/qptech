@@ -63,14 +63,54 @@
 			"type": 0
 		}
 	],
-	"nugget": [
+	"sand": [
 		{
-			"outputmaterial": "orepowder",
+			"outputmaterial": "sand",
 			"outputquantity": 1,
-			"odds": 100,
-			"type": 2
+			"odds": 100
+		},
+		{
+			"outputmaterial": "sand",
+			"outputquantity": 1,
+			"odds": 25,
+			"machinename": "washplant"
+		},
+		{
+			"outputmaterial": "game:nugget-nativecopper",
+			"outputquantity": 3,
+			"odds": 5,
+			"type": "PARTIAL",
+			"machinename": "washplant"
+		},
+		{
+			"outputmaterial": "game:nugget-cassiterite",
+			"outputquantity": 1,
+			"odds": 2,
+			"type": "PARTIAL",
+			"machinename": "washplant"
+		},
+		{
+			"outputmaterial": "game:nugget-sphalerite",
+			"outputquantity": 1,
+			"odds": 2,
+			"type": "PARTIAL",
+			"machinename": "washplant"
+		},
+		{
+			"outputmaterial": "game:nugget-bismuth",
+			"outputquantity": 1,
+			"odds": 1,
+			"type": "PARTIAL",
+			"machinename": "washplant"
+		},
+		{
+			"outputmaterial": "game:nugget-magnetite",
+			"outputquantity": 1,
+			"odds": 0.5,
+			"type": "PARTIAL",
+			"machinename": "washplant"
 		}
-
 	]
+
 
 }

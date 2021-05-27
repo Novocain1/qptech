@@ -259,6 +259,7 @@
     <None Include="qptech\assets\machines\blocktypes\metal\electric\clayformer.json" />
     <None Include="qptech\assets\machines\blocktypes\metal\electric\electricforge.json" />
     <None Include="qptech\assets\machines\blocktypes\metal\electric\generator.json" />
+    <None Include="qptech\assets\machines\blocktypes\metal\electric\washplant.json" />
     <None Include="qptech\assets\machines\blocktypes\metal\electric\macerator.json" />
     <None Include="qptech\assets\machines\blocktypes\metal\electric\metalpress.json" />
     <None Include="qptech\assets\machines\blocktypes\metal\other\hiddenchute\chute-cross.json" />

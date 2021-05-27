@@ -18,9 +18,16 @@ namespace qptech.src
         protected BlockFacing rmInputFace=BlockFacing.FromCode("up"); //what faces will be checked for input containers
         protected BlockFacing outputFace = BlockFacing.FromCode("down");
         CollectibleObject workingitem;
+        protected string machinename = "macerator";
+        public string MachineName => machinename;
         public override void Initialize(ICoreAPI api)
         {
             base.Initialize(api);
+            if (Block.Attributes != null)
+            {
+                
+                machinename = Block.Attributes["machinename"].AsString(machinename);
+            }
             SetupAnimation();
         }
         protected override void DoDeviceStart()
@@ -40,7 +47,7 @@ namespace qptech.src
             {
                 DummyInventory dummy = new DummyInventory(Api);
 
-                List<ItemStack> outputitems = MacerationRecipe.GetMacerate(workingitem, Api);
+                List<ItemStack> outputitems = MacerationRecipe.GetMacerate(workingitem, Api,MachineName);
                 foreach (ItemStack outitem in outputitems)
                 {
                     if (outitem == null) { continue; }
@@ -104,7 +111,7 @@ namespace qptech.src
                     if (checkitem != null) { co = checkitem as CollectibleObject; }
                     else { co = checkiblock as CollectibleObject; }
 
-                    if (!MacerationRecipe.CanMacerate(co, Api)) { continue; }
+                    if (!MacerationRecipe.CanMacerate(co, Api,MachineName)) { continue; }
                     workingitem = co;
                     //Item has been set, need to pull one item from the stack
                     deviceState = enDeviceState.RUNNING;
@@ -150,17 +157,21 @@ namespace qptech.src
     }
     public class MacerationRecipe
     {
+        public string machinename = "macerator";
         public string outputmaterial;
         public int outputquantity=1;
+        public int inputquantity = 1;
         public float odds=1;
+        
         public enTypes type = enTypes.SWAP;
         /// <summary>
         /// enTypes
         /// DIRECT - change one specific item into another specific item
         /// SWAP   - change one item into another by swapping part of its Code
         /// ORESWAP - swap part of the item code, plus swap the metal type using the orelookups list (eg: malachite->copper)
+        /// PARTIAL - if partial match of input item, out a specific item
         /// </summary>
-        public enum enTypes {DIRECT,SWAP,ORESWAP};
+        public enum enTypes {DIRECT,SWAP,ORESWAP,PARTIAL};
 
         
         static Dictionary<string, List<MacerationRecipe>> maceratelist;
@@ -174,9 +185,18 @@ namespace qptech.src
         {
             outputmaterial = materialout;
             outputquantity = quantityout;
+            inputquantity = 1;
             odds = oddsout;
         }
-        public static bool CanMacerate(CollectibleObject co,ICoreAPI api)
+        public MacerationRecipe(string materialout, int quantityout, float oddsout,int inputquantityout,string machinenameout)
+        {
+            outputmaterial = materialout;
+            outputquantity = quantityout;
+            inputquantity = inputquantityout;
+            machinename = machinenameout;
+            odds = oddsout;
+        }
+        public static bool CanMacerate(CollectibleObject co,ICoreAPI api,string machinename)
         {
             //TODO: change this to "CanMacerate", add a FindMacerate that returns items:
             //   - from the maceratelist directly - adding extra output based on RNG
@@ -185,16 +205,23 @@ namespace qptech.src
             if (co == null) { return false; }
             if (co.FirstCodePart() == "ore") { return true; }
             if (co.FirstCodePart() == "nugget") { return false; } //disabling nugget processing for now
-            if (maceratelist.ContainsKey(co.FirstCodePart())) { return true; }
-            if (maceratelist.ContainsKey(co.Code.ToString())) { return true; }
+            if (maceratelist.ContainsKey(co.FirstCodePart())) {
+                bool result = maceratelist[co.FirstCodePart()].Any(val => val.machinename==machinename);
+                return result; 
+            }
+            if (maceratelist.ContainsKey(co.Code.ToString())) {
+                bool result = maceratelist[co.Code.ToString()].Any(val => val.machinename == machinename);
+                return result;
+            }
+            
             return false;
         }
 
-        public static List<ItemStack> GetMacerate(CollectibleObject co, ICoreAPI api)
+        public static List<ItemStack> GetMacerate(CollectibleObject co, ICoreAPI api,string machinename)
         {
-            
+            if (machinename == "") { machinename = "macerator"; }
             List<ItemStack> outputstack = new List<ItemStack>();
-            if (!CanMacerate(co, api)) { return outputstack; }
+            if (!CanMacerate(co, api,machinename)) { return outputstack; }
             string fcp = co.FirstCodePart();
             string fullcode = co.Code.ToString();
             Random rand = new Random();
@@ -233,13 +260,15 @@ namespace qptech.src
                 {
 
                     if (mr.type == enTypes.DIRECT) { continue; }
-
+                    if (mr.machinename != machinename&&mr.machinename!="*") { continue; }
                     double roll = rand.NextDouble() * 100;
                     if (!(mr.odds == 100 || roll <= mr.odds)) { continue; }
                     string al = fullcode;
-
-                    al = al.Replace(fcp, mr.outputmaterial);
-                    if (mr.type == enTypes.ORESWAP)
+                    if (mr.type == enTypes.SWAP)
+                    {
+                        al = al.Replace(fcp, mr.outputmaterial);
+                    }
+                    else if (mr.type == enTypes.ORESWAP)
                     {
                         foreach (string nativemetal in orelookups.Keys)
                         {
@@ -249,6 +278,10 @@ namespace qptech.src
                                 al = al.Replace("game", "machines");//THIS IS A HACK PLZ FIX
                             }
                         }
+                    }
+                    else if (mr.type== enTypes.PARTIAL)
+                    {
+                        al = mr.outputmaterial;
                     }
                     int outqty = mr.outputquantity;
                     if (mr.odds != 100) { outqty = rand.Next(1, mr.outputquantity + 1); }
@@ -270,8 +303,8 @@ namespace qptech.src
             foreach (MacerationRecipe mr in maceratelist[fullcode])
             {
 
-                if (mr.type == enTypes.SWAP) { continue; }
-
+                if (mr.type == enTypes.SWAP||mr.type==enTypes.PARTIAL) { continue; }
+                if (mr.machinename != machinename && mr.machinename != "*") { continue; }
                 double roll = rand.NextDouble() * 100;
                 if (!(mr.odds == 100 || roll <= mr.odds)) { continue; }
                 string al = mr.outputmaterial;
