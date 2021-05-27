@@ -405,6 +405,8 @@
     <None Include="qptech\qptech1.1.1-pre2.zip" />
     <None Include="roofs\assets\blocks\blocktypes\rooftypes\roof-others.json" />
     <None Include="roofs\assets\blocks\blocktypes\rooftypes\roof.json" />
+    <None Include="roofs\assets\blocks\itemtypes\rooftypes\support beans.json" />
+    <None Include="roofs\assets\blocks\itemtypes\rooftypes\wooden planks.json" />
     <None Include="roofs\assets\blocks\lang\en.json" />
     <None Include="roofs\assets\blocks\recipes\grid\rooftypes\hingover.json" />
     <None Include="roofs\assets\blocks\recipes\grid\rooftypes\corners.json" />
@@ -687,6 +689,5 @@
     <Folder Include="qptechfurniture\assets\furniture\blocktypes\metal\oven\" />
     <Folder Include="qptechfurniture\assets\furniture\textures\block\stone\rock\cabinets\" />
     <Folder Include="qptechfurniture\assets\qptech\config\" />
-    <Folder Include="roofs\assets\blocks\itemtypes\rooftypes\" />
   </ItemGroup>
 </Project>
