@@ -80,7 +80,7 @@
   },
   "materialDensity": 400,
   "collisionSelectionBoxesByType": {
-    "*-hingover-*": [
+    "*-hangover-*": [
       {
         "x1": 0,
         "y1": 0.75,

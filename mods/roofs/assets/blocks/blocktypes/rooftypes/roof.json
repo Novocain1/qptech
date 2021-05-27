@@ -15,7 +15,7 @@
   "variantgroups": [
     {
       "code": "type",
-      "states": [ "normal", "top", "corner", "flat"  ]
+      "states": [ "normal", "top", "corner", "flat", "innercorner" ]
     },
     {
       "code": "variant",
@@ -83,14 +83,14 @@
   },
   "materialDensity": 400,
   "collisionSelectionBoxesByType": {
-      "*-flat-*": [
+    "*-flat-*": [
       {
-		    "x1": 0,
-	      "y1": 0, 
-	      "z1": 0, 
-	      "x2": 1,
-		    "y2": 1,
-		    "z2": 1,
+        "x1": 0,
+        "y1": 0,
+        "z1": 0,
+        "x2": 1,
+        "y2": 1,
+        "z2": 1,
         "rotateYByType": {
           "*-north-*": 180,
           "*-east-*": 90,
@@ -238,6 +238,100 @@
           "*-east-*": 270,
           "*-south-*": 180,
           "*-west-*": 90
+        }
+      }
+    ],
+    "*-innercorner-*": [
+      {
+        "x1": 0,
+        "y1": 0,
+        "z1": 0,
+        "x2": 1,
+        "y2": 0.3125,
+        "z2": 1
+      },
+      {
+        "x1": 0,
+        "y1": 0.3125,
+        "z1": 0,
+        "x2": 1,
+        "y2": 0.5625,
+        "z2": 0.6875,
+        "rotateYByType": {
+          "*-north-*": 0,
+          "*-east-*": 270,
+          "*-south-*": 180,
+          "*-west-*": 90
+        }
+      },
+      {
+        "x1": 0.3125,
+        "y1": 0.3125,
+        "z1": 0.6875,
+        "x2": 1,
+        "y2": 0.5625,
+        "z2": 1,
+        "rotateYByType": {
+          "*-north-*": 0,
+          "*-east-*": 270,
+          "*-south-*": 180,
+          "*-west-*": 90
+        }
+      },
+      {
+        "x1": 0,
+        "y1": 0.5625,
+        "z1": 0,
+        "x2": 1,
+        "y2": 0.75,
+        "z2": 0.4375,
+        "rotateYByType": {
+          "*-north-*": 0,
+          "*-east-*": 270,
+          "*-south-*": 180,
+          "*-west-*": 90
+        }
+      },
+      {
+        "x1": 0.5,
+        "y1": 0.5625,
+        "z1": 0.4375,
+        "x2": 1,
+        "y2": 0.75,
+        "z2": 1,
+        "rotateYByType": {
+          "*-north-*": 0,
+          "*-east-*": 270,
+          "*-south-*": 180,
+          "*-west-*": 90
+        }
+      },
+      {
+        "x1": 0,
+        "y1": 0.75,
+        "z1": 0,
+        "x2": 1,
+        "y2": 1,
+        "z2": 0.25,
+        "rotateYByType": {
+          "*-north-*": 0,
+          "*-east-*": 270,
+          "*-south-*": 180,
+          "*-west-*": 90
+        }
+      },
+      {
+        "x1": 0.5,
+        "y1": 0.75,
+        "z1": 0,
+        "x2": 1,
+        "y2": 1,
+        "z2": 1,
+        "rotateYByType": {
+          "*-north-*": 270,
+          "*-east-*": 90,
+          "*-south-*": 180,
+          "*-west-*": 0
         }
       }
     ]
