@@ -8,7 +8,7 @@
 		"qptech": [ "*-east" ]
 	},
 	"variantgroups": [
-		{ code: "type", states: ["bowl", "clayplanter","flowerpot","ingotmold"] },
+		{ code: "type", states: ["bowl", "clayplanter","flowerpot","ingotmold","blueshingle","fireshingle"] },
 		{
 			"code": "side",
 			"loadFromProperties": "abstract/horizontalorientation"
@@ -20,9 +20,9 @@
 			"properties": { "dropBlockFace": "east" }
 		}
 	],
-	
-	"attributesbytype":{
-		"*-bowl-*":{
+
+	"attributesbytype": {
+		"*-bowl-*": {
 			"maxAmps": 2,
 			"maxVolts": 16,
 			"capacitance": 2,
@@ -34,10 +34,10 @@
 			"recipe": "game:bowl-raw",
 			"ingredient": "clay",
 			"processingTime": 0.17,
-			"animationSpeed": 0.05,
-			
+			"animationSpeed": 0.05
+
 		},
-		"*-clayplanter-*":{
+		"*-clayplanter-*": {
 			"maxAmps": 2,
 			"maxVolts": 16,
 			"capacitance": 2,
@@ -51,7 +51,7 @@
 			"processingTime": 0.25,
 			"animationSpeed": 0.04
 		},
-		"*-flowerpot-*":{
+		"*-flowerpot-*": {
 			"maxAmps": 2,
 			"maxVolts": 16,
 			"capacitance": 2,
@@ -65,7 +65,7 @@
 			"processingTime": 0.25,
 			"animationSpeed": 0.04
 		},
-		"*-ingotmold-*":{
+		"*-ingotmold-*": {
 			"maxAmps": 2,
 			"maxVolts": 16,
 			"capacitance": 2,
@@ -79,7 +79,35 @@
 			"processingTime": 0.17,
 			"animationSpeed": 0.05
 		},
-		
+		"*-blueshingle-*": {
+			"maxAmps": 2,
+			"maxVolts": 16,
+			"capacitance": 2,
+			"requiredAmps": 2,
+			"inputFace": "west",
+			"outputFace": "east",
+			"inputQuantity": 1,
+			"outputQuantity": 1,
+			"recipe": "game:shingle-raw-blue",
+			"ingredient": "game:clay-blue",
+			"processingTime": 0.17,
+			"animationSpeed": 0.05
+		},
+		"*-fireshingle-*": {
+			"maxAmps": 2,
+			"maxVolts": 16,
+			"capacitance": 2,
+			"requiredAmps": 2,
+			"inputFace": "west",
+			"outputFace": "east",
+			"inputQuantity": 1,
+			"outputQuantity": 1,
+			"recipe": "game:shingle-raw-fire",
+			"ingredient": "game:clay-fire",
+			"processingTime": 0.17,
+			"animationSpeed": 0.05
+		}
+
 	},
 	"blockmaterial": "Metal",
 	"drawtype": "json",

@@ -1,6 +1,8 @@
 ﻿{
-		"game:bowl-burned": "machines:clayformer-bowl",
-		"game:clayplanter-burnt": "machines:clayformer-clayplanter",
-		"game:flowerpot-burnt": "machines:clayformer-flowerpot",
-		"game:ingotmold-burned": "machines:clayformer-ingotmold"
+	"game:bowl-burned": "machines:clayformer-bowl",
+	"game:clayplanter-burnt": "machines:clayformer-clayplanter",
+	"game:flowerpot-burnt": "machines:clayformer-flowerpot",
+	"game:ingotmold-burned": "machines:clayformer-ingotmold",
+	"game:shingle-burned-blue": "machines:clayformer-blueshingle",
+	"game:shingle-burned-fire": "machines:clayformer-fireshingle"
 }

@@ -77,7 +77,7 @@ namespace qptech.src
         }
 
         
-        string[] materials;
+        string[] materials; //List of valid materials eg: a list of metals that would work with this assembler
         public string[] Materials => materials;
         protected BlockFacing rmInputFace; //what faces will be checked for input containers
         protected BlockFacing outputFace; //what faces will be checked for output containers
@@ -278,7 +278,8 @@ namespace qptech.src
                     string fcp = checkitem.FirstCodePart().ToString();
                     string lcp = checkitem.LastCodePart().ToString();
                     //no materials list so we don't need check for subtypes
-                    if (checkitem.FirstCodePart() == ingredient && (materials == null || materials.Length == 0)) { match = true; }
+                    if (checkitem.Code.ToString() == ingredient) { match = true; }
+                    else if (checkitem.FirstCodePart() == ingredient && (materials == null || materials.Length == 0)) { match = true; }
                     else if (checkitem.FirstCodePart().ToString() == ingredient && materials.Contains(checkitem.LastCodePart().ToString()))
                     {
                         match = true;
@@ -287,7 +288,8 @@ namespace qptech.src
 
                 }
                 else if (checkiblock != null) {
-                    if(checkiblock.FirstCodePart().ToString() == ingredient && (materials == null || materials.Length == 0)) { match = true; }
+                    if (checkiblock.Code.ToString() == ingredient) { match = true; }
+                    else if(checkiblock.FirstCodePart().ToString() == ingredient && (materials == null || materials.Length == 0)) { match = true; }
                     else if (checkiblock.FirstCodePart().ToString()==ingredient && materials.Contains(checkiblock.LastCodePart().ToString())){
                         match = true;
                         ingredient_subtype = checkiblock.LastCodePart();
