@@ -15,7 +15,6 @@
 		"distributionFaces": [ "north" ]
 	},
 	"variantgroups": [
-
 		{
 			"code": "side",
 			"loadFromProperties": "abstract/horizontalorientation"

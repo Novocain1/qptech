@@ -334,7 +334,7 @@ namespace qptech.src
         public override void FromTreeAttributes(ITreeAttribute tree, IWorldAccessor worldAccessForResolve)
         {
             base.FromTreeAttributes(tree, worldAccessForResolve);
-            
+
 
             //if (type == null) type = defaultType; // No idea why. Somewhere something has no type. Probably some worldgen ruins
             capacitor = tree.GetInt("capacitor");
@@ -383,6 +383,7 @@ namespace qptech.src
             {
                 toChange = toChange.GetCCW();
             }
+    
             return toChange;
         }
     }

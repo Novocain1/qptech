@@ -3,35 +3,103 @@
 	"class": "BlockWire",
 	"entityclass": "BEEWire",
 	"creativeinventory": {
-		"general": [ "*" ],
-		"qptech": [ "*" ]
+		"general": [ "*-ew-uncovered" ],
+		"qptech": [ "*-ew-uncovered" ]
 	},
 	"variantgroups": [
 		{
 			"code": "type",
-			"states": [ "tin-2a-cross"]
+			"states": [ "empty", "n", "e", "s", "w", "ne", "ns", "nw", "es", "ew", "sw", "nes", "new", "nsw", "esw", "nesw" ]
 		},
-		
+		{
+			"code": "wirecover",
+			"states": [ "uncovered", "covered" ]
+		}
 	],
-	
 	"attributesByType": {
-		
-		"*-tin-2a-cross": {
+		"*": {
 			"maxAmps": 2,
 			"maxVolts": 16,
 			"capacitance": 2,
-			
+			"receptionFaces": [ "north", "south", "west", "east" ],
+			"distributionFaces": [ "north", "south", "west", "east" ]
 		}
-		
 	},
-	"shape": { "base": "block/metal/electric/wires/wireplate-{type}" },
-	
+	"shapebytype": {
+		"*-empty-uncovered": { "base": "block/metal/electric/wires/wireplate-tin-2a-empty" },
+		"*-n-uncovered": {
+			"base": "block/metal/electric/wires/wireplate-tin-2a-normal",
+			"rotateY": 270
+		},
+		"*-e-uncovered": {
+			"base": "block/metal/electric/wires/wireplate-tin-2a-normal",
+			"rotateY": 180
+		},
+		"*-s-uncovered": {
+			"base": "block/metal/electric/wires/wireplate-tin-2a-normal",
+			"rotateY": 90
+		},
+		"*-w-uncovered": {
+			"base": "block/metal/electric/wires/wireplate-tin-2a-normal",
+			"rotateY": 0
+		},
+
+		"*-ns-uncovered": {
+			"base": "block/metal/electric/wires/wireplate-tin-2a-normal",
+			"rotateY": 90
+		},
+		"*-ew-uncovered": {
+			"base": "block/metal/electric/wires/wireplate-tin-2a-normal",
+			"rotateY": 0
+		},
+
+		"*-ne-uncovered": {
+			"base": "block/metal/electric/wires/wireplate-tin-2a-l",
+			"rotateY": 180
+		},
+		"*-nw-uncovered": {
+			"base": "block/metal/electric/wires/wireplate-tin-2a-l",
+			"rotateY": 270
+		},
+		"*-es-uncovered": {
+			"base": "block/metal/electric/wires/wireplate-tin-2a-l",
+			"rotateY": 90
+		},
+		"*-sw-uncovered": {
+			"base": "block/metal/electric/wires/wireplate-tin-2a-l",
+			"rotateY": 0
+		},
+
+		"*-nes-uncovered": {
+			"base": "block/metal/electric/wires/wireplate-tin-2a-t",
+			"rotateY": 180
+		},
+		"*-new-uncovered": {
+			"base": "block/metal/electric/wires/wireplate-tin-2a-t",
+			"rotateY": 270
+		},
+		"*-nsw-uncovered": {
+			"base": "block/metal/electric/wires/wireplate-tin-2a-t",
+			"rotateY": 0
+		},
+		"*-esw-uncovered": {
+			"base": "block/metal/electric/wires/wireplate-tin-2a-t",
+			"rotateY": 90
+		},
+
+		"*-nesw-uncovered": {
+			"base": "block/metal/electric/wires/wireplate-tin-2a-cross",
+			"rotateY": 0
+		}
+	},
 	"textures": {
 		"wires": { "base": "block/metal/wires/tin-wires" },
 		"castiron": { "base": "block/castiron" }
 	},
 	"resistance": 1,
-	"drawtype": "json",
+	"drawtypeByType": {
+		"*-uncovered": "JSON"
+	},
 	"faceCullMode": "NeverCull",
 	"renderpass": "OpaqueNoCull",
 	"sidesolid": { "all": false },
