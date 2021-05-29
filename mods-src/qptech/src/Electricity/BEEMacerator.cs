@@ -13,6 +13,28 @@ using Vintagestory.API.Server;
 
 namespace qptech.src
 {
+    /// <summary>
+    /// The Macerator - Also covers the washplant
+    /// Takes power and an input chest of materials (and eventually water) and
+    /// outputs various other materials, either specific materials or pattern
+    /// matched materials. Can set odds and quantities that would be dropped in
+    /// the macerationrecipes.json
+    /// Set the machinename in the relevant blocktype json to specify what machines recipes are for
+    /// default/unspecified will be macerator (so if you don't set this your machine will use any
+    /// recipe that is specified for machinename macerator or any recipe that has no machinename set)
+    /// 
+    /// macerationrecipes.json example:
+    ///	"muddygravel": [                           <- this is the input item, then we have an array of outputs
+	///	{                                          <- start of the entry (you can have more than one thing output per input item)
+	///		"outputmaterial": "game:clay-blue",    <- this would output blue clay
+	///		"outputquantity": 4,                   <- outputs 1-4 blue clay
+	///		"odds": 50,                            <- 50% chance of outputing any clay
+	///		"type": "PARTIAL",                     <- match type partial - means the input will be pattern matched, but the output will be the a specific item
+	///		"machinename":  "washplant"            <- the machine name (default is "macerator") - so in the blocktypes json file for washplant i set a machine name of washplant in the attributes to pickup this recipe
+    /// },                                         <- end of this output item - you could add another item after this to be outputted
+	/// ],                                         <- end of this recipe
+    /// 
+    /// </summary>
     class BEEMacerator:BEEBaseDevice
     {
         protected BlockFacing rmInputFace=BlockFacing.FromCode("up"); //what faces will be checked for input containers
@@ -170,6 +192,7 @@ namespace qptech.src
         /// SWAP   - change one item into another by swapping part of its Code
         /// ORESWAP - swap part of the item code, plus swap the metal type using the orelookups list (eg: malachite->copper)
         /// PARTIAL - if partial match of input item, out a specific item
+        /// 
         /// </summary>
         public enum enTypes {DIRECT,SWAP,ORESWAP,PARTIAL};
 

@@ -70,6 +70,20 @@
 			"odds": 100
 		},
 		{
+			"outputmaterial": "game:clay-blue",
+			"outputquantity": 1,
+			"odds": 10,
+			"type": "PARTIAL",
+			"machinename": "washplant"
+		},
+		{
+			"outputmaterial": "game:clay-fire",
+			"outputquantity": 1,
+			"odds": 5,
+			"type": "PARTIAL",
+			"machinename": "washplant"
+		},
+		{
 			"outputmaterial": "sand",
 			"outputquantity": 1,
 			"odds": 25,
@@ -107,6 +121,37 @@
 			"outputmaterial": "game:nugget-magnetite",
 			"outputquantity": 1,
 			"odds": 0.5,
+			"type": "PARTIAL",
+			"machinename": "washplant"
+		}
+
+	],
+	"muddygravel": [
+		{
+			"outputmaterial": "game:clay-blue",
+			"outputquantity": 4,
+			"odds": 50,
+			"type": "PARTIAL",
+			"machinename": "washplant"
+		},
+		{
+			"outputmaterial": "game:clay-fire",
+			"outputquantity": 4,
+			"odds": 25,
+			"type": "PARTIAL",
+			"machinename": "washplant"
+		},
+		{
+			"outputmaterial": "game:nugget-gold",
+			"outputquantity": 1,
+			"odds": 0.1,
+			"type": "PARTIAL",
+			"machinename": "washplant"
+		},
+		{
+			"outputmaterial": "game:nugget-silver",
+			"outputquantity": 1,
+			"odds": 0.1,
 			"type": "PARTIAL",
 			"machinename": "washplant"
 		}

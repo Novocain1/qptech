@@ -3,74 +3,29 @@
 	"class": "BlockWire",
 	"entityclass": "BEEWire",
 	"creativeinventory": {
-		"general": [ "*-east" ],
-		"qptech": [ "*-east" ]
+		"general": [ "*" ],
+		"qptech": [ "*" ]
 	},
 	"variantgroups": [
 		{
 			"code": "type",
-			"states": [ "tin-2a", "tin-2a-l", "tin-2a-cross", "tin-2a-t" ]
+			"states": [ "tin-2a-cross"]
 		},
-		{
-			"code": "side",
-			"loadFromProperties": "abstract/horizontalorientation"
-		}
+		
 	],
-	"behaviors": [
-		{
-			"name": "HorizontalOrientable",
-			"properties": { "dropBlockFace": "east" }
-		}
-	],
+	
 	"attributesByType": {
-		"*-tin-2a-*": {
+		
+		"*-tin-2a-cross": {
 			"maxAmps": 2,
 			"maxVolts": 16,
 			"capacitance": 2,
-			"receptionFaces": [ "south", "north" ],
-			"distributionFaces": [ "north", "south" ]
-		},
-		"*-tin-2a-l-*": {
-			"maxAmps": 2,
-			"maxVolts": 16,
-			"capacitance": 2,
-			"receptionFaces": [ "north", "south", "west" ],
-			"distributionFaces": [ "north", "south", "west" ]
-		},
-		"*-tin-2a-cross-*": {
-			"maxAmps": 2,
-			"maxVolts": 16,
-			"capacitance": 2,
-			"receptionFaces": [ "north", "south", "west", "east" ],
-			"distributionFaces": [ "north", "south", "west", "east" ]
-		},
-		"*-tin-2a-t-*": {
-			"maxAmps": 2,
-			"maxVolts": 16,
-			"capacitance": 2,
-			"receptionFaces": [ "south", "west", "east" ],
-			"distributionFaces": [ "south", "west", "east" ]
+			
 		}
+		
 	},
 	"shape": { "base": "block/metal/electric/wires/wireplate-{type}" },
-	"shapeByType": {
-		"*-north": {
-			"base": "block/metal/electric/wires/wireplate-{type}",
-			"rotateY": 0
-		},
-		"*-east": {
-			"base": "block/metal/electric/wires/wireplate-{type}",
-			"rotateY": 270
-		},
-		"*-west": {
-			"base": "block/metal/electric/wires/wireplate-{type}",
-			"rotateY": 90
-		},
-		"*-south": {
-			"base": "block/metal/electric/wires/wireplate-{type}",
-			"rotateY": 180
-		}
-	},
+	
 	"textures": {
 		"wires": { "base": "block/metal/wires/tin-wires" },
 		"castiron": { "base": "block/castiron" }

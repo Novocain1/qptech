@@ -37,6 +37,7 @@ namespace qptech.src
         bool generating = false;
         bool haswater = true;
         bool heated = false;
+        bool blockgone = false;
         public virtual float SoundLevel
         {
             get { return 0.1f; }
@@ -66,7 +67,7 @@ namespace qptech.src
                 fuelCounter = 0;
                 if (lastwaterused == 0) { lastwaterused = Api.World.Calendar.TotalHours; }
             }
-            if (api.World.Side == EnumAppSide.Client&&animUtil!=null)
+            if (api.World.Side == EnumAppSide.Client&&animUtil!=null&&!blockgone)
             {
                 float rotY = Block.Shape.rotateY;
                 animUtil.InitializeAnimator("run", new Vec3f(0, rotY, 0));
@@ -91,19 +92,19 @@ namespace qptech.src
             bool trypower = DoGeneratePower();
             generating = trypower;
                 
-            if (Api.World.Side == EnumAppSide.Client && animUtil != null && animInit)
+            if (!blockgone&&Api.World.Side == EnumAppSide.Client && animUtil != null && animInit)
             {
                 
                 if (trypower)
                 {
                     
                     if (animUtil.activeAnimationsByAnimCode.Count==0){
-                        animUtil.StartAnimation(new AnimationMetaData() { Animation = "run", Code = "run", AnimationSpeed = 1, EaseInSpeed = 1, EaseOutSpeed = 1, Weight = 1, BlendMode = EnumAnimationBlendMode.Average });
+                      // animUtil.StartAnimation(new AnimationMetaData() { Animation = "run", Code = "run", AnimationSpeed = 1, EaseInSpeed = 1, EaseOutSpeed = 1, Weight = 1, BlendMode = EnumAnimationBlendMode.Average });
                     }
                 }
                 else
                 {
-                    animUtil.StopAnimation("run");
+                  //  animUtil.StopAnimation("run");
                 }
 
             }
@@ -178,22 +179,22 @@ namespace qptech.src
 
             ToggleAmbientSounds(isOn);
             justswitched = true;
-            if (Api.World.Side == EnumAppSide.Client&&animUtil!=null)
+            if (!blockgone&&Api.World.Side == EnumAppSide.Client&&animUtil!=null)
             {
                 if (!animInit)
                 {
                     float rotY = Block.Shape.rotateY;
-                    animUtil.InitializeAnimator("run", new Vec3f(0, rotY, 0));
+                    //animUtil.InitializeAnimator("run", new Vec3f(0, rotY, 0));
                     animInit = true;
                 }
                 if (isOn)
                 {
                     
-                    animUtil.StartAnimation(new AnimationMetaData() { Animation = "run", Code = "run", AnimationSpeed = 0.8f, EaseInSpeed = 4, EaseOutSpeed = 8, Weight = 1, BlendMode = EnumAnimationBlendMode.Average });
+                    //animUtil.StartAnimation(new AnimationMetaData() { Animation = "run", Code = "run", AnimationSpeed = 0.8f, EaseInSpeed = 4, EaseOutSpeed = 8, Weight = 1, BlendMode = EnumAnimationBlendMode.Average });
                 }
                 else
                 {
-                    animUtil.StopAnimation("run");
+                    //animUtil.StopAnimation("run");
                 }
 
             }
@@ -306,18 +307,24 @@ namespace qptech.src
         }
         public override void OnBlockBroken()
         {
-            ToggleAmbientSounds(false);
+            Cleanup();
             base.OnBlockBroken();
         }
         public override void OnBlockRemoved()
         {
-            ToggleAmbientSounds(false);
+            Cleanup();
             base.OnBlockRemoved();
         }
         public override void OnBlockUnloaded()
         {
-            ToggleAmbientSounds(false);
+            Cleanup();
             base.OnBlockUnloaded();
+        }
+        public virtual void Cleanup()
+        {
+            blockgone = true;
+            ToggleAmbientSounds(false);
+            if (animUtil != null) { animUtil.StopAnimation("run"); }
         }
     }
 }
