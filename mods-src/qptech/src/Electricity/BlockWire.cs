@@ -84,7 +84,6 @@ namespace qptech.src {
             string orientations = GetOrientations(world, pos);
 
             AssetLocation newBlockCode = CodeWithVariant("type", orientations);
-
             if (!Code.Equals(newBlockCode))
             {
                 Block block = world.BlockAccessor.GetBlock(newBlockCode);
@@ -92,7 +91,7 @@ namespace qptech.src {
 
                 world.BlockAccessor.SetBlock(block.BlockId, pos);
                 world.BlockAccessor.TriggerNeighbourBlockUpdate(pos);
-                world.BlockAccessor.GetChunkAtBlockPos(pos );
+                world.BlockAccessor.MarkBlockDirty(pos);
             }
             else
             {
