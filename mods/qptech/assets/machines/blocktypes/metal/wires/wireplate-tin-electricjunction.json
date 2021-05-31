@@ -14,7 +14,7 @@
 	},
 	"attributesByType": {
 		"*tin-electricjunction": {
-			"maxAmps": 16,
+			"maxAmps": 32,
 			"maxVolts": 16,
 			"capacitance": 8,
 			"receptionFaces": [ "up", "down", "north", "south", "east", "west" ],

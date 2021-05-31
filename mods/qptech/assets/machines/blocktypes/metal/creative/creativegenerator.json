@@ -11,7 +11,7 @@
 		"maxAmps": 2,
 		"maxVolts": 16,
 		"capacitance": 4,
-		"genAmps": 2,
+		"genAmps": 20,
 		"distributionFaces": [ "north" ]
 	},
 	"variantgroups": [

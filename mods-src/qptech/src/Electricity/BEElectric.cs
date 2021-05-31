@@ -16,7 +16,7 @@ namespace qptech.src
     public class BEElectric : BlockEntity, IElectricity
     {
         /*base class to handle electrical devices*/
-        protected int maxAmps = 1;    //how many packets that can move at once
+        protected int maxAmps = 16;    //how many packets that can move at once
         protected int maxVolts = 16;  //how many volts it can handle before exploding
         protected int Capacitance => capacitance;//how many packets it can store
         protected int capacitance = 1;
@@ -48,7 +48,7 @@ namespace qptech.src
             if (outputConnections == null) { outputConnections = new List<IElectricity>(); }
             if (inputConnections == null) { inputConnections = new List<IElectricity>(); }
             if (Block.Attributes == null) { api.World.Logger.Error("ERROR BEE INITIALIZE HAS NO BLOCK"); return; }
-            maxAmps = Block.Attributes["maxAmps"].AsInt(maxAmps);
+            maxAmps = Block.Attributes["maxAmps"].AsInt(maxAmps)*10;
             maxVolts = Block.Attributes["maxVolts"].AsInt(maxVolts);
             capacitance = Block.Attributes["capacitance"].AsInt(Capacitance);
 

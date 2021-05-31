@@ -15,12 +15,13 @@
 	],
 	
 	"attributesByType": {
-		
+
 		"*-tin-2a-cross": {
-			"maxAmps": 2,
+			"maxAmps": 32,
 			"maxVolts": 16,
-			"capacitance": 2,
-			
+			"capacitance": 8,
+			"receptionFaces": [ "north", "south", "east", "west" ],
+			"distributionFaces": [ "north", "south", "east", "west" ]
 		}
 		
 	},
