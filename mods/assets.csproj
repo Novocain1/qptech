@@ -346,6 +346,7 @@
     <None Include="qptech\assets\machines\recipes\smithing\tool\pullplate.json" />
     <None Include="qptech\assets\machines\recipes\smithing\tool\screwdriverhead.json" />
     <None Include="qptech\assets\machines\shapes\block\metal\electric\forge-lv.json" />
+    <None Include="qptech\assets\machines\shapes\block\metal\electric\washplant2.json" />
     <None Include="qptech\assets\machines\shapes\block\wood\basin.json" />
     <None Include="qptech\assets\machines\shapes\block\metal\electric\battery\primitive.json" />
     <None Include="qptech\assets\machines\shapes\block\glass\BlockLantern.json" />
