@@ -6,7 +6,7 @@
 		"heatModifier": 1.1
 	},
 	"creativeinventory": {
-		"general": [ "*-cold-east" ],
+		"qptech": [ "*-cold-east" ],
 		"kitchen": [ "*-cold-east" ]
 	},
 	"variantgroups": [
@@ -30,22 +30,22 @@
 		}
 	],
 	"renderpass": "OpaqueNoCull",
-	"shape": { "base": "block/oven/castironovenlarge" },
+	"shape": { "base": "block/metal/oven/castironovenlarge" },
 	"shapeByType": {
 		"*-north": {
-			"base": "block/oven/castironovenlarge",
+			"base": "block/metal/oven/castironovenlarge",
 			"rotateY": 0
 		},
 		"*-east": {
-			"base": "block/oven/castironovenlarge",
+			"base": "block/metal/oven/castironovenlarge",
 			"rotateY": 270
 		},
 		"*-west": {
-			"base": "block/oven/castironovenlarge",
+			"base": "block/metal/oven/castironovenlarge",
 			"rotateY": 90
 		},
 		"*-south": {
-			"base": "block/oven/castironovenlarge",
+			"base": "block/metal/oven/castironovenlarge",
 			"rotateY": 180
 		}
 	},

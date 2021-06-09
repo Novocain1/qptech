@@ -2,7 +2,7 @@
 	"code": "cabinet",
 	"entityclass": "GenericTypedContainer",
 	"creativeinventory": {
-		"general": [ "*-east" ],
+		"qptech": [ "*-east" ],
 		"kitchen": [ "*-east" ]
 	},
 	"attributes": {

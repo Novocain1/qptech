@@ -3,7 +3,7 @@
 	"class": "BlockFirepit",
 	"entityClass": "ModdedFirepit",
 	"creativeinventory": {
-		"general": [ "*-cold-east" ],
+		"qptech": [ "*-cold-east" ],
 		"kitchen": [ "*-cold-east" ]
 	},
 	"variantgroups": [
@@ -30,22 +30,22 @@
 		"heatModifier": 1.06
 	},
 	"renderpass": "OpaqueNoCull",
-	"shape": { "base": "block/oven/castironoven" },
+	"shape": { "base": "block/metal/oven/castironoven" },
 	"shapeByType": {
 		"*-north": {
-			"base": "block/oven/castironoven",
+			"base": "block/metal/oven/castironoven",
 			"rotateY": 0
 		},
 		"*-east": {
-			"base": "block/oven/castironoven",
+			"base": "block/metal/oven/castironoven",
 			"rotateY": 270
 		},
 		"*-west": {
-			"base": "block/oven/castironoven",
+			"base": "block/metal/oven/castironoven",
 			"rotateY": 90
 		},
 		"*-south": {
-			"base": "block/oven/castironoven",
+			"base": "block/metal/oven/castironoven",
 			"rotateY": 180
 		}
 	},

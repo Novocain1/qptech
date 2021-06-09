@@ -158,13 +158,13 @@ namespace qptech.src
                     if (!animInit)
                     {
                         float rotY = Block.Shape.rotateY;
-                        animUtil.InitializeAnimator("process", new Vec3f(0, rotY, 0));
+                        animUtil.InitializeAnimator(Pos.ToString() + "process", new Vec3f(0, rotY, 0));
                         animInit = true;
                     }
                     animUtil.StartAnimation(new AnimationMetaData()
                     {
-                        Animation = "process",
-                        Code = "process",
+                        Animation = animationName,
+                        Code = animationName,
                         AnimationSpeed = animationSpeed,
                         EaseInSpeed = 1,
                         EaseOutSpeed = 1,
@@ -249,7 +249,7 @@ namespace qptech.src
             if (Api.World.Side == EnumAppSide.Client && animUtil != null)
             {
                 
-                animUtil.StopAnimation("process");
+                animUtil.StopAnimation(Pos.ToString() + animationName);
             }
         }
 

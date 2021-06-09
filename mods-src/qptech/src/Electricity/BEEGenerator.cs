@@ -70,7 +70,7 @@ namespace qptech.src
             if (api.World.Side == EnumAppSide.Client&&animUtil!=null&&!blockgone)
             {
                 float rotY = Block.Shape.rotateY;
-                animUtil.InitializeAnimator("run", new Vec3f(0, rotY, 0));
+                animUtil.InitializeAnimator(Pos.ToString() + "run", new Vec3f(0, rotY, 0));
                 animUtil.StartAnimation(new AnimationMetaData() { Animation = "run", Code = "run", AnimationSpeed = 1, EaseInSpeed = 4, EaseOutSpeed = 8, Weight = 1, BlendMode = EnumAnimationBlendMode.Average });
                 animInit = true;
             }
@@ -184,17 +184,17 @@ namespace qptech.src
                 if (!animInit)
                 {
                     float rotY = Block.Shape.rotateY;
-                    //animUtil.InitializeAnimator("run", new Vec3f(0, rotY, 0));
+                    animUtil.InitializeAnimator(Pos.ToString()+ "run", new Vec3f(0, rotY, 0));
                     animInit = true;
                 }
                 if (isOn)
                 {
                     
-                    //animUtil.StartAnimation(new AnimationMetaData() { Animation = "run", Code = "run", AnimationSpeed = 0.8f, EaseInSpeed = 4, EaseOutSpeed = 8, Weight = 1, BlendMode = EnumAnimationBlendMode.Average });
+                    animUtil.StartAnimation(new AnimationMetaData() { Animation = "run", Code = "run", AnimationSpeed = 0.8f, EaseInSpeed = 4, EaseOutSpeed = 8, Weight = 1, BlendMode = EnumAnimationBlendMode.Average });
                 }
                 else
                 {
-                    //animUtil.StopAnimation("run");
+                    animUtil.StopAnimation("run");
                 }
 
             }
@@ -324,7 +324,7 @@ namespace qptech.src
         {
             blockgone = true;
             ToggleAmbientSounds(false);
-            if (animUtil != null) { animUtil.StopAnimation("run"); }
+            if (animUtil != null) { animUtil.StopAnimation(Pos.ToString() + "run"); }
         }
     }
 }
