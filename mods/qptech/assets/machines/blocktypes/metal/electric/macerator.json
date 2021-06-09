@@ -32,7 +32,8 @@
 			"maxVolts": 16,
 			"capacitance": 2,
 			"requiredAmps": 1,
-			"processingTicks": 5
+			"processingTicks": 5,
+			"animationName": "macerator-process"
 		}
 	},
 

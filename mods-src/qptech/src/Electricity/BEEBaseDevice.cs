@@ -21,6 +21,7 @@ namespace qptech.src
         protected int requiredAmps = 1;     //how many amps to run
         protected int processingTicks = 30; //how many ticks for process to run
         protected int tickCounter = 0;
+        protected string animationName = "process";
         public int RequiredAmps { get { return requiredAmps; } }
         //public bool IsPowered { get { return capacitor >= requiredAmps; } }
 
@@ -41,7 +42,7 @@ namespace qptech.src
             if (Block.Attributes != null) {
                 requiredAmps = Block.Attributes["requiredAmps"].AsInt(requiredAmps);
                 processingTicks = Block.Attributes["processingTicks"].AsInt(processingTicks);
-                
+                animationName = Block.Attributes["animationName"].AsString(animationName);
             }
             distributionFaces = new List<BlockFacing>(); //no distribution for us!
         }

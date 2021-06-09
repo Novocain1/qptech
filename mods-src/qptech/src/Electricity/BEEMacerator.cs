@@ -41,6 +41,7 @@ namespace qptech.src
         protected BlockFacing outputFace = BlockFacing.FromCode("down");
         CollectibleObject workingitem;
         protected string machinename = "macerator";
+        
         public string MachineName => machinename;
         public override void Initialize(ICoreAPI api)
         {
@@ -160,13 +161,13 @@ namespace qptech.src
                 if (!animInit)
                 {
                     float rotY = Block.Shape.rotateY;
-                    animUtil.InitializeAnimator("process", new Vec3f(0, rotY, 0));
+                    animUtil.InitializeAnimator(Pos.ToString()+ "process", new Vec3f(0, rotY, 0));
                     animInit = true;
                 }
                 animUtil.StartAnimation(new AnimationMetaData()
                 {
-                    Animation = "process",
-                    Code = "process",
+                    Animation = animationName,
+                    Code = animationName,
                     AnimationSpeed = 1,
                     EaseInSpeed = 1,
                     EaseOutSpeed = 1,

@@ -101,7 +101,7 @@
 					}
 				},
 				{
-					"name": "shaft axis",
+					"name": "grinder shaft axis",
 					"from": [ -1.0, 2.0, 2.0 ], 
 					"to": [ 13.0, 3.0, 3.0 ], 
 					"rotationOrigin": [ 0.0, 2.5, 2.5 ],
@@ -695,7 +695,7 @@
 					}
 				},
 				{
-					"name": "shaft axis 2",
+					"name": "grinder shaft axis 2",
 					"from": [ -1.0, 2.0, 2.0 ], 
 					"to": [ 13.0, 3.0, 3.0 ], 
 					"rotationOrigin": [ 0.0, 2.5, 2.5 ],
@@ -1323,37 +1323,28 @@
 	],
 	"animations": [
 		{
-			"name": "process",
-			"code": "process",
-			"quantityframes": 15,
-			"onActivityStopped": "PlayTillEnd",
+			"name": "macerator-process",
+			"code": "macerator-process",
+			"quantityframes": 30,
+			"onActivityStopped": "Stop",
 			"onAnimationEnd": "Repeat",
 			"keyframes": [
 				{
 					"frame": 0,
 					"elements": {
 						"grinder1": {  },
-						"shaft axis": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"grinder shaft axis": { "rotationX": -180.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"grinder2": {  },
-						"shaft axis 2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+						"grinder shaft axis 2": { "rotationX": 180.0, "rotationY": 0.0, "rotationZ": 0.0 }
 					}
 				},
 				{
-					"frame": 7,
-					"elements": {
-						"grinder2": {  },
-						"shaft axis 2": { "rotationX": -180.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"grinder1": {  },
-						"shaft axis": { "rotationX": 180.0, "rotationY": 0.0, "rotationZ": 0.0 }
-					}
-				},
-				{
-					"frame": 14,
+					"frame": 29,
 					"elements": {
 						"grinder1": {  },
-						"shaft axis": { "rotationX": 360.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"grinder shaft axis": { "rotationX": 180.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"grinder2": {  },
-						"shaft axis 2": { "rotationX": -360.0, "rotationY": 0.0, "rotationZ": 0.0 }
+						"grinder shaft axis 2": { "rotationX": -180.0, "rotationY": 0.0, "rotationZ": 0.0 }
 					}
 				}
 			]
