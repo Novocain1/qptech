@@ -1,8 +1,8 @@
 {
 	"code": "lightbulb",
 	"creativeinventory": {
-		"general": [ "*" ],
-		"qptech": [ "*" ]
+		"general": [ "" ],
+		"qptech": [ "" ]
 	},
 	"variantgroups": [
 		{

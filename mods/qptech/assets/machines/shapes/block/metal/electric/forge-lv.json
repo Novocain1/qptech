@@ -8,6 +8,8 @@
 	"textureSizes": {
 	},
 	"textures": {
+		"machinery": "block/machinery",
+		"castiron": "block/castiron"
 	},
 	"elements": [
 		{

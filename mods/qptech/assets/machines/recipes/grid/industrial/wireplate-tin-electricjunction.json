@@ -1,7 +1,11 @@
 {
-	ingredientPattern: "T	W	P",
+	ingredientPattern: "T	W	W",
 	ingredients: {
-		"W": { type: "item", code: "wire-tin", quantity: 2 },
+		"W": {
+			"type": "block",
+			"code": "wireplate-tin-2a-cross",
+			"quantity": 1
+		},
 		"T": { type: "item", code: "screwdriver-*", isTool: true },
 		"P": { type: "item", code: "game:plank-*", quantity: 2}
 	},
@@ -9,7 +13,7 @@
 	height: 3,
 	output: {
 		"type": "block",
-		"code": "wireplate-tin-2a-cross",
+		"code": "wireplate-tin-electricjunction",
 		"quantity": 1
 	}
 }

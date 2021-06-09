@@ -113,6 +113,7 @@ namespace qptech.src {
         public override ItemStack OnPickBlock(IWorldAccessor world, BlockPos pos)
         {
             Block block = world.BlockAccessor.GetBlock(CodeWithVariants(new string[] { "type", "wirecover" }, new string[] { "ew", "uncovered" }));
+            if (block == null) { return null; }
             return new ItemStack(block);
         }
         public bool ShouldConnectAt(IWorldAccessor world, BlockPos ownPos, BlockFacing side)

@@ -3,8 +3,8 @@
 	"class": "ElectricalBlock",
 	"entityclass": "BEEWire",
 	"creativeinventory": {
-		"general": [ "*-{type}-east" ],
-		"qptech": [ "*-{type}-east" ]
+		"general": [ "*-lv-east" ],
+		"qptech": [ "*-lv-east" ]
 	},
 	"variantgroups": [
 		{

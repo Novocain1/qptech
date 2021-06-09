@@ -2,7 +2,11 @@
 	ingredientPattern: "MTS	IBH	RP_",
 	ingredients: {
 		"T": { type: "item", code: "screwdriver-*", isTool: true },
-		"P": { type: "block", code: "wireplate-tin-4a", quantity: 1},
+		"P": {
+			"type": "block",
+			"code": "wireplate-tin-2a-cross",
+			"quantity": 1
+		},
 		"B": { type: "block", code: "machineryblock", quantity: 1},
 		"M": { type: "item", code: "motor-primitive", quantity: 2},
 		"S": { type: "item", code: "screw-brass", quantity: 4},

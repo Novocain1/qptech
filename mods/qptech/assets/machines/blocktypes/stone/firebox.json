@@ -1,7 +1,7 @@
 {
 	"code": "firebox",
 	"creativeinventory": {
-		"general": [ "*" ], "qptech": [ "*" ]
+		"general": [ "" ], "qptech": [ "" ]
 
 	},
 	"blockmaterial": "stone",

@@ -1,8 +1,8 @@
 {
 	"code": "ringedbarrel",
 	"creativeinventory": {
-		"general": [ "*" ],
-		"qptech": [ "*" ]
+		"general": [ "" ],
+		"qptech": [ "" ]
 
 	},
 	"blockmaterial": "Metal",

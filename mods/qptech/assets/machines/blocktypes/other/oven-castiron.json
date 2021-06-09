@@ -30,22 +30,22 @@
 		"heatModifier": 1.06
 	},
 	"renderpass": "OpaqueNoCull",
-	"shape": { "base": "block/metal/castironoven" },
+	"shape": { "base": "block/oven/castironoven" },
 	"shapeByType": {
 		"*-north": {
-			"base": "block/metal/castironoven",
+			"base": "block/oven/castironoven",
 			"rotateY": 0
 		},
 		"*-east": {
-			"base": "block/metal/castironoven",
+			"base": "block/oven/castironoven",
 			"rotateY": 270
 		},
 		"*-west": {
-			"base": "block/metal/castironoven",
+			"base": "block/oven/castironoven",
 			"rotateY": 90
 		},
 		"*-south": {
-			"base": "block/metal/castironoven",
+			"base": "block/oven/castironoven",
 			"rotateY": 180
 		}
 	},

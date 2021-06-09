@@ -30,22 +30,22 @@
 		}
 	],
 	"renderpass": "OpaqueNoCull",
-	"shape": { "base": "block/metal/castironovenlarge" },
+	"shape": { "base": "block/oven/castironovenlarge" },
 	"shapeByType": {
 		"*-north": {
-			"base": "block/metal/castironovenlarge",
+			"base": "block/oven/castironovenlarge",
 			"rotateY": 0
 		},
 		"*-east": {
-			"base": "block/metal/castironovenlarge",
+			"base": "block/oven/castironovenlarge",
 			"rotateY": 270
 		},
 		"*-west": {
-			"base": "block/metal/castironovenlarge",
+			"base": "block/oven/castironovenlarge",
 			"rotateY": 90
 		},
 		"*-south": {
-			"base": "block/metal/castironovenlarge",
+			"base": "block/oven/castironovenlarge",
 			"rotateY": 180
 		}
 	},

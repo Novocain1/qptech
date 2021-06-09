@@ -10,7 +10,7 @@
 	"variantgroups": [
 		{
 			"code": "type",
-			"states": [ "lvsoftmetalplate", "lvsoftscrew", "lvsoftrod" ]
+			"states": [ "lvsoftmetalplate", "lvsoftscrew", "lvsoftrod"]
 		},
 		{
 			"code": "side",
@@ -25,10 +25,10 @@
 	],
 	"attributesbytype": {
 		"*-lvsoftmetalplate-*": {
-			"maxAmps": 4,
+			"maxAmps": 40,
 			"maxVolts": 16,
-			"capacitance": 4,
-			"requiredAmps": 4,
+			"capacitance": 40,
+			"requiredAmps": 40,
 			"receptionFaces": [ "north" ],
 			"inputFace": "west",
 			"outputFace": "east",
@@ -43,10 +43,10 @@
 
 		},
 		"*-lvsoftscrew-*": {
-			"maxAmps": 4,
+			"maxAmps": 40,
 			"maxVolts": 16,
-			"capacitance": 4,
-			"requiredAmps": 4,
+			"capacitance": 40,
+			"requiredAmps": 40,
 			"receptionFaces": [ "north" ],
 			"inputFace": "west",
 			"outputFace": "east",
@@ -61,11 +61,11 @@
 
 		},
 		"*-lvsoftrod-*": {
-			"maxAmps": 4,
+			"maxAmps": 40,
 			"maxVolts": 16,
-			"capacitance": 4,
-			"requiredAmps": 4,
-			"receptionFaces": [ "north"],
+			"capacitance": 40,
+			"requiredAmps": 40,
+			"receptionFaces": [ "north" ],
 			"inputFace": "west",
 			"outputFace": "east",
 			"inputQuantity": 1,
@@ -77,6 +77,7 @@
 			"heatRequirement": 800,
 			"materials": [ "brass" ]
 		}
+		
 	},
 	"blockmaterial": "Metal",
 	"drawtype": "json",
