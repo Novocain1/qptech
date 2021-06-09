@@ -15,7 +15,7 @@ namespace qptech.src {
     {
 
         ICoreClientAPI capi;
-        Block snowLayerBlock;
+        //Block snowLayerBlock;
 
         public override void OnLoaded(ICoreAPI api)
         {
@@ -23,27 +23,27 @@ namespace qptech.src {
 
             capi = api as ICoreClientAPI;
 
-            snowLayerBlock = api.World.GetBlock(new AssetLocation("snowlayer-1"));
+            //snowLayerBlock = api.World.GetBlock(new AssetLocation("snowlayer-1"));
         }
 
-        public void OnJsonTesselation(ref MeshData sourceMesh, ref int[] lightRgbsByCorner, BlockPos pos, Block[] chunkExtBlocks, int extIndex3d)
+        /*public void OnJsonTesselation(ref MeshData sourceMesh, ref int[] lightRgbsByCorner, BlockPos pos, Block[] chunkExtBlocks, int extIndex3d)
         {
             // Todo: make this work
-            /*            int nBlockId = chunkExtIds[extIndex3d + TileSideEnum.MoveIndex[TileSideEnum.Up]];
+                        int nBlockId = chunkExtIds[extIndex3d + TileSideEnum.MoveIndex[TileSideEnum.Up]];
                         Block upblock = api.World.Blocks[nBlockId];
                         if (upblock.snowLevel >= 1 && snowLayerBlock != null)
                         {
                             sourceMesh = sourceMesh.Clone();
                             sourceMesh.AddMeshData(capi.TesselatorManager.GetDefaultBlockMesh(snowLayerBlock));
                             return;
-                        }*/
+                        }
 
             return;  // no windwave for solid fences!
 
             //base.OnJsonTesselation(ref sourceMesh, ref lightRgbsByCorner, pos, chunkExtIds, chunkLightExt, extIndex3d);
-        }
+        }*/
 
-        public string GetOrientations(IWorldAccessor world, BlockPos pos)
+        /*public string GetOrientations(IWorldAccessor world, BlockPos pos)
         {
             string orientations =
                 GetWireCode(world, pos, BlockFacing.NORTH) +
@@ -60,10 +60,10 @@ namespace qptech.src {
         {
             if (ShouldConnectAt(world, pos, facing)) return "" + facing.Code[0];
             return "";
-        }
+        }*/
 
 
-        public override bool TryPlaceBlock(IWorldAccessor world, IPlayer byPlayer, ItemStack itemstack, BlockSelection blockSel, ref string failureCode)
+        /*public override bool TryPlaceBlock(IWorldAccessor world, IPlayer byPlayer, ItemStack itemstack, BlockSelection blockSel, ref string failureCode)
         {
             string orientations = GetOrientations(world, blockSel.Position);
             Block block = world.BlockAccessor.GetBlock(CodeWithVariant("type", orientations));
@@ -77,29 +77,31 @@ namespace qptech.src {
             }
 
             return false;
-        }
+        }*/
 
         public override void OnNeighbourBlockChange(IWorldAccessor world, BlockPos pos, BlockPos neibpos)
         {
-            string orientations = GetOrientations(world, pos);
+            // string orientations = GetOrientations(world, pos);
 
-            AssetLocation newBlockCode = CodeWithVariant("type", orientations);
-            if (!Code.Equals(newBlockCode))
-            {
-                Block block = world.BlockAccessor.GetBlock(newBlockCode);
-                if (block == null) return;
+            //AssetLocation newBlockCode = CodeWithVariant("type", orientations);
+            //if (!Code.Equals(newBlockCode))
+            // {
+            //    Block block = world.BlockAccessor.GetBlock(newBlockCode);
+            //    if (block == null) return;
 
-                world.BlockAccessor.SetBlock(block.BlockId, pos);
-                world.BlockAccessor.TriggerNeighbourBlockUpdate(pos);
-                world.BlockAccessor.MarkBlockDirty(pos);
-            }
-            else
-            {
+            //     world.BlockAccessor.SetBlock(block.BlockId, pos);
+            //     world.BlockAccessor.TriggerNeighbourBlockUpdate(pos);
+            //      world.BlockAccessor.MarkBlockDirty(pos);
+            // }
+            //  else
+            //  {
+            BEEWire beew = world.BlockAccessor.GetBlockEntity(pos) as BEEWire;
+            if (beew != null) { beew.FindConnections(); }
                 base.OnNeighbourBlockChange(world, pos, neibpos);
-            }
+           // }
         }
 
-        public override BlockDropItemStack[] GetDropsForHandbook(ItemStack handbookStack, IPlayer forPlayer)
+        /*public override BlockDropItemStack[] GetDropsForHandbook(ItemStack handbookStack, IPlayer forPlayer)
         {
             return new BlockDropItemStack[] { new BlockDropItemStack(handbookStack) };
         }
@@ -131,7 +133,7 @@ namespace qptech.src {
         }
 
 
-        static string[] OneDir = new string[] { "n", "e", "s", "w" };
+        /*static string[] OneDir = new string[] { "n", "e", "s", "w" };
         static string[] TwoDir = new string[] { "ns", "ew" };
         static string[] AngledDir = new string[] { "ne", "es", "sw", "nw" };
         static string[] ThreeDir = new string[] { "nes", "new", "nsw", "esw" };
@@ -158,8 +160,8 @@ namespace qptech.src {
             AngleGroups["nsw"] = new KeyValuePair<string[], int>(ThreeDir, 2);
             AngleGroups["esw"] = new KeyValuePair<string[], int>(ThreeDir, 3);
         }
-
-        public override AssetLocation GetRotatedBlockCode(int angle)
+        */
+        /*public override AssetLocation GetRotatedBlockCode(int angle)
         {
             string type = Variant["type"];
 
@@ -174,7 +176,7 @@ namespace qptech.src {
 
             return CodeWithVariant("type", newFacing);
             
-        }
+        }*/
 
         public override void OnEntityCollide(IWorldAccessor world, Entity entity, BlockPos pos, BlockFacing facing, Vec3d collideSpeed, bool isImpact)
         {

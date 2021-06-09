@@ -98,9 +98,9 @@ namespace qptech.src
                 if (trypower)
                 {
                     
-                    if (animUtil.activeAnimationsByAnimCode.Count==0){
+                    //if (animUtil.activeAnimationsByAnimCode.Count==0){
                       // animUtil.StartAnimation(new AnimationMetaData() { Animation = "run", Code = "run", AnimationSpeed = 1, EaseInSpeed = 1, EaseOutSpeed = 1, Weight = 1, BlendMode = EnumAnimationBlendMode.Average });
-                    }
+                    //}
                 }
                 else
                 {
