@@ -240,10 +240,12 @@
     <None Include="qptechfurniture\modinfo.json" />
     <None Include="qptechweapons\assets\game\entities\ball.json" />
     <None Include="qptechweapons\assets\game\itemtypes\tool\ball.json" />
+    <None Include="qptechweapons\assets\game\itemtypes\tool\filletknife.json" />
     <None Include="qptechweapons\assets\game\itemtypes\tool\slingshot.json" />
     <None Include="qptechweapons\assets\game\lang\en.json" />
     <None Include="qptechweapons\assets\game\recipes\grid\tool\slingshot-crude.json" />
     <None Include="qptechweapons\assets\game\shapes\item\tool\ball.json" />
+    <None Include="qptechweapons\assets\game\shapes\item\tool\filletknife.json" />
     <None Include="qptechweapons\assets\game\shapes\item\tool\slingshot\crude-charge1.json" />
     <None Include="qptechweapons\assets\game\shapes\item\tool\slingshot\crude-charge2.json" />
     <None Include="qptechweapons\assets\game\shapes\item\tool\slingshot\crude-charge3.json" />
