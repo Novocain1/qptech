@@ -267,9 +267,14 @@ namespace qptech.src
                     }
                     if (metalfound)
                     {
-                        int outitemqty = oreitem.Attributes["metalUnits"].AsInt(1)+rand.Next(0, 5);
+                        int mu = oreitem.Attributes["metalUnits"].AsInt(1);
+                        
                         
                         Item outputItem = api.World.GetItem(new AssetLocation(outitemcode));
+                        ItemNugget nuggie = outputItem as ItemNugget;
+                        
+                        int outitemqty = mu/5  + rand.Next(0, 5);
+
                         if (outputItem != null)
                         {
                             ItemStack itmstk = new ItemStack(outputItem, outitemqty);
