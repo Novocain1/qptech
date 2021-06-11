@@ -79,7 +79,7 @@ namespace qptech.src
         protected override void DoDeviceStart()
         {
             
-            if (Capacitor >= requiredAmps&&IsOn&&contents.StackSize>0)
+            if (Capacitor >= requiredFlux&&IsOn&&contents.StackSize>0)
             {
 
                 tickCounter = 0;
@@ -98,13 +98,13 @@ namespace qptech.src
                 return;
             }*/
             if (contents == null) { DoDeviceComplete(); return; }
-            if (Capacitor < requiredAmps||contents.StackSize==0)
+            if (Capacitor < requiredFlux||contents.StackSize==0)
             {
                 DoDeviceComplete();
                 return;
             }
             //tickCounter++;
-            ChangeCapacitor(-requiredAmps);
+            ChangeCapacitor(-requiredFlux);
         }
 
         public float GetHeatStrength(IWorldAccessor world, BlockPos heatSourcePos, BlockPos heatReceiverPos)

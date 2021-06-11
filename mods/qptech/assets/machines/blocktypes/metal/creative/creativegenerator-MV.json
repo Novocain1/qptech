@@ -9,9 +9,9 @@
 	},
 	"attributes": {
 		"capacitance": 10,
-		"maxVolts": 16,
-		"maxAmps": 8,
-		"genAmps": 4,
+		
+		"maxFlux": 8,
+		"genFlux": 4,
 		"distributionFaces": [ "north" ]
 	},
 	"variantgroups": [

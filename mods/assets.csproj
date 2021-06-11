@@ -257,6 +257,7 @@
     <None Include="qptech\assets\game\shapes\block\can-full.json" />
     <None Include="qptech\assets\game\shapes\block\can-open.json" />
     <None Include="qptech\assets\game\shapes\block\can-sealed.json" />
+    <None Include="qptech\assets\machines\blocktypes\metal\creative\creativegenerator.json" />
     <None Include="qptech\assets\machines\blocktypes\metal\electric\battery.json" />
     <None Include="qptech\assets\machines\blocktypes\metal\electric\clayformer.json" />
     <None Include="qptech\assets\machines\blocktypes\metal\electric\blastfurnace.json" />
@@ -276,7 +277,7 @@
     <None Include="qptech\assets\machines\blocktypes\other\cabinet.json" />
     <None Include="qptech\assets\machines\blocktypes\other\castironovenlarge.json" />
     <None Include="qptech\assets\machines\blocktypes\metal\creative\creativegenerator-MV.json" />
-    <None Include="qptech\assets\machines\blocktypes\metal\creative\creativegenerator.json" />
+    <None Include="qptech\assets\machines\blocktypes\metal\creative\creativetestgenerator.json" />
     <None Include="qptech\assets\machines\blocktypes\dummy-element.json" />
     <None Include="qptech\assets\machines\blocktypes\stone\firebox.json" />
     <None Include="qptech\assets\machines\blocktypes\other\firepitloader.json" />

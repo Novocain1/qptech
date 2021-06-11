@@ -25,10 +25,10 @@ namespace qptech.src.misc
         double stolenpowercounter=0;
         //some objects may actually use this to check how close they are etc - we don't care we just want all the power...
         public BlockEntity EBlock { get { return this as BlockEntity; } }
-        //report a ridiculous amount of amps, but this isn't tracked by this device anyways
-        public int MaxAmps => 2048;
+        //report a ridiculous amount of TF, but this isn't tracked by this device anyways
+        public int MaxFlux => 2048;
         //this doesn't actually matter right now - most devices would explode or something bad during a voltage mismatch
-        public int MaxVolts => 16;
+        public int PowerClass => 16;
 
         public bool IsPowered => IsOn && (stolenpowercounter > 0);
 
@@ -38,14 +38,14 @@ namespace qptech.src.misc
         //always report we need a lot of power because we're greedy like that
         public int NeedPower()
         {
-            return MaxAmps;
+            return MaxFlux;
         }
 
-        //Take any amps offered and report them taken
-        public int ReceivePacketOffer(IElectricity from, int inVolt, int inAmp)
+        //Take any TF offered and report them taken
+        public int ReceivePacketOffer(IElectricity from, int inFlux)
         {
-            stolenpowercounter += inAmp; //keeping score
-            return inAmp;
+            stolenpowercounter += inFlux; //keeping score
+            return inFlux;
         }
 
         //Do nothing, we don't track our power connections, we don't even care!

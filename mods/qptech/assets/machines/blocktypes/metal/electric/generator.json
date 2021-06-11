@@ -1,5 +1,5 @@
 {
-	"code": "generator-primitive",
+	"code": "generator",
 	"class": "ElectricalBlock",
 	"entityclass": "BEEGenerator",
 	"entityBehaviors": [ { "name": "Animatable" } ],
@@ -8,10 +8,10 @@
 		"qptech": [ "*-east" ]
 	},
 	"attributes": {
-		"maxAmps": 2,
-		"maxVolts": 16,
+		"maxFlux": 2,
+		
 		"capacitance": 4,
-		"genAmps": 20,
+		"genFlux": 20,
 		"distributionFaces": [ "north" ],
 		"requiredHeat": 900,
 		"heatFace": "down",
@@ -22,6 +22,10 @@
 
 	},
 	"variantgroups": [
+		{
+			"code": "type",
+			"states": [ "primitive" ]
+		},
 		{
 			"code": "side",
 			"loadFromProperties": "abstract/horizontalorientation"
@@ -54,17 +58,7 @@
 			"rotateY": 180
 		}
 	},
-	"textures": {
-		"machinery-back": { "base": "block/metal/generator/machinery-back" },
-		"fan": { "base": "block/metal/generator/fan" },
-		"machinery-gate": { "base": "block/metal/generator/machinery-gate" },
-		"machinery-fan": { "base": "block/metal/generator/machinery-fan" },
-		"machinery-glass": { "base": "block/metal/generator/machinery-glass" },
-		"machinery-top": { "base": "block/metal/generator/machinery-top" },
-		"machinery": { "base": "block/metal/generator/machinery-border-small" },
-		"bronze": { "base": "game:block/metal/sheet/tinbronze1" },
-		"wires": { "base": "block/metal/wires/tin-wires" }
-	},
+
 	"resistance": 1,
 	"sidesolid": {
 		"all": false,

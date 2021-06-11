@@ -8,6 +8,7 @@ using Vintagestory.API.MathTools;
 using Vintagestory.API.Util;
 using Vintagestory.GameContent;
 
+
 namespace QptechFurniture.src
 {
 	public abstract class ModdedBlockLiquidContainerBase : BlockContainer, ILiquidSource, ILiquidSink
@@ -142,8 +143,9 @@ namespace QptechFurniture.src
 		{
 			try
 			{
-				JsonObject obj = stack?.ItemAttributes?["waterTightContainerProps"];
+				/*JsonObject obj = stack?.ItemAttributes?["waterTightContainerProps"];
 				if (obj != null && obj.Exists) return obj.AsObject<WaterTightContainableProps>(null, stack.Collectible.Code.Domain);
+				*/
 				return null;
 			}
 			catch (Exception)

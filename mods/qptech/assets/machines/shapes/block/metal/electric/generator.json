@@ -8,6 +8,8 @@
 	"textureSizes": {
 	},
 	"textures": {
+		"fan": "block/metal/generator/fan",
+		"machinery-back": "block/metal/generator/machinery-back"
 	},
 	"elements": [
 		{
@@ -462,7 +464,7 @@
 						{
 							"name": "Fan gate 0",
 							"from": [ 0.0, 0.0, 0.0 ], 
-							"to": [ 0.0, 8.0, 8.0 ], 
+							"to": [ 0.01, 8.0, 8.0 ], 
 							"faces": {
 								"north": { "texture": "#null", "uv": [ 0.0, 0.0, 0.5, 8.0 ], "enabled": false },
 								"east": { "texture": "#machinery-fan", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false },

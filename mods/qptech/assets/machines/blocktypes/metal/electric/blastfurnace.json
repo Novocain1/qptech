@@ -19,10 +19,10 @@
 		}
 	],
 	"attributes": {
-		"maxAmps": 80,
-		"maxVolts": 16,
+		"maxFlux": 80,
+		
 		"capacitance": 40,
-		"requiredAmps": 80,
+		"requiredFlux": 80,
 		
 	},
 	"blockmaterial": "Metal",

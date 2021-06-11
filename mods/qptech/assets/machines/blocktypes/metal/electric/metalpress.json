@@ -25,10 +25,10 @@
 	],
 	"attributesbytype": {
 		"*-lvsoftmetalplate-*": {
-			"maxAmps": 40,
-			"maxVolts": 16,
+			"maxFlux": 40,
+			
 			"capacitance": 40,
-			"requiredAmps": 40,
+			"requiredFlux": 40,
 			"receptionFaces": [ "north" ],
 			"inputFace": "west",
 			"outputFace": "east",
@@ -43,10 +43,10 @@
 
 		},
 		"*-lvsoftscrew-*": {
-			"maxAmps": 40,
-			"maxVolts": 16,
+			"maxFlux": 40,
+			
 			"capacitance": 40,
-			"requiredAmps": 40,
+			"requiredFlux": 40,
 			"receptionFaces": [ "north" ],
 			"inputFace": "west",
 			"outputFace": "east",
@@ -61,10 +61,10 @@
 
 		},
 		"*-lvsoftrod-*": {
-			"maxAmps": 40,
-			"maxVolts": 16,
+			"maxFlux": 40,
+			
 			"capacitance": 40,
-			"requiredAmps": 40,
+			"requiredFlux": 40,
 			"receptionFaces": [ "north" ],
 			"inputFace": "west",
 			"outputFace": "east",

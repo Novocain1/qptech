@@ -19,7 +19,7 @@ namespace qptech.src
         ILoadedSound ambientSound;
         protected int fuelTicks = 0;    //how many OnTicks a piece of fuel will last for
         int fuelCounter = 0;            //counts down to use fuel
-        protected int genAmps = 1;      //how many amps (power packets) are generated per OnTick
+        protected int genFlux = 1;      //how much TF (power packets) are generated per OnTick
         BlockFacing fuelHopperFace;     //which face fuel is loaded from
         bool fueled = false;            //whether device is currently fueld
         bool animInit = false;
@@ -47,7 +47,7 @@ namespace qptech.src
             base.Initialize(api);
             if (Block.Attributes != null)
             {
-                genAmps = Block.Attributes["genAmps"].AsInt(genAmps);
+                genFlux = Block.Attributes["genFlux"].AsInt(genFlux);
                 fuelHopperFace = BlockFacing.FromCode(Block.Attributes["fuelHopperFace"].AsString("up"));
                 fuelHopperFace = OrientFace(Block.Code.ToString(), fuelHopperFace);
                 string[] fc = Block.Attributes["fuelCodes"].AsArray<string>();
@@ -67,13 +67,13 @@ namespace qptech.src
                 fuelCounter = 0;
                 if (lastwaterused == 0) { lastwaterused = Api.World.Calendar.TotalHours; }
             }
-            if (api.World.Side == EnumAppSide.Client&&animUtil!=null&&!blockgone)
+            /*if (api.World.Side == EnumAppSide.Client&&animUtil!=null&&!blockgone)
             {
                 float rotY = Block.Shape.rotateY;
                 animUtil.InitializeAnimator(Pos.ToString() + "run", new Vec3f(0, rotY, 0));
                 animUtil.StartAnimation(new AnimationMetaData() { Animation = "run", Code = "run", AnimationSpeed = 1, EaseInSpeed = 4, EaseOutSpeed = 8, Weight = 1, BlendMode = EnumAnimationBlendMode.Average });
                 animInit = true;
-            }
+            }*/
             
         }
         public override void OnTick(float par)
@@ -92,7 +92,7 @@ namespace qptech.src
             bool trypower = DoGeneratePower();
             generating = trypower;
                 
-            if (!blockgone&&Api.World.Side == EnumAppSide.Client && animUtil != null && animInit)
+            /*if (!blockgone&&Api.World.Side == EnumAppSide.Client && animUtil != null && animInit)
             {
                 
                 if (trypower)
@@ -107,9 +107,9 @@ namespace qptech.src
                   //  animUtil.StopAnimation("run");
                 }
 
-            }
+            }*/
 
-            if (trypower) { ChangeCapacitor(MaxAmps); }
+            if (trypower) { ChangeCapacitor(MaxFlux); }
             ToggleAmbientSounds(trypower);
             return;
         }
@@ -158,7 +158,7 @@ namespace qptech.src
             return fueled;
         }
         //generators don't receive power
-        public override int ReceivePacketOffer(IElectricity from,int volt, int amp)
+        public override int ReceivePacketOffer(IElectricity from, int hf)
         {
             return 0;
         }
@@ -179,7 +179,7 @@ namespace qptech.src
 
             ToggleAmbientSounds(isOn);
             justswitched = true;
-            if (!blockgone&&Api.World.Side == EnumAppSide.Client&&animUtil!=null)
+            /*if (!blockgone&&Api.World.Side == EnumAppSide.Client&&animUtil!=null)
             {
                 if (!animInit)
                 {
@@ -197,7 +197,7 @@ namespace qptech.src
                     animUtil.StopAnimation("run");
                 }
 
-            }
+            }*/
             Api.World.PlaySoundAt(new AssetLocation("sounds/electriczap"), Pos.X, Pos.Y, Pos.Z, null, false, 8, 1);
         }
         public override int NeedPower()
@@ -324,7 +324,7 @@ namespace qptech.src
         {
             blockgone = true;
             ToggleAmbientSounds(false);
-            if (animUtil != null) { animUtil.StopAnimation(Pos.ToString() + "run"); }
+            /*if (animUtil != null) { animUtil.StopAnimation(Pos.ToString() + "run"); }*/
         }
     }
 }

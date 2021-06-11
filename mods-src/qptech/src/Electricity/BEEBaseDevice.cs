@@ -15,15 +15,15 @@ namespace qptech.src
     //intermediate class, shouldn't generally be used
     public class BEEBaseDevice:BEElectric
     {
-        //How many amps to run at maxVolts?
+        
         public enum enDeviceState { IDLE, RUNNING, WARMUP, MATERIALHOLD, ERROR }
        
-        protected int requiredAmps = 1;     //how many amps to run
+        protected int requiredFlux = 1;     //how much TF to run
         protected int processingTicks = 30; //how many ticks for process to run
         protected int tickCounter = 0;
         protected string animationName = "process";
-        public int RequiredAmps { get { return requiredAmps; } }
-        //public bool IsPowered { get { return capacitor >= requiredAmps; } }
+        public int RequiredFlux { get { return requiredFlux; } }
+        //public bool IsPowered { get { return capacitor >= requiredFlux; } }
 
         protected enDeviceState deviceState = enDeviceState.WARMUP;
         public enDeviceState DeviceState { get { return deviceState; } }
@@ -40,7 +40,7 @@ namespace qptech.src
             animInit = false;
             //if (Block == null || Block.Attributes == null) { return; }
             if (Block.Attributes != null) {
-                requiredAmps = Block.Attributes["requiredAmps"].AsInt(requiredAmps);
+                requiredFlux = Block.Attributes["requiredFlux"].AsInt(requiredFlux);
                 processingTicks = Block.Attributes["processingTicks"].AsInt(processingTicks);
                 animationName = Block.Attributes["animationName"].AsString(animationName);
             }
@@ -64,7 +64,7 @@ namespace qptech.src
 
         protected virtual void DoDeviceStart()
         {
-            if (Capacitor >= requiredAmps)
+            if (Capacitor >= requiredFlux)
             {
                 
                 tickCounter = 0;
@@ -83,13 +83,13 @@ namespace qptech.src
                 DoDeviceComplete();
                 return;
             }
-            if (Capacitor < requiredAmps)
+            if (Capacitor < requiredFlux)
             {
                 DoFailedProcessing();
                 return;
             }
             tickCounter++;
-            ChangeCapacitor(-requiredAmps);
+            ChangeCapacitor(-requiredFlux);
             
         }
         //can do some feedback if device can't run

@@ -1,59 +1,58 @@
 {
-	"code": "electricforge",
-	"class": "BlockEForge",
-	"entityclass": "BEEForge",
+	"code": "iliterallycant",
+	"class": "ElectricalBlock",
+	"entityclass": "BEEGenerator",
+	"entityBehaviors": [ { "name": "Animatable" } ],
 	"creativeinventory": {
 		"general": [ "*-east" ],
 		"qptech": [ "*-east" ]
 	},
+	"attributes": {
+		"maxFlux": 2,
+		
+		"capacitance": 4,
+		"genFlux": 20,
+		"distributionFaces": [ "north" ]
+	},
 	"variantgroups": [
 		{
 			"code": "type",
-			"states": [ "lv" ]
+			"states": [ "cantevenrightnow" ]
 		},
 		{
 			"code": "side",
 			"loadFromProperties": "abstract/horizontalorientation"
 		}
 	],
+
 	"behaviors": [
 		{
 			"name": "HorizontalOrientable",
 			"properties": { "dropBlockFace": "east" }
 		}
 	],
-	"attributes": {
-		"maxFlux": 2,
-		
-		"capacitance": 4,
-		"requiredFlux": 1,
-		"maxHeat": 1000,
-		"degreesPerHour": 1500,
-		"maxItems": 2,
-		"stackRenderHeight": 0.1
-	},
 	"blockmaterial": "Metal",
 	"drawtype": "json",
-
-	"shape": { "base": "block/metal/electric/forge-lv" },
+	"shape": { "base": "block/metal/electric/generator" },
 	"shapeByType": {
 		"*-north": {
-			"base": "block/metal/electric/forge-lv",
+			"base": "block/metal/electric/generator",
 			"rotateY": 0
 		},
 		"*-east": {
-			"base": "block/metal/electric/forge-lv",
+			"base": "block/metal/electric/generator",
 			"rotateY": 270
 		},
 		"*-west": {
-			"base": "block/metal/electric/forge-lv",
+			"base": "block/metal/electric/generator",
 			"rotateY": 90
 		},
 		"*-south": {
-			"base": "block/metal/electric/forge-lv",
+			"base": "block/metal/electric/generator",
 			"rotateY": 180
 		}
 	},
+
 	"resistance": 1,
 	"sideAo": { "all": false },
 	"sidesolid": {
@@ -65,13 +64,7 @@
 	"sounds": {
 		"place": "game:block/anvil",
 		"walk": "game:walk/stone"
-	},
-	"selectionBox": {
-		"x1": 0,
-		"y1": 0.5625,
-		"z1": 0,
-		"x2": 1,
-		"y2": 1,
-		"z2": 1
 	}
+
+
 }

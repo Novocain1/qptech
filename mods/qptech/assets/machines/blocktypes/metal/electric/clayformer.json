@@ -23,10 +23,10 @@
 
 	"attributesbytype": {
 		"*-bowl-*": {
-			"maxAmps": 2,
-			"maxVolts": 16,
+			"maxFlux": 2,
+			
 			"capacitance": 2,
-			"requiredAmps": 2,
+			"requiredFlux": 2,
 			"inputFace": "west",
 			"outputFace": "east",
 			"inputQuantity": 4,
@@ -38,10 +38,10 @@
 
 		},
 		"*-clayplanter-*": {
-			"maxAmps": 2,
-			"maxVolts": 16,
+			"maxFlux": 2,
+			
 			"capacitance": 2,
-			"requiredAmps": 2,
+			"requiredFlux": 2,
 			"inputFace": "west",
 			"outputFace": "east",
 			"inputQuantity": 12,
@@ -52,10 +52,10 @@
 			"animationSpeed": 0.04
 		},
 		"*-flowerpot-*": {
-			"maxAmps": 2,
-			"maxVolts": 16,
+			"maxFlux": 2,
+			
 			"capacitance": 2,
-			"requiredAmps": 2,
+			"requiredFlux": 2,
 			"inputFace": "west",
 			"outputFace": "east",
 			"inputQuantity": 10,
@@ -66,10 +66,10 @@
 			"animationSpeed": 0.04
 		},
 		"*-ingotmold-*": {
-			"maxAmps": 2,
-			"maxVolts": 16,
+			"maxFlux": 2,
+			
 			"capacitance": 2,
-			"requiredAmps": 2,
+			"requiredFlux": 2,
 			"inputFace": "west",
 			"outputFace": "east",
 			"inputQuantity": 4,
@@ -80,10 +80,10 @@
 			"animationSpeed": 0.05
 		},
 		"*-blueshingle-*": {
-			"maxAmps": 2,
-			"maxVolts": 16,
+			"maxFlux": 2,
+			
 			"capacitance": 2,
-			"requiredAmps": 2,
+			"requiredFlux": 2,
 			"inputFace": "west",
 			"outputFace": "east",
 			"inputQuantity": 1,
@@ -94,10 +94,10 @@
 			"animationSpeed": 0.05
 		},
 		"*-fireshingle-*": {
-			"maxAmps": 2,
-			"maxVolts": 16,
+			"maxFlux": 2,
+			
 			"capacitance": 2,
-			"requiredAmps": 2,
+			"requiredFlux": 2,
 			"inputFace": "west",
 			"outputFace": "east",
 			"inputQuantity": 1,

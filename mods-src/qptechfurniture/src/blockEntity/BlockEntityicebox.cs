@@ -320,7 +320,7 @@ namespace QptechFurniture.src
             string meshKey = type + block.Subtype + "-" + rndTexNum;
             if (meshes.TryGetValue(meshKey, out mesh))
             {
-                if (animUtil != null && animUtil.render == null)
+                if (animUtil != null )
                 {
                     animUtil.InitializeAnimator(type + "-" + key, mesh, shape, rendererRot);
                 }
@@ -333,7 +333,7 @@ namespace QptechFurniture.src
 
             if (animUtil != null)
             {
-                if (animUtil.render == null)
+                if (animUtil == null)
                 {
                     mesh = animUtil.InitializeAnimator(type + "-" + key, shape, block, rendererRot);
                 }

@@ -66,7 +66,7 @@ namespace qptech.src
             get
             {
                 if (!IsOn) { return "OFF"; }
-                else if (!IsPowered) { return "NO POWER! REQ "+maxVolts.ToString()+"V and "+RequiredAmps.ToString()+" Amps"; }
+                else if (!IsPowered) { return "NO POWER! REQ "+RequiredFlux.ToString()+" TF"; }
                 else if (deviceState == enDeviceState.MATERIALHOLD) { return "NEEDS MATERIAL"; }
                 else if (deviceState== enDeviceState.RUNNING) { return "PROCESSING"; }
                 else if (deviceState == enDeviceState.IDLE) { return "READY"; }
@@ -92,7 +92,7 @@ namespace qptech.src
             
             
             if (Block.Attributes != null) {
-                //requiredAmps = Block.Attributes["requiredAmps"].AsInt(requiredAmps);
+                //requiredFlux = Block.Attributes["requiredFlux"].AsInt(requiredFlux);
                 rmInputFace = BlockFacing.FromCode(Block.Attributes["inputFace"].AsString("up"));
                 
                 outputFace = BlockFacing.FromCode(Block.Attributes["outputFace"].AsString("down"));
@@ -142,12 +142,12 @@ namespace qptech.src
         {
             //TODO
             
-            if (Capacitor < requiredAmps) { return; }//not enough power
+            if (Capacitor < requiredFlux) { return; }//not enough power
             FetchMaterial();
             processstarted = Api.World.Calendar.TotalHours;      
             if (internalQuantity<inputQuantity) { ChangeCapacitor(-1); deviceState = enDeviceState.MATERIALHOLD; return; }//check for and extract the required RM
             //TODO - do we make sure there's an output container?
-            if (Capacitor >= requiredAmps)
+            if (Capacitor >= requiredFlux)
             {
                 internalQuantity = 0;
                 tickCounter = 0;
@@ -187,13 +187,13 @@ namespace qptech.src
                 DoDeviceComplete();
                 return;
             }
-            if (Capacitor < requiredAmps)
+            if (Capacitor < requiredFlux)
             {
                 DoFailedProcessing();
                 return;
             }
             tickCounter++;
-            ChangeCapacitor(-requiredAmps);
+            ChangeCapacitor(-requiredFlux);
 
         }
         GUIAssemblerStatus gas;

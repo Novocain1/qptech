@@ -16,10 +16,10 @@ namespace Electricity.API
     /// you would have to create your own tick (default 75) to go through and distribute available power if applicable
     /// (or it can passively accept power)
     /// 
-    /// Suggested guidelines
-    /// LV -  16 Volts
-    /// MV -  64 Volts
-    /// HV - 256 Volts
+    /// 1.0.2 Major Refactor - will now deal with Temporal Flux or Flux units (TF Units)
+    /// this is similar to how Minecraft mods typically deal in Redstone Flux or RF untis
+    /// 
+    /// Removing voltage all together - everything will be determined by how many TF your devices etc can handle
     /// 
     /// OnTick length to handle your electricity updates - 75
     /// </summary>
@@ -35,15 +35,14 @@ namespace Electricity.API
         BlockEntity EBlock { get; }
         ///MaxAmps - How much power can be transferred in one turn
 
-        int MaxAmps { get;  }
-        ///MaxVolts - the voltage class of this device (should match whatever its hooked up to)
-        int MaxVolts { get; }
+        int MaxFlux { get;  }
+        
         ///if device is on
         bool IsOn { get;  }
         ///Device has power
         bool IsPowered { get; }
         ///Receive an offer for a power packet, return how much power it uses
-        int ReceivePacketOffer(IElectricity from, int inVolt, int inAmp);
+        int ReceivePacketOffer(IElectricity from, int inFlux);
         ///return if this object needs any power
         int NeedPower();
         ///Try to accept an IElectricity as a connected power source (return false to refuse connection)

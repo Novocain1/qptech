@@ -1,5 +1,5 @@
 {
-	"code": "creativegenerator-primitive",
+	"code": "creativegenerator",
 	"class": "ElectricalBlock",
 	"entityclass": "BEEGenerator",
 	"entityBehaviors": [ { "name": "Animatable" } ],
@@ -8,13 +8,17 @@
 		"qptech": [ "*-east" ]
 	},
 	"attributes": {
-		"maxAmps": 2,
-		"maxVolts": 16,
+		"maxFlux": 2,
+		
 		"capacitance": 4,
-		"genAmps": 20,
+		"genFlux": 20,
 		"distributionFaces": [ "north" ]
 	},
 	"variantgroups": [
+		{
+			"code": "type",
+			"states": [ "primitive" ]
+		},
 		{
 			"code": "side",
 			"loadFromProperties": "abstract/horizontalorientation"

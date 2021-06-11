@@ -16,12 +16,12 @@ namespace qptech.src
     public class BEElectric : BlockEntity, IElectricity
     {
         /*base class to handle electrical devices*/
-        protected int maxAmps = 16;    //how many packets that can move at once
-        protected int maxVolts = 16;  //how many volts it can handle before exploding
+        protected int maxFlux = 16;    //how many packets that can move at once
+        
         protected int Capacitance => capacitance;//how many packets it can store
         protected int capacitance = 1;
         //protected int cachedCapacitance = 0;
-        protected int Capacitor => capacitor;  //packets currently stored (the ints store the volts for each packet)
+        protected int Capacitor => capacitor;  //TF currently stored
         protected int capacitor = 0;
         protected bool isOn = true;        //if it's not on it won't do any power processing
         protected List<IElectricity> outputConnections; //what we are connected to output power
@@ -30,8 +30,8 @@ namespace qptech.src
         protected List<BlockFacing> distributionFaces; //what faces are valid for distributing power
         protected List<BlockFacing> receptionFaces; //what faces are valid for receiving power
         bool distributiontick = false;
-        public int MaxAmps { get { return maxAmps; } }
-        public int MaxVolts { get { return maxVolts; } }
+        public int MaxFlux { get { return maxFlux; } }
+        
 
         public bool IsPowered { get { return IsOn && Capacitor > 0; } }
         public virtual bool IsOn { get { return isOn; } }
@@ -48,8 +48,8 @@ namespace qptech.src
             if (outputConnections == null) { outputConnections = new List<IElectricity>(); }
             if (inputConnections == null) { inputConnections = new List<IElectricity>(); }
             if (Block.Attributes == null) { api.World.Logger.Error("ERROR BEE INITIALIZE HAS NO BLOCK"); return; }
-            maxAmps = Block.Attributes["maxAmps"].AsInt(maxAmps)*10;
-            maxVolts = Block.Attributes["maxVolts"].AsInt(maxVolts);
+            maxFlux = Block.Attributes["maxFlux"].AsInt(maxFlux)*10;
+            
             capacitance = Block.Attributes["capacitance"].AsInt(Capacitance);
 
             RegisterGameTickListener(OnTick, 75);
@@ -211,28 +211,28 @@ namespace qptech.src
         {
             base.GetBlockInfo(forPlayer, dsc);
             dsc.AppendLine("On:" + isOn.ToString());
-            dsc.AppendLine("Volts:" + MaxVolts.ToString() + "V" + " Amps:" + maxAmps.ToString());
-            dsc.AppendLine("Power:" + Capacitor.ToString() + "/" + Capacitance.ToString());
+            dsc.AppendLine("Max TF:" + maxFlux.ToString());
+            dsc.AppendLine("Stored TF:" + Capacitor.ToString() + "/" + Capacitance.ToString());
             dsc.AppendLine("IN:" + inputConnections.Count.ToString() + " OUT:" + outputConnections.Count.ToString());
         }
 
         //Used for other power devices to offer this device some energy returns how much power was used
         //API
-        public virtual int ReceivePacketOffer(IElectricity from, int inVolt, int inAmp) //eg 2
+        public virtual int ReceivePacketOffer(IElectricity from, int inFlux) //eg 2
         {
             if (usedconnections == null) { usedconnections = new List<IElectricity>(); }
             if (!isOn) { return 0; }//Not even on
-            if (inVolt != maxVolts) { DoOverload(); return 0; }//Incompatible power - bad!
-            if (inAmp <= 0) { return 0; }
+            
+            if (inFlux <= 0) { return 0; }
             if (Capacitor >= Capacitance) { return 0; }//already full
-            inAmp = Math.Min(inAmp, MaxAmps); //can only move a certain amount of amps - eg 2
-            int useamps = Math.Min(inAmp, Capacitance - Capacitor); //2
-            useamps = Math.Max(useamps, 0);
-            ChangeCapacitor(useamps);
+            inFlux = Math.Min(inFlux, MaxFlux); //can only move a certain amount of TF - eg 2
+            int useflux = Math.Min(inFlux, Capacitance - Capacitor); //2
+            useflux = Math.Max(useflux, 0);
+            ChangeCapacitor(useflux);
 
             usedconnections.Add(from);
-            if (useamps != 0) { MarkDirty(); }//not zero should be dirty
-            return useamps;//return 2
+            if (useflux != 0) { MarkDirty(); }//not zero should be dirty
+            return useflux;//return 2
         }
 
         //Attempt to send out power (can be overridden for devices that only use power)
@@ -257,15 +257,15 @@ namespace qptech.src
             }
             if (powerreq == 0) { return; } //Don't need to distribute any power
             bool gavepower = false;
-            //cap the powerrequest to our max amps, by the number of requests
-            powerreq = Math.Min(powerreq, tempconnections.Count * maxAmps);
+            //cap the powerrequest to our max TF, by the number of requests
+            powerreq = Math.Min(powerreq, tempconnections.Count * maxFlux);
             //distribute what power we can
             //If we have more power than is requested, just go through and give power
             if (Capacitor >= powerreq)
             {
                foreach (IElectricity ie in tempconnections)
                 {
-                    int offer = ie.ReceivePacketOffer(this, MaxVolts, Math.Min(Capacitor, maxAmps));
+                    int offer = ie.ReceivePacketOffer(this,  Math.Min(Capacitor, maxFlux));
                     if (offer > 0) { ChangeCapacitor(-offer);gavepower=true; }
                 }
                if (gavepower) { MarkDirty(true); }
@@ -277,13 +277,13 @@ namespace qptech.src
             int leftover = Capacitor % tempconnections.Count;//remainder
             foreach (IElectricity ie in tempconnections)
             {
-                int offer = ie.ReceivePacketOffer(this, MaxVolts, eachavail);
+                int offer = ie.ReceivePacketOffer(this,  eachavail);
                 if (offer == 0) { continue; }
                 gavepower = true;
                 ChangeCapacitor(-offer);
                 if (leftover > 0)
                 {
-                    offer = ie.ReceivePacketOffer(this, MaxVolts, leftover);
+                    offer = ie.ReceivePacketOffer(this,  leftover);
                     if (offer > 0)
                     {
                         leftover -= offer;
@@ -325,7 +325,7 @@ namespace qptech.src
             {
                 needs = Capacitance - Capacitor;
                 if (needs < 0) { needs = 0; }
-                needs = Math.Min(needs, MaxAmps);
+                needs = Math.Min(needs, MaxFlux);
             }
             return needs;
             

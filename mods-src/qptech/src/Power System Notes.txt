@@ -1,25 +1,25 @@
 ﻿(in volts)
 Voltage - eg 16v etc
-Amps - how many volt packets can be transferred
-Capacitance - how many volt packets can be stored
-MaxVoltage - if it goes too high then boom!
-MaxAmps - how many packets can be transmitted at once
+Temporal Flux - how many power packets can be transferred
+Capacitance - how many power packets can be stored
+
+MaxFlux - how many packets can be transmitted at once
 Connections - various power system things connected
 Power Usage - 
-Generator - Voltage Output, Amps out
+Generator - Voltage Output, TF out
 
 Power packet - Voltage
 
 Wire - has input, output face
 
 OnTick:
-- if a wire - offer packets to connections, reduce own amps accordingly (should fill up the network overtime)
+- if a wire - offer packets to connections, reduce own TF accordingly (should fill up the network overtime)
 - if a generator if it's on & running - offer a packet to connections
 
 bool ReceivePacketOffer(int volts)- packet of energy offered to item - if it can recevie this packet return true,
 and the calling entity will use it up, otherwise return false
 - generators only offer packets
-- wires offer and receive - will check against their amps (which is the number of packets they can hold)
+- wires offer and receive - will check against their TF (which is the number of packets they can hold)
 - devices only receive packets
 
 Ideas etc:
