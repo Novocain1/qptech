@@ -24,13 +24,14 @@
 	],
 	"attributes": {
 		"maxFlux": 2,
-		
+
 		"capacitance": 4,
 		"requiredFlux": 1,
 		"maxHeat": 1000,
 		"degreesPerHour": 1500,
 		"maxItems": 2,
-		"stackRenderHeight": 0.1
+		"stackRenderHeight": 0.1,
+		"unloadable": true
 	},
 	"blockmaterial": "Metal",
 	"drawtype": "json",
@@ -68,10 +69,11 @@
 	},
 	"selectionBox": {
 		"x1": 0,
-		"y1": 0.5625,
+		"y1": 0,
 		"z1": 0,
 		"x2": 1,
-		"y2": 1,
+		"y2": 0.75,
 		"z2": 1
 	}
+
 }

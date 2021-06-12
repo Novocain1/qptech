@@ -22,12 +22,39 @@ namespace qptech.src
         EForgeContentsRenderer renderer;
         double lastTickTotalHours;
         float maxHeat=1100;                                 //max temperature of device default 1100
+        float MaxHeat => maxHeat * CurrentAirBoost;
+        float maxAirBoostBonus=1;                           //how high can an airboost increase the temp?
+        float currentAirBoost = 1;
+        public float CurrentAirBoost => currentAirBoost;
+        public bool Boostable => (maxAirBoostBonus>1);
+        bool unloadable = false;
+        public bool Unloadable => unloadable;
+        bool loadable = false;
+        public bool Loadable => loadable;
         float degreesPerHour=1500;                          //temperature increase per hour default 1500
+        public float DegreesPerHour => degreesPerHour * CurrentAirBoost;
         int maxItems = 4;                                   //how many items can go in
         float stackRenderHeight =0.07f;                     //this is basically the height for the itemstack
         string elementShapeName = "machines:dummy-element-lit";      //what item to load heating element's shape & texture from
         public override bool IsOn => base.IsOn&&contents!=null;
         public ItemStack Contents => contents;
+        public void ClearContents()
+        {
+            contents = new ItemStack();
+
+        }
+        public bool ContentsReady
+        {
+            get
+            {
+                if (!Unloadable) { return false; }
+                if (Contents == null) { return false; }
+                if (Contents.StackSize <1) { return false; }
+                if (Contents.Collectible == null) { return false; }
+                if (Contents.Collectible.GetTemperature(Api.World,Contents)>= maxHeat) { return true; }
+                return false;
+            }
+        }
         
         public override void Initialize(ICoreAPI api)
         {
@@ -41,6 +68,9 @@ namespace qptech.src
                 maxItems = Block.Attributes["maxItems"].AsInt(maxItems);
                 stackRenderHeight = Block.Attributes["stackRenderHeight"].AsFloat(stackRenderHeight);
                 elementShapeName = Block.Attributes["elementShapeName"].AsString(elementShapeName);
+                maxAirBoostBonus = Block.Attributes["maxAirBoostBonus"].AsFloat(maxAirBoostBonus);
+                loadable = Block.Attributes["loadable"].AsBool(loadable);
+                unloadable = Block.Attributes["unloadable"].AsBool(unloadable);
             }
             if (api is ICoreClientAPI)
             {
@@ -63,9 +93,9 @@ namespace qptech.src
                 float temp = contents.Collectible.GetTemperature(Api.World, contents);
                 if (temp < maxHeat)
                 {
-                    float tempGain = (float)(hoursPassed * degreesPerHour);
+                    float tempGain = (float)(hoursPassed * DegreesPerHour);
 
-                    contents.Collectible.SetTemperature(Api.World, contents, Math.Min(maxHeat, temp + tempGain));
+                    contents.Collectible.SetTemperature(Api.World, contents, Math.Min(MaxHeat, temp + tempGain));
                 }
             }
             lastTickTotalHours = Api.World.Calendar.TotalHours;

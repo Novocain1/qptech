@@ -40,23 +40,50 @@ namespace qptech.src
             
             public void OnTick(float par)
             {
+                //Test if there is somewhere to put stuff
+                BlockPos checkPos = new BlockPos(Pos.X, Pos.Y - 1, Pos.Z);
+                var outputContainer = Api.World.BlockAccessor.GetBlockEntity(checkPos) as BlockEntityContainer;
+                if (outputContainer == null) { return; }
                 
-                //find a firepit above us
-                BlockPos checkPos = new BlockPos(Pos.X, Pos.Y+1, Pos.Z);
+                //find a firepit or forge above us
+                checkPos = new BlockPos(Pos.X, Pos.Y+1, Pos.Z);
                 
                 checkblock = Api.World.BlockAccessor.GetBlockEntity(checkPos);
                 //Nothing at firepit location, nothing we can do, there is no point, good day sir!
-                                
+                
                 var firepit = checkblock as BlockEntityFirepit;
+                var forge = checkblock as BEEForge;
+                ItemSlot targetSlot;
                 //NO Firepit then you musta quit
-                if (firepit == null) { return; }
+                if (firepit == null&&forge==null) { return; }
+                if (forge!=null && !(forge.Unloadable && forge.ContentsReady)) { return; }
+                else {
+                    
+                    DummyInventory di = new DummyInventory(Api,1);
+                    di.Slots[0].Itemstack = forge.Contents;
+                    int quantity = 1;
+                    
+                    targetSlot = outputContainer.Inventory.GetAutoPushIntoSlot(BlockFacing.UP, di.Slots[0]);
+                    ItemStackMoveOperation op = new ItemStackMoveOperation(Api.World, EnumMouseButton.Left, 0, EnumMergePriority.DirectMerge, quantity);
+
+                    int qmoved = di[0].TryPutInto(targetSlot, ref op);
+                    if (qmoved == 0) { 
+                        forge.Contents.StackSize -= 1;
+                        if (forge.Contents.StackSize == 0)
+                        {
+                            forge.ClearContents();
+                        }
+                    }
+                    forge.MarkDirty(true);
+                    
+                    return;
+                }
                 if (firepit.outputStack == null) { return; }
                 if (firepit.outputStack.StackSize == 0) { return; }
-                checkPos = new BlockPos(Pos.X, Pos.Y -1, Pos.Z);
-                var outputContainer = Api.World.BlockAccessor.GetBlockEntity(checkPos) as BlockEntityContainer;
-                if (outputContainer == null) { return; }
+                
+                
                
-                ItemSlot targetSlot = outputContainer.Inventory.GetAutoPushIntoSlot(BlockFacing.UP, firepit.outputSlot);
+                targetSlot = outputContainer.Inventory.GetAutoPushIntoSlot(BlockFacing.UP, firepit.outputSlot);
                 if (targetSlot != null)
                 {
                     int quantity = 1;
