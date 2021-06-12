@@ -266,6 +266,7 @@
     <None Include="qptech\assets\machines\blocktypes\metal\electric\washplant.json" />
     <None Include="qptech\assets\machines\blocktypes\metal\electric\macerator.json" />
     <None Include="qptech\assets\machines\blocktypes\metal\electric\metalpress.json" />
+    <None Include="qptech\assets\machines\blocktypes\metal\heatsink.json" />
     <None Include="qptech\assets\machines\blocktypes\metal\other\hiddenchute\chute-cross.json" />
     <None Include="qptech\assets\machines\blocktypes\metal\other\hiddenchute\chute-straight.json" />
     <None Include="qptech\assets\machines\blocktypes\metal\other\hiddenchute\chute-t.json" />
@@ -349,6 +350,7 @@
     <None Include="qptech\assets\machines\recipes\smithing\tool\pullplate.json" />
     <None Include="qptech\assets\machines\recipes\smithing\tool\screwdriverhead.json" />
     <None Include="qptech\assets\machines\shapes\block\metal\electric\forge-lv.json" />
+    <None Include="qptech\assets\machines\shapes\block\metal\electric\heatsink.json" />
     <None Include="qptech\assets\machines\shapes\block\metal\electric\washplant2.json" />
     <None Include="qptech\assets\machines\shapes\block\wood\basin.json" />
     <None Include="qptech\assets\machines\shapes\block\metal\electric\battery\primitive.json" />

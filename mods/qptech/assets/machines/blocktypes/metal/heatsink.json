@@ -1,0 +1,64 @@
+{
+	"code": "heatsink",
+	
+	
+	"behaviors": [
+		{
+			"name": "HorizontalOrientable",
+			"properties": { "dropBlockFace": "east" }
+		}
+	],
+	"variantgroups": [
+		{
+			"code": "type",
+			"states": [ "lowtemp" ]
+		},
+		{
+			"code": "side",
+			"loadFromProperties": "abstract/horizontalorientation"
+		}
+	],
+	"creativeinventory": {
+		"general": [ "*-east" ],
+		"qptech": [ "*-east" ]
+	},
+	"blockmaterial": "Metal",
+	"shape": { "base": "block/metal/electric/heatsink" },
+	"shapeByType": {
+		"*-north": {
+			"base": "block/metal/electric/heatsink",
+			"rotateY": 0
+		},
+		"*-east": {
+			"base": "block/metal/electric/heatsink",
+			"rotateY": 270
+		},
+		"*-west": {
+			"base": "block/metal/electric/heatsink",
+			"rotateY": 90
+		},
+		"*-south": {
+			"base": "block/metal/electric/heatsink",
+			"rotateY": 180
+		}
+	},
+	"drawtype": "json",
+
+	"resistance": 1,
+	"sideopaque": {
+		"all": false
+	},
+	"sounds": {
+		"place": "game:block/anvil",
+		"walk": "game:walk/stone"
+	},
+	"guiTransform": {
+		"origin": {
+			"x": 0.5,
+			"y": 0.5,
+			"z": 0.5
+		},
+		"scale": 1
+	}
+
+}
