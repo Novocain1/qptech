@@ -20,7 +20,7 @@
 			"maxFlux": 32,
 			
 			"capacitance": 8,
-			"receptionFaces": [ "north", "south", "east", "west" ],
+			"receptionFaces": [ "north", "south", "east", "west","down" ],
 			"distributionFaces": [ "north", "south", "east", "west" ]
 		}
 		
