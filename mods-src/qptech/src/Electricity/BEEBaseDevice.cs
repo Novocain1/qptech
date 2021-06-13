@@ -30,7 +30,7 @@ namespace qptech.src
         public override void OnTick(float par)
         {
             base.OnTick(par);
-            //override as we don't want to transmit power
+            
             UsePower();
         }
         protected bool animInit = false;

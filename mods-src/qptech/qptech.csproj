@@ -75,7 +75,7 @@
     <Compile Include="src\Electricity\BEEAssembler.cs" />
     <Compile Include="src\Electricity\BEEBaseDevice.cs" />
     <Compile Include="src\Electricity\BEEBlastFurnace.cs" />
-    <Compile Include="src\Electricity\BEEChiller.cs" />
+    <Compile Include="src\Electricity\BEEHVAC.cs" />
     <Compile Include="src\Electricity\BEEForge.cs" />
     <Compile Include="src\Electricity\BEElectric.cs" />
     <Compile Include="src\Electricity\BEEGenerator.cs" />

@@ -1,7 +1,8 @@
 {
 	"code": "electricfan",
-	
-	
+	"class": "ElectricalBlock",
+	"entityclass": "BEEHVAC",
+
 	"behaviors": [
 		{
 			"name": "HorizontalOrientable",
@@ -46,19 +47,18 @@
 
 	"resistance": 1,
 	"sideopaque": {
-		"all": false
+		"all": true
 	},
 	"sounds": {
 		"place": "game:block/anvil",
 		"walk": "game:walk/stone"
 	},
 	"guiTransform": {
-		"origin": {
-			"x": 0.5,
-			"y": 0.5,
-			"z": 0.5
-		},
-		"scale": 1
+		"rotation": {
+			"x": -8,
+			"y": -81,
+			"z": 3
+		}
 	}
 
 }
