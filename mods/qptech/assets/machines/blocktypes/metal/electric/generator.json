@@ -9,7 +9,7 @@
 	},
 	"attributes": {
 		"maxFlux": 2,
-		
+
 		"capacitance": 4,
 		"genFlux": 20,
 		"distributionFaces": [ "north" ],
@@ -37,6 +37,17 @@
 			"properties": { "dropBlockFace": "east" }
 		}
 	],
+	"textures": {
+		"machinery-back": { "base": "block/metal/generator/machinery-back" },
+		"fan": { "base": "block/metal/generator/fan" },
+		"machinery-gate": { "base": "block/metal/generator/machinery-gate" },
+		"machinery-fan": { "base": "block/metal/generator/machinery-fan" },
+		"machinery-glass": { "base": "block/metal/generator/machinery-glass" },
+		"machinery-top": { "base": "block/metal/generator/machinery-top" },
+		"machinery": { "base": "block/metal/generator/machinery-border-small" },
+		"bronze": { "base": "game:block/metal/sheet/tinbronze1" },
+		"wires": { "base": "block/metal/wires/tin-wires" }
+	},
 	"blockmaterial": "Metal",
 	"drawtype": "json",
 	"shape": { "base": "block/metal/electric/generator" },
