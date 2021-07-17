@@ -204,7 +204,7 @@ namespace qptech.src
                 itemFlowAccum = Math.Min(itemFlowAccum + ItemFlowRate, Math.Max(1, ItemFlowRate * 2));
                 if (itemFlowAccum < 1) return;
 
-                if (PushFaces != null && PushFaces.Length > 0 && !inventory.IsEmpty)
+                if (PushFaces != null && PushFaces.Length > 0 && !inventory.Empty)
                 {
                     ItemStack stack = inventory.First(slot => !slot.Empty).Itemstack;
 
@@ -241,7 +241,7 @@ namespace qptech.src
 
                 }
 
-                if (PullFaces != null && PullFaces.Length > 0 && inventory.IsEmpty)
+                if (PullFaces != null && PullFaces.Length > 0 && inventory.Empty)
                 {
                     BlockFacing inputFace = PullFaces[Api.World.Rand.Next(PullFaces.Length)];
 

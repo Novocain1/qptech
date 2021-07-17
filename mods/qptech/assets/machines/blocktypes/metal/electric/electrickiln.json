@@ -1,0 +1,74 @@
+{
+	"code": "electrickiln",
+	"class": "ElectricalBlock",
+	"entityclass": "BEEKiln",
+	"entityBehaviors": [ { "name": "Animatable" } ],
+	"creativeinventory": {
+		"general": [ "*-east" ],
+		"qptech": [ "*-east" ]
+	},
+	"variantgroups": [
+		{
+			code: "type",
+			states: [ "lv" ]
+		},
+		{
+			"code": "side",
+			"loadFromProperties": "abstract/horizontalorientation"
+		}
+	],
+	"behaviors": [
+		{
+			"name": "HorizontalOrientable",
+			"properties": { "dropBlockFace": "east" }
+		}
+	],
+
+	"attributesbytype": {
+		"*-lv-*": {
+			"maxFlux": 8,
+			
+			"capacitance": 16,
+			"requiredFlux": 4
+			
+
+		}
+
+	},
+	"blockmaterial": "Metal",
+	"drawtype": "json",
+
+	"shape": { "base": "block/metal/electric/clayformer" },
+	"shapeByType": {
+		"*-north": {
+			"base": "block/metal/electric/clayformer",
+			"rotateY": 0
+		},
+		"*-east": {
+			"base": "block/metal/electric/clayformer",
+			"rotateY": 270
+		},
+		"*-west": {
+			"base": "block/metal/electric/clayformer",
+			"rotateY": 90
+		},
+		"*-south": {
+			"base": "block/metal/electric/clayformer",
+			"rotateY": 180
+		}
+	},
+	"resistance": 1,
+	"sideAo": { "all": false },
+	"sidesolid": {
+		"all": false
+	},
+	"sideopaque": {
+		"all": false
+	},
+	"sounds": {
+		"place": "game:block/anvil",
+		"walk": "game:walk/stone"
+	}
+
+
+}

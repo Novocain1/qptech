@@ -245,7 +245,7 @@ namespace QptechFurniture.src
                 inventory.PutLocked = false;
             }
 
-            if (inventory.PutLocked && inventory.IsEmpty) return false;
+            if (inventory.PutLocked && inventory.Empty) return false;
 
             if (Api.World is IServerWorldAccessor)
             {
