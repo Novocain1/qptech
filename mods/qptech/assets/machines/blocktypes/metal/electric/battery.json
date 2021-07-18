@@ -28,14 +28,14 @@
 			
 			"capacitance": 500,
 			"receptionFaces": [ "south" ],
-			"distributionFaces": [ "north", "east", "west" ]
+			"distributionFaces": [ "north", "east", "west","down" ]
 		},
 		"*-lv-*": {
 			"maxFlux": 4,
 			
 			"capacitance": 1000,
 			"receptionFaces": [ "south" ],
-			"distributionFaces": [ "north", "east", "west" ]
+			"distributionFaces": [ "north", "east", "west","down" ]
 		}
 	},
 	"blockmaterial": "Metal",

@@ -29,7 +29,7 @@
 			
 			"capacitance": 40,
 			"requiredFlux": 40,
-			"receptionFaces": [ "north" ],
+			
 			"inputFace": "west",
 			"outputFace": "east",
 			"inputQuantity": 2,

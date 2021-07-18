@@ -111,5 +111,7 @@
 	"block-macerator-lv-*": "Macerator (LV)",
 	"blockdesc-macerator-*": "Basic Ore and Aggregate procesing. May yield extra ore or different bonus ores.",
 	"block-washplant-lv-*": "Wash Plant (LV)",
-	"blockdesc-washplant-*": "Washing your gravel, sand, and nuggets may yield extra or different items. Note: in future this would require a water supply, and the model will be updated!"
+	"blockdesc-washplant-*": "Washing your gravel, sand, and nuggets may yield extra or different items. Note: in future this would require a water supply, and the model will be updated!",
+	"block-electrickiln-lv-*": "Electric Kiln (LV)",
+	"blockdesc-electrickiln-lv-*": "Will fire your raw clay items. Input on left, output on right."
 }

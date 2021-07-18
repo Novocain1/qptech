@@ -21,7 +21,7 @@ namespace qptech.src
         protected double restingheat = 20;
         protected double heatPerTick = 10;
         protected double insulationFactor = 0.99;
-        protected double maxHeat = 2000;
+        protected double maxHeat = 1000;
         protected double stackHeatFactor = 100; //averages up the heat over this factor
         public double StackHeatChange => (internalheat + stackheat * (stackHeatFactor - 1)) / stackHeatFactor;
         /// <summary>
@@ -120,8 +120,36 @@ namespace qptech.src
                 outputStack = new ItemStack(outputItem, 1);
             }
             dummy[0].Itemstack = outputStack;
-            dummy.DropAll(Pos.ToVec3d());
-            this.MarkDirty(true);
+            BlockPos bp = Pos.Copy().Offset(outputFace);
+            BlockEntity checkblock = Api.World.BlockAccessor.GetBlockEntity(bp);
+            var outputContainer = checkblock as BlockEntityContainer;
+            int outputQuantity = 1;
+            if (outputContainer != null)
+            {
+                WeightedSlot tryoutput = outputContainer.Inventory.GetBestSuitedSlot(dummy[0]);
+
+                if (tryoutput.slot != null)
+                {
+                    ItemStackMoveOperation op = new ItemStackMoveOperation(Api.World, EnumMouseButton.Left, 0, EnumMergePriority.DirectMerge, outputQuantity);
+
+                    dummy[0].TryPutInto(tryoutput.slot, ref op);
+
+                }
+            }
+
+            if (!dummy.Empty)
+            {
+                //If no storage then spill on the ground
+                Vec3d pos = Pos.ToVec3d();
+
+                dummy.DropAll(pos);
+            }
+            Api.World.PlaySoundAt(new AssetLocation("sounds/doorslide"), Pos.X, Pos.Y, Pos.Z, null, false, 8, 1);
+            if (Api.World.Side == EnumAppSide.Client && animUtil != null)
+            {
+
+                animUtil.StopAnimation(Pos.ToString() + animationName);
+            }
         }
 
         void TryStart()

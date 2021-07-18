@@ -68,7 +68,7 @@ namespace qptech.src
                 receptionFaces = BlockFacing.HORIZONTALS.ToList<BlockFacing>();
                 return;
             }
-            if (!Block.Attributes.KeyExists("receptionFaces")) { receptionFaces = BlockFacing.HORIZONTALS.ToList<BlockFacing>(); }
+            if (!Block.Attributes.KeyExists("receptionFaces")) { receptionFaces = BlockFacing.ALLFACES.ToList<BlockFacing>(); }
             else
             {
                 cfaces = Block.Attributes["receptionFaces"].AsArray<string>(cfaces);
@@ -79,7 +79,7 @@ namespace qptech.src
                 }
             }
 
-            if (!Block.Attributes.KeyExists("distributionFaces")) { distributionFaces = BlockFacing.HORIZONTALS.ToList<BlockFacing>(); }
+            if (!Block.Attributes.KeyExists("distributionFaces")) { distributionFaces = BlockFacing.ALLFACES.ToList<BlockFacing>(); }
             else
             {
                 cfaces = Block.Attributes["distributionFaces"].AsArray<string>(cfaces);
