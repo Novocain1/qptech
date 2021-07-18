@@ -63,7 +63,7 @@ namespace qptech.src
         }
         protected override void DoDeviceStart()
         {
-            //if (Api.World.Side is EnumAppSide.Client) { return; }
+            if (Api.World.Side is EnumAppSide.Client) { return; }
             if (Capacitor < requiredFlux) { DoFailedStart(); }
             tickCounter = 0;
             if (deviceState == enDeviceState.IDLE)
@@ -76,7 +76,7 @@ namespace qptech.src
         }
         void DoCooling()
         {
-            //if (Api.World.Side is EnumAppSide.Client) { return; }
+            if (Api.World.Side is EnumAppSide.Client) { return; }
             if (internalheat <= restingheat) { internalheat = restingheat;return; }
             internalheat *= insulationFactor;
             
@@ -87,7 +87,7 @@ namespace qptech.src
 
         protected override void DoDeviceProcessing()
         {
-            //if (Api.World.Side is EnumAppSide.Client) { return; }
+            if (Api.World.Side is EnumAppSide.Client) { return; }
             if (Capacitor < requiredFlux) { DoCooling(); return; }
             ChangeCapacitor(-requiredFlux);
             if (internalheat < maxHeat)
@@ -157,7 +157,7 @@ namespace qptech.src
             
             
 
-           //if (Api.World.Side is EnumAppSide.Client) { return; }
+            if (Api.World.Side is EnumAppSide.Client) { return; }
             BlockPos bp = Pos.Copy().Offset(rmInputFace);
             BlockEntity checkblock = Api.World.BlockAccessor.GetBlockEntity(bp);
             var inputContainer = checkblock as BlockEntityContainer;
