@@ -15,7 +15,7 @@
 		}
 	},
 	variantgroups: [
-		{ code: "material", states: ["iron", "meteoriciron", "steel" ] },
+		{ code: "material", states: ["tinbronze","bismuthbronze","blackbronze","iron", "meteoriciron", "steel" ] },
 	],
 	
 	enabled: true,
