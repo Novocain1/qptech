@@ -1,6 +1,7 @@
 ﻿{
 	"machines:heavymold-screw": "machines:metalpress-lvsoftscrew",
 	"machines:heavymold-metalplate": "machines:metalpress-lvsoftmetalplate",
-	"machines:heavymold-rod": "machines:metalpress-lvsoftrod"
+	"machines:heavymold-rod": "machines:metalpress-lvsoftrod",
+	"game:plate-iron": "machines:metalpress-lvbender"
 
 }

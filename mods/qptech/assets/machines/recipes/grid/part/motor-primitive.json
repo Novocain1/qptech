@@ -1,7 +1,7 @@
 {
 	ingredientPattern: "SPS	TRW	SPS",
 	ingredients: {
-		"W": { type: "item", code: "wire-copper", quantity: 4 },
+		"W": { type: "item", code: "wire-copper", quantity: 2 },
 		"P": { type: "item", code: "machineplate-*bronze", quantity: 1 },
 		"S": { type: "item", code: "screw-brass", quantity: 1 },
 		"R": { type: "item", code: "rod-brass", quantity: 1 },

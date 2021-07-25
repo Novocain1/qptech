@@ -11,7 +11,7 @@
 		"inventoryClassName": "chest",
 
 		"types": [ "normal-generic" ],
-		"quantitySlots": { "normal-generic": 18 },
+		"quantitySlots": { "normal-generic": 20 },
 		"storageType": { "normal-generic": 169 },
 		"typedOpenSound": { "normal-generic": "sounds/block/largechestopen" },
 		"dialogTitleLangCode": {

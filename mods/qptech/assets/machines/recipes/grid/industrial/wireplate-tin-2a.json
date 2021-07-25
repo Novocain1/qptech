@@ -1,7 +1,7 @@
 {
 	ingredientPattern: "T	W	P",
 	ingredients: {
-		"W": { type: "item", code: "wire-tin", quantity: 2 },
+		"W": { type: "item", code: "wire-*", quantity: 2 },
 		"T": { type: "item", code: "screwdriver-*", isTool: true },
 		"P": { type: "item", code: "game:plank-*", quantity: 2}
 	},

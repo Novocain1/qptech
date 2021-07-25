@@ -10,7 +10,7 @@
 	"variantgroups": [
 		{
 			"code": "type",
-			"states": [ "lvsoftmetalplate", "lvsoftscrew", "lvsoftrod"]
+			"states": [ "lvsoftmetalplate", "lvsoftscrew", "lvsoftrod","lvbender"]
 		},
 		{
 			"code": "side",
@@ -26,10 +26,10 @@
 	"attributesbytype": {
 		"*-lvsoftmetalplate-*": {
 			"maxFlux": 40,
-			
+
 			"capacitance": 40,
 			"requiredFlux": 40,
-			
+
 			"inputFace": "west",
 			"outputFace": "east",
 			"inputQuantity": 2,
@@ -39,12 +39,12 @@
 			"processingTime": 0.045,
 			"animationSpeed": 0.45,
 			"heatRequirement": 800,
-			"materials": [ "copper", "brass", "gold", "silver", "tin", "lead", "bismuth", "zinc" ]
+			"materials": [ "copper", "brass", "gold", "silver", "tin", "lead", "bismuth", "zinc","tinbronze","bismuthbronze","blackbronze" ]
 
 		},
 		"*-lvsoftscrew-*": {
 			"maxFlux": 40,
-			
+
 			"capacitance": 40,
 			"requiredFlux": 40,
 			"receptionFaces": [ "north" ],
@@ -62,7 +62,7 @@
 		},
 		"*-lvsoftrod-*": {
 			"maxFlux": 40,
-			
+
 			"capacitance": 40,
 			"requiredFlux": 40,
 			"receptionFaces": [ "north" ],
@@ -76,8 +76,25 @@
 			"animationSpeed": 0.45,
 			"heatRequirement": 800,
 			"materials": [ "brass" ]
+		},
+		"*-lvbender-*": {
+			"maxFlux": 40,
+
+			"capacitance": 40,
+			"requiredFlux": 40,
+			"receptionFaces": [ "north" ],
+			"inputFace": "west",
+			"outputFace": "east",
+			"inputQuantity": 1,
+			"outputQuantity": 3,
+			"recipe": "machines:chutesection",
+			"ingredient": "plate",
+			"processingTime": 0.045,
+			"animationSpeed": 0.45,
+			"heatRequirement": 800,
+			"materials": [ "copper" ]
 		}
-		
+
 	},
 	"blockmaterial": "Metal",
 	"drawtype": "json",

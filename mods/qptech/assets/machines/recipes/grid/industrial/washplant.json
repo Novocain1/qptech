@@ -24,7 +24,7 @@
 		"M": {
 			"type": "item",
 			"code": "motor-primitive",
-			"quantity": 2
+			"quantity": 1
 		},
 		"S": {
 			"type": "item",

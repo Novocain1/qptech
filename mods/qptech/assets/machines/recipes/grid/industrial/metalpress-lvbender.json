@@ -1,5 +1,5 @@
 {
-	ingredientPattern: "MTS	IBH	RP_",
+	ingredientPattern: "MTS	IBI	RP_",
 	ingredients: {
 		"T": { type: "item", code: "screwdriver-*", isTool: true },
 		"P": {
@@ -12,9 +12,9 @@
 		"S": { type: "item", code: "screw-brass", quantity: 4},
 		"I": { "type":  "item", "code": "game:metalplate-iron","quantity": 2},
 		"R": { "type":  "item", "code": "rod-brass","quantity": 4},
-		"H": { "type": "item", "code":  "heavymold-rod","quantity": 1}
+		
 	},
 	width: 3,
 	height: 3,
-	output: { type: "block", code: "metalpress-lvsoftrod-east", quantity: 1  }
+	output: { type: "block", code: "metalpress-lvbender-east", quantity: 1  }
 }

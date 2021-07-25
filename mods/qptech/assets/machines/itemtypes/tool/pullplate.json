@@ -53,5 +53,8 @@
 		"pullplate-iron": 2000,
 		"pullplate-meteoriciron": 2800,
 		"pullplate-steel": 5000,
+		"pullplate-tinbronze": 1750,
+		"pullplate-bismuthbronze": 1800,
+		"pullplate-blackbronze":  1850
 	}
 }

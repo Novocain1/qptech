@@ -1,7 +1,7 @@
 {
 	ingredientPattern: "PPP	S_H	PPP",
 	ingredients: {
-		"P": { type: "item", code: "game:plank-*", name: "wood", quantity: 2 },
+		"P": { type: "item", code: "game:plank-*", name: "wood", quantity: 4 },
 		"S": { type: "item", code: "game:saw-*", isTool: true },
 		"H": { type: "item", code: "game:hammer-*", isTool: true }
 		
