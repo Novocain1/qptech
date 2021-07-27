@@ -1,0 +1,46 @@
+{
+    "code": "mpmotor",
+    "class": "BlockElectricMotor",
+    "entityClass": "ElectricMotor",
+    "behaviors": [
+        {
+            "name": "HorizontalOrientable"
+        }
+    ],
+    "entityBehaviors": [
+        {
+            "name": "MPMotor"
+        }
+    ],
+    "texturesByType": {
+        "all": {
+            "base": "game:block/metal/sheet/silver1"
+        },
+        "north": {
+            "base": "game:block/metal/sheet/gold1"
+        }
+    },
+    "creativeinventory": {
+        "general": [
+            "*-north"
+        ],
+        "mechanics": [
+            "*-north"
+        ],
+        "qptech": [
+            "*-north"
+        ]
+    },
+    "variantgroups": [
+        {
+            "code": "side",
+            "loadFromProperties": "abstract/horizontalorientation"
+        }
+    ],
+    "sidesolid": {
+        "all": false
+    },
+    "sideopaque": {
+        "all": false
+    }
+}
