@@ -45,7 +45,7 @@ namespace Electricity.API
         int ReceivePacketOffer(IElectricity from, int inFlux);
         ///return if this object needs any power
         int NeedPower();
-        ///Try to accept an IElectricity as a connected power source (return false to refuse connection)
+        ///Try to accept an IElectricity as a connected power source (return 0 to refuse connection)
         bool TryInputConnection(IElectricity connectto);
         ///Try to accept an IElectricity as a connected power destination
         bool TryOutputConnection(IElectricity connectto);

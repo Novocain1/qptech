@@ -37,8 +37,10 @@ namespace qptech.src
     /// </summary>
     class BEEMacerator:BEEBaseDevice
     {
-        protected BlockFacing rmInputFace=BlockFacing.FromCode("up"); //what faces will be checked for input containers
-        protected BlockFacing outputFace = BlockFacing.FromCode("down");
+        string materialInputFace = "up";
+        string materialOutputFace = "down";
+        protected BlockFacing rmInputFace=>BlockFacing.FromCode(materialInputFace); //what faces will be checked for input containers
+        protected BlockFacing outputFace=> BlockFacing.FromCode(materialOutputFace);
         CollectibleObject workingitem;
         protected string machinename = "macerator";
         
@@ -50,6 +52,9 @@ namespace qptech.src
             {
                 
                 machinename = Block.Attributes["machinename"].AsString(machinename);
+                materialInputFace = Block.Attributes["materialInputFace"].AsString(materialInputFace);
+                materialOutputFace = Block.Attributes["materialOutputFace"].AsString(materialOutputFace);
+
             }
             SetupAnimation();
         }

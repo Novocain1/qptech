@@ -258,12 +258,14 @@
     <None Include="qptech\assets\game\shapes\block\can-open.json" />
     <None Include="qptech\assets\game\shapes\block\can-sealed.json" />
     <None Include="qptech\assets\machines\blocktypes\metal\creative\creativegenerator.json" />
+    <None Include="qptech\assets\machines\blocktypes\metal\electric\testmotor.json" />
     <None Include="qptech\assets\machines\blocktypes\metal\electric\battery.json" />
     <None Include="qptech\assets\machines\blocktypes\metal\electric\electrickiln.json" />
     <None Include="qptech\assets\machines\blocktypes\metal\electric\clayformer.json" />
     <None Include="qptech\assets\machines\blocktypes\metal\electric\blastfurnace.json" />
     <None Include="qptech\assets\machines\blocktypes\metal\electric\electricforge.json" />
     <None Include="qptech\assets\machines\blocktypes\metal\electric\generator.json" />
+    <None Include="qptech\assets\machines\blocktypes\metal\electric\logsplitter.json" />
     <None Include="qptech\assets\machines\blocktypes\metal\electric\washplant.json" />
     <None Include="qptech\assets\machines\blocktypes\metal\electric\macerator.json" />
     <None Include="qptech\assets\machines\blocktypes\metal\electric\metalpress.json" />
