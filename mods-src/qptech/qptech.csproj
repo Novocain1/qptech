@@ -76,6 +76,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="src\Electricity\BEBMPGenerator.cs" />
     <Compile Include="src\Electricity\BEBMPMotor.cs" />
     <Compile Include="src\Electricity\BEEAssembler.cs" />
     <Compile Include="src\Electricity\BEEBaseDevice.cs" />
@@ -87,10 +88,12 @@
     <Compile Include="src\Electricity\BEEGenerator.cs" />
     <Compile Include="src\Electricity\BEEMacerator.cs" />
     <Compile Include="src\Electricity\BEEWire.cs" />
+    <Compile Include="src\Electricity\BEMPGenerator.cs" />
     <Compile Include="src\Electricity\BEMPMotor.cs" />
     <Compile Include="src\Electricity\BEPowerFlag.cs" />
     <Compile Include="src\Electricity\BlockClayformer.cs" />
     <Compile Include="src\Electricity\BlockEForge.cs" />
+    <Compile Include="src\Electricity\BlockMPGenerator.cs" />
     <Compile Include="src\Electricity\BlockElectricMotor.cs" />
     <Compile Include="src\Electricity\BlockMetalPress.cs" />
     <Compile Include="src\Electricity\BlockWire.cs" />

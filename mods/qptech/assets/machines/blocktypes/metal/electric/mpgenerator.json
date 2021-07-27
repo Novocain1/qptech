@@ -1,12 +1,12 @@
 {
-    "code": "mpmotor",
-    "class": "BlockElectricMotor",
-    "entityClass": "ElectricMotor",
+    "code": "mpgenerator",
+    "class": "BlockMPGenerator",
+    "entityClass": "ElectricGenerator",
     "attributes":{
         "requiredFlux": 35,
         "capacitance": 35,
-        "onSpeed": 1.0,
-        "onTorque": 5.0
+        "requiredTorque": 5.0,
+        "genFlux": 35
     },
     "behaviors": [
         {
@@ -15,7 +15,7 @@
     ],
     "entityBehaviors": [
         {
-            "name": "MPMotor"
+            "name": "MPGenerator"
         }
     ],
     "textures": {
