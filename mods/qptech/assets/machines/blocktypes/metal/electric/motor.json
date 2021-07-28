@@ -18,11 +18,19 @@
             "name": "MPMotor"
         }
     ],
+    "shapeInventory": {
+        "base": "block/metal/electric/motor"
+    },
     "shapeByType": {
-		"*-north": { "base": "block/metal/electric/motor", "rotateY": 180 },
-        "*-east": { "base": "block/metal/electric/motor", "rotateY": 90 },
-        "*-south": { "base": "block/metal/electric/motor", "rotateY": 0 },
-        "*-west": { "base": "block/metal/electric/motor", "rotateY": 270 }
+		"*-rotor-north": { "base": "block/metal/electric/motor-rotor", "rotateY": 180 },
+        "*-rotor-east": { "base": "block/metal/electric/motor-rotor", "rotateY": 90 },
+        "*-rotor-south": { "base": "block/metal/electric/motor-rotor", "rotateY": 0 },
+        "*-rotor-west": { "base": "block/metal/electric/motor-rotor", "rotateY": 270 },
+
+        "*-stator-north": { "base": "block/metal/electric/motor-stator", "rotateY": 180 },
+        "*-stator-east": { "base": "block/metal/electric/motor-stator", "rotateY": 90 },
+        "*-stator-south": { "base": "block/metal/electric/motor-stator", "rotateY": 0 },
+        "*-stator-west": { "base": "block/metal/electric/motor-stator", "rotateY": 270 }
 	},
     "textures": {
         "conductingbars": {
@@ -49,16 +57,20 @@
     },
     "creativeinventory": {
         "general": [
-            "*-north"
+            "*-rotor-north"
         ],
         "mechanics": [
-            "*-north"
+            "*-rotor-north"
         ],
         "qptech": [
-            "*-north"
+            "*-rotor-north"
         ]
     },
     "variantgroups": [
+        {
+            "code": "rotorstator",
+            "states": [ "rotor", "stator" ]
+        },
         {
             "code": "side",
             "loadFromProperties": "abstract/horizontalorientation"
