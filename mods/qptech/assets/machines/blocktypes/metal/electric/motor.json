@@ -6,7 +6,8 @@
         "requiredFlux": 35,
         "capacitance": 35,
         "onSpeed": 1.0,
-        "onTorque": 5.0
+        "_comment": "1.25 is maximum torque output possible from one windmill with 5 sails.",
+        "onTorque": 1.25
     },
     "behaviors": [
         {
@@ -42,8 +43,11 @@
 		"machinery-gate": {
             "base": "block/metal/generator/machinery-gate"
         },
-		"machinery-fan": {
-            "base": "block/metal/generator/machinery-fan"
+		"machinery-largefan": {
+            "base": "block/machinery-largefan"
+        },
+        "castiron": {
+            "base": "block/castiron"
         },
 		"tin-wires": {
             "base": "block/metal/wires/tin-wires"

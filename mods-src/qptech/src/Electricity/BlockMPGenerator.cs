@@ -7,19 +7,14 @@ namespace qptech.src
 {
     class BlockMPGenerator : ElectricalBlock
     {
-        int facing;
+        public int powerInIndex;
 
         public MeshData statorMesh;
 
         public override void OnLoaded(ICoreAPI api)
         {
-            int iOfA = BlockFacing.FromCode(Variant["side"]).Index;
-            int iOfB = BlockFacing.FromCode(Variant["side"]).Opposite.Index;
-
-            foreach (BlockFacing face in BlockFacing.HORIZONTALS)
-            {
-                if (face.Index != iOfA && face.Index != iOfB) facing |= 1 << face.Index;
-            }
+            int index = BlockFacing.FromCode(Variant["side"]).Opposite.Index;
+            powerInIndex = index + 1 > 3 ? 0 : index + 1;
 
             if (Attributes != null)
             {
@@ -42,7 +37,7 @@ namespace qptech.src
 
         public override bool HasMechPowerConnectorAt(IWorldAccessor world, BlockPos pos, BlockFacing face)
         {
-            return (facing >> face.Index & 1) > 0;
+            return powerInIndex == face.Index;
         }
 
         public override void OnBlockPlaced(IWorldAccessor world, BlockPos blockPos, ItemStack byItemStack = null)

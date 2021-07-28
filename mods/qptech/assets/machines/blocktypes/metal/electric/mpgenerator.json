@@ -44,6 +44,12 @@
 		"machinery-gate": {
             "base": "block/metal/generator/machinery-gate"
         },
+        "machinery-largefan": {
+            "base": "block/machinery-largefan"
+        },
+        "castiron": {
+            "base": "block/castiron"
+        },
 		"machinery-fan": {
             "base": "block/metal/generator/machinery-fan"
         },

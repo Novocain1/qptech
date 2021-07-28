@@ -15,12 +15,8 @@ namespace qptech.src
         public BEBMPGenerator(BlockEntity blockentity) : base(blockentity)
         {
             Blockentity = blockentity;
-            string orientation = blockentity.Block.Variant["side"];
-            var ownFacing = BlockFacing.FromCode(orientation);
-            
-            ownFacing = BlockFacingExt.FromIndex(ownFacing.Index >= 3 ? 0 : ownFacing.Index + 1).Opposite;
 
-            OutFacingForNetworkDiscovery = ownFacing;
+            OutFacingForNetworkDiscovery = BlockFacingExt.FromIndex((Block as BlockMPGenerator).powerInIndex);
         }
 
         public override void Initialize(ICoreAPI api, JsonObject properties)
