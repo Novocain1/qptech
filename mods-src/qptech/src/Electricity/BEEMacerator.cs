@@ -300,7 +300,15 @@ namespace qptech.src
                     string al = fullcode;
                     if (mr.type == enTypes.SWAP)
                     {
-                        al = al.Replace(fcp, mr.outputmaterial);
+                        if (fcp=="log") //hacked in check for log splitter
+                        {
+                            al=al.Replace("log-placed", "plank");
+                            al=al.Replace("-ud", "");
+                        }
+                        else
+                        {
+                            al = al.Replace(fcp, mr.outputmaterial);
+                        }
                     }
                     else if (mr.type == enTypes.ORESWAP)
                     {

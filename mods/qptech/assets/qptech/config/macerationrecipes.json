@@ -75,9 +75,17 @@
 			"outputmaterial": "game:stick",
 			"outputquantity": 10,
 			"odds": 50,
-			"type":  "PARTIAL"
+			"type": "PARTIAL"
+		},
+		{
+			"outputmaterial": "plank",
+			"outputquantity": 5,
+			"odds": 100,
+			"machinename": "lumbermill",
+			"type":  "SWAP"
 		}
 	],
+	
 	"game:log-placed-pine-ud": [
 		{
 			"outputmaterial": "game:resin",
