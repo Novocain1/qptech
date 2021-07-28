@@ -7,7 +7,8 @@
         "capacitance": 35,
         "onSpeed": 1.0,
         "_comment": "1.25 is maximum torque output possible from one windmill with 5 sails.",
-        "onTorque": 1.25
+        "onTorque": 1.25,
+        "receptionFaces": [ "north" ]
     },
     "behaviors": [
         {

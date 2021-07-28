@@ -46,10 +46,10 @@ namespace qptech.src
             switch (BlockFacing.FromCode(Block.Variant["side"]).Index)
             {
                 case 0:
-                    AxisSign = new int[] { 1, 0, 0 };
+                    AxisSign = new int[] { -1, 0, 0 };
                     break;
                 case 1:
-                    AxisSign = new int[] { 0, 0, 1 };
+                    AxisSign = new int[] { 0, 0, -1 };
                     break;
                 case 2:
                     AxisSign = new int[] { -1, 0, 0 };

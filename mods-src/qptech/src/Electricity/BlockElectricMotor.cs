@@ -53,6 +53,7 @@ namespace qptech.src
                     if (block.HasMechPowerConnectorAt(world, pos, face.Opposite))
                     {
                         block.DidConnectAt(world, pos, face.Opposite);
+                        WasPlaced(world, blockPos, face);
                     }
                 }
             }
