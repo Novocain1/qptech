@@ -258,7 +258,6 @@
     <None Include="qptech\assets\game\shapes\block\can-open.json" />
     <None Include="qptech\assets\game\shapes\block\can-sealed.json" />
     <None Include="qptech\assets\machines\blocktypes\metal\creative\creativegenerator.json" />
-    <None Include="qptech\assets\machines\blocktypes\metal\electric\testmotor.json" />
     <None Include="qptech\assets\machines\blocktypes\metal\electric\battery.json" />
     <None Include="qptech\assets\machines\blocktypes\metal\electric\electrickiln.json" />
     <None Include="qptech\assets\machines\blocktypes\metal\electric\clayformer.json" />
