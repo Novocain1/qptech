@@ -5,28 +5,19 @@ using Vintagestory.GameContent.Mechanics;
 
 namespace qptech.src
 {
-    class BEBMPGenerator : BEBehaviorMPRotor
+    class BEBMPGenerator : BEBehaviorMPBase
     {
         BEMPGenerator generator { get => Blockentity as BEMPGenerator; }
 
-        protected override float Resistance => ResistanceLink;
-        protected override double AccelerationFactor => AccelerationFactorLink;
-        protected override float TargetSpeed => TargetSpeedLink;
-        protected override float TorqueFactor => TorqueFactorLink;
-
-        public float ResistanceLink { get; set; }
-        public double AccelerationFactorLink { get; set; }
-        public float TargetSpeedLink { get; set; }
-        public float TorqueFactorLink { get; set; }
-
-        public float RequiredTorque { get; set; }
+        public float RequiredTorque { get; set; } = 5.0f;
+        public float OwnResistance { get; set; } = 0.003f;
 
         public BEBMPGenerator(BlockEntity blockentity) : base(blockentity)
         {
             Blockentity = blockentity;
 
             string orientation = blockentity.Block.Variant["side"];
-            ownFacing = BlockFacing.FromCode(orientation);
+            BlockFacing ownFacing = BlockFacing.FromCode(orientation);
             OutFacingForNetworkDiscovery = ownFacing.Opposite;
         }
 
@@ -34,14 +25,28 @@ namespace qptech.src
         {
             base.Initialize(api, properties);
 
-            ResistanceLink = 0.5f;
-            AccelerationFactorLink = 0.9;
-            TargetSpeedLink = 0.0f;
-            TorqueFactorLink = 0.0f;
-
             if (Block?.Attributes != null)
             {
                 RequiredTorque = Block.Attributes["requiredTorque"].AsFloat(RequiredTorque);
+                OwnResistance = Block.Attributes["ownResistance"].AsFloat(OwnResistance);
+            }
+
+            switch (BlockFacing.FromCode(Block.Variant["side"]).Index)
+            {
+                case 0:
+                    AxisSign = new int[] { 0, 0, -1 };
+                    break;
+                case 1:
+                    AxisSign = new int[] { -1, 0, 0 };
+                    break;
+                case 2:
+                    AxisSign = new int[] { 0, 0, -1 };
+                    break;
+                case 3:
+                    AxisSign = new int[] { -1, 0, 0 };
+                    break;
+                default:
+                    break;
             }
 
             Blockentity.RegisterGameTickListener(UpdateTF, 75);
@@ -68,5 +73,7 @@ namespace qptech.src
         {
             network?.updateNetwork(manager.getTickNumber());
         }
+
+        public override float GetResistance() => OwnResistance;
     }
 }

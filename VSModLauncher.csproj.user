@@ -2,7 +2,7 @@
 <Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <StartAction>Program</StartAction>
-    <StartProgram>C:\Games\Vintagestory\Vintagestory.exe</StartProgram>
+    <StartProgram>C:\Games\Vintagestory\NDA\bin\Debug\Vintagestory.exe</StartProgram>
     <StartArguments>--dataPath="C:\Games\Vintagestory\ModDevData" --openWorld="modsamplestest" -pcreativebuilding --addModPath="C:\Games\Vintagestory\qptech\mods</StartArguments>
     <StartWorkingDirectory>C:\Games\Vintagestory\</StartWorkingDirectory>
   </PropertyGroup>
