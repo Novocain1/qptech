@@ -264,6 +264,8 @@
     <None Include="qptech\assets\machines\blocktypes\metal\electric\blastfurnace.json" />
     <None Include="qptech\assets\machines\blocktypes\metal\electric\electricforge.json" />
     <None Include="qptech\assets\machines\blocktypes\metal\electric\generator.json" />
+    <None Include="qptech\assets\machines\blocktypes\metal\electric\lumbermill.json" />
+    <None Include="qptech\assets\machines\blocktypes\metal\electric\logsplitter.json" />
     <None Include="qptech\assets\machines\blocktypes\metal\electric\washplant.json" />
     <None Include="qptech\assets\machines\blocktypes\metal\electric\macerator.json" />
     <None Include="qptech\assets\machines\blocktypes\metal\electric\metalpress.json" />
