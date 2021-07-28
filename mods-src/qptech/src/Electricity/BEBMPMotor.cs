@@ -46,6 +46,24 @@ namespace qptech.src
                 OnTorque = Block.Attributes["onTorque"].AsFloat(OnTorque);
             }
 
+            switch (BlockFacing.FromCode(Block.Variant["side"]).Index)
+            {
+                case 0:
+                    AxisSign = new int[] { 1, 0, 0 };
+                    break;
+                case 1:
+                    AxisSign = new int[] { 0, 0, -1 };
+                    break;
+                case 2:
+                    AxisSign = new int[] { 1, 0, 0 };
+                    break;
+                case 3:
+                    AxisSign = new int[] { 0, 0, -1 };
+                    break;
+                default:
+                    break;
+            }
+
             Blockentity.RegisterGameTickListener(UpdateTF, 75);
             Blockentity.RegisterGameTickListener(UpdateMP, 1000);
         }

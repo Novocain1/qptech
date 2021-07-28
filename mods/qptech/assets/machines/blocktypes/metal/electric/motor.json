@@ -18,9 +18,33 @@
             "name": "MPMotor"
         }
     ],
+    "shapeByType": {
+		"*-north": { "base": "block/metal/electric/motor", "rotateY": 180 },
+        "*-east": { "base": "block/metal/electric/motor", "rotateY": 90 },
+        "*-south": { "base": "block/metal/electric/motor", "rotateY": 0 },
+        "*-west": { "base": "block/metal/electric/motor", "rotateY": 270 }
+	},
     "textures": {
-        "all": {
-            "base": "game:block/metal/sheet/silver1"
+        "conductingbars": {
+            "base": "block/conductingbars"
+        },
+		"copperspooldiagonal": {
+            "base": "block/copperspooldiagonal"
+        },
+		"machinery-gate": {
+            "base": "block/metal/generator/machinery-gate"
+        },
+		"machinery-fan": {
+            "base": "block/metal/generator/machinery-fan"
+        },
+		"tin-wires": {
+            "base": "block/metal/wires/tin-wires"
+        },
+		"shinybrass": {
+            "base": "block/shinybrass"
+        },
+		"machinery": {
+            "base": "block/machinery"
         }
     },
     "creativeinventory": {

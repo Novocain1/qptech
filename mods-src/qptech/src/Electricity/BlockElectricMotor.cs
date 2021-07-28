@@ -4,13 +4,19 @@ using Vintagestory.GameContent.Mechanics;
 
 namespace qptech.src
 {
-    class BlockMPGenerator : ElectricalBlock
+    class BlockElectricMotor : ElectricalBlock
     {
-        BlockFacing powerInFacing;
+        int facing;
 
         public override void OnLoaded(ICoreAPI api)
         {
-            powerInFacing = BlockFacing.FromCode(Variant["side"]).Opposite;
+            int iOfA = BlockFacing.FromCode(Variant["side"]).Index;
+            int iOfB = BlockFacing.FromCode(Variant["side"]).Opposite.Index;
+
+            foreach (BlockFacing face in BlockFacing.HORIZONTALS)
+            {
+                if (face.Index != iOfA && face.Index != iOfB) facing |= 1 << face.Index;
+            }
 
             base.OnLoaded(api);
         }
@@ -22,7 +28,7 @@ namespace qptech.src
 
         public override bool HasMechPowerConnectorAt(IWorldAccessor world, BlockPos pos, BlockFacing face)
         {
-            return face == powerInFacing;
+            return (facing >> face.Index & 1) > 0;
         }
 
         public override void OnBlockPlaced(IWorldAccessor world, BlockPos blockPos, ItemStack byItemStack = null)
