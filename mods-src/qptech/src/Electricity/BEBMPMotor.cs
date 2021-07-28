@@ -20,15 +20,13 @@ namespace qptech.src
         public float TorqueFactorLink { get; set; }
 
         public float OnSpeed { get; set; } = 1.0f;
-        public float OnTorque { get; set; } = 5.0f;
+        public float OnTorque { get; set; } = 0.5f;
 
         public BEBMPMotor(BlockEntity blockentity) : base(blockentity)
         {
             Blockentity = blockentity;
-
-            string orientation = blockentity.Block.Variant["side"];
-            ownFacing = BlockFacing.FromCode(orientation);
-            OutFacingForNetworkDiscovery = ownFacing.Opposite;
+            ownFacing = BlockFacingExt.FromIndex(ownFacing.Index >= 3 ? 0 : ownFacing.Index + 1);
+            OutFacingForNetworkDiscovery = ownFacing;
         }
 
         public override void Initialize(ICoreAPI api, JsonObject properties)
@@ -80,8 +78,8 @@ namespace qptech.src
                     TorqueFactorLink = TorqueFactorLink > 0 ? TorqueFactorLink - 0.01f : 0;
                     break;
                 case BEEBaseDevice.enDeviceState.RUNNING:
-                    TargetSpeedLink = 1.0f;
-                    TorqueFactorLink = 5.0f;
+                    TargetSpeedLink = OnSpeed;
+                    TorqueFactorLink = OnTorque;
                     motor.UsePowerP();
                     break;
                 default:

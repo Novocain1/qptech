@@ -94,6 +94,7 @@
     <Compile Include="src\Electricity\BlockClayformer.cs" />
     <Compile Include="src\Electricity\BlockEForge.cs" />
     <Compile Include="src\Electricity\BlockElectricMotor.cs" />
+    <Compile Include="src\Electricity\BlockFacingExt.cs" />
     <Compile Include="src\Electricity\BlockMPGenerator.cs" />
     <Compile Include="src\Electricity\BlockMetalPress.cs" />
     <Compile Include="src\Electricity\BlockWire.cs" />

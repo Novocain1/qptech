@@ -1,4 +1,5 @@
-﻿using Vintagestory.API.Common;
+﻿using Vintagestory.API.Client;
+using Vintagestory.API.Common;
 using Vintagestory.API.MathTools;
 using Vintagestory.GameContent.Mechanics;
 
@@ -6,11 +7,30 @@ namespace qptech.src
 {
     class BlockMPGenerator : ElectricalBlock
     {
-        BlockFacing powerInFacing;
+        int facing;
+
+        public MeshData statorMesh;
 
         public override void OnLoaded(ICoreAPI api)
         {
-            powerInFacing = BlockFacing.FromCode(Variant["side"]).Opposite;
+            int iOfA = BlockFacing.FromCode(Variant["side"]).Index;
+            int iOfB = BlockFacing.FromCode(Variant["side"]).Opposite.Index;
+
+            foreach (BlockFacing face in BlockFacing.HORIZONTALS)
+            {
+                if (face.Index != iOfA && face.Index != iOfB) facing |= 1 << face.Index;
+            }
+
+            if (Attributes != null)
+            {
+                if (api.Side.IsClient())
+                {
+                    ICoreClientAPI capi = (ICoreClientAPI)api;
+                    Block statorBlock = capi.World.GetBlock(CodeWithVariant("rotorstator", "stator"));
+                    capi.Tesselator.TesselateBlock(statorBlock, out statorMesh);
+                }
+
+            }
 
             base.OnLoaded(api);
         }
@@ -22,7 +42,7 @@ namespace qptech.src
 
         public override bool HasMechPowerConnectorAt(IWorldAccessor world, BlockPos pos, BlockFacing face)
         {
-            return face == powerInFacing;
+            return (facing >> face.Index & 1) > 0;
         }
 
         public override void OnBlockPlaced(IWorldAccessor world, BlockPos blockPos, ItemStack byItemStack = null)

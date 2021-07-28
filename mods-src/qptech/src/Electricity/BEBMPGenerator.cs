@@ -15,10 +15,12 @@ namespace qptech.src
         public BEBMPGenerator(BlockEntity blockentity) : base(blockentity)
         {
             Blockentity = blockentity;
-
             string orientation = blockentity.Block.Variant["side"];
-            BlockFacing ownFacing = BlockFacing.FromCode(orientation);
-            OutFacingForNetworkDiscovery = ownFacing.Opposite;
+            var ownFacing = BlockFacing.FromCode(orientation);
+            
+            ownFacing = BlockFacingExt.FromIndex(ownFacing.Index >= 3 ? 0 : ownFacing.Index + 1).Opposite;
+
+            OutFacingForNetworkDiscovery = ownFacing;
         }
 
         public override void Initialize(ICoreAPI api, JsonObject properties)
@@ -34,16 +36,16 @@ namespace qptech.src
             switch (BlockFacing.FromCode(Block.Variant["side"]).Index)
             {
                 case 0:
-                    AxisSign = new int[] { 0, 0, -1 };
+                    AxisSign = new int[] { 1, 0, 0 };
                     break;
                 case 1:
-                    AxisSign = new int[] { -1, 0, 0 };
-                    break;
-                case 2:
                     AxisSign = new int[] { 0, 0, -1 };
                     break;
+                case 2:
+                    AxisSign = new int[] { 1, 0, 0 };
+                    break;
                 case 3:
-                    AxisSign = new int[] { -1, 0, 0 };
+                    AxisSign = new int[] { 0, 0, -1 };
                     break;
                 default:
                     break;
@@ -66,6 +68,11 @@ namespace qptech.src
                     break;
                 default:
                     break;
+            }
+            
+            if (network?.TotalAvailableTorque >= RequiredTorque)
+            {
+                generator.ChangeCapacitor(35);
             }
         }
 
