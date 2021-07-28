@@ -1,0 +1,94 @@
+{
+    "code": "mpgenerator",
+    "class": "BlockElectricGenerator",
+    "entityClass": "ElectricGenerator",
+    "attributes":{
+        "requiredFlux": 35,
+        "capacitance": 35,
+        "requiredTorque": 1.5,
+        "genFlux": 35,
+        "ownResistance": 0.003,
+        "receptionFaces": null,
+        "distributionFaces": [ "south" ]
+    },
+    "behaviors": [
+        {
+            "name": "HorizontalOrientable"
+        }
+    ],
+    "entityBehaviors": [
+        {
+            "name": "MPGenerator"
+        }
+    ],
+    "shapeInventory": {
+        "base": "block/metal/electric/motor"
+    },
+    "shapeByType": {
+		"*-rotor-north": { "base": "block/metal/electric/motor-rotor", "rotateY": 180 },
+        "*-rotor-east": { "base": "block/metal/electric/motor-rotor", "rotateY": 90 },
+        "*-rotor-south": { "base": "block/metal/electric/motor-rotor", "rotateY": 0 },
+        "*-rotor-west": { "base": "block/metal/electric/motor-rotor", "rotateY": 270 },
+
+        "*-stator-north": { "base": "block/metal/electric/motor-stator", "rotateY": 180 },
+        "*-stator-east": { "base": "block/metal/electric/motor-stator", "rotateY": 90 },
+        "*-stator-south": { "base": "block/metal/electric/motor-stator", "rotateY": 0 },
+        "*-stator-west": { "base": "block/metal/electric/motor-stator", "rotateY": 270 }
+	},
+    "textures": {
+        "conductingbars": {
+            "base": "block/conductingbars"
+        },
+		"copperspooldiagonal": {
+            "base": "block/copperspooldiagonal"
+        },
+		"machinery-gate": {
+            "base": "block/metal/generator/machinery-gate"
+        },
+        "machinery-largefan": {
+            "base": "block/machinery-largefan"
+        },
+        "castiron": {
+            "base": "block/castiron"
+        },
+		"machinery-fan": {
+            "base": "block/metal/generator/machinery-fan"
+        },
+		"tin-wires": {
+            "base": "block/metal/wires/tin-wires"
+        },
+		"shinybrass": {
+            "base": "block/shinybrass"
+        },
+		"machinery": {
+            "base": "block/machinery"
+        }
+    },
+    "creativeinventory": {
+        "general": [
+            "*-rotor-north"
+        ],
+        "mechanics": [
+            "*-rotor-north"
+        ],
+        "qptech": [
+            "*-rotor-north"
+        ]
+    },
+    "variantgroups": [
+        {
+            "code": "rotorstator",
+            "states": [ "rotor", "stator" ]
+        },
+        {
+            "code": "side",
+            "loadFromProperties": "abstract/horizontalorientation"
+        }
+    ],
+    "sidesolid": {
+        "all": false
+    },
+    "sideopaque": {
+        "all": false
+    }
+}

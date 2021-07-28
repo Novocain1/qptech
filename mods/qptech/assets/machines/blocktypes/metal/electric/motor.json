@@ -1,0 +1,90 @@
+{
+    "code": "mpmotor",
+    "class": "BlockElectricMotor",
+    "entityClass": "ElectricMotor",
+    "attributes":{
+        "requiredFlux": 35,
+        "capacitance": 35,
+        "onSpeed": 1.0,
+        "_comment": "1.25 is maximum torque output possible from one windmill with 5 sails.",
+        "onTorque": 1.25,
+        "receptionFaces": [ "north" ]
+    },
+    "behaviors": [
+        {
+            "name": "HorizontalOrientable"
+        }
+    ],
+    "entityBehaviors": [
+        {
+            "name": "MPMotor"
+        }
+    ],
+    "shapeInventory": {
+        "base": "block/metal/electric/motor"
+    },
+    "shapeByType": {
+		"*-rotor-north": { "base": "block/metal/electric/motor-rotor", "rotateY": 180 },
+        "*-rotor-east": { "base": "block/metal/electric/motor-rotor", "rotateY": 90 },
+        "*-rotor-south": { "base": "block/metal/electric/motor-rotor", "rotateY": 0 },
+        "*-rotor-west": { "base": "block/metal/electric/motor-rotor", "rotateY": 270 },
+
+        "*-stator-north": { "base": "block/metal/electric/motor-stator", "rotateY": 180 },
+        "*-stator-east": { "base": "block/metal/electric/motor-stator", "rotateY": 90 },
+        "*-stator-south": { "base": "block/metal/electric/motor-stator", "rotateY": 0 },
+        "*-stator-west": { "base": "block/metal/electric/motor-stator", "rotateY": 270 }
+	},
+    "textures": {
+        "conductingbars": {
+            "base": "block/conductingbars"
+        },
+		"copperspooldiagonal": {
+            "base": "block/copperspooldiagonal"
+        },
+		"machinery-gate": {
+            "base": "block/metal/generator/machinery-gate"
+        },
+		"machinery-largefan": {
+            "base": "block/machinery-largefan"
+        },
+        "castiron": {
+            "base": "block/castiron"
+        },
+		"tin-wires": {
+            "base": "block/metal/wires/tin-wires"
+        },
+		"shinybrass": {
+            "base": "block/shinybrass"
+        },
+		"machinery": {
+            "base": "block/machinery"
+        }
+    },
+    "creativeinventory": {
+        "general": [
+            "*-rotor-north"
+        ],
+        "mechanics": [
+            "*-rotor-north"
+        ],
+        "qptech": [
+            "*-rotor-north"
+        ]
+    },
+    "variantgroups": [
+        {
+            "code": "rotorstator",
+            "states": [ "rotor", "stator" ]
+        },
+        {
+            "code": "side",
+            "loadFromProperties": "abstract/horizontalorientation"
+        }
+    ],
+    "sidesolid": {
+        "all": false
+    },
+    "sideopaque": {
+        "all": false
+    }
+}

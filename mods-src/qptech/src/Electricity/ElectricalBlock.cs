@@ -6,11 +6,22 @@ using System.Threading.Tasks;
 using Vintagestory.API.Common;
 using Vintagestory.GameContent;
 using Vintagestory.API.MathTools;
+using Vintagestory.GameContent.Mechanics;
 
 namespace qptech.src
 {
-    class ElectricalBlock:Block
+    class ElectricalBlock : BlockMPBase
     {
+        public override void DidConnectAt(IWorldAccessor world, BlockPos pos, BlockFacing face)
+        {
+
+        }
+
+        public override bool HasMechPowerConnectorAt(IWorldAccessor world, BlockPos pos, BlockFacing face)
+        {
+            return false;
+        }
+
         //Toggle power if player is holding a screwdriver or club
         public override bool OnBlockInteractStart(IWorldAccessor world, IPlayer byPlayer, BlockSelection blockSel)
         {

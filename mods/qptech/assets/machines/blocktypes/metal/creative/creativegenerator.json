@@ -10,8 +10,8 @@
 	"attributes": {
 		"maxFlux": 2,
 		
-		"capacitance": 4,
-		"genFlux": 20,
+		"capacitance": 50,
+		"genFlux": 50,
 		"distributionFaces": [ "north" ]
 	},
 	"variantgroups": [

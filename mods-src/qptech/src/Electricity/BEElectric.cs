@@ -121,11 +121,11 @@ namespace qptech.src
         protected virtual void FindInputConnections()
         {
             //BlockFacing probably has useful stuff to do this right
+            
+            if (receptionFaces == null) return;
 
             foreach (BlockFacing bf in receptionFaces)
             {
-
-
                 BlockPos bp = Pos.Copy().Offset(bf);
 
                 BlockEntity checkblock = Api.World.BlockAccessor.GetBlockEntity(bp);
