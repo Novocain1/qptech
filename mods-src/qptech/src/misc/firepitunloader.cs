@@ -56,8 +56,8 @@ namespace qptech.src
                 ItemSlot targetSlot;
                 //NO Firepit then you musta quit
                 if (firepit == null&&forge==null) { return; }
-                if (forge!=null && !(forge.Unloadable && forge.ContentsReady)) { return; }
-                else {
+                if (forge!=null &&  !(forge.Unloadable && forge.ContentsReady)) { return; }
+                if (forge!=null) {
                     
                     DummyInventory di = new DummyInventory(Api,1);
                     di.Slots[0].Itemstack = forge.Contents;

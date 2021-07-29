@@ -51,7 +51,7 @@ namespace qptech.src
                 if (Contents == null) { return false; }
                 if (Contents.StackSize <1) { return false; }
                 if (Contents.Collectible == null) { return false; }
-                if (Contents.Collectible.GetTemperature(Api.World,Contents)>= maxHeat) { return true; }
+                if (Contents.Collectible.GetTemperature(Api.World,Contents)>= maxHeat*0.95f) { return true; }
                 return false;
             }
         }

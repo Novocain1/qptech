@@ -34,6 +34,8 @@ namespace qptech.src
     /// },                                         <- end of this output item - you could add another item after this to be outputted
 	/// ],                                         <- end of this recipe
     /// 
+    /// Also lumbermill is kinda hacked in - logs using the swap type will always output planks
+    /// 
     /// </summary>
     class BEEMacerator:BEEBaseDevice
     {
