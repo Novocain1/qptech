@@ -33,6 +33,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="cairo-sharp">
+      <HintPath>..\..\..\Lib\cairo-sharp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="protobuf-net">
+      <HintPath>..\..\..\Lib\protobuf-net.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -42,36 +50,28 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
     <Reference Include="Tavis.JsonPatch">
-      <HintPath>$(AppData)\Vintagestory\Lib\Tavis.JsonPatch.dll</HintPath>
+      <HintPath>..\..\..\Lib\Tavis.JsonPatch.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="VintagestoryAPI">
-      <HintPath>$(AppData)\Vintagestory\VintagestoryAPI.dll</HintPath>
+      <HintPath>..\..\..\VintagestoryAPI.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="VSSurvivalMod">
-      <HintPath>$(AppData)\Vintagestory\Mods\VSSurvivalMod.dll</HintPath>
+      <HintPath>..\..\..\Mods\VSSurvivalMod.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="VSEssentials">
-      <HintPath>$(AppData)\Vintagestory\Mods\VSEssentials.dll</HintPath>
+      <HintPath>..\..\..\Mods\VSEssentials.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="VSCreativeMod">
-      <HintPath>$(AppData)\Vintagestory\Mods\VSCreativeMod.dll</HintPath>
+      <HintPath>..\..\..\Mods\VSCreativeMod.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>$(AppData)\Vintagestory\Lib\Newtonsoft.Json.dll</HintPath>
       <Private>False</Private>
-    </Reference>
-    <Reference Include="Protobuf">
-      <HintPath>$(AppData)\Vintagestory\Lib\protobuf-net.dll</HintPath>
-      <Private>false</Private>
-    </Reference>
-    <Reference Include="cairo">
-      <HintPath>$(AppData)\Vintagestory\Lib\cairo-sharp.dll</HintPath>
-      <Private>false</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>

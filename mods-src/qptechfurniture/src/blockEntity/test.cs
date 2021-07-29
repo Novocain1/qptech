@@ -319,7 +319,7 @@ namespace QptechFurniture.src
 
                     for (int j = 0; j < mesh.RenderPassCount; j++)
                     {
-                        mesh.RenderPasses[j] = (int)EnumChunkRenderPass.OpaqueNoCull;
+                        mesh.RenderPassesAndExtraBits[j] = (short)EnumChunkRenderPass.OpaqueNoCull;
                     }
 
                     Block block = GetContents()?.Block;
