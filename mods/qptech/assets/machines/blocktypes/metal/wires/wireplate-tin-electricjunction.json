@@ -14,9 +14,9 @@
 	},
 	"attributesByType": {
 		"*tin-electricjunction": {
-			"maxFlux": 32,
+			"maxFlux": 500,
 			
-			"capacitance": 8,
+			"capacitance": 500,
 			"receptionFaces": [ "up", "down", "north", "south", "east", "west" ],
 			"distributionFaces": [ "up", "down", "north", "south", "east", "west" ]
 		}

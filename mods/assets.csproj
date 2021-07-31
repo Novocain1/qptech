@@ -265,6 +265,8 @@
     <None Include="qptech\assets\machines\blocktypes\metal\electric\electricforge.json" />
     <None Include="qptech\assets\machines\blocktypes\metal\electric\generator.json" />
     <None Include="qptech\assets\machines\blocktypes\metal\electric\logsplitter.json" />
+    <None Include="qptech\assets\machines\blocktypes\metal\electric\motor.json" />
+    <None Include="qptech\assets\machines\blocktypes\metal\electric\mpgenerator.json" />
     <None Include="qptech\assets\machines\blocktypes\metal\electric\washplant.json" />
     <None Include="qptech\assets\machines\blocktypes\metal\electric\macerator.json" />
     <None Include="qptech\assets\machines\blocktypes\metal\electric\metalpress.json" />
@@ -281,7 +283,6 @@
     <None Include="qptech\assets\machines\blocktypes\other\cabinet.json" />
     <None Include="qptech\assets\machines\blocktypes\other\castironovenlarge.json" />
     <None Include="qptech\assets\machines\blocktypes\metal\creative\creativegenerator-MV.json" />
-    <None Include="qptech\assets\machines\blocktypes\metal\creative\creativetestgenerator.json" />
     <None Include="qptech\assets\machines\blocktypes\dummy-element.json" />
     <None Include="qptech\assets\machines\blocktypes\stone\firebox.json" />
     <None Include="qptech\assets\machines\blocktypes\other\firepitloader.json" />
@@ -358,6 +359,9 @@
     <None Include="qptech\assets\machines\shapes\block\metal\electric\electrickiln-lv.json" />
     <None Include="qptech\assets\machines\shapes\block\metal\electric\forge-lv.json" />
     <None Include="qptech\assets\machines\shapes\block\metal\electric\heatsink.json" />
+    <None Include="qptech\assets\machines\shapes\block\metal\electric\motor-rotor.json" />
+    <None Include="qptech\assets\machines\shapes\block\metal\electric\motor-stator.json" />
+    <None Include="qptech\assets\machines\shapes\block\metal\electric\motor.json" />
     <None Include="qptech\assets\machines\shapes\block\metal\electric\washplant2.json" />
     <None Include="qptech\assets\machines\shapes\block\wood\basin.json" />
     <None Include="qptech\assets\machines\shapes\block\metal\electric\battery\primitive.json" />

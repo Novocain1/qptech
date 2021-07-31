@@ -87,7 +87,12 @@ namespace qptech.src
 
         protected override void DoDeviceProcessing()
         {
-            if (Api.World.Side is EnumAppSide.Client) { return; }
+
+            
+            if (Api.World.Side is EnumAppSide.Client)
+            {
+                return;
+            }
             if (Capacitor < requiredFlux) { DoCooling(); return; }
             ChangeCapacitor(-requiredFlux);
             if (internalheat < maxHeat)
@@ -102,7 +107,47 @@ namespace qptech.src
             }
             this.MarkDirty(true);
         }
+        protected override void DoRunningParticles()
+        {
+                var ptc = new SimpleParticleProperties(
+                10, 0, // min quantity, max quantity
+                ColorUtil.ToRgba(34, 22, 22, 22),
+                new Vec3d(0, 1.1, 0), //min position
+                new Vec3d(1, 0, 1), //max position
+                new Vec3f(0, 0.1f, 0), //min velocity
+                new Vec3f(0.5f, 0.1f, 0.5f), //max velocity
+                10, //life length
+                -0.1f, //gravity effect
+                1, 1, //min size, max size
+                EnumParticleModel.Quad); // quad or cube
 
+                ptc.SizeEvolve = new EvolvingNatFloat(EnumTransformFunction.COSINUS, 1.5f);
+                ptc.SelfPropelled = true;
+                ptc.WindAffected = true;
+                ptc.WindAffectednes = 5;
+            ptc.MinPos = Pos.ToVec3d();
+                this.Api.World.SpawnParticles(ptc);
+
+            var rand = new Random();
+
+               ptc = new SimpleParticleProperties(
+                100, 5, // min quantity, max quantity
+                ColorUtil.ToRgba(rand.Next(255, 255), rand.Next(100, 100), rand.Next(50, 100), rand.Next(0, 0)),
+                new Vec3d(0.5, 1.5, 0.5), //min position
+                new Vec3d(0, 0, 0), //max position
+                new Vec3f(-1, 1, -1), //min velocity
+                new Vec3f(1, 0.3f, 1), //max velocity
+                (float)((rand.NextDouble() * (2 - 0.2)) + 0.2), //life length
+                (float)((rand.NextDouble() * (2.4 - -0.2)) + -0.2), //gravity effect 
+                0.3f, 0.3f, //min size, max size
+                EnumParticleModel.Cube); // quad or cube
+
+            ptc.RedEvolve = new EvolvingNatFloat(EnumTransformFunction.SMOOTHSTEP, 1);
+            ptc.MinPos = Pos.ToVec3d();
+            this.Api.World.SpawnParticles(ptc);
+
+
+        }
         protected override void DoDeviceComplete()
         {
             deviceState = enDeviceState.IDLE;

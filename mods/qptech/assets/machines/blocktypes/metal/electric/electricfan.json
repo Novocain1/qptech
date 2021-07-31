@@ -23,7 +23,7 @@
 		"general": [ "*-east" ],
 		"qptech": [ "*-east" ]
 	},
-	"blockmaterial": "Metal",
+	"blockmaterial": "Stone",
 	"shape": { "base": "block/metal/electric/electricfan" },
 	"shapeByType": {
 		"*-north": {

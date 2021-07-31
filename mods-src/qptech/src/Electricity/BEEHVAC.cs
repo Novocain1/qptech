@@ -30,7 +30,7 @@ namespace qptech.src
         BlockFacing coldside=BlockFacing.FromCode("south");
         BlockPos hotPos=> Pos.Copy().Offset(hotside);
         BlockPos coldPos => Pos.Copy().Offset(coldside);
-        float poweredcoolingbonus = 0.05f; //so a 5% efficiency bonus
+        float poweredcoolingbonus = 50f; //10C bonus
         public float ColdBonus => -poweredcoolingbonus;
         public float HotBonus => poweredcoolingbonus;
         public override void Initialize(ICoreAPI api)
@@ -52,15 +52,16 @@ namespace qptech.src
             Room coldroom = roomReg.GetRoomForPosition(coldPos);
             if (hotroom.Location == coldroom.Location) { return; } //HOT & COLD ARE THE SAME SO THIS REALLY DOES NOTHING
             RoomStats hotstats = new RoomStats(this, hotroom);
-            hotstats.storagebonus = HotBonus;
+            hotstats.temperatureChange = HotBonus;
             RoomStats coldstats = new RoomStats(this, coldroom);
-            coldstats.storagebonus = ColdBonus;
+            coldstats.temperatureChange = ColdBonus;
             RoomStats.HVACRegistry.Add(hotstats);
             RoomStats.HVACRegistry.Add(coldstats);
             //test code:
             float storageinhot = RoomStats.GetStorageBonus(Api, hotPos);
             float storageincold = RoomStats.GetStorageBonus(Api, coldPos);
-            if (1 == 1) { }
+            
+            
         }
         
         void Cleanup()
@@ -84,7 +85,7 @@ namespace qptech.src
     {
         public Room room; //which room this applies to
         public BEEHVAC statsource; //which object supplies this bonus
-        public float storagebonus=1; //adjustment to storage bonus (>0 to <1 would increase storage time, 1+ would decrease)
+        public float temperatureChange=1; //adjustment to temp in degrees C
         public RoomStats()
         {
 
@@ -94,15 +95,22 @@ namespace qptech.src
             room = forroom;
             statsource = beehvac;
         }
-        public static RoomRegistry roomReg;
+        
         public static float GetStorageBonus(ICoreAPI Api,BlockPos Pos)
         {
-            roomReg = Api.ModLoader.GetModSystem<RoomRegistry>();
+            
+            if (Api is ICoreClientAPI) { return 0; }
+            if (HVACRegistry == null) { return 0; }
+            if (HVACRegistry.Count == 0) { return 0; }
+            
+            RoomRegistry roomReg = Api.ModLoader.GetModSystem<RoomRegistry>();
+            if (roomReg == null) { return 0; }
+            
             Room room = roomReg.GetRoomForPosition(Pos);
-            float bonus = 1;
+            float bonus = 0;
             var findHVACs = from hvac in HVACRegistry
                             where hvac.room.Location == room.Location
-                            select hvac.storagebonus;
+                            select hvac.temperatureChange;
 
 
             float addbonus = findHVACs.Sum();

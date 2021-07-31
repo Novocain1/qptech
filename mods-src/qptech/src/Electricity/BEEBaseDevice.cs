@@ -30,7 +30,7 @@ namespace qptech.src
         public override void OnTick(float par)
         {
             base.OnTick(par);
-            
+            if (deviceState == enDeviceState.RUNNING) { DoRunningParticles(); }
             UsePower();
         }
         protected bool animInit = false;
@@ -45,6 +45,11 @@ namespace qptech.src
                 animationName = Block.Attributes["animationName"].AsString(animationName);
             }
             distributionFaces = new List<BlockFacing>(); //no distribution for us!
+        }
+
+        protected virtual void DoRunningParticles()
+        {
+
         }
         protected virtual void UsePower()
         {
