@@ -128,23 +128,7 @@ namespace qptech.src
             ptc.MinPos = Pos.ToVec3d();
                 this.Api.World.SpawnParticles(ptc);
 
-            var rand = new Random();
-
-               ptc = new SimpleParticleProperties(
-                100, 5, // min quantity, max quantity
-                ColorUtil.ToRgba(rand.Next(255, 255), rand.Next(100, 100), rand.Next(50, 100), rand.Next(0, 0)),
-                new Vec3d(0.5, 1.5, 0.5), //min position
-                new Vec3d(0, 0, 0), //max position
-                new Vec3f(-1, 1, -1), //min velocity
-                new Vec3f(1, 0.3f, 1), //max velocity
-                (float)((rand.NextDouble() * (2 - 0.2)) + 0.2), //life length
-                (float)((rand.NextDouble() * (2.4 - -0.2)) + -0.2), //gravity effect 
-                0.3f, 0.3f, //min size, max size
-                EnumParticleModel.Cube); // quad or cube
-
-            ptc.RedEvolve = new EvolvingNatFloat(EnumTransformFunction.SMOOTHSTEP, 1);
-            ptc.MinPos = Pos.ToVec3d();
-            this.Api.World.SpawnParticles(ptc);
+            
 
 
         }

@@ -5,7 +5,7 @@
     "attributes":{
         
         "capacitance": 350,
-        "speedToFlux": 3,
+        "speedToFlux": 4,
         
         "ownResistance": 0.075,
         "receptionFaces": null,
