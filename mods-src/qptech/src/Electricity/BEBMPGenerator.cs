@@ -2,6 +2,7 @@
 using Vintagestory.API.Datastructures;
 using Vintagestory.API.MathTools;
 using Vintagestory.GameContent.Mechanics;
+using System.Text;
 
 namespace qptech.src
 {
@@ -9,8 +10,10 @@ namespace qptech.src
     {
         BEMPGenerator generator { get => Blockentity as BEMPGenerator; }
 
-        public float RequiredTorque { get; set; } = 5.0f;
+        public float SpeedToFlux { get; set; } = 30f;
         public float OwnResistance { get; set; } = 0.003f;
+
+        public int generated = 0;
 
         public BEBMPGenerator(BlockEntity blockentity) : base(blockentity)
         {
@@ -25,7 +28,7 @@ namespace qptech.src
 
             if (Block?.Attributes != null)
             {
-                RequiredTorque = Block.Attributes["requiredTorque"].AsFloat(RequiredTorque);
+                SpeedToFlux = Block.Attributes["speedToFlux"].AsFloat(SpeedToFlux);
                 OwnResistance = Block.Attributes["ownResistance"].AsFloat(OwnResistance);
             }
 
@@ -53,7 +56,7 @@ namespace qptech.src
 
         public void UpdateTF(float dt)
         {
-            switch (generator.DeviceState)
+            /*switch (generator.DeviceState)
             {
                 case BEEBaseDevice.enDeviceState.WARMUP:
                 case BEEBaseDevice.enDeviceState.IDLE:
@@ -64,12 +67,17 @@ namespace qptech.src
                     break;
                 default:
                     break;
+            }*/
+
+
+            generated = (int)(network.Speed * SpeedToFlux);
+            generator.ChangeCapacitor(generated);
+            if (generator.Capacitor < generator.Capacitance)
+            {
+                
+                network.NetworkResistance += OwnResistance;
             }
             
-            if (network?.TotalAvailableTorque >= RequiredTorque)
-            {
-                generator.ChangeCapacitor(35);
-            }
         }
 
         public void UpdateMP(float dt)
@@ -78,5 +86,11 @@ namespace qptech.src
         }
 
         public override float GetResistance() => OwnResistance;
+        public override void GetBlockInfo(IPlayer forPlayer, StringBuilder dsc)
+        {
+            base.GetBlockInfo(forPlayer, dsc);
+            dsc.AppendLine("Generation :" + generated.ToString());
+
+        }
     }
 }

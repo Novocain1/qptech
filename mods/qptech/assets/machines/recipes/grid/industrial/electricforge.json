@@ -1,5 +1,5 @@
 {
-	ingredientPattern: "STS	PBM	S_S",
+	ingredientPattern: "STS	PB_	S_S",
 	ingredients: {
 		"T": { type: "item", code: "screwdriver-*", isTool: true },
 		"P": { type: "block", code: "wireplate-tin-2a-cross", quantity: 4},

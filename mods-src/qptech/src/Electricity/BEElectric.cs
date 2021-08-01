@@ -18,10 +18,10 @@ namespace qptech.src
         /*base class to handle electrical devices*/
         protected int maxFlux = 16;    //how many packets that can move at once
         
-        protected int Capacitance => capacitance;//how many packets it can store
+        public int Capacitance => capacitance;//how many packets it can store
         protected int capacitance = 1;
         //protected int cachedCapacitance = 0;
-        protected int Capacitor => capacitor;  //TF currently stored
+        public int Capacitor => capacitor;  //TF currently stored
         protected int capacitor = 0;
        
         protected bool isOn = true;        //if it's not on it won't do any power processing

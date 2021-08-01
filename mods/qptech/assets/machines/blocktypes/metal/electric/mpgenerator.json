@@ -3,13 +3,13 @@
     "class": "BlockElectricGenerator",
     "entityClass": "ElectricGenerator",
     "attributes":{
-        "requiredFlux": 35,
-        "capacitance": 35,
-        "requiredTorque": 1.5,
-        "genFlux": 35,
-        "ownResistance": 0.003,
+        
+        "capacitance": 350,
+        "speedToFlux": 5,
+        
+        "ownResistance": 0.1,
         "receptionFaces": null,
-        "distributionFaces": [ "south" ]
+        "distributionFaces": [ "north" ]
     },
     "behaviors": [
         {

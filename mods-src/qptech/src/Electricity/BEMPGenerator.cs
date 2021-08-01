@@ -4,20 +4,17 @@ using Vintagestory.API.MathTools;
 
 namespace qptech.src
 {
-    class BEMPGenerator : BEEBaseDevice
+    class BEMPGenerator : BEElectric
     {
-        public void UsePowerP() => UsePower();
+       
 
         public override void Initialize(ICoreAPI api)
         {
             base.Initialize(api);
-            this.distributionFaces.Add(BlockFacing.FromCode(Block.Variant["side"]).Opposite);
+            //this.distributionFaces.Add(BlockFacing.FromCode(Block.Variant["side"]).Opposite);
         }
 
-        protected override void UsePower()
-        {
-            base.UsePower();
-        }
+       
 
         public override bool OnTesselation(ITerrainMeshPool mesher, ITesselatorAPI tessThreadTesselator)
         {
