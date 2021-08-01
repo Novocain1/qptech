@@ -24,16 +24,16 @@
 	],
 	"attributesbytype": {
 		"*-primitive-*": {
-			"maxFlux": 1,
+			"maxFlux": 160,
 			
-			"capacitance": 500,
+			"capacitance": 5000,
 			"receptionFaces": [ "south" ],
 			"distributionFaces": [ "north", "east", "west","down" ]
 		},
 		"*-lv-*": {
-			"maxFlux": 4,
+			"maxFlux": 160,
 			
-			"capacitance": 1000,
+			"capacitance": 5000,
 			"receptionFaces": [ "south" ],
 			"distributionFaces": [ "north", "east", "west","down" ]
 		}

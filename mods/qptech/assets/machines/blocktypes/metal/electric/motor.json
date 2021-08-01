@@ -4,11 +4,11 @@
   "entityClass": "ElectricMotor",
 
   "attributes": {
-    "requiredFlux": 35,
+    "requiredFlux": 70,
     "capacitance": 500,
-    "onSpeed": 1.0,
+    "onSpeed": 0.9,
     "_comment": "1.25 is maximum torque output possible from one windmill with 5 sails.",
-    "onTorque": 1.25,
+    "onTorque": 1,
     "receptionFaces": [ "north" ]
   },
   "behaviors": [

@@ -17,9 +17,9 @@
 	"attributesByType": {
 
 		"*-tin-2a-cross": {
-			"maxFlux": 32,
+			"maxFlux": 64,
 			
-			"capacitance": 8,
+			"capacitance": 65,
 			"receptionFaces": [ "north", "south", "east", "west","down" ],
 			"distributionFaces": [ "north", "south", "east", "west","down" ]
 		}

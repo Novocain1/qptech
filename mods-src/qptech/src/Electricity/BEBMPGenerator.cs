@@ -12,7 +12,7 @@ namespace qptech.src
 
         public float SpeedToFlux { get; set; } = 30f;
         public float OwnResistance { get; set; } = 0.003f;
-
+        public float MinimumSpeed { get; set; } = 0.3f;
         public int generated = 0;
 
         public BEBMPGenerator(BlockEntity blockentity) : base(blockentity)
@@ -69,14 +69,13 @@ namespace qptech.src
                     break;
             }*/
 
-
+            if (network == null) { return; }
+            network.NetworkResistance += OwnResistance;
+            if (network.Speed < MinimumSpeed) { generated = 0; return; }
             generated = (int)(network.Speed * SpeedToFlux);
             generator.ChangeCapacitor(generated);
-            if (generator.Capacitor < generator.Capacitance)
-            {
-                
-                network.NetworkResistance += OwnResistance;
-            }
+            
+            
             
         }
 
@@ -90,7 +89,11 @@ namespace qptech.src
         {
             base.GetBlockInfo(forPlayer, dsc);
             dsc.AppendLine("Generation :" + generated.ToString());
-
+            if (network != null)
+            {
+                dsc.AppendLine("network speed:  " + Network.Speed.ToString());
+                dsc.AppendLine("network resist: " + Network.NetworkResistance.ToString());
+            }
         }
     }
 }

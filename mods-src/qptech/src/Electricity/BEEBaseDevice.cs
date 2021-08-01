@@ -69,16 +69,22 @@ namespace qptech.src
 
         protected virtual void DoDeviceStart()
         {
-            if (Capacitor >= requiredFlux)
+
+            if (Api.World.Side is EnumAppSide.Client) { return; }
+            if (Capacitor < requiredFlux) { DoFailedStart(); return; }
+            tickCounter = 0;
+            if (deviceState == enDeviceState.IDLE)
             {
                 
-                tickCounter = 0;
-                deviceState = enDeviceState.RUNNING;
+               if (Capacitor >= requiredFlux)
+                {
+                    ChangeCapacitor(-requiredFlux);
+                    deviceState = enDeviceState.RUNNING;
+                }
                 
-                //sounds/blocks/doorslide.ogg
-                DoDeviceProcessing();
             }
-            else { DoFailedStart(); }
+            this.MarkDirty(true);
+
         }
 
         protected virtual void DoDeviceProcessing()
@@ -100,7 +106,7 @@ namespace qptech.src
         //can do some feedback if device can't run
         protected virtual void DoFailedStart()
         {
-            
+            deviceState = enDeviceState.IDLE;
         }
         //feedback if device cannot process
         protected virtual void DoFailedProcessing()

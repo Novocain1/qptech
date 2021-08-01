@@ -32,7 +32,7 @@ namespace qptech.src
         {
             base.Initialize(api, properties);
 
-            ResistanceLink = 0.5f;
+            ResistanceLink = 1f;
             AccelerationFactorLink = 0.9;
             TargetSpeedLink = 0.0f;
             TorqueFactorLink = 0.0f;
@@ -67,23 +67,22 @@ namespace qptech.src
 
         public void UpdateTF(float dt)
         {
-            switch (motor.DeviceState)
+            //if (network != null)
+            //{
+             //   network.NetworkResistance += Resistance;
+            //}
+            if (motor.DeviceState == BEEBaseDevice.enDeviceState.RUNNING)
             {
-                case BEEBaseDevice.enDeviceState.WARMUP:
-                case BEEBaseDevice.enDeviceState.IDLE:
-                case BEEBaseDevice.enDeviceState.MATERIALHOLD:
-                case BEEBaseDevice.enDeviceState.ERROR:
-                    TargetSpeedLink = TargetSpeedLink > 0 ? TargetSpeedLink - 0.01f : 0;
-                    TorqueFactorLink = TorqueFactorLink > 0 ? TorqueFactorLink - 0.01f : 0;
-                    break;
-                case BEEBaseDevice.enDeviceState.RUNNING:
-                    TargetSpeedLink = OnSpeed;
-                    TorqueFactorLink = OnTorque;
-                    motor.UsePowerP();
-                    break;
-                default:
-                    break;
+                TargetSpeedLink = OnSpeed;
+                TorqueFactorLink = OnTorque;
+                //motor.UsePowerP();
             }
+            else
+            {
+                TargetSpeedLink = TargetSpeedLink > 0 ? TargetSpeedLink - 0.05f : 0;
+                TorqueFactorLink = TorqueFactorLink > 0 ? TorqueFactorLink - 0.05f : 0;
+            }
+           
         }
 
         public void UpdateMP(float dt)
