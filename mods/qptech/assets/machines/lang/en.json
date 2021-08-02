@@ -103,10 +103,13 @@
 	"blockdesc-clayformer-*": "Place a container of clay on the input side, and if powered it will create unfired clay pieces of the current type. Sneak click with a valid completed & fired clay object to set the output. (Currently supports bowls, flowerpots, ingots, blue fire shingles, red fire shingles, and planters) Note: Craft the clay bowl version and switch from there.",
 	"pocketcontents": "Dimensional Storage",
 	"block-metalpress-lvsoftscrew-*": "Soft Metal Press [Screws] (LV)",
-	"blockdesc-metalpress-*": "The Metal Press will take heated Raw Materials and using the appropriate Heavy Mold, output various metal items. Note that heavy molds are consumed when switching products!",
+	"blockdesc-metalpress-lvsoftscrew-*": "Finally, no more hammering screws! Take one heated metal plate from a container on the left, and receive 24 screws in a container on the right. It's super effective!'",
 	"block-metalpress-lvsoftmetalplate-*": "Soft Metal Press [Metal Plates] (LV)",
+	"blockdesc-metalpress-lvsoftmetalplate-*": "Takes heated ingots from input container on left and stamps into metal plates, outputting them on container to the right.",
 	"block-metalpress-lvsoftrod-*": "Soft Metal Press [Rods] (LV)",
+	"blockdesc-metalpress-lvsoftrod-*": "Takes heated ingots from the container on the left, and outputs rods into a container on the right. Much more efficient at making rods than hammering them yourself! (4 rods from one ingot)",
 	"block-metalpress-lvbender-*": "Pipe Bender [Copper] (LV)",
+	"blockdesc-metalpress-lvbender-*": "Create copper chute sections, takes one heated copper plate from the left and outputs 3 copper chutes on the right",
 	"item-heavymold-screw": "Heavy Mold - Screws",
 	"item-heavymold-metalplate": "Heavy Mold - Metal Plates",
 	"item-heavymold-rod": "Heavy Mold - Rods",
@@ -118,6 +121,6 @@
 	"block-electrickiln-lv-*": "Electric Kiln (LV)",
 	"blockdesc-electrickiln-lv-*": "Will fire your raw clay items. Input on left, output on right.",
 	"block-mpgenerator-*": "Electric Generator (LV)(Mechanical Power)",
-	"block-mpmotor-*": "Novotech Electric Motor (MV)(Mechanical Power)",
-	
+	"block-mpmotor-*": "Novotech Electric Motor (MV)(Mechanical Power)"
+
 }
