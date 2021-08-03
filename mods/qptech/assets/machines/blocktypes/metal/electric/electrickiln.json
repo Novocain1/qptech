@@ -9,8 +9,8 @@
 	},
 	"variantgroups": [
 		{
-			code: "type",
-			states: [ "lv" ]
+			"code": "type",
+			"states": [ "lv" ]
 		},
 		{
 			"code": "side",
@@ -27,10 +27,10 @@
 	"attributesbytype": {
 		"*-lv-*": {
 			"maxFlux": 8,
-			
+
 			"capacitance": 16,
 			"requiredFlux": 4
-			
+
 
 		}
 
@@ -57,6 +57,14 @@
 			"rotateY": 180
 		}
 	},
+	"textures": {
+		"machinery-back": { "base": "block/metal/generator/machinery-back" },
+		"machinery-firebox": { "base": "block/metal/firebox/machinery-firebox" },
+		"machinery": { "base": "block/machinery" },
+		"castiron": { "base": "block/castironpeekaboo" },
+		"wires": { "base": "block/metal/wires/tin-wires" }
+	},
+
 	"resistance": 1,
 	"sideAo": { "all": false },
 	"sidesolid": {
