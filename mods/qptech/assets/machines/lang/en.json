@@ -75,7 +75,7 @@
 	"itemdesc-screw-*": "Screw this!",
 	"item-wire-tin": "Metal Wire (Tin)",
 	"item-wire-copper": "Metal Wire (Copper)",
-	"itemdesc-wire-*": "Wires, generally useful for electrical things - careful no insulation here!",
+	"itemdesc-wire-*": "Wires for making electrical things (to hook up things use wireplates, batteries, and junctions)",
 	"item-pullplate-iron": "Wire Pulling Plate (Iron)",
 	"item-pullplate-meteoriciron": "Wire Pulling Plate (Meteoric Iron)",
 	"item-pullplate-steel": "Wire Pulling Plate (Steel)",
@@ -103,11 +103,11 @@
 	"blockdesc-clayformer-*": "Place a container of clay on the input side, and if powered it will create unfired clay pieces of the current type. Sneak click with a valid completed & fired clay object to set the output. (Currently supports bowls, flowerpots, ingots, blue fire shingles, red fire shingles, and planters) Note: Craft the clay bowl version and switch from there.",
 	"pocketcontents": "Dimensional Storage",
 	"block-metalpress-lvsoftscrew-*": "Soft Metal Press [Screws] (LV)",
-	"blockdesc-metalpress-lvsoftscrew-*": "Finally, no more hammering screws! One metal rod->12 screws It's super effective!'",
+	"blockdesc-metalpress-lvsoftscrew-*": "Finally, no more hammering screws! One metal rod->12 screws It's super effective! (Will eventually be changed to a cutting machien)",
 	"block-metalpress-lvsoftmetalplate-*": "Soft Metal Press [Metal Plates] (LV)",
 	"blockdesc-metalpress-lvsoftmetalplate-*": "Takes heated ingots from input container on left and stamps into metal plates, outputting them on container to the right.",
 	"block-metalpress-lvsoftrod-*": "Soft Metal Press [Rods] (LV)",
-	"blockdesc-metalpress-lvsoftrod-*": "Takes heated ingots from the container on the left, and outputs rods into a container on the right. Much more efficient at making rods than hammering them yourself! (4 rods from one ingot)",
+	"blockdesc-metalpress-lvsoftrod-*": "Takes heated plates from the container on the left, and outputs rods into a container on the right. Much more efficient at making rods than hammering them yourself! (5:1) (Will eventually be changed to a lathe)",
 	"block-metalpress-lvbender-*": "Pipe Bender [Copper] (LV)",
 	"blockdesc-metalpress-lvbender-*": "Create copper chute sections, takes one heated copper plate from the left and outputs 3 copper chutes on the right",
 	"item-heavymold-screw": "Heavy Mold - Screws",
@@ -117,10 +117,12 @@
 	"block-macerator-lv-*": "Macerator (LV)",
 	"blockdesc-macerator-*": "Basic Ore and Aggregate procesing. May yield extra ore or different bonus ores.",
 	"block-washplant-lv-*": "Wash Plant (LV)",
-	"blockdesc-washplant-*": "Washing your gravel, sand, and nuggets may yield extra or different items. Note: in future this would require a water supply, and the model will be updated!",
+	"blockdesc-washplant-*": "Washing your gravel and sand may yield extra or different items. Note: in future this would require a water supply, and the model will be updated!",
 	"block-electrickiln-lv-*": "Electric Kiln (LV)",
 	"blockdesc-electrickiln-lv-*": "Will fire your raw clay items. Input on left, output on right.",
-	"block-mpgenerator-*": "Electric Generator (LV)(Mechanical Power)",
-	"block-mpmotor-*": "Novotech Electric Motor (MV)(Mechanical Power)"
+	"block-mpgenerator-*": "Electric Generator (*PREVIEW* Mechanical Power)(LV)",
+	"blockdesc-mpgenerator-*": "Create electricity from mechanical power! NOTE: THIS IS FOR TESTING AND MAY BE UNPREDICTABLE",
+	"block-mpmotor-*": "Electric Motor (*PREVIEW* Mechanical Power)(LV)",
+	"blockdesc-mpmotor-*": "Electric Motor - Create mechanical power from electricity! NOTE: THIS IS FOR TESTING AND MAY BE UNPREDICTABLE"
 
 }

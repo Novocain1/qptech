@@ -53,7 +53,7 @@
 			"inputQuantity": 1,
 			"outputQuantity": 12,
 			"recipe": "machines:screw",
-			"ingredient": "machines:rod",
+			"ingredient": "rod",
 			"processingTime": 0.045,
 			"animationSpeed": 0.45,
 			"heatRequirement": 800,
