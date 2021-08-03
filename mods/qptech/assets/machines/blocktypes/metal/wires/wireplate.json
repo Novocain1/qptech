@@ -10,8 +10,7 @@
 		{
 			"code": "type",
 			"states": [ "tin-2a-cross"]
-		},
-		
+		}
 	],
 	
 	"attributesByType": {

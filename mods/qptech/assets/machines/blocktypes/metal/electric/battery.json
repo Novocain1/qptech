@@ -25,17 +25,17 @@
 	"attributesbytype": {
 		"*-primitive-*": {
 			"maxFlux": 160,
-			
+
 			"capacitance": 5000,
 			"receptionFaces": [ "south" ],
-			"distributionFaces": [ "north", "east", "west","down" ]
+			"distributionFaces": [ "north", "east", "west", "down" ]
 		},
 		"*-lv-*": {
 			"maxFlux": 160,
-			
+
 			"capacitance": 5000,
 			"receptionFaces": [ "south" ],
-			"distributionFaces": [ "north", "east", "west","down" ]
+			"distributionFaces": [ "north", "east", "west", "down" ]
 		}
 	},
 	"blockmaterial": "Metal",
@@ -44,20 +44,27 @@
 	"shapeByType": {
 		"*-north": {
 			"base": "block/metal/electric/battery/primitive",
-			"rotateY": 0
+			"rotateY": 180
 		},
 		"*-east": {
 			"base": "block/metal/electric/battery/primitive",
-			"rotateY": 270
+			"rotateY": 90
 		},
 		"*-west": {
 			"base": "block/metal/electric/battery/primitive",
-			"rotateY": 90
+			"rotateY": 270
 		},
 		"*-south": {
 			"base": "block/metal/electric/battery/primitive",
-			"rotateY": 180
+			"rotateY": 0
 		}
+	},
+	"textures": {
+		"wires": { "base": "block/metal/wires/tin-wires" },
+		"shinybrass": { "base": "block/shinybrass" },
+		"machinery-border-small": { "base": "block/metal/metalpress/machinery-border-small" },
+		"machinery-back": { "base": "block/metal/generator/machinery-back" },
+		"castiron": { "base": "block/castiron" }
 	},
 	"resistance": 1,
 	"sideAo": { "all": false },

@@ -2,9 +2,9 @@
 <Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <StartAction>Program</StartAction>
-    <StartProgram>C:\Users\quent\AppData\Roaming\Vintagestory\Vintagestory.exe</StartProgram>
-    <StartArguments>--openWorld="modsamplestest" -pcreativebuilding --addModPath="C:\Users\quent\source\repos\wqpvs\qptech\mods</StartArguments>
-    <StartWorkingDirectory>C:\Users\quent\AppData\Roaming\VintagestoryData\</StartWorkingDirectory>
+    <StartProgram>$(AppData)\Vintagestory\Vintagestory.exe</StartProgram>
+    <StartArguments>--openWorld="modsamplestest" -pcreativebuilding --addModPath="$(SolutionDir)mods</StartArguments>
+    <StartWorkingDirectory>$(AppData)\Vintagestory\</StartWorkingDirectory>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
     <StartAction>Program</StartAction>
