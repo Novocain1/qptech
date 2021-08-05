@@ -36,6 +36,8 @@ namespace qptech.src
         int maxItems = 4;                                   //how many items can go in
         float stackRenderHeight =0.07f;                     //this is basically the height for the itemstack
         string elementShapeName = "machines:dummy-element-lit";      //what item to load heating element's shape & texture from
+        private SimpleParticleProperties smokeParticles;
+
         public override bool IsOn => base.IsOn&&contents!=null;
         public ItemStack Contents => contents;
         public void ClearContents()
@@ -135,6 +137,30 @@ namespace qptech.src
             }
             //tickCounter++;
             ChangeCapacitor(-requiredFlux);
+        }
+
+        protected override void DoRunningParticles()
+        {
+
+            smokeParticles = new SimpleParticleProperties(
+                  1, 2,
+                  ColorUtil.ToRgba(100, 22, 22, 22),
+                  new Vec3d(),
+                  new Vec3d(0.75, 0, 0.75),
+                  new Vec3f(-1 / 32f, 0.1f, -1 / 32f),
+                  new Vec3f(1 / 32f, 0.1f, 1 / 32f),
+                  2f,
+                  -0.025f / 4,
+                  0.2f,
+                  0.6f,
+                  EnumParticleModel.Quad
+              );
+
+            smokeParticles.SizeEvolve = new EvolvingNatFloat(EnumTransformFunction.LINEAR, -0.25f);
+            smokeParticles.SelfPropelled = true;
+            smokeParticles.AddPos.Set(8 / 16.0, 0, 8 / 16.0);
+            smokeParticles.MinPos.Set(Pos.X + 4 / 16f, Pos.Y + 6 / 16f, Pos.Z + 4 / 16f);
+            Api.World.SpawnParticles(smokeParticles);
         }
 
         public float GetHeatStrength(IWorldAccessor world, BlockPos heatSourcePos, BlockPos heatReceiverPos)
