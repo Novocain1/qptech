@@ -41,6 +41,8 @@ namespace qptech.src
         string blockoritem="";
         double requiredheat;
         DummyInventory dummy;
+        private SimpleParticleProperties smokeParticles;
+
         public override void Initialize(ICoreAPI api)
         {
             base.Initialize(api);
@@ -109,28 +111,26 @@ namespace qptech.src
         }
         protected override void DoRunningParticles()
         {
-                var ptc = new SimpleParticleProperties(
-                10, 0, // min quantity, max quantity
-                ColorUtil.ToRgba(34, 22, 22, 22),
-                new Vec3d(0, 1.1, 0), //min position
-                new Vec3d(1, 0, 1), //max position
-                new Vec3f(0, 0.1f, 0), //min velocity
-                new Vec3f(0.5f, 0.1f, 0.5f), //max velocity
-                10, //life length
-                -0.1f, //gravity effect
-                1, 1, //min size, max size
-                EnumParticleModel.Quad); // quad or cube
 
-                ptc.SizeEvolve = new EvolvingNatFloat(EnumTransformFunction.COSINUS, 1.5f);
-                ptc.SelfPropelled = true;
-                ptc.WindAffected = true;
-                ptc.WindAffectednes = 5;
-            ptc.MinPos = Pos.ToVec3d();
-                this.Api.World.SpawnParticles(ptc);
+            smokeParticles = new SimpleParticleProperties(
+                  1, 2,
+                  ColorUtil.ToRgba(70, 22, 22, 22),
+                  new Vec3d(),
+                  new Vec3d(0.75, 0, 0.75),
+                  new Vec3f(-1 / 32f, 0.1f, -1 / 32f),
+                  new Vec3f(1 / 32f, 0.1f, 1 / 32f),
+                  1.5f,
+                  -0.025f / 4,
+                  0.2f,
+                  0.6f,
+                  EnumParticleModel.Quad
+              );
 
-            
-
-
+            smokeParticles.SizeEvolve = new EvolvingNatFloat(EnumTransformFunction.LINEAR, -0.25f);
+            smokeParticles.SelfPropelled = true;
+            smokeParticles.AddPos.Set(8 / 16.0, 0, 8 / 16.0);
+            smokeParticles.MinPos.Set(Pos.X + 4 / 16f, Pos.Y + 3 / 16f, Pos.Z + 4 / 16f);
+            Api.World.SpawnParticles(smokeParticles);
         }
         protected override void DoDeviceComplete()
         {

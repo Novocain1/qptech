@@ -1,6 +1,5 @@
 {
 	"code": "blastfurnace",
-	
 	"entityclass": "BEEBlastFurnace",
 	"creativeinventory": {
 		"general": [ "" ],
@@ -20,14 +19,11 @@
 	],
 	"attributes": {
 		"maxFlux": 80,
-		
 		"capacitance": 40,
 		"requiredFlux": 80,
-		
 	},
 	"blockmaterial": "Metal",
 	"drawtype": "json",
-
 	"shape": { "base": "block/metal/electric/forge-lv" },
 	"shapeByType": {
 		"*-north": {

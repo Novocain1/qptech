@@ -27,17 +27,13 @@
 	"attributesbytype": {
 		"*-lv-*": {
 			"maxFlux": 8,
-
 			"capacitance": 16,
 			"requiredFlux": 4
-
-
 		}
 
 	},
 	"blockmaterial": "Metal",
 	"drawtype": "json",
-
 	"shape": { "base": "block/metal/electric/electrickiln-lv" },
 	"shapeByType": {
 		"*-north": {
@@ -64,7 +60,6 @@
 		"castiron": { "base": "block/castironpeekaboo" },
 		"wires": { "base": "block/metal/wires/tin-wires" }
 	},
-
 	"resistance": 1,
 	"sideAo": { "all": false },
 	"sidesolid": {
