@@ -2,11 +2,11 @@
   "type": "code",
   "modid": "qptech",
   "name": "QPTECH",
-  "description" : "Making your life better thru technology",
+  "description": "Making your life better thru technology",
   "author": "WQP",
-  "version": "1.2.1.pre1",
+  "version": "1.2.1-pre.3",
   "dependency": {
     "game": "1.15.1",
-	"qptechapi": "1.1.0"
+    "qptechapi": "1.1.0"
   }
 }

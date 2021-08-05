@@ -56,7 +56,7 @@
 			"ingredient": "rod",
 			"processingTime": 0.045,
 			"animationSpeed": 0.45,
-			"heatRequirement": 800,
+			"heatRequirement": -1,
 			"materials": [ "brass" ]
 
 		},

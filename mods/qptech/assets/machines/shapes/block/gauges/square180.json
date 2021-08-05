@@ -1,0 +1,87 @@
+{
+	"editor": {
+		"allAngles": false,
+		"entityTextureMode": false
+	},
+	"textureWidth": 16,
+	"textureHeight": 16,
+	"textureSizes": {
+	},
+	"textures": {
+		"castiron": "C:/Users/quent/source/repos/wqpvs/qptech/mods/qptech/assets/machines/textures/block/castiron",
+		"shinybrass": "C:/Users/quent/source/repos/wqpvs/qptech/mods/qptech/assets/machines/textures/block/shinybrass"
+	},
+	"elements": [
+		{
+			"name": "MainFace",
+			"from": [ 0.0, 0.0, 0.0 ], 
+			"to": [ 16.0, 0.5, 16.0 ], 
+			"rotationOrigin": [ 8.0, 0.0, 16.0 ],
+			"faces": {
+				"north": { "texture": "#castiron", "uv": [ 0.0, 0.0, 16.0, 0.5 ] },
+				"east": { "texture": "#castiron", "uv": [ 0.0, 0.0, 16.0, 0.5 ] },
+				"south": { "texture": "#castiron", "uv": [ 0.0, 0.0, 16.0, 0.5 ] },
+				"west": { "texture": "#castiron", "uv": [ 0.0, 0.0, 16.0, 0.5 ] },
+				"up": { "texture": "#castiron", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+				"down": { "texture": "#castiron", "uv": [ 0.0, 0.0, 16.0, 16.0 ] }
+			},
+			"children": [
+				{
+					"name": "Trim Face",
+					"from": [ 1.0, 0.5, 9.0 ], 
+					"to": [ 15.0, 1.0, 15.0 ], 
+					"rotationOrigin": [ 1.0, 0.0, 9.0 ],
+					"faces": {
+						"north": { "texture": "#shinybrass", "uv": [ 0.0, 0.0, 14.0, 0.5 ] },
+						"east": { "texture": "#shinybrass", "uv": [ 0.0, 0.0, 6.0, 0.5 ] },
+						"south": { "texture": "#shinybrass", "uv": [ 0.0, 0.0, 14.0, 0.5 ] },
+						"west": { "texture": "#shinybrass", "uv": [ 0.0, 0.0, 6.0, 0.5 ] },
+						"up": { "texture": "#shinybrass", "uv": [ 0.0, 0.0, 14.0, 6.0 ] },
+						"down": { "texture": "#shinybrass", "uv": [ 0.0, 0.0, 14.0, 6.0 ], "enabled": false }
+					}
+				},
+				{
+					"name": "Needle",
+					"from": [ 1.0, 1.0, 13.0 ], 
+					"to": [ 8.0, 1.5, 13.5 ], 
+					"rotationOrigin": [ 8.0, 1.0, 13.25 ],
+					"faces": {
+						"north": { "texture": "#castiron", "uv": [ 0.0, 0.0, 7.0, 0.5 ] },
+						"east": { "texture": "#castiron", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"south": { "texture": "#castiron", "uv": [ 0.0, 0.0, 7.0, 0.5 ] },
+						"west": { "texture": "#castiron", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+						"up": { "texture": "#castiron", "uv": [ 0.0, 0.0, 7.0, 0.5 ] },
+						"down": { "texture": "#castiron", "uv": [ 0.0, 0.0, 7.0, 0.5 ], "enabled": false }
+					}
+				},
+				{
+					"name": "Trim Face4",
+					"from": [ 2.0, 0.5, 6.0 ], 
+					"to": [ 14.0, 1.0, 9.0 ], 
+					"rotationOrigin": [ 2.0, 0.0, 6.0 ],
+					"faces": {
+						"north": { "texture": "#shinybrass", "uv": [ 0.0, 0.0, 12.0, 0.5 ] },
+						"east": { "texture": "#shinybrass", "uv": [ 0.0, 0.0, 3.0, 0.5 ] },
+						"south": { "texture": "#shinybrass", "uv": [ 0.0, 0.0, 12.0, 0.5 ] },
+						"west": { "texture": "#shinybrass", "uv": [ 0.0, 0.0, 3.0, 0.5 ] },
+						"up": { "texture": "#shinybrass", "uv": [ 0.0, 0.0, 12.0, 3.0 ] },
+						"down": { "texture": "#shinybrass", "uv": [ 0.0, 0.0, 12.0, 3.0 ], "enabled": false }
+					}
+				},
+				{
+					"name": "Trim Face5",
+					"from": [ 3.0, 0.5, 4.0 ], 
+					"to": [ 13.0, 1.0, 6.0 ], 
+					"rotationOrigin": [ 3.0, 0.0, 4.0 ],
+					"faces": {
+						"north": { "texture": "#shinybrass", "uv": [ 0.0, 0.0, 10.0, 0.5 ] },
+						"east": { "texture": "#shinybrass", "uv": [ 0.0, 0.0, 2.0, 0.5 ] },
+						"south": { "texture": "#shinybrass", "uv": [ 0.0, 0.0, 10.0, 0.5 ] },
+						"west": { "texture": "#shinybrass", "uv": [ 0.0, 0.0, 2.0, 0.5 ] },
+						"up": { "texture": "#shinybrass", "uv": [ 0.0, 0.0, 10.0, 2.0 ] },
+						"down": { "texture": "#shinybrass", "uv": [ 0.0, 0.0, 10.0, 2.0 ], "enabled": false }
+					}
+				}
+			]
+		}
+	]}
