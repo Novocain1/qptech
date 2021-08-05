@@ -211,10 +211,11 @@ namespace qptech.src
         public override void GetBlockInfo(IPlayer forPlayer, StringBuilder dsc)
         {
             base.GetBlockInfo(forPlayer, dsc);
-            dsc.AppendLine("On:" + isOn.ToString());
-            dsc.AppendLine("Max TF:" + maxFlux.ToString());
-            dsc.AppendLine("Stored TF:" + Capacitor.ToString() + "/" + Capacitance.ToString());
-            dsc.AppendLine("IN:" + inputConnections.Count.ToString() + " OUT:" + outputConnections.Count.ToString());
+            if (IsOn) { dsc.AppendLine("Turned On (right click with screwdriver or hammer to turn on/off)"); }
+            else { dsc.AppendLine("Turned Off (right click with screwdriver or hammer to turn on/off)"); }
+            dsc.AppendLine("Stored Temporal Flux " + Capacitor.ToString() + " of " + maxFlux.ToString());
+            
+            //dsc.AppendLine("IN:" + inputConnections.Count.ToString() + " OUT:" + outputConnections.Count.ToString());
         }
 
         //Used for other power devices to offer this device some energy returns how much power was used
