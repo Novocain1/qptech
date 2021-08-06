@@ -257,7 +257,6 @@
     <None Include="qptech\assets\game\shapes\block\can-full.json" />
     <None Include="qptech\assets\game\shapes\block\can-open.json" />
     <None Include="qptech\assets\game\shapes\block\can-sealed.json" />
-    <None Include="qptech\assets\machines\blocktypes\dummy-gauge.json" />
     <None Include="qptech\assets\machines\blocktypes\metal\creative\creativegenerator.json" />
     <None Include="qptech\assets\machines\blocktypes\metal\electric\battery.json" />
     <None Include="qptech\assets\machines\blocktypes\metal\electric\electrickiln.json" />
@@ -367,6 +366,7 @@
     <None Include="qptech\assets\machines\shapes\block\metal\electric\motor-rotor.json" />
     <None Include="qptech\assets\machines\shapes\block\metal\electric\motor-stator.json" />
     <None Include="qptech\assets\machines\shapes\block\metal\electric\motor.json" />
+    <None Include="qptech\assets\machines\shapes\block\metal\electric\roundgauge0.json" />
     <None Include="qptech\assets\machines\shapes\block\metal\electric\washplant2.json" />
     <None Include="qptech\assets\machines\shapes\block\wood\basin.json" />
     <None Include="qptech\assets\machines\shapes\block\metal\electric\battery\primitive.json" />
@@ -703,6 +703,9 @@
     <Content Include="qptech\assets\machines\textures\block\notchedbrass.png" />
     <Content Include="qptech\assets\machines\textures\block\oak1.png" />
     <Content Include="qptech\assets\machines\textures\block\redfabric.png" />
+    <Content Include="qptech\assets\machines\textures\block\roundgauge-0.png" />
+    <Content Include="qptech\assets\machines\textures\block\roundgauge-100.png" />
+    <Content Include="qptech\assets\machines\textures\block\roundgauge-50.png" />
     <Content Include="qptech\assets\machines\textures\block\shinybrass.png" />
     <Content Include="qptech\assets\machines\textures\block\stone\other\front-granite.png" />
     <Content Include="qptech\assets\machines\textures\block\metal\wires\tin-wires.png" />
