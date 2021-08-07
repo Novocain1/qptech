@@ -1,6 +1,6 @@
 {
-	"code": "powerflag",
-	
+	"code": "gauge-east",
+	"entityclass": "BETextureTest",
 	"behaviors": [
 		{
 			"name": "RightClickPickup",
@@ -17,7 +17,7 @@
 	},
 	"blockmaterial": "Metal",
 	"drawtype": "json",
-	"shape": { "base": "block/metal/statusflag" },
+	"shape": { "base": "block/metal/electric/roundgauge0" },
 	"resistance": 0,
 	"sideopaque": {
 		"all": false

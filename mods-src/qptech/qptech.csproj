@@ -102,12 +102,12 @@
     <Compile Include="src\Electricity\GUIAssemblerStatus.cs" />
     <Compile Include="src\Electricity\HVACEnvironmentUpdater.cs" />
     <Compile Include="src\misc\APIExtensions.cs" />
+    <Compile Include="src\misc\BETextureTest.cs" />
     <Compile Include="src\misc\BlockCannedMeal.cs" />
     <Compile Include="src\Electricity\ElectricalBlock.cs" />
     <Compile Include="src\Electricity\ElectricityLoader.cs" />
     <Compile Include="src\misc\BlockEntityHiddenHopper.cs" />
     <Compile Include="src\misc\BlockTemporalPocket.cs" />
-    <Compile Include="src\misc\GUITests.cs" />
     <Compile Include="src\misc\HackMan.cs" />
     <Compile Include="src\misc\Multiblock.cs" />
     <Compile Include="src\misc\icebox.cs" />

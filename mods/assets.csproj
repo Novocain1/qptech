@@ -277,6 +277,7 @@
     <None Include="qptech\assets\machines\blocktypes\metal\other\hiddenchute\chute-t.json" />
     <None Include="qptech\assets\machines\blocktypes\metal\other\hiddenchute\chute.json" />
     <None Include="qptech\assets\machines\blocktypes\metal\other\hiddenhopper\hiddenhopper.json" />
+    <None Include="qptech\assets\machines\blocktypes\metal\gauge.json" />
     <None Include="qptech\assets\machines\blocktypes\other\blocklantern.json" />
     <None Include="qptech\assets\machines\blocktypes\metal\electric\light\light-bulb.json" />
     <None Include="qptech\assets\machines\blocktypes\metal\barrel.json" />
@@ -358,7 +359,6 @@
     <None Include="qptech\assets\machines\recipes\smithing\part\screw.json" />
     <None Include="qptech\assets\machines\recipes\smithing\tool\pullplate.json" />
     <None Include="qptech\assets\machines\recipes\smithing\tool\screwdriverhead.json" />
-    <None Include="qptech\assets\machines\shapes\block\gauges\square180.json" />
     <None Include="qptech\assets\machines\shapes\block\metal\electric\electricfan.json" />
     <None Include="qptech\assets\machines\shapes\block\metal\electric\electrickiln-lv.json" />
     <None Include="qptech\assets\machines\shapes\block\metal\electric\forge-lv.json" />
