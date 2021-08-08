@@ -40,15 +40,20 @@ namespace qptech.src
             }
             gaugetextures = new List<string>();
             gaugetextures.Add("roundgauge-0");
-            gaugetextures.Add("roundgauge-25");
+            gaugetextures.Add("roundgauge-10");
+            gaugetextures.Add("roundgauge-20");
+            gaugetextures.Add("roundgauge-30");
+            gaugetextures.Add("roundgauge-40");
             gaugetextures.Add("roundgauge-50");
-            gaugetextures.Add("roundgauge-75");
-            gaugetextures.Add("roundgauge-100");
+            gaugetextures.Add("roundgauge-60");
+            gaugetextures.Add("roundgauge-70");
+            gaugetextures.Add("roundgauge-80");
+            gaugetextures.Add("roundgauge-90");
             gaugetextures.Add("roundgauge-100");
             RegisterGameTickListener(OnTick, 100);
 
         }
-
+        float rot = 0;
         public void OnTick(float dt)
         {
 
@@ -56,10 +61,18 @@ namespace qptech.src
 
             BlockPos bp = Pos.Copy().Offset(BlockFacing.DOWN);
 
-            BlockEntity checkblock = Api.World.BlockAccessor.GetBlockEntity(bp);
-            var bee = checkblock as BEElectric;
+            BlockEntity checkBE = Api.World.BlockAccessor.GetBlockEntity(bp);
+            var bee = checkBE as BEElectric;
             if (bee != null)
             {
+                
+                switch (bee.Block.LastCodePart())
+                {
+                    case "east": rot = 90;break;
+                    case "south": rot = 0;break;
+                    case "west": rot = 270;break;
+                    case "north": rot = 180;break;
+                }
                 if (bee.IsOn)
                 {
                     pcttracker = bee.CapacitorPercentage;
@@ -88,8 +101,10 @@ namespace qptech.src
         {
             
             Shape shape = capi.TesselatorManager.GetCachedShape(new AssetLocation("machines:block/metal/electric/roundgauge0"));
+            
             MeshData meshdata;
-            capi.Tesselator.TesselateShape("roundgauge0", shape, out meshdata, this);
+            capi.Tesselator.TesselateShape("roundgauge0"+Pos.ToString(), shape, out meshdata, this);
+            meshdata.Rotate(new Vec3f(0.5f,0.5f,0.5f), 0, GameMath.DEG2RAD*rot, 0);
             mesher.AddMeshData(meshdata);
             return true;
         }

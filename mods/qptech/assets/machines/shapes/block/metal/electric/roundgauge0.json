@@ -8,10 +8,17 @@
 	"textureSizes": {
 	},
 	"textures": {
+		"base":  "block/machinery.png",
 		"roundgauge-0": "block/roundgauge-0",
-		"roundgauge-25": "block/roundgauge-25",
+		"roundgauge-10": "block/roundgauge-10",
+		"roundgauge-20": "block/roundgauge-20",
+		"roundgauge-30": "block/roundgauge-30",
+		"roundgauge-40": "block/roundgauge-40",
 		"roundgauge-50": "block/roundgauge-50",
-		"roundgauge-75": "block/roundgauge-75",
+		"roundgauge-60": "block/roundgauge-60",
+		"roundgauge-70": "block/roundgauge-70",
+		"roundgauge-80": "block/roundgauge-80",
+		"roundgauge-90": "block/roundgauge-90",
 		"roundgauge-100": "block/roundgauge-100"
 	},
 	"elements": [
