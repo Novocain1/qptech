@@ -13,6 +13,7 @@ using Vintagestory.API.Server;
 using Vintagestory.GameContent;
 using Vintagestory.API.Util;
 
+
 namespace qptech.src
 {
     public class BETextureTest : BlockEntity
@@ -27,6 +28,7 @@ namespace qptech.src
                 ICoreClientAPI capi = (ICoreClientAPI)api;
                 capi.Event.RegisterRenderer(renderer = new TestGaugeRenderer(Pos, capi), EnumRenderStage.Opaque);
                 renderer.SetNewText("POOP",2);
+                RegisterGameTickListener(OnTick, 75);
             }
         }
         public override void GetBlockInfo(IPlayer forPlayer, StringBuilder dsc)
@@ -35,6 +37,18 @@ namespace qptech.src
             dsc.Append("HI");
 
             //dsc.AppendLine("IN:" + inputConnections.Count.ToString() + " OUT:" + outputConnections.Count.ToString());
+        }
+        public void OnTick(float df)
+        {
+            if (renderer != null)
+            {
+                renderer.SetNewText("POOP", 0);
+            }
+        }
+        public override void OnBlockRemoved()
+        {
+            renderer?.Dispose();
+            renderer = null;
         }
     }
 
@@ -150,6 +164,7 @@ namespace qptech.src
 
             public virtual void OnRenderFrame(float deltaTime, EnumRenderStage stage)
             {
+                 if (quadModelRef == null) return;
                 if (loadedTexture == null) return;
                 if (!api.Render.DefaultFrustumCuller.SphereInFrustum(pos.X + 0.5, pos.Y + 0.5, pos.Z + 0.5, 1)) return;
 
@@ -188,10 +203,13 @@ namespace qptech.src
 
             public void Dispose()
             {
-                api.Event.UnregisterRenderer(this, EnumRenderStage.Opaque);
-
-                loadedTexture?.Dispose();
-                quadModelRef?.Dispose();
+            loadedTexture?.Dispose();
+            quadModelRef?.Dispose();
+            loadedTexture = null;
+            quadModelRef = null;
+            api.Event.UnregisterRenderer(this, EnumRenderStage.Opaque);
+                
+                
             }
         }
     public class TextureTestLoader : ModSystem
