@@ -23,7 +23,7 @@ namespace qptech.src
         //protected int cachedCapacitance = 0;
         public int Capacitor => capacitor;  //TF currently stored
         protected int capacitor = 0;
-       
+        public float CapacitorPercentage => (float)capacitor /(float) capacitance;       
         protected bool isOn = true;        //if it's not on it won't do any power processing
         protected List<IElectricity> outputConnections; //what we are connected to output power
         protected List<IElectricity> inputConnections; //what we are connected to receive power

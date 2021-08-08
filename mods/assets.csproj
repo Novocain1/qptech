@@ -705,7 +705,9 @@
     <Content Include="qptech\assets\machines\textures\block\redfabric.png" />
     <Content Include="qptech\assets\machines\textures\block\roundgauge-0.png" />
     <Content Include="qptech\assets\machines\textures\block\roundgauge-100.png" />
+    <Content Include="qptech\assets\machines\textures\block\roundgauge-25.png" />
     <Content Include="qptech\assets\machines\textures\block\roundgauge-50.png" />
+    <Content Include="qptech\assets\machines\textures\block\roundgauge-75.png" />
     <Content Include="qptech\assets\machines\textures\block\shinybrass.png" />
     <Content Include="qptech\assets\machines\textures\block\stone\other\front-granite.png" />
     <Content Include="qptech\assets\machines\textures\block\metal\wires\tin-wires.png" />

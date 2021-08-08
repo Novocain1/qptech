@@ -9,7 +9,9 @@
 	},
 	"textures": {
 		"roundgauge-0": "block/roundgauge-0",
+		"roundgauge-25": "block/roundgauge-25",
 		"roundgauge-50": "block/roundgauge-50",
+		"roundgauge-75": "block/roundgauge-75",
 		"roundgauge-100": "block/roundgauge-100"
 	},
 	"elements": [
