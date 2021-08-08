@@ -12,7 +12,7 @@ namespace qptech.src
 {
     class ElectricalBlock : BlockMPBase
     {
-        long powertogglecooldown = 100;
+        long powertogglecooldown = 1200;
         long nextpowertoggleat = 0;
         public override void DidConnectAt(IWorldAccessor world, BlockPos pos, BlockFacing face)
         {
